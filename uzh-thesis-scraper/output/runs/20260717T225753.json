@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-17T22:57:53.398995+00:00",
+  "sources": [
+    {
+      "source_id": "iff--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-17T22:57:54.391960+00:00"
+}

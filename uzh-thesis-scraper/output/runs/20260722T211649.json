@@ -1,0 +1,41 @@
+{
+  "started_at": "2026-07-22T21:16:49.607917+00:00",
+  "sources": [
+    {
+      "source_id": "ifi--17",
+      "page_type": "topics",
+      "status": "schema_invalid",
+      "action": "kept_previous",
+      "record_count": 26,
+      "reasons": [
+        "topics[4]: no topic_description/research_area",
+        "topics[5]: no topic_description/research_area",
+        "topics[6]: no topic_description/research_area",
+        "topics[7]: no topic_description/research_area",
+        "topics[8]: no topic_description/research_area",
+        "topics[9]: no topic_description/research_area",
+        "topics[10]: no topic_description/research_area",
+        "topics[11]: no topic_description/research_area",
+        "topics[12]: no topic_description/research_area",
+        "topics[13]: no topic_description/research_area"
+      ]
+    },
+    {
+      "source_id": "ifi--17",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "schema_invalid": 1,
+      "ok": 1
+    },
+    "flagged": 1
+  },
+  "finished_at": "2026-07-22T21:18:20.689333+00:00"
+}

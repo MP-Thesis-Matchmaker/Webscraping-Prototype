@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+cache/
+output/theses.json
+output/theses.sqlite
+output/runs/
+output/preview/
+registry/state.json
+.env
+
+.DS_Store
+.claude/

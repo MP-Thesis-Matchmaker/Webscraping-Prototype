@@ -1,0 +1,69 @@
+{
+  "faculty": "Wirtschaftswissenschaftliche Fakultät",
+  "faculty_code": "WWF",
+  "unit": "Institut für Betriebswirtschaftslehre (IBW) / Department of Business Administration",
+  "unit_id": "ibw",
+  "source_id": "ibw--1",
+  "source_url": "https://www.business.uzh.ch/de/teaching/thesis.html",
+  "page_type": "process",
+  "process": [
+    {
+      "degree_level": "Bachelor, Master",
+      "process_description": "Eligible students must have relevant prior coursework passed for the chosen research area; consult the table’s \"Remarks\" column for specific prerequisites. To obtain a supervisor you either (A) propose your own topic by submitting a 2–3 page Research Proposal via the Business Theses Market, or (B) apply for a listed topic on the Market with CV, current transcript (export from module booking) and a short motivational letter. Use your UZH login to apply. Matching may take up to two months; successful matches lead to contact by the supervisor and the final assignment is posted on OLAT. Picking up the assignment on OLAT starts the fixed six‑month work period; submit the thesis and attachments as a ZIP on OLAT. Grades arrive within one month. Follow Dekanat (Studium und Abschluss) rules; the institute may require revisions or reject proposals.",
+      "relevant_links": [
+        {
+          "url": "https://www.oec.uzh.ch/de/studies/theses.html#OLAT-Prozess:_Anmeldung,_Themenabholung_und_Abgabe_der_Abschlussarbeit",
+          "description": "Detaillierte Informationen zum OLAT-Prozess"
+        },
+        {
+          "url": "https://theses.business.uzh.ch/",
+          "description": "Business Theses Market"
+        },
+        {
+          "url": "https://www.business.uzh.ch/dam/jcr:4b2871d0-fa49-437b-bdb5-e8b66b10b455/260630_Possible_Topic_Areas_for_Theses_2026.pdf",
+          "description": "Mögliche Themenbereiche für Bachelor- und Masterarbeiten (PDF, 117 KB)"
+        },
+        {
+          "url": "https://www.business.uzh.ch/en/research/professorships/managerialaccounting/abschlussarbeiten.html",
+          "description": "e-Form"
+        },
+        {
+          "url": "https://www.business.uzh.ch/de/research/professorships/emap/teaching/thesis.html",
+          "description": "thesis page"
+        },
+        {
+          "url": "https://www.business.uzh.ch/en/research/professorships/hrmlead/Theses.html",
+          "description": "website"
+        },
+        {
+          "url": "https://www.business.uzh.ch/en/research/professorships/managerial-economics/thesissupervision.html",
+          "description": "website"
+        },
+        {
+          "url": "https://www.business.uzh.ch/de/research/professorships/strategy/stu/thesis.html",
+          "description": "website"
+        },
+        {
+          "url": "https://www.business.uzh.ch/en/research/professorships/international-management/Teaching/thesis.html",
+          "description": "our website"
+        },
+        {
+          "url": "https://www.business.uzh.ch/de/teaching/thesis/thesesmarket.html",
+          "description": "Business Theses Market"
+        },
+        {
+          "url": "https://www.business.uzh.ch/de/teaching/thesis/faqs.html",
+          "description": "FAQs for Students"
+        }
+      ],
+      "source_url": "https://www.business.uzh.ch/de/teaching/thesis.html",
+      "source_id": "ibw--1",
+      "scraped_at": "2026-07-17T21:32:34.495742+00:00",
+      "_llm": {
+        "provider": "openai",
+        "model": "gpt-5-mini",
+        "status": "ok"
+      }
+    }
+  ]
+}

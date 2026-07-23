@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-07-17T22:47:49.276730+00:00",
+  "sources": [
+    {
+      "source_id": "iff--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "by_status": {
+      "ok": 4
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-17T22:49:44.823585+00:00"
+}

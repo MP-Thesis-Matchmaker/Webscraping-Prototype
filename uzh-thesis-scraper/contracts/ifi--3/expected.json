@@ -1,0 +1,49 @@
+{
+  "source_id": "ifi--3",
+  "page_type": "topics",
+  "verified_content_sha1": "83315557b65bc013ce0013ae488f840f966f5469",
+  "records": [
+    {
+      "title": "Neuro-Symbolic Event Narrative Generation from Large-Scale Knowledge Bases",
+      "status": "open",
+      "degree_level": "Master",
+      "date_of_listing": null,
+      "research_area": "Dynamic and Distributed Information Systems",
+      "supervisor_name": null,
+      "supervisor_email": "nmamie@ifi.uzh.ch",
+      "topic_description": "Description: The goal of this thesis is to construct a trusted, dynamically updating Knowledge Base designed to mitigate misinformation through fact-grounded content generation and recommendation. The research begins by replicating the Talking to GDELT Through Knowledge Graphs pipeline in English, subsequently transferring and adapting it to a multilingual corpus compiled from distributed, trusted data sources. To safeguard the platform against the spread of misinformation and narrative manipulation, the second phase of the thesis will explore neuro-symbolic approaches based on logical rules over incoming data streams, enabling dynamic updates and continuous consistency monitoring of the resulting Knowledge Graph. This should lead to verified event narratives that provide users with robust, fact-grounded accounts rooted in a resilient source of truth. Sources: Myers, Audun, et al. \"Talking to GDELT through knowledge graphs.\" arXiv preprint arXiv:2503.07584 (2025). Start date: Fall 2026 Requirements: Strong background in machine learning and deep learning Proficiency with PyTorch and LLM Inference Major in AI or Data Science Some knowledge of neuro-symbolic approaches (bonus) Recommended courses Advanced Topics in Artificial Intelligence Deep Learning Contact Please contact Noah Mamie (he/him): nmamie@ifi.uzh.ch",
+      "source_link": "https://www.ifi.uzh.ch/en/ddis/theses/topics.html",
+      "source_id": "ifi--3",
+      "scraped_at": "2026-07-18T09:40:29.262738+00:00",
+      "topic_id": "932c0f166b6bb1bbc017b221fe181c22ddb718f4"
+    },
+    {
+      "title": "Who to Ask and What to Correct: Joint Deferral Policies for Multi-Expert Interventions in Concept Bottleneck Models",
+      "status": "open",
+      "degree_level": "Master",
+      "date_of_listing": null,
+      "research_area": "Dynamic and Distributed Information Systems",
+      "supervisor_name": null,
+      "supervisor_email": "bergh@ifi.uzh.ch",
+      "topic_description": "Description: Concept Bottleneck Models (CBMs) are interpretable deep learning models that predict human-understandable concepts (e.g. \"has black wings\") from inputs (e.g., images) and then use those concepts to make final task predictions. A key advantage of CBMs is intervenability : human experts can correct incorrect concept predictions at test time to improve the final output. However, current approaches assume a single oracle expert and uniform intervention costs. This thesis investigates possibilities for designing a post-hoc deferral module that jointly selects which concept to intervene on and which expert to assign those interventions to, in settings with multiple experts of varying expertise and cost. In a first stage of the thesis, the thesis will explore potentials for a post-hoc deferral module that learns to route individual concept interventions to the most suitable expert. In a second stage, methods should be explored to incorporate and model heterogeneous cost between experts. Start date: Fall 2026 Requirements: Strong background in machine learning and deep learning (including theory), ideally with some knowledge in reinforcement learning. Proficiency with PyTorch. Major in AI or Data Science Recommended courses: Deep Learning, Advanced Topics in Artificial Intelligence. Please contact Laurin van den Bergh (he/him): bergh@ifi.uzh.ch",
+      "source_link": "https://www.ifi.uzh.ch/en/ddis/theses/topics.html",
+      "source_id": "ifi--3",
+      "scraped_at": "2026-07-18T09:40:29.262738+00:00",
+      "topic_id": "5e9d4cddc003377de2dff431b31b5e8fea8de6fa"
+    },
+    {
+      "title": "AI-Facilitated Group Decision-Making in Real-Time Chat",
+      "status": "open",
+      "degree_level": "Master",
+      "date_of_listing": null,
+      "research_area": "Dynamic and Distributed Information Systems",
+      "supervisor_name": null,
+      "supervisor_email": "patricia.kahr@uzh.ch",
+      "topic_description": "In group decision-making, voices are frequently raised but remain unheard. People bring different goals, values, and levels of confidence to a conversation, and yet the true power of collective reasoning only emerges when participants genuinely acknowledge each other's ideas. When dominant voices crowd out quieter ones, or when time pressure pushes a group toward premature consensus, the quality of decisions suffers. These dynamics are well-documented in the social and organizational psychology literature, yet they remain difficult to detect and address in practice. At the same time, advances in large language models and conversational AI open new possibilities for real-time facilitation. Rather than relying on a human moderator to notice imbalances and intervene, an AI facilitator could monitor group conversations as they unfold, for example, detecting when a contribution has gone unacknowledged, when the group is converging too quickly, or when a minority perspective deserves more airtime. By nudging individuals or the group as a whole at the right moment, such a system could help groups make decisions that are not only faster, but fairer and more reflective of the full range of views present. This master project sets out to build and study exactly that. Working within a multiplayer, chat-based environment such as Mattermost, you will design and integrate a bot that monitors group conversations in real time and intervenes with targeted nudges to individuals in private or groups directly. A follow-up (Master’s thesis) project could investigate how different AI intervention strategies affect decision quality, perceived fairness, and individual experience, and further explore the broader design space of AI-supported group collaboration. Requirements: Strong programming skills in Python Experience with API and webhook development Familiarity with bot or LLM integration, and looging of structured data Interest in HCI research Start Date: April / May 2026 Apply by 15.5.2026 as a group of 2–4 students Please contact Patricia Kahr (she/her): patricia.kahr@uzh.ch",
+      "source_link": "https://www.ifi.uzh.ch/en/ddis/theses/topics.html",
+      "source_id": "ifi--3",
+      "scraped_at": "2026-07-18T09:40:29.262738+00:00",
+      "topic_id": "eb5af3bb69ad33b615336bd5042c6b3de8a5d0b1"
+    }
+  ]
+}

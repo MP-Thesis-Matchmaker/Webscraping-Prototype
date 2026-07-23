@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-17T21:10:54.154396+00:00",
+  "sources": [
+    {
+      "source_id": "ibw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-17T21:11:06.015049+00:00"
+}

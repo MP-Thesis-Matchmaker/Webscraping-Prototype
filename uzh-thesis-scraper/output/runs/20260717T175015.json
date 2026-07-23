@@ -1,0 +1,33 @@
+{
+  "started_at": "2026-07-17T17:50:15.291799+00:00",
+  "sources": [
+    {
+      "source_id": "ivw--1",
+      "page_type": "process",
+      "status": "page_changed",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": [
+        "hash deadbeef -> 4b3847b0"
+      ],
+      "diff": {
+        "added": 0,
+        "removed": 0,
+        "modified": 1,
+        "added_keys": [],
+        "removed_keys": [],
+        "modified_keys": [
+          "ivw--1"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "page_changed": 1
+    },
+    "flagged": 1
+  },
+  "finished_at": "2026-07-17T17:50:22.484575+00:00"
+}

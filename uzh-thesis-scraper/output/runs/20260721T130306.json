@@ -1,0 +1,189 @@
+{
+  "started_at": "2026-07-21T13:03:06.077566+00:00",
+  "sources": [
+    {
+      "source_id": "ivw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ivw--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ivw--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ivw--4",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 43,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 30,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 8,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--3",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 3,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--4",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--5",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 12,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--5",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--6",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--7",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 6,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--7",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 22,
+    "by_status": {
+      "ok": 22
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-21T13:05:30.962766+00:00"
+}

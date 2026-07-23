@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-21T15:09:09.011814+00:00",
+  "sources": [
+    {
+      "source_id": "ifi--10",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--10",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 31,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-21T15:09:21.049026+00:00"
+}
