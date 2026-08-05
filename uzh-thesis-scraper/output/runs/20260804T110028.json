@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-08-04T11:00:28.009932+00:00",
+  "sources": [
+    {
+      "source_id": "religionswissenschaftliches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "religionswissenschaftliches-seminar--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-04T11:00:28.091168+00:00"
+}

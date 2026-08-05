@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-31T12:38:43.925951+00:00",
+  "sources": [
+    {
+      "source_id": "isek--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 21,
+      "reasons": []
+    },
+    {
+      "source_id": "isek--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T12:38:44.255712+00:00"
+}

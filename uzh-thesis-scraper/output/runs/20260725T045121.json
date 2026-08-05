@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-25T04:51:21.469994+00:00",
+  "sources": [
+    {
+      "source_id": "asien-orient-institut--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-25T04:51:31.288160+00:00"
+}

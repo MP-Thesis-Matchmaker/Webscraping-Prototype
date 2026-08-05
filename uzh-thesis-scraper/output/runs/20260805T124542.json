@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-08-05T12:45:42.168862+00:00",
+  "sources": [
+    {
+      "source_id": "geography--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 27,
+      "reasons": []
+    },
+    {
+      "source_id": "geography--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "geography--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "by_status": {
+      "ok": 3
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-05T12:46:01.035668+00:00"
+}

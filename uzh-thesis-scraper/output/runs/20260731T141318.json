@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-31T14:13:18.265599+00:00",
+  "sources": [
+    {
+      "source_id": "romanisches-seminar--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 21,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T14:13:25.491488+00:00"
+}

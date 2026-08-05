@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-04T11:31:19.018066+00:00",
+  "sources": [
+    {
+      "source_id": "biochemisches-institut-mnf--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 8,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-04T11:31:36.754473+00:00"
+}

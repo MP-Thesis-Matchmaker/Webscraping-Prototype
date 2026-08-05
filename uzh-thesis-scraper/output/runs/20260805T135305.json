@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-05T13:53:05.234123+00:00",
+  "sources": [
+    {
+      "source_id": "vsf--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-05T13:53:05.299648+00:00"
+}

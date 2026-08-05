@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-30T07:59:30.416375+00:00",
+  "sources": [
+    {
+      "source_id": "historisches-seminar--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 28,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-30T08:00:39.371159+00:00"
+}

@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-07-30T08:29:55.147192+00:00",
+  "sources": [
+    {
+      "source_id": "erziehungswissenschaft--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--4",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "by_status": {
+      "ok": 4
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-30T08:29:55.389119+00:00"
+}

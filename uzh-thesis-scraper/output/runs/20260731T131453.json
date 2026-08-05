@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-31T13:14:53.457734+00:00",
+  "sources": [
+    {
+      "source_id": "psychologisches-institut--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 141,
+      "reasons": []
+    },
+    {
+      "source_id": "psychologisches-institut--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T13:16:09.407007+00:00"
+}

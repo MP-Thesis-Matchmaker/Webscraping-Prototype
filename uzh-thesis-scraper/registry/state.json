@@ -308,180 +308,516 @@
       "verified_sha1": "b2bec9aa86e0dcba75da95b4450b985d6c665bad"
     },
     "asien-orient-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "a432f66aa25dfc1cad87c4fc243926ddf38e559d",
+        "fetched_at": "2026-07-25T04:51:13.367133+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "a432f66aa25dfc1cad87c4fc243926ddf38e559d"
     },
     "asien-orient-institut--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "25654ec9f690e90a915d2e6b3e0b2692f48f41ec",
+        "fetched_at": "2026-07-25T04:49:51.658113+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "25654ec9f690e90a915d2e6b3e0b2692f48f41ec"
     },
     "deutsches-seminar--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "0978bbbf1afdf39678647337608b6a0d49ea32ca",
+        "fetched_at": "2026-08-05T13:54:32.694382+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "0978bbbf1afdf39678647337608b6a0d49ea32ca"
     },
     "deutsches-seminar--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "3c5b22b349c9be629168c840dc7b74d50889ec79",
+        "fetched_at": "2026-08-05T13:54:34.988047+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "3c5b22b349c9be629168c840dc7b74d50889ec79"
     },
     "deutsches-seminar--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "503c2ecf1e3da1ee2b3cec05db53bf910e20b118",
+        "fetched_at": "2026-07-25T05:47:10.041276+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "503c2ecf1e3da1ee2b3cec05db53bf910e20b118"
     },
     "englisches-seminar--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "f5883585039fb28eba9c0cdcf79db8f0a29a8adc",
+        "fetched_at": "2026-07-25T06:11:10.129584+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "f5883585039fb28eba9c0cdcf79db8f0a29a8adc"
     },
     "englisches-seminar--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "a93a7a8e6f8a4ddfe94dcea17d3413b694f3752d",
+        "fetched_at": "2026-07-25T06:10:37.366483+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "a93a7a8e6f8a4ddfe94dcea17d3413b694f3752d"
     },
     "englisches-seminar--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "615b0f49a41d656a69babbe82de57b8d145be732",
+        "fetched_at": "2026-07-25T06:06:18.524924+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "615b0f49a41d656a69babbe82de57b8d145be732"
     },
     "historisches-seminar--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "ab4309e5204db22a60b28f1e97188f4fb57f197c",
+        "fetched_at": "2026-07-30T08:01:12.059273+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "ab4309e5204db22a60b28f1e97188f4fb57f197c"
     },
     "historisches-seminar--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "f7ec429c7dab5885692395babe69cddc94f4a4b3",
+        "fetched_at": "2026-07-30T08:01:44.207171+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "f7ec429c7dab5885692395babe69cddc94f4a4b3"
     },
     "historisches-seminar--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "64e3c517eb295fa6095ae8c5ddd025b612bc5e26",
+        "fetched_at": "2026-07-30T07:59:18.768011+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "64e3c517eb295fa6095ae8c5ddd025b612bc5e26"
     },
     "computerlinguistik--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "9b01de7a8c69fb4e4f080f633a63b7ce47084b5d",
+        "fetched_at": "2026-07-30T08:15:04.472081+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "9b01de7a8c69fb4e4f080f633a63b7ce47084b5d"
     },
     "computerlinguistik--2": {
       "onboarding": "unverified",
       "run": "pending"
     },
     "erziehungswissenschaft--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "f545a452456a9a01e9e97104c62aaa0981cd4d39",
+        "fetched_at": "2026-07-30T08:20:17.642857+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "f545a452456a9a01e9e97104c62aaa0981cd4d39"
     },
     "erziehungswissenschaft--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "6f534a304d4fdedc3469ac11113648ce93aa3903",
+        "fetched_at": "2026-07-30T08:20:29.306164+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "6f534a304d4fdedc3469ac11113648ce93aa3903"
     },
     "erziehungswissenschaft--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "19f0126f06f9c999b9c605352535de104bea9334",
+        "fetched_at": "2026-07-30T08:20:43.973088+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "19f0126f06f9c999b9c605352535de104bea9334"
     },
     "erziehungswissenschaft--4": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "f9b9133d59e0bf81a457391e5d76c39fb60c0af3",
+        "fetched_at": "2026-07-30T08:20:59.444881+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "f9b9133d59e0bf81a457391e5d76c39fb60c0af3"
     },
     "isle--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "513b47c228ed7dad03af1ec33b1812d09b8a7e2f",
+        "fetched_at": "2026-07-31T09:39:17.080823+00:00"
+      },
+      "page_type": "none",
+      "verified_sha1": "513b47c228ed7dad03af1ec33b1812d09b8a7e2f"
     },
     "isle--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "61f0b11209e26cd77e517cf6a4deb077a780c3bf",
+        "fetched_at": "2026-07-31T09:05:18.084201+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "61f0b11209e26cd77e517cf6a4deb077a780c3bf"
     },
     "kommunikationswissenschaft-und-medienforschung-ikm--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "40c18efd736fb0f037445ea6ac652c504c060759",
+        "fetched_at": "2026-07-31T10:24:54.502639+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "40c18efd736fb0f037445ea6ac652c504c060759"
     },
     "kommunikationswissenschaft-und-medienforschung-ikm--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "1612fcef30d9ace2201b10362300ddea12f8c591",
+        "fetched_at": "2026-07-31T10:25:06.257081+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "1612fcef30d9ace2201b10362300ddea12f8c591"
     },
     "ipz--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "4bc0f67be31170d17837836252f33d454af73e94",
+        "fetched_at": "2026-07-31T10:41:32.472970+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "4bc0f67be31170d17837836252f33d454af73e94"
     },
     "ipz--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "b1caa3ba3753e0e94ef35004789bff78e22468b0",
+        "fetched_at": "2026-07-31T10:43:45.010908+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "b1caa3ba3753e0e94ef35004789bff78e22468b0"
     },
     "ipz--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "2cc5f3e91060f9880fc30226a9987f05d3d64420",
+        "fetched_at": "2026-07-31T10:43:45.537279+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "2cc5f3e91060f9880fc30226a9987f05d3d64420"
     },
     "slavistik-und-osteuropastudien--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "592258f1e0da38e0870a315b77615d90d8610d8a",
+        "fetched_at": "2026-07-31T10:52:00.442010+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "592258f1e0da38e0870a315b77615d90d8610d8a"
     },
     "isek--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "d50ff4ad8bba54f887b69a1b229e0223e8e8e9a1",
+        "fetched_at": "2026-07-31T12:36:43.838191+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "d50ff4ad8bba54f887b69a1b229e0223e8e8e9a1"
     },
     "isek--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "920c4b87da84fbd91fbd3f2fd8012aba36e09def",
+        "fetched_at": "2026-07-31T12:36:44.413461+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "920c4b87da84fbd91fbd3f2fd8012aba36e09def"
     },
     "kunsthistorisches-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "51316bec6f4cd56626b0abbf97a44b9298295751",
+        "fetched_at": "2026-07-31T12:45:41.323417+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "51316bec6f4cd56626b0abbf97a44b9298295751"
     },
     "kunsthistorisches-institut--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "f9fc93d6f7b09b8eed0ec36cafa3af2fd502ecd4",
+        "fetched_at": "2026-07-31T12:45:56.121256+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "f9fc93d6f7b09b8eed0ec36cafa3af2fd502ecd4"
     },
     "musikwissenschaftliches-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "bcd6241b52df5cfa62d9f2065e0f768dd2bab5ea",
+        "fetched_at": "2026-07-31T12:53:40.942359+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "bcd6241b52df5cfa62d9f2065e0f768dd2bab5ea"
     },
     "musikwissenschaftliches-institut--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "9b2a992b04e25486a8caf8b53e79dfed76d4714a",
+        "fetched_at": "2026-07-31T12:53:53.507655+00:00"
+      },
+      "page_type": "none",
+      "verified_sha1": "9b2a992b04e25486a8caf8b53e79dfed76d4714a"
     },
     "musikwissenschaftliches-institut--3": {
       "onboarding": "unverified",
       "run": "pending"
     },
     "philosophisches-seminar--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "2c372bf49ae61e2bc2369ace61c65dddcfd751a5",
+        "fetched_at": "2026-07-31T12:57:04.356349+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "2c372bf49ae61e2bc2369ace61c65dddcfd751a5"
     },
     "psychologisches-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "6658c55b4cb8c65803e0a5d000322722fb7a2e54",
+        "fetched_at": "2026-07-31T13:02:37.754703+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "6658c55b4cb8c65803e0a5d000322722fb7a2e54"
     },
     "psychologisches-institut--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "b8131922fd45b199b771aa5461efb0f52b950f55",
+        "fetched_at": "2026-07-31T13:02:44.578181+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "b8131922fd45b199b771aa5461efb0f52b950f55"
     },
     "romanisches-seminar--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "a486a5cde5aa192ab1386897b23a313e5cd07837",
+        "fetched_at": "2026-07-31T14:13:33.456228+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "a486a5cde5aa192ab1386897b23a313e5cd07837"
     },
     "romanisches-seminar--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "9e79bd5b41f8d54a9d5377b49e9665e3ac54f9f1",
+        "fetched_at": "2026-07-31T14:11:38.211220+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "9e79bd5b41f8d54a9d5377b49e9665e3ac54f9f1"
     },
     "romanisches-seminar--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "5d8d58ef115de03481288bbda5f62d799f766059",
+        "fetched_at": "2026-07-31T14:13:45.314601+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "5d8d58ef115de03481288bbda5f62d799f766059"
     },
     "filmwissenschaft--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "7dcd4985e21c41ca7d9c5528306c9a6cfdd45eae",
+        "fetched_at": "2026-07-31T14:19:49.850587+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "7dcd4985e21c41ca7d9c5528306c9a6cfdd45eae"
     },
     "filmwissenschaft--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "11809feeb283b49a4cb1610fdf4f0a2b911e9eea",
+        "fetched_at": "2026-07-31T14:20:01.233587+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "11809feeb283b49a4cb1610fdf4f0a2b911e9eea"
     },
     "filmwissenschaft--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "45e5463b55d31f17441ad3d93affbb7008910b9c",
+        "fetched_at": "2026-07-31T14:20:17.740552+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "45e5463b55d31f17441ad3d93affbb7008910b9c"
     },
     "soziologisches-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "c641e87d66f9b03769d038d0ffc7a197448db6a1",
+        "fetched_at": "2026-07-31T14:34:56.703456+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "c641e87d66f9b03769d038d0ffc7a197448db6a1"
     },
     "soziologisches-institut--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "262f9ca2298d5389f8ea106d464a8354394a395d",
+        "fetched_at": "2026-07-31T14:35:10.795630+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "262f9ca2298d5389f8ea106d464a8354394a395d"
     },
     "soziologisches-institut--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "91f372e7f21248b19e2b0ae587c83f38896cca89",
+        "fetched_at": "2026-07-31T14:35:25.391644+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "91f372e7f21248b19e2b0ae587c83f38896cca89"
     },
     "ivr--1": {
       "onboarding": "unverified",
@@ -544,88 +880,240 @@
       "run": "pending"
     },
     "theologisches-seminar--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "67b736c39e6c587889f9156bf299deffb490420a",
+        "fetched_at": "2026-08-04T10:50:54.512456+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "67b736c39e6c587889f9156bf299deffb490420a"
     },
     "religionswissenschaftliches-seminar--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "ae465b632b4a8014069089a271f7cd6b85f8f809",
+        "fetched_at": "2026-08-04T10:59:53.117999+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "ae465b632b4a8014069089a271f7cd6b85f8f809"
     },
     "astrophysics--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "f2453f7ee137c45ba7b4a9589e2af025a4c48df5",
+        "fetched_at": "2026-08-04T11:17:38.737602+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "f2453f7ee137c45ba7b4a9589e2af025a4c48df5"
     },
     "biochemisches-institut-mnf--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "b87d9d847103d6ed246b0a9a26b0f0c1576cdbb0",
+        "fetched_at": "2026-08-04T11:31:18.774655+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "b87d9d847103d6ed246b0a9a26b0f0c1576cdbb0"
     },
     "biochemisches-institut-mnf--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "c73c878683e9b8c7c57e6e59b737a36da779cec1",
+        "fetched_at": "2026-08-04T11:33:44.156799+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "c73c878683e9b8c7c57e6e59b737a36da779cec1"
     },
     "biochemisches-institut-mnf--3": {
       "onboarding": "unverified",
       "run": "pending"
     },
     "chemistry--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "053dc70c309ab3319f4c2d4315d0b9fecaeb7b4d",
+        "fetched_at": "2026-08-04T13:44:18.385672+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "053dc70c309ab3319f4c2d4315d0b9fecaeb7b4d"
     },
     "ieu--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "38cc9ac35063806f29711273a5ffb4649757c8b8",
+        "fetched_at": "2026-08-05T12:24:15.306312+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "38cc9ac35063806f29711273a5ffb4649757c8b8"
     },
     "ieu--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "4b88d5fcf5c528fbe51b60712daecfa3ac2397c0",
+        "fetched_at": "2026-08-05T12:34:38.384478+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "4b88d5fcf5c528fbe51b60712daecfa3ac2397c0"
     },
     "ieu--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "9435cb26816c5b6802b1d057b63c819949544af6",
+        "fetched_at": "2026-08-05T12:25:29.954640+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "9435cb26816c5b6802b1d057b63c819949544af6"
     },
     "ieu--4": {
       "onboarding": "unverified",
       "run": "pending"
     },
     "geography--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "e101436390a5f5efd66070f462676aaa40fc66e9",
+        "fetched_at": "2026-08-05T12:40:57.787959+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "e101436390a5f5efd66070f462676aaa40fc66e9"
     },
     "geography--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "476c2191c727f5967b66d1f96b2f2f45c12abf9a",
+        "fetched_at": "2026-08-05T12:41:00.327219+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "476c2191c727f5967b66d1f96b2f2f45c12abf9a"
     },
     "geography--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "5c9e90bf8f3ef3fa859c3f71045c43c83ef6c2c9",
+        "fetched_at": "2026-08-05T12:41:02.675235+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "5c9e90bf8f3ef3fa859c3f71045c43c83ef6c2c9"
     },
     "mathematics--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "9870b98adad3b653974f4cc3933b6c7728ed5090",
+        "fetched_at": "2026-08-05T12:51:00.742158+00:00"
+      },
+      "page_type": "none",
+      "verified_sha1": "9870b98adad3b653974f4cc3933b6c7728ed5090"
     },
     "mathematics--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "1255fe849ad32833462ad8e141289f58f79537c5",
+        "fetched_at": "2026-08-05T12:51:04.013981+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "1255fe849ad32833462ad8e141289f58f79537c5"
     },
     "paleontology--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "6776e224f53e1b8958c27c5905080b462e8d410b",
+        "fetched_at": "2026-08-05T12:58:13.383275+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "6776e224f53e1b8958c27c5905080b462e8d410b"
     },
     "physics--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "c11729b7408ec85858c3ce4b01801e8e2bcadb7e",
+        "fetched_at": "2026-08-05T13:09:02.460086+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "c11729b7408ec85858c3ce4b01801e8e2bcadb7e"
     },
     "physics--2": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "beb8ceda859b4a07db6ec272ff06bd99d2fda2cf",
+        "fetched_at": "2026-08-05T13:09:04.668970+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "beb8ceda859b4a07db6ec272ff06bd99d2fda2cf"
     },
     "physics--3": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "b0ecd1cfd342a991b57c792818ee8ed21978d89b",
+        "fetched_at": "2026-08-05T13:09:06.853554+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "b0ecd1cfd342a991b57c792818ee8ed21978d89b"
     },
     "imcr--1": {
-      "onboarding": "unverified",
-      "run": "pending"
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "e5e51e315647f1bf9fda45317af3ddb391be6655",
+        "fetched_at": "2026-08-05T13:19:23.621571+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "e5e51e315647f1bf9fda45317af3ddb391be6655"
     },
     "physiologisches-institut-mnf--1": {
       "onboarding": "unverified",
@@ -806,6 +1294,162 @@
       },
       "page_type": "process",
       "verified_sha1": "d961744db4812859d73be86e2af14ecf92777477"
+    },
+    "asien-orient-institut--3": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "ea043a4636415fff7691c45c4a4905d122451301",
+        "fetched_at": "2026-07-25T04:55:04.730406+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "ea043a4636415fff7691c45c4a4905d122451301"
+    },
+    "deutsches-seminar--4": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "2704d4f05cbed0f9efc65dcd1742598c209a18b5",
+        "fetched_at": "2026-07-25T05:47:21.265073+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "2704d4f05cbed0f9efc65dcd1742598c209a18b5"
+    },
+    "deutsches-seminar--5": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "e3798d17f04fe78904e3fa57fc4abed25f50cd6e",
+        "fetched_at": "2026-07-25T05:45:32.423967+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "e3798d17f04fe78904e3fa57fc4abed25f50cd6e"
+    },
+    "rfw--1": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "8b39c7013283af1226bf51e766c55e931b989b06",
+        "fetched_at": "2026-08-04T10:17:23.612039+00:00"
+      },
+      "page_type": "topics",
+      "verified_sha1": "8b39c7013283af1226bf51e766c55e931b989b06"
+    },
+    "rfw--2": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "e2a5dad0504bf0b0bcd99489d43d9b90fabe3066",
+        "fetched_at": "2026-08-04T10:21:32.849139+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "e2a5dad0504bf0b0bcd99489d43d9b90fabe3066"
+    },
+    "iaka--1": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "48d89ecd758374433f298ee6af09d7e49232dd93",
+        "fetched_at": "2026-07-30T08:09:14.999268+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "48d89ecd758374433f298ee6af09d7e49232dd93"
+    },
+    "filmwissenschaft--4": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "ce9c43ad5f3e354d67112fa8f85b4552d6fc01ec",
+        "fetched_at": "2026-07-31T14:20:37.275871+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "ce9c43ad5f3e354d67112fa8f85b4552d6fc01ec"
+    },
+    "soziologisches-institut--4": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "c327581d3368e68c28044a08c2c32d3dffecbac4",
+        "fetched_at": "2026-07-31T14:33:37.747533+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "c327581d3368e68c28044a08c2c32d3dffecbac4"
+    },
+    "theologisches-seminar--2": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "5995c9591c951bdbcf19359ef94944b2a775a6b2",
+        "fetched_at": "2026-08-04T10:50:47.411842+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "5995c9591c951bdbcf19359ef94944b2a775a6b2"
+    },
+    "religionswissenschaftliches-seminar--2": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "52118585469fe72d4f3e0b6f799224e72cdd73c2",
+        "fetched_at": "2026-08-04T11:00:13.775522+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "52118585469fe72d4f3e0b6f799224e72cdd73c2"
+    },
+    "religionswissenschaftliches-seminar--3": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "f2d2ed0f97566051b745be34613920ed264265ca",
+        "fetched_at": "2026-08-04T10:58:50.044277+00:00"
+      },
+      "page_type": "people",
+      "verified_sha1": "f2d2ed0f97566051b745be34613920ed264265ca"
+    },
+    "mef--1": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "abddb87d0c9d24a2632619b915d68ea47ec84b11",
+        "fetched_at": "2026-08-05T13:48:56.670359+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "abddb87d0c9d24a2632619b915d68ea47ec84b11"
+    },
+    "vsf--1": {
+      "onboarding": "verified",
+      "run": "done",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "811e3856507e8ba76e1343ed8f5a34b374ec6fa5",
+        "fetched_at": "2026-08-05T13:52:21.924052+00:00"
+      },
+      "page_type": "process",
+      "verified_sha1": "811e3856507e8ba76e1343ed8f5a34b374ec6fa5"
     }
   }
 }

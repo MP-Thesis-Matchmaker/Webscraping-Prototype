@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-04T10:17:32.928986+00:00",
+  "sources": [
+    {
+      "source_id": "rfw--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 5,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-04T10:18:47.385511+00:00"
+}

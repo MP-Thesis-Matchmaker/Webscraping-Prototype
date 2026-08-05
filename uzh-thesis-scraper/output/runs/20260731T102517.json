@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-31T10:25:17.048228+00:00",
+  "sources": [
+    {
+      "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T10:25:17.105903+00:00"
+}

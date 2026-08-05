@@ -49,7 +49,7 @@
       "thesis_sources": [
         {
           "source_id": "ibw--1",
-          "url": "https://www.business.uzh.ch/en/teaching/thesis.html",
+          "url": "https://www.business.uzh.ch/en/teaching/theses.html",
           "notes": "Theses process page and people page with professors for thesis supervision"
         },
         {
@@ -216,11 +216,18 @@
       "thesis_sources": [
         {
           "source_id": "asien-orient-institut--1",
-          "url": "https://www.aoi.uzh.ch/de/studies/studyorganization/completion/finaltheses.html"
+          "url": "https://www.aoi.uzh.ch/de/studies/studyorganization/completion/finaltheses.html",
+          "notes": "Final theses guidance page"
         },
         {
           "source_id": "asien-orient-institut--2",
-          "url": "https://www.aoi.uzh.ch/de/institut/personen.html#Professorinnen_und_Professoren"
+          "url": "https://www.aoi.uzh.ch/en/institut/personen.html",
+          "notes": "People page"
+        },
+        {
+          "source_id": "asien-orient-institut--3",
+          "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+          "notes": "Thesis process overview page for faculty of philosophy"
         }
       ]
     },
@@ -238,15 +245,28 @@
       "thesis_sources": [
         {
           "source_id": "deutsches-seminar--1",
-          "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ma.php?get=s"
+          "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ma.php?get=s",
+          "notes": "Process page and form for MA thesis supervision"
         },
         {
           "source_id": "deutsches-seminar--2",
-          "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ba.php?get=s"
+          "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ba.php?get=s",
+          "notes": "Process page and form for BA thesis supervision"
         },
         {
           "source_id": "deutsches-seminar--3",
-          "url": "https://www.ds.uzh.ch/de/studium/bachelor/info_bachelorstudium/abschluss_bachelor.html#Die_Bachelorarbeit_am_Deutschen_Seminar"
+          "url": "https://www.ds.uzh.ch/de/studium/bachelor/info_bachelorstudium/abschluss_bachelor.html#Die_Bachelorarbeit_am_Deutschen_Seminar",
+          "notes": "Process page for BA thesis supervision"
+        },
+        {
+          "source_id": "deutsches-seminar--4",
+          "url": "https://www.ds.uzh.ch/de/studium/master/info_masterstudium/abschluss_master.html",
+          "notes": "Process page for MA thesis supervision"
+        },
+        {
+          "source_id": "deutsches-seminar--5",
+          "url": "https://www.ds.uzh.ch/apps/cms/pfs/personen.php",
+          "notes": "People page"
         }
       ]
     },
@@ -264,15 +284,18 @@
       "thesis_sources": [
         {
           "source_id": "englisches-seminar--1",
-          "url": "https://www.es.uzh.ch/en/studies/master/master-thesis.html"
+          "url": "https://www.es.uzh.ch/en/studies/master/master-thesis.html",
+          "notes": "Process page for MA thesis supervision"
         },
         {
           "source_id": "englisches-seminar--2",
-          "url": "https://www.es.uzh.ch/en/studies/bachelor/bachelor-thesis.html"
+          "url": "https://www.es.uzh.ch/en/studies/bachelor/bachelor-thesis.html",
+          "notes": "Process page for BA thesis supervision"
         },
         {
           "source_id": "englisches-seminar--3",
-          "url": "https://www.es.uzh.ch/en/department/people.html"
+          "url": "https://www.es.uzh.ch/en/department/people.html",
+          "notes": "People page, extract all with 'Prof' or 'Dr.' in title"
         }
       ]
     },
@@ -290,15 +313,18 @@
       "thesis_sources": [
         {
           "source_id": "historisches-seminar--1",
-          "url": "https://www.hist.uzh.ch/de/studium/studienstufen/master/aufbau/abschluss.html"
+          "url": "https://www.hist.uzh.ch/de/studium/studienstufen/master/aufbau/abschluss.html",
+          "notes": "Process page for MA thesis supervision"
         },
         {
           "source_id": "historisches-seminar--2",
-          "url": "https://www.hist.uzh.ch/de/studium/studienstufen/bachelor/aufbau/abschluss/bachelorarbeit.html"
+          "url": "https://www.hist.uzh.ch/de/studium/studienstufen/bachelor/aufbau/abschluss/bachelorarbeit.html",
+          "notes": "Process page for BA thesis supervision"
         },
         {
           "source_id": "historisches-seminar--3",
-          "url": "https://www.hist.uzh.ch/de/personen.html"
+          "url": "https://www.hist.uzh.ch/de/personen.html",
+          "notes": "People page, extract all Professor:innen, Privatdozierende / Titularprofessor:innen"
         }
       ]
     },
@@ -313,7 +339,13 @@
       "concrete_public_topics": "No",
       "notes": "Official institute homepage identified; no public central BA/MA topic/process page surfaced.",
       "last_checked": "2026-07-07",
-      "thesis_sources": []
+      "thesis_sources": [
+        {
+          "source_id": "iaka--1",
+          "url": "https://www.iaka.uzh.ch/dam/jcr:466b1f32-db04-4570-9991-2018fbcb40d7/Hinweise_schriftliche_Arbeiten_HS24.pdf",
+          "notes": "Process pdf for BA/MA thesis"
+        }
+      ]
     },
     {
       "unit_id": "computerlinguistik",
@@ -329,11 +361,8 @@
       "thesis_sources": [
         {
           "source_id": "computerlinguistik--1",
-          "url": "https://www.cl.uzh.ch/de/studium/theses.html"
-        },
-        {
-          "source_id": "computerlinguistik--2",
-          "url": "https://www.cl.uzh.ch/en/studies/studies-BA-MA/teaching/BaMasterArbeit.html"
+          "url": "https://www.cl.uzh.ch/en/studium/theses.html",
+          "notes": "The same as ifi--10 but under a different faculty"
         }
       ]
     },
@@ -351,19 +380,23 @@
       "thesis_sources": [
         {
           "source_id": "erziehungswissenschaft--1",
-          "url": "https://www.ife.uzh.ch/de/study/Master/Module/Master-Arbeit.html"
+          "url": "https://www.ife.uzh.ch/de/study/Master/Module/Master-Arbeit.html",
+          "notes": "Process page for MA thesis supervision"
         },
         {
           "source_id": "erziehungswissenschaft--2",
-          "url": "https://www.ife.uzh.ch/dam/jcr:5c0e99fe-d5b0-427e-b311-88d59cd7cf43/Merkblatt%20BA-Arbeit.pdf"
+          "url": "https://www.ife.uzh.ch/dam/jcr:5c0e99fe-d5b0-427e-b311-88d59cd7cf43/Merkblatt%20BA-Arbeit.pdf",
+          "notes": "Process pdf for BA thesis"
         },
         {
           "source_id": "erziehungswissenschaft--3",
-          "url": "https://www.ife.uzh.ch/de/study/Bachelor/Module/Bachelorarbeit.html"
+          "url": "https://www.ife.uzh.ch/de/study/Bachelor/Module/Bachelorarbeit.html",
+          "notes": "Process page for BA thesis"
         },
         {
           "source_id": "erziehungswissenschaft--4",
-          "url": "https://www.ife.uzh.ch/dam/jcr:f959d90e-2b98-4f1b-bdd8-c626da957ceb/Merkblatt%20MA-Arbeit.pdf"
+          "url": "https://www.ife.uzh.ch/dam/jcr:f959d90e-2b98-4f1b-bdd8-c626da957ceb/Merkblatt%20MA-Arbeit.pdf",
+          "notes": "Process pdf for MA thesis"
         }
       ]
     },
@@ -381,11 +414,13 @@
       "thesis_sources": [
         {
           "source_id": "isle--1",
-          "url": "https://lms.uzh.ch/auth/RepositoryEntry/5930090496/CourseNode/86108106742130"
+          "url": "https://lms.uzh.ch/auth/RepositoryEntry/5930090496/CourseNode/86108106742130",
+          "notes": "Course page with thesis information; requires UZH login"
         },
         {
           "source_id": "isle--2",
-          "url": "https://www.isle.uzh.ch/de/staff.html"
+          "url": "https://www.isle.uzh.ch/de/staff.html",
+          "notes": "People page, extract all Professors"
         }
       ]
     },
@@ -403,11 +438,13 @@
       "thesis_sources": [
         {
           "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--1",
-          "url": "https://www.ikmz.uzh.ch/de/studies/graduation/bachelor.html"
+          "url": "https://www.ikmz.uzh.ch/de/studies/graduation/bachelor.html",
+          "notes": "BA process page"
         },
         {
           "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--2",
-          "url": "https://www.ikmz.uzh.ch/de/studies/graduation/master.html"
+          "url": "https://www.ikmz.uzh.ch/de/studies/graduation/master.html",
+          "notes": "MA process page"
         }
       ]
     },
@@ -425,15 +462,18 @@
       "thesis_sources": [
         {
           "source_id": "ipz--1",
-          "url": "https://www.ipz.uzh.ch/de/studium/master/themenausschreibung.html"
+          "url": "https://www.ipz.uzh.ch/de/studium/master/themenausschreibung.html",
+          "notes": "MA thesis topics page"
         },
         {
           "source_id": "ipz--2",
-          "url": "https://www.ipz.uzh.ch/de/ueber-uns/personen/mitarbeitende.html"
+          "url": "https://www.ipz.uzh.ch/de/ueber-uns/personen/mitarbeitende.html",
+          "notes": "People page, extract all Professors"
         },
         {
           "source_id": "ipz--3",
-          "url": "https://www.ipz.uzh.ch/de/studium/bachelor.html"
+          "url": "https://www.ipz.uzh.ch/de/studium/bachelor.html",
+          "notes": "BA process page"
         }
       ]
     },
@@ -451,7 +491,8 @@
       "thesis_sources": [
         {
           "source_id": "slavistik-und-osteuropastudien--1",
-          "url": "https://www.isos.uzh.ch/de/institut/mitarbeitende.html"
+          "url": "https://www.isos.uzh.ch/de/institut/mitarbeitende.html", 
+          "notes": "People page, extract all Professors and Doctors, skip \"Institutsleitung und Administration\""
         }
       ]
     },
@@ -469,11 +510,13 @@
       "thesis_sources": [
         {
           "source_id": "isek--1",
-          "url": "https://www.isek.uzh.ch/de/ethnologie/studium/master/maforschung.html"
+          "url": "https://www.isek.uzh.ch/de/ethnologie/studium/master/maforschung.html",
+          "notes": "MA topics and process page"
         },
         {
           "source_id": "isek--2",
-          "url": "https://www.isek.uzh.ch/de/ethnologie/studium/bachelor/Bachelorarbeiten.html"
+          "url": "https://www.isek.uzh.ch/de/ethnologie/studium/bachelor/Bachelorarbeiten.html",
+          "notes": "BA process and people page, extract all listed people"
         }
       ]
     },
@@ -491,11 +534,13 @@
       "thesis_sources": [
         {
           "source_id": "kunsthistorisches-institut--1",
-          "url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/bachelor/Abschluss-des-Studiums.html"
+          "url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/bachelor/Abschluss-des-Studiums.html",
+          "notes": "BA process page"
         },
         {
           "source_id": "kunsthistorisches-institut--2",
-          "url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/master/Abschluss-des-Studiums.html"
+          "url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/master/Abschluss-des-Studiums.html",
+          "notes": "MA process page"
         }
       ]
     },
@@ -513,15 +558,13 @@
       "thesis_sources": [
         {
           "source_id": "musikwissenschaftliches-institut--1",
-          "url": "https://www.musik.uzh.ch/de/studium.html"
+          "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+          "notes": "Thesis process overview page for faculty of philosophy"
         },
         {
           "source_id": "musikwissenschaftliches-institut--2",
-          "url": "https://www.musik.uzh.ch/de/mitarbeiter.html"
-        },
-        {
-          "source_id": "musikwissenschaftliches-institut--3",
-          "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html"
+          "url": "https://www.musik.uzh.ch/de/mitarbeiter.html",
+          "notes": "Skip this page"
         }
       ]
     },
@@ -539,7 +582,9 @@
       "thesis_sources": [
         {
           "source_id": "philosophisches-seminar--1",
-          "url": "https://www.philosophie.uzh.ch/de/studies.html"
+          "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+          "notes": "Thesis process overview page for faculty of philosophy"
+
         }
       ]
     },
@@ -557,11 +602,13 @@
       "thesis_sources": [
         {
           "source_id": "psychologisches-institut--1",
-          "url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/master/abschluss/arbeit/aktuelle-arbeiten.html"
+          "url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/master/abschluss/arbeit/aktuelle-arbeiten.html",
+          "notes": "MA thesis topics page, only directory"
         },
         {
           "source_id": "psychologisches-institut--2",
-          "url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/bachelor/aufbau/bachelorarbeit/aktuelle-bachelorarbeiten.html"
+          "url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/bachelor/aufbau/bachelorarbeit/aktuelle-bachelorarbeiten.html",
+          "notes": "BA thesis topics page"
         }
       ]
     },
@@ -579,15 +626,18 @@
       "thesis_sources": [
         {
           "source_id": "romanisches-seminar--1",
-          "url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ba.html"
+          "url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ba.html",
+          "notes": "BA thesis process page"
         },
         {
           "source_id": "romanisches-seminar--2",
-          "url": "https://www.rose.uzh.ch/de/seminar/personen.html"
+          "url": "https://www.rose.uzh.ch/de/seminar/personen.html",
+          "notes": "People page for Romanisches Seminar, extract only \"ordentliche und ausserordentliche Professor*innen sowie Assistenzprofessor*innen, Titularprofessor*innen sowie Privatdozierende\""
         },
         {
           "source_id": "romanisches-seminar--3",
-          "url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ma.html"
+          "url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ma.html",
+          "notes": "MA thesis process page"
         }
       ]
     },
@@ -605,15 +655,23 @@
       "thesis_sources": [
         {
           "source_id": "filmwissenschaft--1",
-          "url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/BA/abschluss.html"
+          "url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/BA/abschluss.html",
+          "notes": "BA thesis process page"
         },
         {
           "source_id": "filmwissenschaft--2",
-          "url": "https://www.film.uzh.ch/dam/jcr:b6e09f75-50b9-4f08-9c55-153f5b52aab7/2026_Merkblatt_Bachelorarbeit_Abschluss_FIWI.pdf"
+          "url": "https://www.film.uzh.ch/dam/jcr:b6e09f75-50b9-4f08-9c55-153f5b52aab7/2026_Merkblatt_Bachelorarbeit_Abschluss_FIWI.pdf",
+          "notes": "BA thesis process pdf"
         },
         {
           "source_id": "filmwissenschaft--3",
-          "url": "https://www.film.uzh.ch/dam/jcr:e9bd773c-2fda-4e83-93c5-f2e469818a9d/2026_Merkblatt_Masterarbeit_Abschluss_FIWI.pdf"
+          "url": "https://www.film.uzh.ch/dam/jcr:e9bd773c-2fda-4e83-93c5-f2e469818a9d/2026_Merkblatt_Masterarbeit_Abschluss_FIWI.pdf",
+          "notes": "MA thesis process pdf"
+        },
+        {
+          "source_id": "filmwissenschaft--4",
+          "url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/MA/abschluss/thesis.html",
+          "notes": "MA thesis process page"
         }
       ]
     },
@@ -628,274 +686,51 @@
       "concrete_public_topics": "No",
       "notes": "Downloads / thesis-guidance PDF found; no central open topic board found.",
       "last_checked": "2026-07-07",
-      "thesis_sources": [
+      "thesis_sources": 
+      [
         {
           "source_id": "soziologisches-institut--1",
-          "url": "https://www.suz.uzh.ch/de/studies/Downloads.html"
+          "url": "https://www.suz.uzh.ch/de/master/abschluss.html",
+          "notes": "MA thesis process page"
         },
         {
           "source_id": "soziologisches-institut--2",
-          "url": "https://www.suz.uzh.ch/de/master/abschluss.html"
+          "url": "https://www.suz.uzh.ch/de/bachelor/abschluss.html",
+          "notes": "BA thesis process page"
         },
         {
           "source_id": "soziologisches-institut--3",
-          "url": "https://www.suz.uzh.ch/dam/jcr:b5b92ece-6b67-4649-803a-5246909cf86b/Merkblatt%20BA_2601.pdf"
-        }
-      ]
-    },
-    {
-      "unit_id": "ivr",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Institut für Völkerrecht und ausländisches Verfassungsrecht (IVR)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ivr.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "ivr--1",
-          "url": "https://www.ius.uzh.ch/de/staff/professorships/alphabetical/langer/Master--und-Bachelorarbeiten.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "kriminologisches-institut",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Kriminologisches Institut",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch/de/staff/professorships/alphabetical/kriminologie.html",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "kriminologisches-institut--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "cale",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Center for Animal Law and Ethics (CALE)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "cale--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "ccsel",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Centre of Cognitive Science, Ethics and Law (CCSEL)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "ccsel--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "cirr",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Center for Innovation, Risk and Responsibility (CIRR)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "cirr--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
+          "url": "https://www.suz.uzh.ch/dam/jcr:b5b92ece-6b67-4649-803a-5246909cf86b/Merkblatt%20BA_2601.pdf",
+          "notes": "BA thesis process pdf"
         },
         {
-          "source_id": "cirr--2",
-          "url": "https://www.ius.uzh.ch/de/staff/professorships/alphabetical.html#abcd"
+          "source_id": "soziologisches-institut--4",
+          "url": "https://www.suz.uzh.ch/de/institut/aboutus.html",
+          "notes": "People page, extract all people listed under source id 1"
         }
       ]
     },
     {
-      "unit_id": "cipco",
+      "unit_id": "rfw",
       "faculty_code": "RWF",
       "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Center for Intellectual Property & Competition Law (CIPCO)",
+      "unit": "RWF",
       "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.cipco.uzh.ch/de.html",
+      "unit_homepage": "https://www.ius.uzh.ch/",
       "classification": "Process/contact-only",
       "concrete_public_topics": "No",
       "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
       "last_checked": "2026-07-07",
       "thesis_sources": [
         {
-          "source_id": "cipco--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "cimels",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Center for Islamic and Middle Eastern Legal Studies (CIMELS)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
+          "source_id": "rfw--1",
+          "url": "https://www.ius.uzh.ch/de/staff/professorships/subject-area.html",
+          "notes": "People pages with professors/chairs for thesis supervision"
+        },
         {
-          "source_id": "cimels--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "clds",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Center for Legal Data Science (CLDS)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.clds.uzh.ch/en.html",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "clds--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "crcl",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Center for Regulation and Contract Law (CRCL)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.crcl.uzh.ch/en.html",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "crcl--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "zkr",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Zentrum Kunst und Recht (ZKR)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "zkr--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "zlr",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Zentrum für liechtensteinisches Recht (ZLR)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "zlr--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "zfr",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Zentrum für Rechtsetzungslehre (ZfR)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.zfr.uzh.ch/de.html",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "zfr--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "zrf",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Zentrum für rechtsgeschichtliche Forschung (ZrF)",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "zrf--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "stiftungsrecht",
-      "faculty_code": "RWF",
-      "faculty": "Rechtswissenschaftliche Fakultät",
-      "unit": "Zentrum für Stiftungsrecht",
-      "section_on_faculty_page": "Institute und Zentren",
-      "unit_homepage": "https://www.ius.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "RWF uses a faculty-level page for written works; Bachelor/Master work is handled via seminars, Studierendenportal requests, or individual agreements. No unit-specific open topic board found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "stiftungsrecht--1",
-          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html"
+          "source_id": "rfw--2",
+          "url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html#Bachelorarbeit",
+          "notes": "Process page for BA and MA theses"
         }
       ]
     },
@@ -913,7 +748,13 @@
       "thesis_sources": [
         {
           "source_id": "theologisches-seminar--1",
-          "url": "https://www.theologie.uzh.ch/de/studium/studierende/Masterarbeit.html"
+          "url": "https://www.theologie.uzh.ch/de/studium/studierende/Masterarbeit.html",
+          "notes": "MA process page"
+        },
+        {
+          "source_id": "theologisches-seminar--2",
+          "url": "https://www.trf.uzh.ch/de/ueber_uns/professuren.html",
+          "notes": "People page"
         }
       ]
     },
@@ -931,100 +772,20 @@
       "thesis_sources": [
         {
           "source_id": "religionswissenschaftliches-seminar--1",
-          "url": "https://www.trf.uzh.ch/de/studierende/masterarbeit.html"
+          "url": "https://www.religionswissenschaft.uzh.ch/de/studium/studienorganisation/bachelorarbeit.html",
+          "notes": "BA process page"
+        },
+        {
+          "source_id": "religionswissenschaftliches-seminar--2",
+          "url": "https://www.religionswissenschaft.uzh.ch/de/studium/studienorganisation/masterarbeit.html",
+          "notes": "MA process page"
+        },
+        {
+          "source_id": "religionswissenschaftliches-seminar--3",
+          "url": "https://www.trf.uzh.ch/de/ueber_uns/professuren.html",
+          "notes": "People page"
         }
       ]
-    },
-    {
-      "unit_id": "hermeneutik-und-religionsphilosophie",
-      "faculty_code": "TRF",
-      "faculty": "Theologische und Religionswissenschaftliche Fakultät",
-      "unit": "Institut für Hermeneutik und Religionsphilosophie",
-      "section_on_faculty_page": "Seminare, Institute und Zentren",
-      "unit_homepage": "https://www.hermes.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Official institute homepage identified; no public central BA/MA topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "schweizerische-reformationsgeschichte",
-      "faculty_code": "TRF",
-      "faculty": "Theologische und Religionswissenschaftliche Fakultät",
-      "unit": "Institut für Schweizerische Reformationsgeschichte",
-      "section_on_faculty_page": "Seminare, Institute und Zentren",
-      "unit_homepage": "https://www.irg.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Official institute homepage identified; no public central BA/MA topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "sozialethik",
-      "faculty_code": "TRF",
-      "faculty": "Theologische und Religionswissenschaftliche Fakultät",
-      "unit": "Institut für Sozialethik",
-      "section_on_faculty_page": "Seminare, Institute und Zentren",
-      "unit_homepage": "https://www.ethik.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Official institute homepage identified; no public central BA/MA topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "religion-wirtschaft-und-politik",
-      "faculty_code": "TRF",
-      "faculty": "Theologische und Religionswissenschaftliche Fakultät",
-      "unit": "Zentrum für Religion, Wirtschaft und Politik",
-      "section_on_faculty_page": "Seminare, Institute und Zentren",
-      "unit_homepage": "https://www.trf.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Center listed by faculty; no public central BA/MA topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "kirchenentwicklung",
-      "faculty_code": "TRF",
-      "faculty": "Theologische und Religionswissenschaftliche Fakultät",
-      "unit": "Zentrum für Kirchenentwicklung",
-      "section_on_faculty_page": "Seminare, Institute und Zentren",
-      "unit_homepage": "https://www.theologie.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Center listed by faculty; no public central BA/MA topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "praktisch-theologische-spiritualitaetsforschung",
-      "faculty_code": "TRF",
-      "faculty": "Theologische und Religionswissenschaftliche Fakultät",
-      "unit": "Zentrum für praktisch-theologische Spiritualitätsforschung",
-      "section_on_faculty_page": "Seminare, Institute und Zentren",
-      "unit_homepage": "https://www.theologie.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Center listed by faculty; no public central BA/MA topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "anthropologisches-institut-und-museum",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Anthropologisches Institut und Museum",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.aim.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Official MNF unit known; no public central thesis-topic/process page found in crawl.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
     },
     {
       "unit_id": "astrophysics",
@@ -1040,7 +801,8 @@
       "thesis_sources": [
         {
           "source_id": "astrophysics--1",
-          "url": "https://www.astro.uzh.ch/en/studies/Available-Master--Bachelor-projects.html"
+          "url": "https://www.astro.uzh.ch/en/studies/Available-Master--Bachelor-projects.html",
+          "notes": "BA and MA thesis topics page"
         }
       ]
     },
@@ -1058,15 +820,13 @@
       "thesis_sources": [
         {
           "source_id": "biochemisches-institut-mnf--1",
-          "url": "https://www.bioc.uzh.ch/en/teaching/study-overview/master.html"
+          "url": "https://www.bioc.uzh.ch/en/teaching/study-overview/master.html",
+          "notes": "Master thesis research groups"
         },
         {
           "source_id": "biochemisches-institut-mnf--2",
-          "url": "https://www.bioc.uzh.ch/en/research/research-groups.html"
-        },
-        {
-          "source_id": "biochemisches-institut-mnf--3",
-          "url": "https://www.bioc.uzh.ch/en/teaching/study-overview/bachelor.html"
+          "url": "https://www.bioc.uzh.ch/en/research/research-groups.html",
+          "notes": "Research groups page"
         }
       ]
     },
@@ -1084,7 +844,8 @@
       "thesis_sources": [
         {
           "source_id": "chemistry--1",
-          "url": "https://www.chem.uzh.ch/de/Studium/theses.html"
+          "url": "https://www.chem.uzh.ch/de/Studium/theses.html",
+          "notes": "BA/MA thesis topics page"
         }
       ]
     },
@@ -1102,19 +863,18 @@
       "thesis_sources": [
         {
           "source_id": "ieu--1",
-          "url": "https://www.ieu.uzh.ch/en/teaching/ma_projects_evolutionary_biology.html"
+          "url": "https://www.ieu.uzh.ch/en/teaching/ma_projects_evolutionary_biology.html",
+          "notes": "MA thesis topics page"
         },
         {
           "source_id": "ieu--2",
-          "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmQFNe2bI3Neso18NZ6RSg-abAJIm_7CE-CcZifEGPWRnly2FEkO4sMAd_rFtzKHaJ_CHjoVXaDFoo/pubhtml"
+          "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmQFNe2bI3Neso18NZ6RSg-abAJIm_7CE-CcZifEGPWRnly2FEkO4sMAd_rFtzKHaJ_CHjoVXaDFoo/pubhtml",
+          "notes": "MA thesis topics spreadsheet"
         },
         {
           "source_id": "ieu--3",
-          "url": "https://www.ieu.uzh.ch/en/teaching/ma_projects_animal_behaviour.html"
-        },
-        {
-          "source_id": "ieu--4",
-          "url": "https://www.ieu.uzh.ch/en/teaching.html"
+          "url": "https://www.ieu.uzh.ch/en/teaching/ma_projects_animal_behaviour.html",
+          "notes": "MA thesis topics page"
         }
       ]
     },
@@ -1132,15 +892,18 @@
       "thesis_sources": [
         {
           "source_id": "geography--1",
-          "url": "https://www.geo.uzh.ch/en/studying/master/master_thesis_exam/faculty_members.html"
+          "url": "https://www.geo.uzh.ch/en/studying/master/master_thesis_exam/faculty_members.html", 
+          "notes": "People page"
         },
         {
           "source_id": "geography--2",
-          "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam.html"
+          "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam.html",
+          "notes": "Process page for MA thesis"
         },
         {
           "source_id": "geography--3",
-          "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/bachelor-thesis.html"
+          "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/bachelor-thesis.html",
+          "notes": "Process page for BA thesis, follow links and extract the important information"
         }
       ]
     },
@@ -1158,11 +921,13 @@
       "thesis_sources": [
         {
           "source_id": "mathematics--1",
-          "url": "https://www.math.uzh.ch/en/studium/masterarbeit"
+          "url": "https://www.math.uzh.ch/en/studium/masterarbeit",
+          "notes": "MA thesis topics page"
         },
         {
           "source_id": "mathematics--2",
-          "url": "https://www.math.uzh.ch/en/professuren"
+          "url": "https://www.math.uzh.ch/en/professuren",
+          "notes": "People page, extract all Professors"
         }
       ]
     },
@@ -1180,7 +945,8 @@
       "thesis_sources": [
         {
           "source_id": "paleontology--1",
-          "url": "https://www.pim.uzh.ch/de/studium/msc/msc-arbeitsthemen.html"
+          "url": "https://www.pim.uzh.ch/de/studium/msc/msc-arbeitsthemen.html",
+          "notes": "MA thesis topics page"
         }
       ]
     },
@@ -1198,95 +964,20 @@
       "thesis_sources": [
         {
           "source_id": "physics--1",
-          "url": "https://www.physik.uzh.ch/de/studium/Themen-Bachelor-Masterarbeit.html"
+          "url": "https://www.physik.uzh.ch/de/studium/Themen-Bachelor-Masterarbeit/Themenvorschl%C3%A4ge.html",
+          "notes": "BA/MA thesis topics page"
         },
         {
           "source_id": "physics--2",
-          "url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/master-/masterarbeit.html"
+          "url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/master-/masterarbeit.html",
+          "notes": "MA process page"
         },
         {
           "source_id": "physics--3",
-          "url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/bachelorstudiengang/Bachelorarbeit-und-Abschluss.html"
+          "url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/bachelorstudiengang/Bachelorarbeit-und-Abschluss.html",
+          "notes": "BA process page"
         }
       ]
-    },
-    {
-      "unit_id": "ipmb",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Department of Plant and Microbial Biology (IPMB)",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.ipmb.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Official department homepage identified; no public central thesis-topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "systematic-and-evolutionary-botany",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Department of Systematic and Evolutionary Botany",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.sysbot.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Official department homepage identified; no public central thesis-topic/process page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "ini",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Institute of Neuroinformatics (INI)",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.ini.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Official joint UZH/ETH institute homepage identified; no public central BA/MA topic page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "ebpi",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Institut für Epidemiologie, Biostatistik und Prävention (EBPI)",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.ebpi.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Joint MeF/MNF institute according to MeF list; no public central thesis-topic page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "experimentelle-immunologie-mnf",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Institut für Experimentelle Immunologie",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.immunology.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Joint MeF/MNF institute according to MeF list; no public central topic page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "medizinische-virologie-mnf",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Institut für Medizinische Virologie",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.virology.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Joint MeF/MNF institute according to MeF list; no public central topic page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
     },
     {
       "unit_id": "imcr",
@@ -1302,69 +993,13 @@
       "thesis_sources": [
         {
           "source_id": "imcr--1",
-          "url": "https://www.biologie.uzh.ch/de/Studium/Masterstudium/MasterStudies/CancerBiology.html"
+          "url": "https://www.biologie.uzh.ch/de/Studium/Masterstudium/MasterStudies/CancerBiology.html",
+          "notes": "MA topics page"
         }
       ]
     },
     {
-      "unit_id": "pharmakologie-und-toxikologie-mnf",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Institut für Pharmakologie und Toxikologie",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.pharma.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Joint MeF/MNF institute according to MeF list; no public central topic page surfaced. | Projects for Master Theses are available. | Contact: Prof. Zeilhofer",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "dqbm",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Institut für Quantitative Biomedizin (DQBM)",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.dqbm.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Joint MeF/MNF institute according to MeF list; no public central topic page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "physiologisches-institut-mnf",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "Physiologisches Institut",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.physiol.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Joint MeF/MNF institute; teaching page found, no central open BA/MA topic board. But research groups for masters theses.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "physiologisches-institut-mnf--1",
-          "url": "https://www.physiol.uzh.ch/en/research.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "one-health-institute-mnf",
-      "faculty_code": "MNF",
-      "faculty": "Mathematisch-naturwissenschaftliche Fakultät",
-      "unit": "One Health Institute",
-      "section_on_faculty_page": "Institute und Doppelinstitute",
-      "unit_homepage": "https://www.onehealth.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Joint MeF/VSF/MNF institute according to MeF list; no public central topic page surfaced.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": []
-    },
-    {
-      "unit_id": "anatomisches-institut",
+      "unit_id": "mef",
       "faculty_code": "MeF",
       "faculty": "Medizinische Fakultät",
       "unit": "Anatomisches Institut",
@@ -1376,413 +1011,14 @@
       "last_checked": "2026-07-07",
       "thesis_sources": [
         {
-          "source_id": "anatomisches-institut--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
+          "source_id": "mef--1",
+          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html",
+          "notes": "MeF MA process page"
         }
       ]
     },
     {
-      "unit_id": "biochemisches-institut-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Biochemisches Institut",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.bioc.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Unit teaching/process page found; no public central open BA/MA topic board found. MeF also uses central Masterarbeit page/VAM topic exchange.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "biochemisches-institut-mef--1",
-          "url": "https://www.bioc.uzh.ch/en/teaching/study-overview/master.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "biomedizinische-ethik-und-medizingeschichte",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Biomedizinische Ethik und Medizingeschichte",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.ibme.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "biomedizinische-ethik-und-medizingeschichte--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "biomedizinische-technik",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Biomedizinische Technik",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://biomed.ee.ethz.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "biomedizinische-technik--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "epidemiologie-biostatistik-und-praevention",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Epidemiologie, Biostatistik und Prävention",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.ebpi.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "epidemiologie-biostatistik-und-praevention--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "evolutionaere-medizin",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Evolutionäre Medizin",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.iem.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "evolutionaere-medizin--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "experimentelle-immunologie-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Experimentelle Immunologie",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.immunology.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "experimentelle-immunologie-mef--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "hirnforschung",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Hirnforschung",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.hifo.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "hirnforschung--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "implementation-science-in-health-care",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Implementation Science in Health Care",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.ifis.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "implementation-science-in-health-care--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "labortierkunde-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Labortierkunde",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.ltk.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "labortierkunde-mef--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "luft-und-raumfahrtmedizin",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Luft- und Raumfahrtmedizin",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.aerospace.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "luft-und-raumfahrtmedizin--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "medizinische-genetik",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Medizinische Genetik",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.medgen.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "medizinische-genetik--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "medizinische-mikrobiologie",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Medizinische Mikrobiologie",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.imm.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "medizinische-mikrobiologie--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "medizinische-virologie-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Medizinische Virologie",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.virology.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "medizinische-virologie-mef--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "molekulare-krebsforschung",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Molekulare Krebsforschung",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.imcr.uzh.ch/en.html",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "molekulare-krebsforschung--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "one-health-institute-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "One Health Institute",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.onehealth.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "one-health-institute-mef--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "parasitologie-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Parasitologie",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.paras.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "parasitologie-mef--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "pharmakologie-und-toxikologie-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Pharmakologie und Toxikologie",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.pharma.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "pharmakologie-und-toxikologie-mef--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "quantitative-biomedizin",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Quantitative Biomedizin",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.dqbm.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "quantitative-biomedizin--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "rechtsmedizin",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Rechtsmedizin",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.irm.uzh.ch",
-      "classification": "Process/contact-only (central/internal topics exchange)",
-      "concrete_public_topics": "No",
-      "notes": "MeF public Masterarbeit page points to an internal VAM online topic exchange; no public unit-specific open topic page found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "rechtsmedizin--1",
-          "url": "https://www.med.uzh.ch/de/studium/masterarbeit.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "regenerative-medizin",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Institut für Regenerative Medizin",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.irem.uzh.ch",
-      "classification": "No public BSc/MSc thesis page found",
-      "concrete_public_topics": "No",
-      "notes": "Unit teaching/process page found; no public central open BA/MA topic board found. MeF also uses central Masterarbeit page/VAM topic exchange.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "regenerative-medizin--1",
-          "url": "https://www.irem.uzh.ch/en/teaching.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "physiologisches-institut-mef",
-      "faculty_code": "MeF",
-      "faculty": "Medizinische Fakultät",
-      "unit": "Physiologisches Institut",
-      "section_on_faculty_page": "Institute der Medizinischen Fakultät",
-      "unit_homepage": "https://www.physiol.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Unit teaching/process page found; no public central open BA/MA topic board found. MeF also uses central Masterarbeit page/VAM topic exchange.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "physiologisches-institut-mef--1",
-          "url": "https://www.physiol.uzh.ch/en/teaching_neu.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "veterinaeranatomie",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Veterinäranatomie",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.vetanat.uzh.ch",
-      "classification": "Concrete topics listed",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "veterinaeranatomie--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        },
-        {
-          "source_id": "veterinaeranatomie--2",
-          "url": "https://www.vet.uzh.ch/masterarbeiten/ssl-dir/studierenden/"
-        }
-      ]
-    },
-    {
-      "unit_id": "molekulare-mechanismen-bei-krankheiten",
+      "unit_id": "vsf",
       "faculty_code": "VSF",
       "faculty": "Vetsuisse-Fakultät",
       "unit": "Institut für Molekulare Mechanismen bei Krankheiten",
@@ -1794,188 +1030,9 @@
       "last_checked": "2026-07-07",
       "thesis_sources": [
         {
-          "source_id": "molekulare-mechanismen-bei-krankheiten--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "veterinaerphysiologie",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Veterinärphysiologie",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.vetphys.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "veterinaerphysiologie--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "veterinaerpharmakologie-und-toxikologie",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Veterinärpharmakologie und -toxikologie",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.vpt.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "veterinaerpharmakologie-und-toxikologie--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "labortierkunde-vsf",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Labortierkunde",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.ltk.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "labortierkunde-vsf--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "abteilung-immunologie",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Abteilung Immunologie",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.immunology-vsf.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "abteilung-immunologie--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "lebensmittelsicherheit-und-hygiene",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Lebensmittelsicherheit und -hygiene",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.ils.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "lebensmittelsicherheit-und-hygiene--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "parasitologie-vsf",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Parasitologie",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.paras.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "parasitologie-vsf--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "veterinaerpathologie",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Veterinärpathologie",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.vetpathology.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "veterinaerpathologie--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "virologisches-institut",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Virologisches Institut",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.vetvir.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "virologisches-institut--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "tierernaehrung-und-diaetetik",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Institut für Tierernährung und Diätetik",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.tierer.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "tierernaehrung-und-diaetetik--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
-        }
-      ]
-    },
-    {
-      "unit_id": "abteilung-fuer-epidemiologie",
-      "faculty_code": "VSF",
-      "faculty": "Vetsuisse-Fakultät",
-      "unit": "Abteilung für Epidemiologie",
-      "section_on_faculty_page": "Institute",
-      "unit_homepage": "https://www.vetepi.uzh.ch",
-      "classification": "Process/contact-only",
-      "concrete_public_topics": "No",
-      "notes": "Vetsuisse study page states students complete a Masterarbeit; no public institute-specific thesis-topic board found.",
-      "last_checked": "2026-07-07",
-      "thesis_sources": [
-        {
-          "source_id": "abteilung-fuer-epidemiologie--1",
-          "url": "https://www.vet.uzh.ch/de/studium/studiengang.html"
+          "source_id": "vsf--1",
+          "url": "https://www.vet.uzh.ch/de/dozierende/MasterarbeitThemenboerse.html",
+          "notes": "MA process page"    
         }
       ]
     }

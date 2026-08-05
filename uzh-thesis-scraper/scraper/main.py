@@ -61,8 +61,11 @@ def _cache_json_source(state: dict, src: registry.Source, api_url: str):
 
 def _fetch_and_cache(state: dict, src: registry.Source, sess, render: bool):
     """Fetch one source into the cache and persist run-state. Returns
-    (FetchResult, meta|None)."""
-    result = fetch.fetch_one(src.source_id, src.url, sess, force_render=render)
+    (FetchResult, meta|None). A contract may override the fetched URL via
+    `page_url` (e.g. to pull an embedded people/list iframe instead of the wrapper
+    page)."""
+    url = (_contract_spec(src) or {}).get("page_url") or src.url
+    result = fetch.fetch_one(src.source_id, url, sess, force_render=render)
     if not result.ok:
         registry.update_source_state(
             state, src.source_id, run=registry.RUN_FAILED,
@@ -72,12 +75,12 @@ def _fetch_and_cache(state: dict, src: registry.Source, sess, render: bool):
         return result, None
 
     if result.is_binary:
-        meta = cache.write_binary(src.source_id, result.raw_bytes, url=src.url,
+        meta = cache.write_binary(src.source_id, result.raw_bytes, url=url,
                                   http_status=result.http_status,
                                   fetch_method=result.method,
                                   content_type=result.content_type)
     else:
-        meta = cache.write_page(src.source_id, result.text, url=src.url,
+        meta = cache.write_page(src.source_id, result.text, url=url,
                                 http_status=result.http_status,
                                 fetch_method=result.method)
     registry.update_source_state(
@@ -390,15 +393,50 @@ def _page_html(src, url, fetch_fn):
     return "", url
 
 
+def _combined_process_html(src, urls, fetch_fn):
+    """Concatenate the main content of a process hub page and each listed
+    subpage into a single <main> blob, so the LLM produces ONE process summary
+    covering all of them (e.g. a Bachelor page whose two tracks live on
+    dedicated subpages). Links from every page are preserved."""
+    from bs4 import BeautifulSoup
+    parts = []
+    for url in [src.url, *urls]:
+        html, _ = _page_html(src, url, fetch_fn)
+        if not html:
+            continue
+        node = llm_extract._main_node(BeautifulSoup(html, "html.parser"))
+        if node:
+            parts.append(node.decode())
+    return "<main>" + "\n".join(parts) + "</main>"
+
+
 def _extract_multi_page(src, spec, fetch_fn):
     """Extract a source spread across several pages (e.g. master + bachelor topic
     lists). Each page's records get its `set:` field overrides; records are then
     merged by `merge_by` (default title), unioning degree_level across pages so a
     topic offered for both degrees becomes 'Bachelor, Master'."""
     key = spec.get("merge_by", "title")
+    pages = list(spec.get("pages") or [])
+    pf = spec.get("pages_from")            # auto-discover subpages from a directory page
+    if pf:
+        from urllib.parse import urljoin
+
+        from bs4 import BeautifulSoup
+        dhtml, dbase = _page_html(src, pf.get("url") or src.url, fetch_fn)
+        pat = re.compile(pf["url_pattern"], re.I) if pf.get("url_pattern") else None
+        seen = set()
+        for a in BeautifulSoup(dhtml or "", "html.parser").select(pf.get("selector", "a[href]")):
+            href = a.get("href", "")
+            if not href:
+                continue
+            url = urljoin(dbase, href)
+            if (pat and not pat.search(url)) or url in seen:
+                continue
+            seen.add(url)
+            pages.append({"url": url})
     merged: dict[str, dict] = {}
     order: list[str] = []
-    for pg in spec["pages"]:
+    for pg in pages:
         html, base = _page_html(src, pg["url"], fetch_fn)
         if not html:
             continue
@@ -424,15 +462,32 @@ def _extract_source(src, page_type, fetch_fn):
     """Extract records for one verified source, routed by page_type. Returns
     (records, llm_ok)."""
     if page_type == "process":
-        rec = llm_extract.extract_process(src.source_id)
+        cspec = _contract_spec(src) or {}
+        inc = cspec.get("include_pages")  # fold subpages into ONE combined summary
+        if inc:
+            html = _combined_process_html(src, inc, fetch_fn)
+            rec = llm_extract.extract_process(src.source_id, html=html, base_url=src.url)
+        else:
+            rec = llm_extract.extract_process(src.source_id)
+        override = cspec.get("degree_level")                        # e.g. a page
+        if override:                                                # that covers BA+MA
+            rec["degree_level"] = override
         return [rec], rec["_llm"].get("status") == "ok"
     if page_type == "none":
         return [], True
     spec = spec_engine.load_spec(src.source_id)
-    if spec.get("pages"):
+    if spec.get("pages") or spec.get("pages_from"):
         records = _extract_multi_page(src, spec, fetch_fn)
     else:
         records = spec_engine.extract(src.source_id, spec)
+    if spec.get("roster"):  # keep only people named on a roster page (+ tag them)
+        records = _apply_roster_filter(src, records, spec["roster"], fetch_fn)
+    if spec.get("keep_if"):  # keep only records whose field contains one of the strings
+        kc = spec["keep_if"]
+        subs = [s.lower() for s in (kc.get("contains_any") or [])]
+        fld = kc["field"]
+        records = [r for r in records if isinstance(r.get(fld), str)
+                   and any(s in r[fld].lower() for s in subs)]
     if spec.get("directory"):  # resolve missing profile URLs via a people page
         _resolve_via_directory(src, records, spec["directory"], fetch_fn)
     if spec.get("follow"):
@@ -440,9 +495,11 @@ def _extract_source(src, page_type, fetch_fn):
         spec_engine.enrich_from_links(src.source_id, records, spec["follow"],
                                       kind=kind, fetch_fn=fetch_fn, limit=None,
                                       log=lambda m: None)
-    if page_type == "people":  # drop internal helper keys (e.g. _profile_url)
+    if spec.get("resolve_person_emails"):  # pick the personal (non-secretariat) email
+        _resolve_person_emails(src, records, spec["resolve_person_emails"], fetch_fn)
+    if page_type == "people":  # drop internal helper keys, but KEEP _profile_url
         for rec in records:
-            for k in [k for k in rec if k.startswith("_")]:
+            for k in [k for k in rec if k.startswith("_") and k != "_profile_url"]:
                 del rec[k]
     if spec.get("pdf_summary"):
         _summarize_topic_pdfs(src, records, spec["pdf_summary"])
@@ -570,6 +627,106 @@ def _resolve_supervisors_via_directory(src, records, cfg, fetch_fn) -> None:
                     break
 
 
+def _resolve_person_emails(src, records, cfg, fetch_fn) -> None:
+    """Pick each person's PERSONAL email from their profile page: the mailto whose
+    local part matches the person's name and is not a secretariat/office address
+    (excluded prefixes). Leaves email null when no personal address is published
+    (better than storing a secretariat or placeholder address). Profiles are
+    cached (shared with the follow step)."""
+    from bs4 import BeautifulSoup
+
+    exclude = tuple(cfg.get("exclude_prefix", ["sek"]))
+    for rec in records:
+        url = rec.get("_profile_url")
+        if not url:
+            continue
+        slug = spec_engine._link_slug(url)
+        if cache.has_subpage(src.source_id, "people", slug):
+            html = cache.read_subpage(src.source_id, "people", slug)
+        else:
+            try:
+                st, html = fetch_fn(url, False)
+            except Exception:  # noqa: BLE001
+                html = None
+            if html and 200 <= st < 300:
+                cache.write_subpage(src.source_id, "people", slug, html)
+            else:
+                html = None
+        if not html:
+            continue
+        main = BeautifulSoup(html, "html.parser").select_one("main") or BeautifulSoup(html, "html.parser")
+        toks = [t for t in (_fold_name(x) for x in re.split(r"\s+", rec.get("name") or "")) if len(t) >= 3]
+        best, best_score = None, 0
+        for a in main.select('a[href^="mailto"]'):
+            addr = a.get("href", "")[7:].split("?")[0].strip()
+            if "@" not in addr:
+                continue
+            local = _fold_name(addr.split("@")[0])
+            if not local or local.startswith(exclude):
+                continue
+            score = sum(1 for t in toks if t in local)
+            if score == 0:
+                continue
+            if score > best_score or (score == best_score and best
+                                      and len(local) < len(_fold_name(best.split("@")[0]))):
+                best, best_score = addr, score
+        rec["email"] = best   # personal-only; null when none matches the name
+
+
+def _apply_roster_filter(src, records, cfg, fetch_fn):
+    """Keep only the people who appear on one or more 'roster' pages (e.g. the
+    supervisor <select> on a thesis-booking form), matched by name. Each roster
+    source may tag its members (e.g. supervises Bachelor/Master); tags are
+    unioned onto the kept records. Roster pages are cached."""
+    from bs4 import BeautifulSoup
+
+    def norm(n):
+        n = re.sub(r"\b\w\.\s*", " ", n or "")     # drop middle initials ("J.")
+        return re.sub(r"\s+", " ", n).strip().lower()
+
+    roster: dict[str, set] = {}
+    for s in cfg.get("sources", []):
+        url = s["url"]
+        slug = spec_engine._link_slug(url)
+        if cache.has_subpage(src.source_id, "aux", slug):
+            html = cache.read_subpage(src.source_id, "aux", slug)
+        else:
+            try:
+                st, html = fetch_fn(url, bool(s.get("render")))
+            except Exception:  # noqa: BLE001
+                html = None
+            if html and 200 <= st < 300:
+                cache.write_subpage(src.source_id, "aux", slug, html)
+            else:
+                html = None
+        if not html:
+            continue
+        names_re = s.get("names_regex")
+        for node in BeautifulSoup(html, "html.parser").select(s["selector"]):
+            txt = node.get_text(" ", strip=True)
+            if names_re:                  # pull several names out of one element
+                found = [m.group(1) if m.groups() else m.group(0)
+                         for m in re.finditer(names_re, txt)]
+            elif "," in txt:              # one name per element ("Lastname, Firstname")
+                found = [txt]
+            else:                          # skip "(bitte wählen)" / non-name options
+                found = []
+            for nm in found:
+                roster.setdefault(norm(nm), set())
+                if s.get("supervises"):
+                    roster[norm(nm)].add(s["supervises"])
+    field = cfg.get("match", "name")
+    kept = []
+    for r in records:
+        tags = roster.get(norm(r.get(field)))
+        if tags is None:
+            continue
+        if tags:
+            r["supervises"] = sorted(tags)
+        kept.append(r)
+    return kept
+
+
 def _resolve_via_directory(src, records, cfg, fetch_fn) -> None:
     """Set each person's profile URL by matching their name against a people-
     directory page (used when the topics page names people but only some link
@@ -625,6 +782,41 @@ def _resolve_supervisor_emails(src, records, cfg, fetch_fn) -> None:
     url_key = cfg.get("url_key", "_url")
     email_spec = cfg.get("email")
     render = bool(cfg.get("render"))
+
+    # record_url mode: follow ONE page per record (e.g. a group leader's page,
+    # derived from the topic URL) and set the topic's single supervisor's name
+    # and email from it.
+    rec_url_key = cfg.get("record_url")
+    if rec_url_key:
+        name_spec = cfg.get("name")
+        seen: dict[str, dict] = {}
+        for rec in records:
+            url = rec.get(rec_url_key)
+            if not url or not url.lower().startswith("http"):
+                continue
+            if url not in seen:
+                slug = spec_engine._link_slug(url)
+                html = (cache.read_subpage(src.source_id, "people", slug)
+                        if cache.has_subpage(src.source_id, "people", slug) else None)
+                if html is None and fetch_fn is not None:
+                    try:
+                        st, html = fetch_fn(url, render)
+                    except Exception:  # noqa: BLE001
+                        html = None
+                    if html and 200 <= st < 300:
+                        cache.write_subpage(src.source_id, "people", slug, html)
+                    else:
+                        html = None
+                soup = BeautifulSoup(html, "html.parser") if html else None
+                seen[url] = {
+                    "name": spec_engine._extract_field(soup, name_spec, url) if (soup and name_spec) else None,
+                    "email": spec_engine._extract_field(soup, email_spec, url) if soup else None,
+                }
+            info = seen[url]
+            if info["name"] or info["email"]:
+                rec["supervisors"] = [{"name": info["name"], "email": info["email"]}]
+        return
+
     resolved: dict[str, str | None] = {}
     for rec in records:
         for sup in rec.get(list_field) or []:
@@ -811,10 +1003,25 @@ def _enrich_topic_pdfs(src, records, cfg) -> int:
                     cache.write_subpage(src.source_id, "pdfsummary", slug, summ)
                     rec[summary_into] = summ
 
-        if want_sups and not rec.get("supervisors"):
-            emails = list(dict.fromkeys(email_re.findall(text)))
+        # By default PDF supervisors only fill when the record has none. With
+        # `supervisors_from_pdf`, a PDF that yields an email REPLACES the record's
+        # (e.g. surname-only) supervisors with the PDF's fuller name+email pairs;
+        # records whose PDF has no email keep their existing supervisors.
+        if want_sups and (cfg.get("supervisors_from_pdf") or not rec.get("supervisors")):
+            # `supervisor_email_any` widens the match beyond @uzh.ch (some PDFs
+            # list external co-supervisors).
+            er = (re.compile(r"[\w.\-]+@[\w.\-]+\.\w{2,}")
+                  if cfg.get("supervisor_email_any") else email_re)
+            emails = list(dict.fromkeys(er.findall(text)))
             if emails:
                 names = _pdf_supervisor_names(text)
+                # also names after a Dr./Prof. title (e.g. "Supervision: Dr X ...")
+                for m in re.finditer(r"(?:Dr|Prof)\.?\s+(?:Dr\.?\s+)?"
+                                     r"([A-ZÄÖÜ][A-Za-zäöü'\-]+(?:\s+[A-ZÄÖÜ][A-Za-zäöü'\-]+){1,2})",
+                                     text):
+                    nm = m.group(1).strip()
+                    if nm not in names:
+                        names.append(nm)
                 rec["supervisors"] = [
                     {"name": _name_for_email(e, names), "email": e} for e in emails]
 
@@ -913,7 +1120,8 @@ def cmd_run(args: argparse.Namespace) -> int:
                     records=records, llm_ok=llm_ok,
                     allow_empty=bool(sp and sp.get("source_type") == "json"))
                 _apply_result(state, data, src, page_type, result, records, rep,
-                              group=(sp or {}).get("group"))
+                              group=(sp or {}).get("group"),
+                              scope=(sp or {}).get("scope"))
 
                 # Auxiliary outputs from the same page:
                 #  - a "Gruppen"-style people table on a process page, or
@@ -1041,16 +1249,18 @@ def _run_aux_process(state, data, src, group, rep) -> None:
     report.add_source(rep, result, action="updated" if result.writable else "kept_previous")
 
 
-def _apply_result(state, data, src, page_type, result, records, rep, group=None) -> None:
+def _apply_result(state, data, src, page_type, result, records, rep, group=None,
+                  scope=None) -> None:
     print(f"    {result.status}  records={len(records)}"
           + (f"  [{group['id']}]" if group else "")
+          + ("  [faculty]" if scope == "faculty" else "")
           + (f"  {result.reasons[0]}" if result.reasons else ""))
     diff = None
     if result.writable:
         if result.status == validate.PAGE_CHANGED:
             old = store.records_for_source(data, src, page_type)
             diff = validate.diff_records(page_type, old, records)
-        store.upsert_source(data, src, page_type, records, group=group)
+        store.upsert_source(data, src, page_type, records, group=group, scope=scope)
         action = "updated"
     else:
         action = "kept_previous"  # never overwrite good data with garbage

@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-31T12:54:00.559882+00:00",
+  "sources": [
+    {
+      "source_id": "musikwissenschaftliches-institut--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "musikwissenschaftliches-institut--2",
+      "page_type": "none",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T12:54:00.614243+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-04T10:59:33.305885+00:00",
+  "sources": [
+    {
+      "source_id": "religionswissenschaftliches-seminar--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 5,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-04T10:59:33.389079+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-05T13:01:10.396824+00:00",
+  "sources": [
+    {
+      "source_id": "paleontology--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 10,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-05T13:01:10.463447+00:00"
+}

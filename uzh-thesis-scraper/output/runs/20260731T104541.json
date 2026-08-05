@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-31T10:45:41.674109+00:00",
+  "sources": [
+    {
+      "source_id": "ipz--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 3,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T10:45:41.740433+00:00"
+}

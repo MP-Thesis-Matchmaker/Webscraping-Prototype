@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-05T13:15:09.375800+00:00",
+  "sources": [
+    {
+      "source_id": "physics--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 34,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-05T13:15:09.450879+00:00"
+}

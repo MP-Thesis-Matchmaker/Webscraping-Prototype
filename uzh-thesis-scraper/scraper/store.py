@@ -25,9 +25,62 @@ SQLITE_PATH = registry.OUTPUT_DIR / "theses.sqlite"
 # Raw per-source people (pre-merge) live in a sidecar so theses.json stays clean;
 # they are only needed to re-merge correctly when re-running a single source.
 RAW_PEOPLE_PATH = registry.OUTPUT_DIR / "people_raw.json"
+RAW_PROCESS_PATH = registry.OUTPUT_DIR / "process_raw.json"
+RAW_FACULTY_PROCESS_PATH = registry.OUTPUT_DIR / "faculty_process_raw.json"
 
 _BUCKET = {"people": "people", "process": "process", "topics": "concrete_topics"}
 _RAW_KEY = "_people_by_source"
+_PROCESS_RAW_KEY = "_process_by_source"
+
+
+def consolidate_process(raw_by_source: dict) -> list:
+    """Collapse a unit's per-source process records into ONE entry per degree
+    level: same-degree sources are merged (descriptions concatenated, links
+    unioned, all contributing sources recorded). So a unit with a BA page + BA
+    PDF + MA page + MA PDF yields one Bachelor and one Master entry."""
+    groups: dict[str, list] = {}
+    order: list[str] = []
+    for sid, recs in raw_by_source.items():
+        for r in recs:
+            deg = r.get("degree_level") or "Unspecified"
+            if deg not in groups:
+                groups[deg] = []
+                order.append(deg)
+            groups[deg].append((sid, r))
+
+    out = []
+    for deg in order:
+        items = groups[deg]
+        descs, links, seen_links, urls, sids, scraped = [], [], set(), [], [], []
+        for sid, r in items:
+            if sid not in sids:
+                sids.append(sid)
+            url = r.get("source_url")
+            if url and url in urls:
+                continue  # same page (e.g. a shared faculty URL) — credit the
+                          # source_id but don't duplicate its description/links
+            d = (r.get("process_description") or "").strip()
+            if d and d not in descs:
+                descs.append(d)
+            for l in r.get("relevant_links") or []:
+                if l.get("url") and l["url"] not in seen_links:
+                    seen_links.add(l["url"])
+                    links.append(l)
+            if url:
+                urls.append(url)
+            if r.get("scraped_at"):
+                scraped.append(r["scraped_at"])
+        out.append({
+            "degree_level": deg,
+            "process_description": "\n\n".join(descs) or None,
+            "relevant_links": links,
+            "source_url": urls[0] if urls else None,
+            "source_urls": urls,
+            "source_id": ",".join(sids),
+            "source_ids": sids,
+            "scraped_at": max(scraped) if scraped else None,
+        })
+    return out
 
 
 def _write_json(path, obj) -> None:
@@ -45,34 +98,61 @@ def load() -> dict:
             data = json.load(fh)
     else:
         data = {"generated_at": None, "faculties": {}}
-    # rehydrate raw per-source people from the sidecar into each unit
-    raw = {}
-    if RAW_PEOPLE_PATH.exists():
-        with RAW_PEOPLE_PATH.open(encoding="utf-8") as fh:
+    # rehydrate raw per-source people/process from the sidecars into each unit
+    for path, key in ((RAW_PEOPLE_PATH, _RAW_KEY), (RAW_PROCESS_PATH, _PROCESS_RAW_KEY)):
+        if not path.exists():
+            continue
+        with path.open(encoding="utf-8") as fh:
             raw = json.load(fh)
-    for fac in data.get("faculties", {}).values():
-        for uid, unit in fac.get("units", {}).items():
-            if uid in raw:
-                unit[_RAW_KEY] = raw[uid]
+        for fac in data.get("faculties", {}).values():
+            for uid, unit in fac.get("units", {}).items():
+                if uid in raw:
+                    unit[key] = raw[uid]
+    # rehydrate faculty-level raw process (keyed by faculty code)
+    if RAW_FACULTY_PROCESS_PATH.exists():
+        with RAW_FACULTY_PROCESS_PATH.open(encoding="utf-8") as fh:
+            fraw = json.load(fh)
+        for fcode, fac in data.get("faculties", {}).items():
+            if fcode in fraw:
+                fac[_PROCESS_RAW_KEY] = fraw[fcode]
     return data
 
 
 def save(data: dict) -> None:
     data["generated_at"] = datetime.now(timezone.utc).isoformat()
-    # Pull the internal raw-people maps out into the sidecar, then write
-    # theses.json without them (restoring in-memory afterwards).
-    sidecar, stashed = {}, []
-    for fac in data.get("faculties", {}).values():
-        for uid, unit in fac.get("units", {}).items():
-            if _RAW_KEY in unit:
-                sidecar[uid] = unit[_RAW_KEY]
-                stashed.append((unit, unit[_RAW_KEY]))
-    _write_json(RAW_PEOPLE_PATH, sidecar)
-    for unit, _ in stashed:
-        del unit[_RAW_KEY]
+    # Pull the internal raw-per-source maps (people, process) out into their
+    # sidecars, then write theses.json without them (restoring in-memory after).
+    stashed = []  # (unit, key, value)
+    for path, key in ((RAW_PEOPLE_PATH, _RAW_KEY), (RAW_PROCESS_PATH, _PROCESS_RAW_KEY)):
+        sidecar = {}
+        for fac in data.get("faculties", {}).values():
+            for uid, unit in fac.get("units", {}).items():
+                if key in unit:
+                    sidecar[uid] = unit[key]
+                    stashed.append((unit, key, unit[key]))
+        _write_json(path, sidecar)
+    # faculty-level raw process (keyed by faculty code)
+    fsidecar = {}
+    for fcode, fac in data.get("faculties", {}).items():
+        if _PROCESS_RAW_KEY in fac:
+            fsidecar[fcode] = fac[_PROCESS_RAW_KEY]
+            stashed.append((fac, _PROCESS_RAW_KEY, fac[_PROCESS_RAW_KEY]))
+    _write_json(RAW_FACULTY_PROCESS_PATH, fsidecar)
+    for obj, key, _ in stashed:
+        del obj[key]
     _write_json(THESES_PATH, data)
-    for unit, value in stashed:
-        unit[_RAW_KEY] = value
+    for obj, key, value in stashed:
+        obj[key] = value
+
+
+def _faculty_bucket(data: dict, src: registry.Source) -> dict:
+    """The faculty-level record, for sources that describe a whole faculty (e.g.
+    the shared Faculty-of-Philosophy thesis process page). Holds a `process`
+    list alongside its `units`."""
+    fac = data.setdefault("faculties", {}).setdefault(
+        src.faculty_code, {"faculty": src.faculty, "units": {}})
+    fac.setdefault("process", [])
+    return fac
 
 
 def _unit_bucket(data: dict, src: registry.Source):
@@ -108,7 +188,9 @@ def records_for_source(data: dict, src: registry.Source, page_type: str) -> list
     if not unit:
         return []
     if page_type == "people":  # people are stored merged; use the raw per-source
-        return unit.get("_people_by_source", {}).get(src.source_id, [])
+        return unit.get(_RAW_KEY, {}).get(src.source_id, [])
+    if page_type == "process":  # process is consolidated; use the raw per-source
+        return unit.get(_PROCESS_RAW_KEY, {}).get(src.source_id, [])
     pool = list(unit.get(bucket, []))
     for g in unit.get("groups", {}).values():
         pool += g.get(bucket, [])
@@ -116,12 +198,32 @@ def records_for_source(data: dict, src: registry.Source, page_type: str) -> list
 
 
 def upsert_source(data: dict, src: registry.Source, page_type: str, records: list,
-                  group: dict | None = None) -> None:
+                  group: dict | None = None, scope: str | None = None) -> None:
     """Replace this source's records within its unit bucket. People are MERGED
     across sources (one record per professor). Process/topics from a chair
-    source are nested under unit.groups.<chair>; unit-level otherwise."""
+    source are nested under unit.groups.<chair>; unit-level otherwise. With
+    scope='faculty', the records are stored at the faculty level instead of a
+    unit (e.g. a faculty-wide thesis-process page shared by several units)."""
     bucket = _BUCKET.get(page_type)
     if not bucket:
+        return
+    if scope == "faculty":
+        fac = _faculty_bucket(data, src)
+        if page_type == "process":
+            # Consolidate per degree (dedups identical descriptions/URLs), so a
+            # faculty-wide page referenced by several units is one entry crediting
+            # all of them. Kept re-run safe via a raw-per-source map.
+            raw = fac.get(_PROCESS_RAW_KEY)
+            if raw is None:
+                raw = {}
+                for r in fac.get("process", []):
+                    raw.setdefault(r.get("source_id"), []).append(r)
+                fac[_PROCESS_RAW_KEY] = raw
+            raw[src.source_id] = records
+            fac["process"] = consolidate_process(raw)
+        else:
+            fac[bucket] = [r for r in fac.get(bucket, [])
+                           if r.get("source_id") != src.source_id] + records
         return
     unit = _unit_bucket(data, src)
     if page_type == "people":
@@ -151,6 +253,18 @@ def upsert_source(data: dict, src: registry.Source, page_type: str, records: lis
         g[bucket] = [r for r in g.get(bucket, []) if r.get("source_id") != src.source_id] + records
         if src.source_id not in g["source_ids"]:
             g["source_ids"].append(src.source_id)
+    elif page_type == "process":
+        # Unit-level process: keep raw per-source (sidecar) and derive ONE entry
+        # per degree. Seed the raw map from any pre-consolidation process on
+        # first touch so other sources' process isn't lost.
+        raw = unit.get(_PROCESS_RAW_KEY)
+        if raw is None:
+            raw = {}
+            for r in unit.get("process", []):
+                raw.setdefault(r.get("source_id"), []).append(r)
+            unit[_PROCESS_RAW_KEY] = raw
+        raw[src.source_id] = records
+        unit["process"] = consolidate_process(raw)
     else:
         unit[bucket] = unit[bucket] + records
 
@@ -224,7 +338,7 @@ _SCHEMA = """
 CREATE TABLE people (source_id TEXT, faculty_code TEXT, unit_id TEXT,
     group_id TEXT, group_name TEXT, role TEXT, name TEXT, email TEXT,
     research_interest TEXT, research_field TEXT, bio TEXT, personal_website TEXT,
-    scraped_at TEXT);
+    profile_url TEXT, scraped_at TEXT);
 CREATE TABLE process (source_id TEXT, faculty_code TEXT, unit_id TEXT,
     group_id TEXT, group_name TEXT, degree_level TEXT, process_description TEXT,
     relevant_links TEXT, source_url TEXT, scraped_at TEXT);
@@ -237,7 +351,7 @@ CREATE TABLE concrete_topics (topic_id TEXT, source_id TEXT, faculty_code TEXT,
 _COLS = {
     "people": ["source_id", "faculty_code", "unit_id", "group_id", "group_name",
                "role", "name", "email", "research_interest", "research_field",
-               "bio", "personal_website", "scraped_at"],
+               "bio", "personal_website", "profile_url", "scraped_at"],
     "process": ["source_id", "faculty_code", "unit_id", "group_id", "group_name",
                 "degree_level", "process_description", "relevant_links",
                 "source_url", "scraped_at"],
@@ -256,6 +370,15 @@ def rebuild_sqlite(data: dict) -> int:
         conn.executescript(_SCHEMA)
         n = 0
         for fcode, fac in data.get("faculties", {}).items():
+            # faculty-level process (unit_id NULL) — e.g. a shared faculty page
+            for rec in fac.get("process", []):
+                row = [rec.get(c) if c not in ("faculty_code", "unit_id", "relevant_links")
+                       else (fcode if c == "faculty_code"
+                             else None if c == "unit_id"
+                             else json.dumps(rec.get(c) or [], ensure_ascii=False))
+                       for c in _COLS["process"]]
+                conn.execute(f"INSERT INTO process VALUES ({','.join('?' * len(_COLS['process']))})", row)
+                n += 1
             for uid, unit in fac.get("units", {}).items():
                 # process/topics come from the unit level AND from each chair
                 # group; people are unit-level only.
@@ -272,6 +395,8 @@ def rebuild_sqlite(data: dict) -> int:
                                 row.append(fcode)
                             elif c == "unit_id":
                                 row.append(uid)
+                            elif c == "profile_url":       # JSON field is _profile_url
+                                row.append(rec.get("_profile_url"))
                             elif c in ("relevant_links", "supervisors"):
                                 row.append(json.dumps(rec.get(c) or [],
                                                       ensure_ascii=False))

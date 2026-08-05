@@ -1,0 +1,23 @@
+{
+  "started_at": "2026-07-31T13:12:21.512741+00:00",
+  "sources": [
+    {
+      "source_id": "psychologisches-institut--1",
+      "page_type": "topics",
+      "status": "extract_failed",
+      "action": "kept_previous",
+      "record_count": 0,
+      "reasons": [
+        "NameError: name 'urljoin' is not defined"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "extract_failed": 1
+    },
+    "flagged": 1
+  },
+  "finished_at": "2026-07-31T13:12:21.555963+00:00"
+}

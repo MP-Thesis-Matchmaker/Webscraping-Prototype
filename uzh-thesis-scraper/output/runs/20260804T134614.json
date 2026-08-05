@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-04T13:46:14.369842+00:00",
+  "sources": [
+    {
+      "source_id": "chemistry--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 10,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-04T13:47:51.793574+00:00"
+}

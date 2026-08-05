@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-07-31T10:44:10.995231+00:00",
+  "sources": [
+    {
+      "source_id": "ipz--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 3,
+      "reasons": []
+    },
+    {
+      "source_id": "ipz--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 14,
+      "reasons": []
+    },
+    {
+      "source_id": "ipz--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "by_status": {
+      "ok": 3
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T10:44:17.212633+00:00"
+}

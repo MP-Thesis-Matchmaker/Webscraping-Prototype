@@ -1,0 +1,1331 @@
+{
+  "deutsches-seminar": {
+    "deutsches-seminar--3": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Für den Erwerb des B.A. im Major müssen Studierende eine selbständige wissenschaftliche Arbeit (15 ECTS) von 90'000–120'000 Zeichen (ca. 30–40 Seiten) verfassen. Betreuungspersonen sind Angehörige des Deutschen Seminars (ordentliche/ausserordentliche Professor:innen, Assistenz- und Titularprofessor:innen, Privatdozierende sowie promovierter wissenschaftlicher Nachwuchs). Vorgehen: vor bzw. spätestens während der Buchungsfrist klären, ob die Wunschbetreuung verfügbar ist und Thema/Titel in der Sprechstunde vereinbaren; während der Buchungsfrist das DS-Webformular zur Anfrage der Betreuungsvereinbarung ausfüllen; nach Erhalt der Betreuungsbestätigung das Modul „Bachelorarbeit“ im Studierendenportal buchen (zuerst Betreuung, dann Buchung, vgl. §26 Studienordnung). Abgabe: 1. Dezember (bei HS-Buchung) bzw. 1. Juni (bei FS), digital oder in Papier nach Wunsch der Betreuerin/des Betreuers; Fristerstreckung max. 1 Monat mit Begründung. Offizielle Details auf den Seiten des Studiendekanats und der Philosophischen Fakultät.",
+        "relevant_links": [
+          {
+            "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ba.php",
+            "description": "Betreuungsvereinbarung für die Bachelorarbeit"
+          }
+        ],
+        "source_url": "https://www.ds.uzh.ch/de/studium/bachelor/info_bachelorstudium/abschluss_bachelor.html#Die_Bachelorarbeit_am_Deutschen_Seminar",
+        "source_id": "deutsches-seminar--3",
+        "scraped_at": "2026-07-25T05:47:29.330823+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok"
+        }
+      }
+    ],
+    "deutsches-seminar--4": [
+      {
+        "degree_level": "Master",
+        "process_description": "Voraussetzung: Sie können die Masterarbeit anmelden, wenn Sie die Bestehensvoraussetzungen Ihres Studienprogramms erfüllt haben. Thema und Betreuung: Wählen Sie Thema/Teilgebiet in Absprache mit einer Betreuungsperson; klären Sie Verfügbarkeit und vereinbaren Titel in der Sprechstunde. Betreuungsberechtigt sind Angehörige des Deutschen Seminars (ordentliche/ausserordentliche Professor:innen, Assistenzprofessor:innen, Titularprofessor:innen, Privatdozierende). Anmeldung/Registrierung: Während der Buchungsfrist das DS-Webformular zur Anfrage der Betreuungsvereinbarung ausfüllen; nach Erhalt der Betreuungsbestätigung das Modul \"Masterarbeit\" im Studierendenportal buchen (zuerst Betreuung klären, dann buchen; vgl. §31 Studienordnung). Ablauf und Fristen: Umfang 180'000–240'000 Zeichen (60–80 S.), 30 ECTS; Abgabe 1. Dezember (bei Buchung im FS) oder 1. Juni (bei Buchung im HS), digital oder auf Papier nach Wunsch der Betreuungsperson. Die Arbeit ist regelmässig zweisemestrig (einsemestrig auf Wunsch möglich); Fristerstreckung nur begründet und max. 1 Monat (s. Verhinderungsgrund). Offizielle Regelungen: Website des Studiendekanats und Seiten der Philosophischen Fakultät.",
+        "relevant_links": [
+          {
+            "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ma.php",
+            "description": "Betreuungsvereinbarung für die Masterarbeit"
+          }
+        ],
+        "source_url": "https://www.ds.uzh.ch/de/studium/master/info_masterstudium/abschluss_master.html",
+        "source_id": "deutsches-seminar--4",
+        "scraped_at": "2026-07-25T05:47:38.197645+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok"
+        }
+      }
+    ],
+    "deutsches-seminar--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "This page describes the MA thesis procedure. MA students must first contact a desired supervisor (check that the person is authorised to supervise), confirm their willingness and agree a topic and provisional title. Then the student fills in the online supervision request form (name, matriculation number, UZH email, booking semester, supervisor and module code, work title). The student receives a submission confirmation by UZH email and—if the supervisor accepts—a supervision confirmation which should be retained. After the supervision confirmation, the student must book the corresponding module themselves in the Studierendenportal (the request is not the module booking). There is no entitlement to be supervised by the chosen person; StO §26/31 apply as the legal basis.",
+        "relevant_links": [],
+        "source_url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ma.php?get=s",
+        "source_id": "deutsches-seminar--1",
+        "scraped_at": "2026-08-05T13:55:39.946294+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "deutsches-seminar--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Eligibility: BA students in the department (modules listed: 06SM360-BA Deutsche Sprach- und Literaturwissenschaft; 06SM370-BA Skandinavistik). How to find/approach a supervisor: contact the desired supervision person (check that they are authorised to supervise), confirm their willingness and agree a topic and working title. How to register: complete the online supervision request form (name, matriculation number, UZH e‑mail + confirmation, booking semester, chosen supervisor, module, Arbeitstitel). You will receive an acknowledgement to your UZH e‑mail and, if the supervisor accepts, a supervision confirmation—keep this. After receiving the supervision confirmation, book the corresponding module yourself in the Studierendenportal. Key formal notes/deadlines: the request does not guarantee supervision or module booking; booking occurs only after a supervision agreement (StO §26/31); booking semester options are shown on the form. Official rules: governed by the study regulations referenced (StO §26 and §31) — no full guideline link is provided on the page.",
+        "relevant_links": [],
+        "source_url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ba.php?get=s",
+        "source_id": "deutsches-seminar--2",
+        "scraped_at": "2026-08-05T13:55:39.971127+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "erziehungswissenschaft": {
+    "erziehungswissenschaft--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "The Bachelorarbeit (15 ECTS, ~450 h) is obligatory for students in the Major Erziehungswissenschaft and the Major Fachwissenschaft Pädagogik und Psychologie (writing a BA in Psychology is excluded). Topics are negotiated with a teaching staff member involved in the BA programme (professors, assistant professors, titular/privatdozierende, (senior) assistants, scientific staff, or specified research units). Students should approach a desired supervisor early (preferably the prior semester) by e‑mail or in office hours with a topic proposal and a short concept. Before booking, a binding supervision confirmation and an accepted concept (research question, disposition, sources/literature) are required (§26). Book the BA module during UZH’s regular booking periods; after booking enter the provisional title and supervisor in the PhF Thesis Title Tool. Formals: 35–45 pages (excl. front matter/refs/appendix), graded, single‑authorship only (§19). Submission deadlines: to supervisor by 1 December (autumn) or 1 June (spring) or the work is failed. Follow the IfE Study‑web lehrstuhl‑specific guidelines, the IfE Merkblätter (e.g. Plagiat, KI use) and relevant UZH study regulations and booking webpages for official rules and deadlines.",
+        "relevant_links": [
+          {
+            "url": "https://www.ife.uzh.ch/dam/jcr:5c0e99fe-d5b0-427e-b311-88d59cd7cf43/Merkblatt%20BA-Arbeit.pdf",
+            "description": "Process pdf for BA thesis"
+          }
+        ],
+        "source_url": "https://www.ife.uzh.ch/dam/jcr:5c0e99fe-d5b0-427e-b311-88d59cd7cf43/Merkblatt%20BA-Arbeit.pdf",
+        "source_id": "erziehungswissenschaft--2",
+        "scraped_at": "2026-07-30T08:36:04.380016+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "erziehungswissenschaft--3": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "The page directs students to the unit’s Merkblatt Bachelorarbeit (PDF) for all information on planning, supervision, booking and submission deadlines; additional, chair- or specialization-specific Merkblätter are available for more detailed rules. Eligibility is not specified on this page. Bachelor theses must be submitted to the supervising person by 1 December (autumn semester) or 1 June (spring semester). You must register yourself for graduation in the Studienfortschritt & -abschluss app within the Studiendekanat’s deadlines; registration is only possible once all required study credits have been obtained and entered in the system. Official rules and procedures live in the Merkblatt Bachelorarbeit, the specialization/Lehrstuhl Merkblätter and the Philosophical Faculty’s bachelor-completion information.",
+        "relevant_links": [
+          {
+            "url": "https://www.ife.uzh.ch/dam/jcr:5c0e99fe-d5b0-427e-b311-88d59cd7cf43/Merkblatt%20BA-Arbeit.pdf",
+            "description": "Merkblatt Bachelorarbeit (PDF, 106 KB)"
+          }
+        ],
+        "source_url": "https://www.ife.uzh.ch/de/study/Bachelor/Module/Bachelorarbeit.html",
+        "source_id": "erziehungswissenschaft--3",
+        "scraped_at": "2026-07-30T08:29:55.282186+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "erziehungswissenschaft--4": [
+      {
+        "degree_level": "Master",
+        "process_description": "Masterstudierende im Major Erziehungswissenschaft sowie im Major Fachwissenschaft Pädagogik und Psychologie (Verfassen in Psychologie ausgeschlossen) können am IfE eine Masterarbeit schreiben. Die Arbeit umfasst 30 ECTS (ca. 900 h), 50–90 Seiten (Titelblatt, Inhalts-/Literaturverzeichnis und Anhang nicht eingerechnet), ist zweisemestrig, benotet und kann auf Deutsch oder Englisch verfasst werden. Studierende planen die Arbeit idealerweise spätestens ein Jahr vor dem Abschluss. Betreuung muss durch eine Dozentin/einen Dozenten mit Doktortitel erfolgen (aufgelistete Kategorien; auch Mitarbeitende der Fachstelle Methoden und der Forschungsstelle mit Doktortitel). Studierende melden sich frühzeitig (vorzugsweise im Vorsemester) per Sprechstunde oder E‑Mail mit Themenvorschlag und Grobskizze; Themenangebote finden sich auf der IfE‑Masterarbeitsseite. Vor Buchung ist eine verbindliche Betreuungszusage und ein akzeptiertes Konzept (Fragestellung, Disposition, Quellen/Literatur) nötig; die Buchung erfolgt selbständig. Offizielle Vorgaben: Studienordnung (§§ 19, 31, 32) sowie IfE‑Merkblätter (Plagiat, KI, lehrstuhlspezifische Hinweise) auf der Study‑Webseite des IfE.",
+        "relevant_links": [
+          {
+            "url": "https://www.ife.uzh.ch/dam/jcr:f959d90e-2b98-4f1b-bdd8-c626da957ceb/Merkblatt%20MA-Arbeit.pdf",
+            "description": "Process pdf for MA thesis"
+          }
+        ],
+        "source_url": "https://www.ife.uzh.ch/dam/jcr:f959d90e-2b98-4f1b-bdd8-c626da957ceb/Merkblatt%20MA-Arbeit.pdf",
+        "source_id": "erziehungswissenschaft--4",
+        "scraped_at": "2026-07-30T08:29:55.293208+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "erziehungswissenschaft--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "Die Masterarbeit ist ein zweisemestriges Pflichtmodul für Master-Major-Studierende der Erziehungswissenschaft und der Fachwissenschaft Pädagogik und Psychologie. Studierende wählen ihr Thema selbst; es muss aber einen Bezug zu den Forschungsthemen des gewählten Schwerpunkts/Lehrstuhls haben (Unterseiten der Lehrstühle listen Themenangebote). Alle Detailregeln zu Planung, Betreuung, Buchung etc. stehen im Merkblatt Masterarbeit (PDF, 124 KB) und in schwerpunktspezifischen Merkblättern; eine Planungspräsentation (PDF) ist ebenfalls verfügbar. Abgabe: Masterarbeiten sind spätestens am 1. Dezember (Herbstsemester) bzw. 1. Juni (Frühjahrssemester) bei der Betreuungsperson einzureichen. Zur Anmeldung des Studienabschlusses müssen Studierende fristgerecht in der App \"Studienfortschritt & -abschluss\" angemeldet sein; die Anmeldung ist erst möglich, wenn alle erforderlichen Leistungen eingetragen sind.",
+        "relevant_links": [
+          {
+            "url": "https://www.ife.uzh.ch/dam/jcr:f959d90e-2b98-4f1b-bdd8-c626da957ceb/Merkblatt%20MA-Arbeit.pdf",
+            "description": "Merkblatt Masterarbeit (PDF, 124 KB)"
+          },
+          {
+            "url": "https://www.ife.uzh.ch/dam/jcr:926ca614-9060-4076-99ae-0d6d6eb2e356/Planung%20Masterarbeit%20am%20IfE_2025.pdf",
+            "description": "Präsentation zum Austausch-Event (PDF, 338 KB)"
+          }
+        ],
+        "source_url": "https://www.ife.uzh.ch/de/study/Master/Module/Master-Arbeit.html",
+        "source_id": "erziehungswissenschaft--1",
+        "scraped_at": "2026-07-30T08:29:55.148501+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "kommunikationswissenschaft-und-medienforschung-ikm": {
+    "kommunikationswissenschaft-und-medienforschung-ikm--1": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Major-Studierende absolvieren ein Forschungsseminar (9 ECTS, Herbstsemester) und die anschliessende Bachelorarbeit (15 ECTS, Frühjahrssemester). Im Forschungsseminar entwickeln Sie das Projekt einzeln oder im Team und erstellen einen Forschungsbericht; die Bachelorarbeit ist eine Einzelarbeit und setzt das erfolgreich abgeschlossene Forschungsseminar voraus. Forschungsseminare werden von den Dozierenden betreut; die Bachelorarbeit wird im Rahmen eines Kolloquiums von diesen Dozierenden betreut. Module buchen Sie selbstständig während der regulären Buchungsfristen (achten Sie auf die korrekte Buchungsgruppe); nach der Buchung fordert das Studiendekanat Sie per E‑Mail auf, Betreuungsperson und Arbeitstitel im System zu erfassen. Abgabe der Bachelorarbeit: 1. Juni. Fristverlängerungen: unter «Leistungsnachweise». Studienfortschritt und Abschlussanmeldung laufen über das Studierendenportal («Studienfortschritt & -abschluss»). Offizielle Richtlinien auf der Website der Philosophischen Fakultät und den verlinkten IKMZ‑Seiten.",
+        "relevant_links": [
+          {
+            "url": "https://www.students.uzh.ch/de/studyadmin/registration/subjectchange.html",
+            "description": "Fristen für den Studienprogrammwechsel"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/abschluss.html",
+            "description": "Anmeldung & Fristen"
+          },
+          {
+            "url": "https://www.students.uzh.ch/de/studyadmin/registration/deregister.html",
+            "description": "Exmatrikulation"
+          }
+        ],
+        "source_url": "https://www.ikmz.uzh.ch/de/studies/graduation/bachelor.html",
+        "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--1",
+        "scraped_at": "2026-07-31T10:25:17.049401+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "kommunikationswissenschaft-und-medienforschung-ikm--2": [
+      {
+        "degree_level": "Master",
+        "process_description": "Für die Masterarbeit (30 ECTS) plus Masterkolloquium (6 ECTS) müssen Sie zuerst die Module der Gruppe «Methoden und Forschungslogik» (im Programm Internet & Society zusätzlich «Multivariate Statistics» und ein «Research Seminar») abgeschlossen haben. Der Prozess startet mit Abteilungs‑Vorbesprechungen (Mitte April und Anfang November), in denen Themen und Betreuungspersonen vorgestellt werden. Anschließend reichen Sie ein Masterarbeitskonzept via Onlineformular ein (Fristen: 30. Mai für Herbststart, 5. Dezember für Frühjahrsstart); die Konzepte werden allen betreuungsberechtigten Dozierenden zur Zuteilung vorgelegt. Nach Betreuungszusage buchen Sie Masterarbeit und Kolloquium während der regulären Modulbuchungsfristen online (Arbeit läuft über zwei Semester). Abgabe der Arbeit: 1. Juni (Herbststart) bzw. 1. Dezember (Frühjahrsstart); Einreichung inkl. Anhänge, Datensätze und unterschriebener Selbständigkeitserklärung. Verlängerungsgesuch bis max. 1 Monat möglich. Offizielle Regeln, Formulare und Uploads finden Sie auf den Seiten der Philosophischen Fakultät (inkl. Leistungsnachweise-Seite).",
+        "relevant_links": [
+          {
+            "url": "https://forms.office.com/e/xWTKZQNhZg",
+            "description": "Onlineformular"
+          },
+          {
+            "url": "https://www.uzh.ch/phil/ssl-dir/abschlussarbeiten/index.php",
+            "description": "Website der Fakultät"
+          },
+          {
+            "url": "https://mediachange.ch/students/",
+            "description": "Merkblatt"
+          },
+          {
+            "url": "https://www.ikmz.uzh.ch/dam/jcr:a2ac3989-3329-4ef7-9020-3d1398f8c863/vorbesprechungstermine_2026_fs_update.pdf",
+            "description": "Vorbesprechungstermine (PDF, 84 KB)"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/abschluss.html",
+            "description": "Anmeldung & Fristen"
+          },
+          {
+            "url": "https://www.students.uzh.ch/de/studyadmin/registration/deregister.html",
+            "description": "Exmatrikulation"
+          }
+        ],
+        "source_url": "https://www.ikmz.uzh.ch/de/studies/graduation/master.html",
+        "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--2",
+        "scraped_at": "2026-07-31T10:25:17.070678+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "ipz": {
+    "ipz--3": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "The page does not give a concrete step‑by‑step process for obtaining and completing a Bachelor thesis; it only states that the Bachelorarbeit is usually done in the spring, builds on the autumn Spezialisierung (groups of max. 15 students), is normally supervised by the Spezialisierungsdozierenden, that since 2024 some Spezialisierungen are offered in spring to link with autumn theses, and that formal requirements and further information are available on the Studiendekanat der Philosophischen Fakultät website.",
+        "relevant_links": [
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/bachelor/regulaer-nachfolger/asto/ASTO_06B-7615-120.pdf",
+            "description": "Anhang zur Studienordnung"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/bachelor/regulaer-nachfolger/mk/MK_06B-7615-120.pdf",
+            "description": "Modulkatalog"
+          },
+          {
+            "url": "https://www.ipz.uzh.ch/dam/jcr:3ce2fb20-6387-49ce-93d6-bf3c0eede695/Struktur_BA_Politikwissenschaft_Major_2024_SA_HD.pdf",
+            "description": "graphische Übersicht des Studienaufbaus (PDF, 67 KB)"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/bachelor/regulaer-nachfolger/mc/MC_06B-7615-120.pdf",
+            "description": "Mustercurriculum"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/bachelor/regulaer-nachfolger/asto/ASTO_06B-7615-060.pdf",
+            "description": "Anhang zur Studienordnung"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/bachelor/regulaer-nachfolger/mk/MK_06B-7160-120.pdf",
+            "description": "Modulkatalog"
+          },
+          {
+            "url": "https://www.ipz.uzh.ch/dam/jcr:6c6ef7b3-fb3c-452e-8572-bd13845cf7ed/Struktur_BA_Politikwissenschaft_Minor_2024_SA_HD.pdf",
+            "description": "graphische Übersicht des Studienaufbaus (PDF, 65 KB)"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/bachelor/regulaer-nachfolger/mc/MC_06B-7615-060.pdf",
+            "description": "Mustercurriculum"
+          },
+          {
+            "url": "https://www.ipz.uzh.ch/dam/jcr:7888108b-7323-4882-bcbf-a36dcf146f7d/StudyingMethodsatIPZ_20260612_Finale_DE.pdf",
+            "description": "einer gemeinsamen Vision der Methodenausbildung (PDF, 102 KB)"
+          },
+          {
+            "url": "https://www.ipz.uzh.ch/dam/jcr:78029c3a-cbf0-45d4-a5f6-ab6c9e32ceb2/PlanungstabelleBA120Polito_2026.xlsx",
+            "description": "Major 120 ECTS (XLSX, 27 KB)"
+          },
+          {
+            "url": "https://www.ipz.uzh.ch/dam/jcr:1554ab12-bb4b-44a8-b972-3ffce8fb8c4d/PlanungstabelleBA60Polito_2026.xlsx",
+            "description": "Minor 60 ECTS (XLSX, 27 KB)"
+          },
+          {
+            "url": "https://www.uzh.ch/de/studies/application/deadlines.html",
+            "description": "Bewerbungsfristen"
+          },
+          {
+            "url": "https://www.ipz.uzh.ch/dam/jcr:3463d2de-441d-4d31-89a9-51f2174f0312/Leitfaden%20Pr%C3%BCfungen%20Leistungsnachweise%20IPZ_ab%20HS25.pdf",
+            "description": "Leitfaden (PDF, 369 KB)"
+          }
+        ],
+        "source_url": "https://www.ipz.uzh.ch/de/studium/bachelor.html",
+        "source_id": "ipz--3",
+        "scraped_at": "2026-07-31T10:44:17.173419+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "isek": {
+    "isek--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "Die Seite enthält keine konkrete, formale Anleitung zu Ablauf, Zulassung, Anmeldung, Betreuungssuche, Fristen oder offiziellen Richtlinien für das Erlangen und Abschließen einer Bachelor‑ oder Masterarbeit.",
+        "relevant_links": [],
+        "source_url": "https://www.isek.uzh.ch/de/ethnologie/studium/master/maforschung.html",
+        "source_id": "isek--1",
+        "scraped_at": "2026-07-31T12:36:53.453559+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok"
+        }
+      }
+    ],
+    "isek--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Die Bachelorarbeit wird während der im Vorlesungsverzeichnis angegebenen Modulbuchungsfrist gebucht; beachten Sie auch die Hinweise des Studiendekanats. Im Merkblatt Bachelorarbeit (PDF) ist geregelt, wer am ISEK‑Ethnologie betreuungsberechtigt ist und welche Dozierenden für das Semester noch Kapazität haben (in der Regel max. 2 Arbeiten pro Dozierendem). Wichtig: die Disposition muss vor der Buchung von der Betreuungsperson akzeptiert werden; die Bestätigung der angenommenen Disposition ist zu Beginn des Schreibsemesters im BA‑Kolloquium einzureichen (Bestätigung PDF). Zulässige (Ko‑)Betreuende ab Herbstsemester 2026: Stefan Binder, Annuska Derks, Kathrin Eitel, Peter Finke, Désirée Gmür, Jan Patrick Heiss, Alice Hertzog, Werner Hertzog, Helena Hof, Paola Juan, Nadja Kempter, Olivia Killias, Iuliia Koreshkova, Esther Leemann, Alexis Malefakis, Juliane Neuhaus, Phuong Nguyen, Maike Powroznik, Johannes Quack, Kiah Rutz, Meltem Sancak, Gabriel Scheidecker, Rebekka Sutter, Lindsay Vogt, Michelle von Dach, Martina Wernsdörfer. (Ko‑)Betreuende in audiovisueller Ethnologie (ab Herbstsemester 2024): Saada Elabed, Olivia Killias, Esther Leemann, Kiah Rutz, Rebekka Sutter (Tonaufnahmen). Officiale Richtlinien: Merkblatt Bachelorarbeit, Bestätigung für angenommene Disposition und die Studiendekanatsseite.",
+        "relevant_links": [
+          {
+            "url": "https://www.isek.uzh.ch/dam/jcr:00000000-62a5-3df0-ffff-fffff546b6b9/Merkblatt%20Bachelorarbeit%20Ethnologie.pdf",
+            "description": "Bachelorarbeit (PDF, 107 KB)"
+          },
+          {
+            "url": "https://uzh.sharepoint.com/:w:/r/sites/ISEK-EthnologieBetreuungBA-Arbeiten/_layouts/15/Doc.aspx?sourcedoc=%7B742B0D1C-EEF3-4109-8066-1147BB635434%7D&file=Ethnologie_Betreuung%20Bachelorarbeiten.docx&action=default&mobileredirect=true",
+            "description": "dieser Liste"
+          },
+          {
+            "url": "https://www.isek.uzh.ch/dam/jcr:0887eb02-2672-4f42-99bb-866f28bd76be/Best%C3%A4tigung%20Disposition%20Bachelorarbeit.pdf",
+            "description": "Bestätigung für die angenommene Disposition (PDF, 129 KB)"
+          }
+        ],
+        "source_url": "https://www.isek.uzh.ch/de/ethnologie/studium/bachelor/Bachelorarbeiten.html",
+        "source_id": "isek--2",
+        "scraped_at": "2026-07-31T12:38:44.218437+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "kunsthistorisches-institut": {
+    "kunsthistorisches-institut--1": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Die Bachelorarbeit (Modul 06SM640-BA, 15 ECTS) ist Bestandteil des BA‑Studiums und wird empfohlen gegen Ende des Studiums zu schreiben. Betreuung: jede Lehrperson des KHIST mit mindestens Masterabschluss, die während des Prüfungszeitraums an der UZH angestellt ist; Thema wird von der Studierenden/ dem Studierenden in Absprache mit der Betreuung gewählt (Idealerweise im vorangehenden Semester besprechen). Anmeldung: Studierende buchen das Modul selbst über das reguläre Modulbuchungssystem; nach Buchungsfrist werden Sie aufgefordert, vorläufigen Titel und Betreuer/in auf der Webseite des Studiendekanats anzugeben. Abgabe: über OLAT; Umfang 60'000–100'000 Zeichen; unterschriebene Lauterkeitserklärung beilegen; Titelblatt mit genannten Angaben. Fristen: Buchung im HS → Abgabe bis 1. Dez.; FS → bis 1. Juni. Betreuungspersonen haben sechs Wochen für Benotung/Gutachten. Modalitäten zu Fristerstreckung/Abmeldung, RVO/StO und Abschlussverfahren siehe Seiten des Studiendekanats und der Philosophischen Fakultät.",
+        "relevant_links": [
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+            "description": "Modul Bachelorarbeit an der PhF"
+          }
+        ],
+        "source_url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/bachelor/Abschluss-des-Studiums.html",
+        "source_id": "kunsthistorisches-institut--1",
+        "scraped_at": "2026-07-31T12:46:08.474572+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "kunsthistorisches-institut--2": [
+      {
+        "degree_level": "Master",
+        "process_description": "Students in the MA program must write a two‑semester Master’s thesis (Modul 06SM640‑MA, 30 ECTS). The module is self‑booked; submission deadlines are 01.06 or 01.12 (see “Modul Masterarbeit an der PhF”). Discuss the topic in a supervisor’s Sprechstunde before booking; supervisors must teach in the Major/Mono programme, hold a doctorate and be employed at UZH. The thesis is an independent written work of 60–90 pages (text with footnotes, excl. appendix and bibliography); cover sheet and formalities follow institute practice. Submit electronically to the Studiendekanat; whether a printed/pdf copy is needed is to be agreed with the supervisor. Graduation must be applied for via the “Studienfortschritt & -abschluss” app; consult the Modulkatalog, VVZ, PhF pages (“Abschluss des Studiums”), Studienordnung and KHIST Studienprogrammberatung for full rules. Requests for withdrawal or extension follow §24/§25 RVO.",
+        "relevant_links": [
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+            "description": "Modul Masterarbeit an der PhF"
+          }
+        ],
+        "source_url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/master/Abschluss-des-Studiums.html",
+        "source_id": "kunsthistorisches-institut--2",
+        "scraped_at": "2026-07-31T12:46:08.499848+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "psychologisches-institut": {
+    "psychologisches-institut--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "This page is only a directory of current Master’s thesis topic lists (by professors, SNF-funded chairs, lecturers/senior scientists and an external professorship) and does not provide any information on eligibility, how to find or approach a supervisor, registration procedures, formal requirements, deadlines, or where official guidelines are published.",
+        "relevant_links": [
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/diffpsy/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/motivation/Lehre-Studium/masterarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/devpsy/lehre/masterarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/klibio/lehre-studium/masterarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/lifespan/studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/sowipsy/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/perspsy/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/gespsy/lehre/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/plafor/lehre/masterarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/geronto/studium/masterarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/wopsy/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/allgpsy/lehre/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/neurokog/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/klidev/studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/meth/methoden/studium/Masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/sozpsy/studium/master/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/klipfor/lehre/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/prevent/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/meth/quantimet/studium-lehre/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/cogres/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/klinint/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/devkj/students/masterarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/atfor/lehre-studium/masterarbeiten0.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/health/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/kultur/lehre-studium/masterarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.comparativelinguistics.uzh.ch/en/ENL/Teaching/mastertheses.html",
+            "description": "weiter"
+          }
+        ],
+        "source_url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/master/abschluss/arbeit/aktuelle-arbeiten.html",
+        "source_id": "psychologisches-institut--1",
+        "scraped_at": "2026-07-31T14:05:08.934827+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "psychologisches-institut--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "This page only lists current bachelor thesis topics organized by professorship (with links) and does not describe eligibility, how to find or approach a supervisor, registration procedures, formal requirements or deadlines, nor where the official guidelines are published.",
+        "relevant_links": [
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/diffpsy/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/kjpsych/ls/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/motivation/Lehre-Studium/bachelorarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/devpsy/lehre/bachelorarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/klibio/lehre-studium/bachelorarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/lifespan/studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/sowipsy/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/perspsy/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/gespsy/lehre/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/plafor/lehre/Bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/geronto/studium/bachelorarbeitsthemen.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/wopsy/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/allgpsy/lehre/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/neurokog/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/angsoz/teaching/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/klidev/studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/methoden/studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/sozpsy/studium/bachelor/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/klipfor/lehre/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/prevent/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/meth/quantimet/studium-lehre/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/nec/cogres/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/klinint/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/dev/devkj/students/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/atfor/lehre-studium/bachelorarbeiten0.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/hea/health/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          },
+          {
+            "url": "https://www.psychologie.uzh.ch/de/bereiche/sob/kultur/lehre-studium/bachelorarbeiten.html",
+            "description": "weiter"
+          }
+        ],
+        "source_url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/bachelor/aufbau/bachelorarbeit/aktuelle-bachelorarbeiten.html",
+        "source_id": "psychologisches-institut--2",
+        "scraped_at": "2026-07-31T14:05:11.829809+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "romanisches-seminar": {
+    "romanisches-seminar--1": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Wer eine Bachelorarbeit buchen will, muss vor der Buchung die Zusage der gewünschten Betreuungsperson einholen (vgl. §26 der Studienordnung, allg. Teil) — indem Sie die Betreuungsperson oder den Studienprogrammdirektor (Rico Valär) kontaktieren. Nach Zusage buchen Sie das 15‑ECTS‑Modul über das Studierendenportal. Nach Ende der Buchungsfrist erhalten Sie vom Dekanat einen Link zu einer Website, auf der sofort Betreuungsperson und provisorischer Titel zu registrieren sind. Das Modul dauert ein Semester; Mindestlänge: 65’000 Zeichen inkl. Leerschläge. Als Betreuerinnen/Betreuer kommen ordentliche/ausserordentliche Professor*innen, Assistenzprofessor*innen, Titularprofessor*innen und Privatdozierende in Frage. Andere Mitarbeitende mit Doktorat benötigen Vorgesetzten‑Zustimmung und einen Antrag an die Studienprogrammdirektorin/den Studienprogrammdirektor. Abgabefristen: für HS-Bewertung bis 1. Dezember, für FS-Bewertung bis 1. Juni; Verlängerungsgesuche an Betreuungsperson und Sven Bachmann.",
+        "relevant_links": [],
+        "source_url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ba.html",
+        "source_id": "romanisches-seminar--1",
+        "scraped_at": "2026-07-31T14:13:56.367719+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "romanisches-seminar--3": [
+      {
+        "degree_level": "Master",
+        "process_description": "Any student who wants to book a Masterarbeit must first obtain the supervisor’s written consent (gem. §31 Studienordnung, allg. Teil) — contact the desired supervisor or the study program director Rico Valär. After consent, book the thesis like any module during normal booking periods in the Studierendenportal. After the booking deadline the Philosophical Faculty will send a link to a special website where you must immediately register the supervisor and a provisional title. The Master thesis is a two‑semester module (can be assessed after one semester by agreement). Minimum length: 120,000 characters including spaces. Eligible supervisors: full and associate professors, assistant professors, titular professors and Privatdozierende; other staff with a PhD may supervise after superior’s approval and an application to the program director. Deadlines: submit to supervisor by 1 Dec for HS grading, 1 June for FS grading; extension requests go to the supervisor and Sven Bachmann. Official rule reference: §31 of the Studienordnung (general part).",
+        "relevant_links": [],
+        "source_url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ma.html",
+        "source_id": "romanisches-seminar--3",
+        "scraped_at": "2026-07-31T14:13:56.389864+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "filmwissenschaft": {
+    "filmwissenschaft--1": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Studierende im Major-Studienprogramm schließen das Bachelorstudium mit einer Bachelorarbeit zu einem selbstgewählten Thema ab. Die Arbeit ist auf ein Semester begrenzt (Modul „Bachelorarbeit“); frühzeitiger Kontakt zur gewünschten Betreuungsperson ist Pflicht — dieser Kontakt muss vor der Buchung erfolgen. Formale Vorgaben: Sprache Deutsch (Ausnahmen: Französisch, Englisch, Italienisch), Umfang 35–40 Seiten (detaillierte Vorgaben in den Merkblättern/Leitfäden). Den Abschluss müssen Studierende termingerecht bei der Philosophischen Fakultät beantragen; nähere Angaben dazu finden sich auf der Homepage des Studiendekanats. Offizielle Hinweise und Vorlagen sind als Downloads verfügbar (Titelblatt, Anleitung der Philosophischen Fakultät, Merkblätter/Leitfäden).",
+        "relevant_links": [
+          {
+            "url": "https://www.film.uzh.ch/dam/jcr:337e2769-8838-48b3-84e8-6d07990de7bd/2020_Vorlage_BA_Arbeit_Titelblatt_FIWI-1.docx",
+            "description": "Titelblatt für Bachelorarbeiten (DOCX, 44 KB)"
+          }
+        ],
+        "source_url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/BA/abschluss.html",
+        "source_id": "filmwissenschaft--1",
+        "scraped_at": "2026-07-31T14:20:53.965071+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "filmwissenschaft--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "This unit supervises Bachelor theses for students in the Filmwissenschaft Major (120 ECTS). Choose a realistic film‑scholarship topic early, contact a prüfungsberechtigte Betreuungsperson (professors, postdocs, Oberassistierende or Privatdozierende listed on the FIWI team page), send an idea sketch and arrange a meeting before booking the “Bachelorarbeit” module; timing of the booking is agreed with the supervisor. Work proceeds via a concept phase (short concept, max ~5 pages with summary, question, theory, thesis, method, provisional structure, bibliography/filmography), a writing phase (allow ≥1 month for first draft and ≥2 weeks for revision) and final submission to the supervisor within the deadline. Formals: 35–40 pages (70’000–80’000 characters), normally in German (English/French by agreement). Official guidelines and templates: FIWI Download/Bildung (Studium) and the Faculty module page (https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html).",
+        "relevant_links": [
+          {
+            "url": "https://www.film.uzh.ch/dam/jcr:b6e09f75-50b9-4f08-9c55-153f5b52aab7/2026_Merkblatt_Bachelorarbeit_Abschluss_FIWI.pdf",
+            "description": "BA thesis process pdf"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.film.uzh.ch/de/team.html",
+            "description": "referenced in document"
+          }
+        ],
+        "source_url": "https://www.film.uzh.ch/dam/jcr:b6e09f75-50b9-4f08-9c55-153f5b52aab7/2026_Merkblatt_Bachelorarbeit_Abschluss_FIWI.pdf",
+        "source_id": "filmwissenschaft--2",
+        "scraped_at": "2026-07-31T14:20:53.988465+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "filmwissenschaft--3": [
+      {
+        "degree_level": "Master",
+        "process_description": "Students enrolled in the MA Major 90 or Mono 120 (Network Cinema CH) complete the Master by booking two modules independently: a one‑semester Fachüberblick (60‑min oral exam, typically CW 18–19 in FS or 48–49 in HS) and a two‑semester Masterarbeit. Choose and define your topic early, contact a prüfungsberechtigte Betreuungsperson (professors, postdocs, Oberassistierende or Privatdozierende listed on the FIWI team page) before booking, send an idea sketch and arrange a meeting; after acceptance agree on timeline and the timing of the module booking. Prepare a concept paper (ideally ≤8 pages excluding provisional outline, bibliography, filmography) with summary, question, theory, thesis, method and corpus. Regular attendance of the Master‑Kolloquium over two semesters (≈3–4 sessions/semester) is required. Binding rules and deadlines are on the Philosophical Faculty site (password‑protected masterarbeit area): https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html.",
+        "relevant_links": [
+          {
+            "url": "https://www.film.uzh.ch/dam/jcr:e9bd773c-2fda-4e83-93c5-f2e469818a9d/2026_Merkblatt_Masterarbeit_Abschluss_FIWI.pdf",
+            "description": "MA thesis process pdf"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.film.uzh.ch/de/team.html",
+            "description": "referenced in document"
+          }
+        ],
+        "source_url": "https://www.film.uzh.ch/dam/jcr:e9bd773c-2fda-4e83-93c5-f2e469818a9d/2026_Merkblatt_Masterarbeit_Abschluss_FIWI.pdf",
+        "source_id": "filmwissenschaft--3",
+        "scraped_at": "2026-07-31T14:20:54.086941+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "filmwissenschaft--4": [
+      {
+        "degree_level": "Master",
+        "process_description": "Masterstudierende der MA‑Studienrichtung schreiben eine Masterarbeit (30 ETCS Credits). Vor der formellen Buchung des Moduls muss frühzeitig Kontakt mit der gewünschten Betreuungsperson aufgenommen werden; nach der Buchung stehen zwei Semester für die Arbeit zur Verfügung. Der Besuch des begleitenden Kolloquiums für Masterarbeiten ist während beider Semester obligatorisch und bereitet auf Präsentation und Verteidigung vor. Formale Vorgaben: Sprache Deutsch (in Ausnahmefällen Französisch, Englisch oder Italienisch), Umfang 60–80 Seiten, zeitliche Limitierung zwei Semester. Für die Anmeldung zum Abschluss, detaillierte Merkblätter und Leitfäden sowie alle relevanten Informationen ist die Homepage des Studiendekanats bzw. die Seite «Anmeldung zum Abschluss» zuständig.",
+        "relevant_links": [
+          {
+            "url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/MA/abschluss/anmeldungabschluss.html",
+            "description": "Anmeldung zum Abschluss."
+          }
+        ],
+        "source_url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/MA/abschluss/thesis.html",
+        "source_id": "filmwissenschaft--4",
+        "scraped_at": "2026-07-31T14:20:54.148023+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "soziologisches-institut": {
+    "soziologisches-institut--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "Masterstudierende buchen das zweisemestrige Modul «Masterarbeit (06SM240-MA)» selbst während der Modulbuchungszeit; das Modul ist nicht mit einer Lehrveranstaltung verbunden. Umfang und Thema sind vorgängig mit einer Betreuungsperson zu klären; die formalen und inhaltlichen Anforderungen werden dort festgelegt. Nach Ablauf der Buchungsfrist fordert das Studiendekanat die Studierenden auf, zunächst einen provisorischen und später den endgültigen Titel sowie die Betreuungsperson einzutragen. Die Masterarbeit muss spätestens im auf das Buchungssemester folgenden Semester abgegeben werden (Laufzeit 2 Semester); frühere Abgabe nach einem Semester ist möglich. Abgabe elektronisch an die Betreuungsperson (optional zusätzlich in Papier). Abgabefristen: 01. Dezember (Herbstsemester) und 01. Juni (Frühjahrssemester). Zur Betreuung berechtigt sind die aufgelisteten Institutspersonen; auch Mitarbeitende mit Doktorgrad können angefragt werden. Offizielle Hinweise und Termine: phil.uzh.ch/Abschluss. Fragen an programmkoordination@soziologie.uzh.ch oder abschluss@phil.uzh.ch.",
+        "relevant_links": [
+          {
+            "url": "https://www.suz.uzh.ch/de/master/masterarbeiten.html",
+            "description": "Bisherige Masterarbeiten"
+          }
+        ],
+        "source_url": "https://www.suz.uzh.ch/de/master/abschluss.html",
+        "source_id": "soziologisches-institut--1",
+        "scraped_at": "2026-07-31T14:35:40.707049+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "soziologisches-institut--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Bachelor students complete a 15‑ECTS empirical Bachelorarbeit based on a quantitative data analysis. The Bachelorarbeitsmodul bildet den Betreuungsrahmen; die Arbeit wird angeleitet und moderiert durch die Dozierenden des Instituts (i.e., supervision is provided by institute lecturers). Registration, booking, submission and deadlines are not given on this page — you must follow the Philosophische Fakultät – Abschluss webpage for the formal Anmeldung, Fristen and submission procedures. Formal requirements noted here: independent empirical work with quantitative analysis; see the Merkblatt Bachelor‑Arbeit (PDF, Stand 09.01.2026). Official guidelines include the faculty Abschluss page and the Bachelor Studienordnung. Questions: programmkoordination@soziologie.uzh.ch or abschluss@phil.uzh.ch.",
+        "relevant_links": [
+          {
+            "url": "https://www.suz.uzh.ch/dam/jcr:b5b92ece-6b67-4649-803a-5246909cf86b/Merkblatt%20BA_2601.pdf",
+            "description": "Merkblatt Bachelor-Arbeit (PDF, 143 KB)"
+          }
+        ],
+        "source_url": "https://www.suz.uzh.ch/de/bachelor/abschluss.html",
+        "source_id": "soziologisches-institut--2",
+        "scraped_at": "2026-07-31T14:35:40.731260+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "soziologisches-institut--3": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Eligible students are those in the Major Soziologie who have completed the statistical-method training (Statistics 1 and especially Statistics 2; Statistics 3 recommended). To register, book the module \"Bachelorarbeit\" (240-BAa, 15 ECTS) and attend the accompanying weekly four‑hour seminar; only book after passing the required statistics modules. Your thesis must be an independent empirical paper based on quantitative analysis (≈450 working hours for 15 ECTS); R and Stata are supported; common datasets are SHP or ESS (self‑collected data possible with a short exposé). Supervision is provided by the course instructors—contact them in advance to discuss topics and data and nominate one as supervisor to the Studiendekanat when requested (usually after course start). Exact deadlines, session details and formal rules are given in the course syllabus on OLAT and in this Merkblatt.",
+        "relevant_links": [
+          {
+            "url": "https://www.suz.uzh.ch/dam/jcr:b5b92ece-6b67-4649-803a-5246909cf86b/Merkblatt%20BA_2601.pdf",
+            "description": "BA thesis process pdf"
+          },
+          {
+            "url": "https://www.europeansocialsurvey.org/data/module-index.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "http://nesstar.ess.nsd.uib.no/webview/",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.europeansocialsurvey.org/data/",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.europeansocialsurvey.org/user/new",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://forscenter.ch/pro-jekte/swiss-household-panel/documentation/?lang=de",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://forscenter.ch/projekte/swiss-household-panel/data/?lang=de",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://psidonline.isr.umich.edu/",
+            "description": "referenced in document"
+          },
+          {
+            "url": "http://www.worldvaluessurvey.org/wvs.jsp",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.oecd.org/pisa/",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.suz.uzh.ch/de/studium/bachelor/plnw/plagi-ate.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.suz.uzh.ch/de/studies/Downloads.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://r4ds.had.co.nz/",
+            "description": "referenced in document"
+          }
+        ],
+        "source_url": "https://www.suz.uzh.ch/dam/jcr:b5b92ece-6b67-4649-803a-5246909cf86b/Merkblatt%20BA_2601.pdf",
+        "source_id": "soziologisches-institut--3",
+        "scraped_at": "2026-07-31T14:35:40.743949+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "rfw": {
+    "rfw--2": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "The page does not describe a concrete process for obtaining or completing Bachelor’s or Master’s theses — it provides no details on eligibility, finding/approaching supervisors, registration, formal requirements, deadlines, or links to official guidelines.",
+        "relevant_links": [
+          {
+            "url": "https://www.ius.uzh.ch/dam/jcr:511cace5-5a9f-4ea9-8f51-e2c329b3568e/Seminarangebotsliste%20Herbstsemester%202026%20DE_v2.pdf",
+            "description": "Seminarangebotsliste Herbstsemester 2026 (PDF, 177 KB)"
+          },
+          {
+            "url": "https://www.ius.uzh.ch/de/studies/during-studies/deadlines.html",
+            "description": "Termine und Fristen"
+          },
+          {
+            "url": "https://launchpad.uzh.ch/",
+            "description": "Zur Anmeldung (Studierendenportal)"
+          },
+          {
+            "url": "https://www.ius.uzh.ch/dam/jcr:f96cbb94-4e9e-4ae2-a2bb-a5c0dd7c5329/Proseminarangebotsliste%20Herbstsemester%202026.pdf",
+            "description": "Proseminarangebotsliste Herbstsemester 2026 (PDF, 176 KB)"
+          },
+          {
+            "url": "https://www.ius.uzh.ch/dam/jcr:a93730b4-8c86-4c00-8588-7f9f59e304ea/neu_ma_vereinbarung_dt-4.pdf",
+            "description": "Vereinbarung über eine Masterarbeit (PDF, 148 KB)"
+          },
+          {
+            "url": "https://www.ius.uzh.ch/dam/jcr:1a063ed6-56a5-4b28-ae40-4b83ef928875/Informationsblatt%20Individuelle%20Masterarbeit.pdf",
+            "description": "Informationsblatt zur individuellen Masterarbeit (PDF, 108 KB)"
+          },
+          {
+            "url": "https://www.ius.uzh.ch/de/studies/contact-form.html",
+            "description": "Kontaktformular"
+          }
+        ],
+        "source_url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html#Bachelorarbeit",
+        "source_id": "rfw--2",
+        "scraped_at": "2026-08-04T10:38:40.467928+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "theologisches-seminar": {
+    "theologisches-seminar--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "Enrolled master’s students select a habilitated or equivalently qualified supervisor and agree on a topic. In the semester in which the thesis is submitted the student must book the module “Masterarbeit” via the online module booking system; after the booking deadline an e‑mail requests the provisional title and supervisor and provides the upload link for the final PDF. The thesis is individually written (typically ~50–80 pages, ≈180’000–240’000 characters). It is assessed in two written reports (first reviewer = supervisor; second reviewer appointed by the study commission). Submission: three properly bound copies to Prodekanat Lehre (Büro KIR 106) plus a PDF via the provided upload link. Deadlines: FS 15 May, HS 15 November. Official guidelines and forms (supervision/assessment, declaration of independence, title page, printing specifications) are provided as PDFs on the page.",
+        "relevant_links": [
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:4bb46127-3bd8-4f3e-803e-9910c45512ca/BetreuungBewertung_Masterarbeiten_TRF.pdf",
+            "description": "«Betreuung und Bewertung von Masterarbeiten» (PDF, 90 KB)"
+          },
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:313b53a5-a6c2-4078-994f-c8d55275e5ad/MA_DruckbestimmungenZB_TRF.pdf",
+            "description": "hier (PDF, 91 KB)"
+          },
+          {
+            "url": "https://thesisbuddy.ch/",
+            "description": "ADAG Print"
+          },
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:93d54a61-7aa8-4f2a-b83f-ac5a1c55e563/Selbststaendigkeitserklaerung_MA_TRF.pdf",
+            "description": "Selbstständigkeitserklärung (PDF, 37 KB)"
+          },
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:6e636066-59b1-4232-b96e-13638dd87334/Vorlage_Titelblatt_Masterarbeit_TRF.dotx",
+            "description": "Vorlage Titelblatt Masterarbeit (DOTX, 45 KB)"
+          }
+        ],
+        "source_url": "https://www.theologie.uzh.ch/de/studium/studierende/Masterarbeit.html",
+        "source_id": "theologisches-seminar--1",
+        "scraped_at": "2026-08-04T10:51:20.181273+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "religionswissenschaftliches-seminar": {
+    "religionswissenschaftliches-seminar--1": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Bachelorarbeiten werden individuell angefertigt; Umfang ca. 24–30 Seiten (Richtwert 72'000–90'000 Zeichen inkl. Leerzeichen). Studierende wählen eine habilitierte Fachperson des Religionswissenschaftlichen Seminars als Betreuerin/Betreuer. Auf Antrag ist Betreuung, Begutachtung und Benotung auch durch eine habilitierte, am Studiengang beteiligte Fachperson des Theologischen Seminars oder der Philosophischen Fakultät möglich; in diesem Fall erstellt eine habilitierte Fachperson des Religionswissenschaftlichen Seminars das Zweitgutachten. Die Arbeit wird in der Regel in doppelter Ausführung bei der betreuenden Fachperson abgegeben. Als offizielle Hilfsmittel sind ein „Leitfaden zum Verfassen schriftlicher Arbeiten“ (PDF) und die „Selbständigkeitserklärung Bachelorarbeit“ (PDF) verlinkt. Konkrete Angaben zu Anmeldung/Registrierung, Fristen und zum Masterarbeitsverfahren fehlen auf der Seite.",
+        "relevant_links": [
+          {
+            "url": "https://www.religionswissenschaft.uzh.ch/dam/jcr:17161337-e48a-4d64-87ae-ac3fbb16c071/Leitfaden%20zum%20Verfassen%20einer%20wissenschaftlichen%20Arbeit_2023.pdf",
+            "description": "Leitfaden zum Verfassen schriftlicher Arbeiten (PDF, 428 KB)"
+          },
+          {
+            "url": "https://www.religionswissenschaft.uzh.ch/dam/jcr:ffffffff-8c4d-5a67-0000-000041c6bd97/selbststaendigkeitserklaerung_bachelor.pdf",
+            "description": "Selbständigkeitserklärung Bachelorarbeit (PDF, 75 KB)"
+          }
+        ],
+        "source_url": "https://www.religionswissenschaft.uzh.ch/de/studium/studienorganisation/bachelorarbeit.html",
+        "source_id": "religionswissenschaftliches-seminar--1",
+        "scraped_at": "2026-08-04T11:00:28.011364+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "religionswissenschaftliches-seminar--2": [
+      {
+        "degree_level": "Master",
+        "process_description": "Master students select a habilitated or equivalently qualified supervisor and agree the thesis topic with them. In the semester when the thesis is submitted you must book the “Masterarbeit” module via the online module booking; after the module-booking deadline you will be emailed to provide the provisional title and supervisor and will receive a link to upload the final PDF. The thesis is normally 50–80 pages (≈180,000–240,000 characters). It is assessed by two written reports (first by the supervisor; the second is appointed by the study commission). Submit three properly bound copies to Prodekanat Lehre, Büro KIR 106, plus the PDF via the upload link. Deadlines: FS 15 May, HS 15 November. Official rules, print specifications and forms (evaluation leaflet, declaration of independence, title-page template) are on the department page. For admin: Barbara Cahn; content: Mona Lucia Velinsky (Theology), Farida Stickel (Religionswissenschaft).",
+        "relevant_links": [
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:4bb46127-3bd8-4f3e-803e-9910c45512ca/BetreuungBewertung_Masterarbeiten_TRF.pdf",
+            "description": "«Betreuung und Bewertung von Masterarbeiten» (PDF, 90 KB)"
+          },
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:313b53a5-a6c2-4078-994f-c8d55275e5ad/MA_DruckbestimmungenZB_TRF.pdf",
+            "description": "hier (PDF, 91 KB)"
+          },
+          {
+            "url": "https://thesisbuddy.ch/",
+            "description": "ADAG Print"
+          },
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:93d54a61-7aa8-4f2a-b83f-ac5a1c55e563/Selbststaendigkeitserklaerung_MA_TRF.pdf",
+            "description": "Selbstständigkeitserklärung (PDF, 37 KB)"
+          },
+          {
+            "url": "http://www.trf.uzh.ch/dam/jcr:6e636066-59b1-4232-b96e-13638dd87334/Vorlage_Titelblatt_Masterarbeit_TRF.dotx",
+            "description": "Vorlage Titelblatt Masterarbeit (DOTX, 45 KB)"
+          }
+        ],
+        "source_url": "https://www.religionswissenschaft.uzh.ch/de/studium/studienorganisation/masterarbeit.html",
+        "source_id": "religionswissenschaftliches-seminar--2",
+        "scraped_at": "2026-08-04T11:00:28.038400+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "geography": {
+    "geography--2": [
+      {
+        "degree_level": "Master",
+        "process_description": "Master’s candidates choose an available topic or propose a self‑selected topic to a supervisor (internal or external). In addition to the supervisor, a faculty member or other person with “Promotionsrecht” must agree to supervise. Topics are listed on unit webpages and in the department’s research‑group/topic lists; past and ongoing theses are published there. To start, upload the Master’s agreement and a 2–3 (30 ECTS) / 4–6 (60 ECTS) page draft concept on Lean Gate; once accepted by supervisor and the Promotionsrecht person it is assigned automatically. Book the corresponding module (GEO/ESS 511 for 30 ECTS or GEO/ESS 510 for 60 ECTS) in UZH’s module booking tool — from autumn 2024 starts are allowed monthly (start = 1st of month); January starters must email teaching-support@geo.uzh.ch for manual booking. Duration: 30 ECTS = 6–12 months, 60 ECTS = 12–18 months. Official timelines, topic lists and guidelines (including plagiarism rules) are on the department pages, the timetable link and UZH’s plagiarism webpage.",
+        "relevant_links": [
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/faq.html",
+            "description": "More about Frequently asked questions"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:2a07dcee-964a-423c-8ad5-88e99040baff/Detailed_Information_MSc_thesis_v3.pdf",
+            "description": "More about Detailed Informationsheet"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/timetable.html",
+            "description": "here"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/topic-ideas.html",
+            "description": "here"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/master/master_thesis_exam/ongoing-completed-msc-theses.html",
+            "description": "pages of the units"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/completed.html",
+            "description": "large, sortable table"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/master/master_thesis_exam/faculty_members.html",
+            "description": "here"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/ongoing-completed-msc-theses.html",
+            "description": "More about Ongoing and completed Master's thesis in the units"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/ongoing.html",
+            "description": "More about List of all ongoing MSc Theses"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/faculty-members.html",
+            "description": "More about Faculty Members with \"Promotionsrecht\" as supervisors"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:722f8d75-15c9-4bac-9d37-602fa5a8dd31/infosheet_consulting_for_students-1.pdf",
+            "description": "Information sheet (PDF, 55 KB)"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:4f61822c-6190-4247-a5b5-f42bedd24099/2026-05_KW21_MSc_Thesis_Presentations.pdf",
+            "description": "More about Current Master exams"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam/interdisciplinary-topics.html",
+            "description": "Interdisciplinary topics"
+          }
+        ],
+        "source_url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam.html",
+        "source_id": "geography--2",
+        "scraped_at": "2026-08-05T12:45:42.203121+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "geography--3": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "The Bachelor thesis (12 ECTS) is written in the 6th semester, offered only in the spring, and is an individual literature-based paper. Admission requires successful completion of compulsory modules from semesters 1–3; it is recommended to choose a topic in an area where you took an elective. An information event takes place in October. Topics are published (typically Nov), supervisors and topics are announced (ESS 388: topic and supervisor on 24.10 in the example schedule) and students register (e.g. notify Meredith C. Schuman for ESS 388 and book the ESS 388 module), enroll in GEO 386 or ESS 386 and in lean-gate.geo.uzh.ch. A supervisor-confirmed concept must be submitted (deadline example 12.12), and final digital submission is via Lean Gate (GEO386/ESS386) or OLAT (ESS388) (example deadline 15.05). Deregistration deadline, presentation and grading dates, resit policy (one repeat allowed), plagiarism rules, evaluation criteria and full formal requirements are given in the linked information sheet, evaluation table and FAQs on the department webpage.",
+        "relevant_links": [
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/bachelor-thesis/earth-system-science.html",
+            "description": "Bachelor Thesis Earthsystem Science"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/bachelor-thesis/geography.html",
+            "description": "Bachelor Thesis Geography"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/bachelor-thesis/faq-bachelor-thesis.html",
+            "description": "FAQ Bachelor thesis"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/en/studying/downloads-and-forms/downloads.html",
+            "description": "More about Guidelines"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:c4b17f52-a47a-4108-9da1-92bc6b786984/BSc_Arbeit_FS2026_v1.pdf",
+            "description": "Slides der Präsentation HS 2025 (Durchführung FS26) (PDF, 8 MB)"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/de/studying/during-your-studies/theses/bachelor-thesis/faq-bachelor-thesis.html",
+            "description": "FAQs"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:b6ad8e6c-bd4a-4762-9686-ba0397ca1e64/Merkblatt_Bachelorarbeit_FS2026_de.pdf",
+            "description": "Merkblatt Bachelorarbeit GEO und ESS (de) (PDF, 152 KB)"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:a3fbf13f-93c8-4559-baa1-93b4a7369f9b/Merkblatt_Bachelorarbeit_FS2026_en.pdf",
+            "description": "Bachelor's thesis information sheet GEO and ESS (en) (PDF, 147 KB)"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:9de4c057-ec67-4e17-ae9d-54069f18632e/BSc_Oberthemen_2025.pdf",
+            "description": "Bachelor Oberthemen FS25 (PDF, 37 KB)"
+          },
+          {
+            "url": "https://www.geo.uzh.ch/dam/jcr:4f9b60d0-6832-47b9-a690-fca0a562f4fe/BScArbeit_Kriterien_DE_EN_2023.pdf",
+            "description": "Tabelle zur Beurteilung (de/en) (PDF, 140 KB)"
+          }
+        ],
+        "source_url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/bachelor-thesis.html",
+        "source_id": "geography--3",
+        "scraped_at": "2026-08-05T12:45:46.895580+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok"
+        }
+      }
+    ]
+  },
+  "physics": {
+    "physics--2": [
+      {
+        "degree_level": "Master",
+        "process_description": "Eligible students: enrolled Master’s students in Physics. Find a supervisor via the posted list of thesis topics or by contacting research groups directly; external internships are possible but require a UZH physics lecturer to accept formal responsibility and approve coursework. Register: record a Learning Agreement on studentadmin.mnf.uz.ch at the start of the Master’s and finalize it with your supervisor before starting the thesis. Sign up for the Masterprüfung by submitting the “Anmeldung Masterprüfung” form (signed by the supervisor) to studium@physik.uzh.ch at least 2 weeks before the desired Thursday seminar slot (Seminar für Bachelor- und Mastervorträge, Thu 15–17). Deadlines: the thesis must be handed to the supervisor at least 2 weeks before the exam. Requirements: 30 or 50 ECTS (≈6 or 10 months), public seminar + private oral exam (~30 min each), final grade = 2/3 written report + 1/3 oral; both components must be ≥4.0. Declare any AI tools used in References or the independence statement. Templates, forms and official guidelines are on the department pages (studentadmin.mnf.uz.ch and the department’s forms page).",
+        "relevant_links": [
+          {
+            "url": "https://www.physik.uzh.ch/de/studium/Themen-Bachelor-Masterarbeit.html",
+            "description": "Liste mit Themenvorschlägen"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:e1b75cd3-a1e5-4e87-aa39-e7ca873ddfcb/thesis.zip",
+            "description": "Latex Vorlage (ZIP, 802 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:97135af4-0d2b-4612-a2e8-96f079744cd9/main.pdf",
+            "description": "Bachelor oder Masterarbeit (PDF, 430 KB)"
+          },
+          {
+            "url": "http://www.physik.uzh.ch/de/studium/studienberatung/formulare.html",
+            "description": "http://www.physik.uzh.ch/de/studium/studienberatung/formulare.html"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:2148aab1-5145-4311-8f97-98e9a821a0fb/MSc_Registration_Exam_PHY.pdf",
+            "description": "Anmeldung Masterprüfung (PDF, 115 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:b7731ada-d377-4f22-8081-a6aa67f012b3/grading_criteria_thesis.pdf",
+            "description": "Bewertungsschema (PDF, 142 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:37a61588-324e-402c-83d6-aa220d48e392/attendance_seminars.pdf",
+            "description": "Seminarvorrträgen (PDF, 37 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/master-/masterarbeit.html",
+            "description": "Ablauf Masterarbeit und Abschluss"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/master-/Beratung--Formulare.html",
+            "description": "Beratung & Formulare"
+          }
+        ],
+        "source_url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/master-/masterarbeit.html",
+        "source_id": "physics--2",
+        "scraped_at": "2026-08-05T13:14:48.650280+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "physics--3": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Die Bachelorarbeit wird in der Regel im letzten Bachelorsemester durchgeführt und ist Voraussetzung für ein Masterstudium. Themen und Betreuende finden Sie über regelmässige Informationsveranstaltungen der Forschungsgruppen, über die auf der Seite gelisteten Themenvorschläge oder durch direkte Kontaktaufnahme mit Forschungsgruppen; die Arbeit ist aktive Mitarbeit in einer Forschungsgruppe (experimentell oder theoretisch). Anmeldung: Formular \"Anmeldung Bachelorarbeit\" (siehe Formulare und Merkblätter) ausfüllen und als PDF an studium@physik.uzh.ch senden. Umfang: 12 oder 8 ECTS (je nach Studienvariante), entspricht etwa 9 bzw. 6 Wochen Vollzeit; Zeitplan (Anfang, verbindliches Ende) wird schriftlich mit der/s Betreuer/in vereinbart. Abgabe: spätestens 2 Wochen vor der Bachelorprüfung; Betreuer erhält Exemplar, Studienkoordination ein PDF. Abschluss: 25‑min Vortrag im \"Seminar für Bachelor- und Mastervorträge\" (Betreuer anwesend), danach Notenblatt unterschreiben und bei Studienkoordination einreichen; Abschluss beantragen via Student-Admin. Vorgaben, Bewertungsbogen, Anmeldung und LaTeX‑Vorlage sind auf der Seite Formulare/Merkblätter verlinkt. KI‑Nutzung ist in Referenzen oder der Selbständigkeitserklärung anzugeben.",
+        "relevant_links": [
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:8eaa3d56-9c3f-4ab3-b8e7-24f698018600/BSc_Registration%20_PHY_E_20250623.pdf",
+            "description": "Anmeldung der Bachelorarbeit (PDF, 107 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:b7731ada-d377-4f22-8081-a6aa67f012b3/grading_criteria_thesis.pdf",
+            "description": "Bewertungsschema BSc (PDF, 142 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/dam/jcr:e5aa5aa4-bfb6-4b8c-9123-d5b3d5e579e6/BSc_Grade%20sheet_PHY_20250623_E.pdf",
+            "description": "Notenblatt Bachelorarbeit (PDF, 112 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/de/studium/studienberatung/wegleitung/Masterstudiengang.html",
+            "description": "Masterstudium"
+          },
+          {
+            "url": "https://cmsauth.uzh.ch/physik/de/studium/Themen-Bachelor-Masterarbeit.html",
+            "description": "hier."
+          },
+          {
+            "url": "https://cmsauth.uzh.ch/physik/de/studium/studienberatung/formulare.html",
+            "description": "Formulare und Merkblätter"
+          },
+          {
+            "url": "https://cmsauth.uzh.ch/physik/dam/jcr:e1b75cd3-a1e5-4e87-aa39-e7ca873ddfcb/thesis.zip",
+            "description": "Latex template (ZIP, 802 KB)"
+          },
+          {
+            "url": "https://cmsauth.uzh.ch/physik/dam/jcr:97135af4-0d2b-4612-a2e8-96f079744cd9/main.pdf",
+            "description": "Bachelor oder Masterarbeit (PDF, 430 KB)"
+          },
+          {
+            "url": "https://www.physik.uzh.ch/de/studium/studienberatung/formulare.html",
+            "description": "Merkblätter und Anmeldeformulare"
+          }
+        ],
+        "source_url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/bachelorstudiengang/Bachelorarbeit-und-Abschluss.html",
+        "source_id": "physics--3",
+        "scraped_at": "2026-08-05T13:14:48.671283+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "mef": {
+    "mef--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "This page concerns the Masterarbeit for Human‑ and Zahnmedizin Master students: the thesis is mandatory in the Master programme and a prerequisite for admission to the federal examination. To find a supervisor or topic students are directed to the Virtuelle Ausbildungsplattform Medizin (VAM > Masterarbeit), which hosts a \"Handbuch\", an online Themenbörse to match supervisors and students, a mini‑guide for supervisors and assorted documents. Formal registration steps and deadlines are not specified on this page. Plagiarism rules are explicit: the Faculty policy (22 May 2019) requires supervisors/mentors to check theses (students must consent), and the absence of suspicion must be confirmed at submission; suspected cases are referred to the Masterarbeitskommission. Official guidelines are on VAM and the faculty's plagiarism‑policy PDF; contact: Sandra Lang, Studiendekanat.",
+        "relevant_links": [
+          {
+            "url": "https://www.med.uzh.ch/dam/jcr:c1650d20-8765-4a9f-b7ff-1985b25b3e84/220207%20Policy%20Plagiat%20Mai%202019.pdf",
+            "description": "pdf (PDF, 102 KB)"
+          }
+        ],
+        "source_url": "https://www.med.uzh.ch/de/studium/masterarbeit.html",
+        "source_id": "mef--1",
+        "scraped_at": "2026-08-05T13:49:51.299521+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "vsf": {
+    "vsf--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "Masterstudierende (1. Studienjahr / Beginn 8. Semester) erhalten ab 1. März eine Liste mit angebotenen Masterarbeitsthemen; betreuende Dozierende geben Themen in die Themenbörse ein und können ab 1. März an Studierende des 4. Jahres vergeben. Studierende wählen ein Thema ab 1. März (17:00) und müssen das Learning Agreement bis 31. Juli unterschreiben. Die Arbeit wird in den Semestern 9–11 durchgeführt (Studierende haben insgesamt 16 Wochen Schreibzeit); nicht‑klinische Schwerpunkte in Sem. 9–10, klinische zwischen den Rotationen in Sem. 9–11. Endfassung: spätestens 31. Oktober bei der betreuenden Person; alle Unterlagen inkl. Bewertung bis 30. November im Studiendekanat. Formulare (Learning Agreement, Vorlage, Beurteilungsschema, Eigenständigkeitserklärung u.a.) und Richtlinien sind in der Masterarbeiten-Themenbörse (Menü „Wichtige Dokumente“, Zugang für Dozierende). Betreuer prüfen Plagiate (Turnitin); Einverständnis der Studierenden erforderlich.",
+        "relevant_links": [
+          {
+            "url": "https://vsf-matool.uzh.ch",
+            "description": "Masterarbeiten-Themenbörse (Dozierende)"
+          },
+          {
+            "url": "https://www.vet.uzh.ch/dam/jcr:f83f151a-2322-4e0d-a177-6a0f4c523ed9/A.I.-Tools_Richtlinie%20VSF%5B30%5D.pdf",
+            "description": "Einsatz von generativer KI bei der Verfassung von Arbeiten (PDF, 352 KB)"
+          }
+        ],
+        "source_url": "https://www.vet.uzh.ch/de/dozierende/MasterarbeitThemenboerse.html",
+        "source_id": "vsf--1",
+        "scraped_at": "2026-08-05T13:53:05.235523+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-30T08:15:17.647229+00:00",
+  "sources": [
+    {
+      "source_id": "computerlinguistik--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "computerlinguistik--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 27,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-30T08:17:17.963520+00:00"
+}

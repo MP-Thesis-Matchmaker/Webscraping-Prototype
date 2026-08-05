@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-25T06:11:32.918255+00:00",
+  "sources": [
+    {
+      "source_id": "englisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-25T06:11:40.975769+00:00"
+}

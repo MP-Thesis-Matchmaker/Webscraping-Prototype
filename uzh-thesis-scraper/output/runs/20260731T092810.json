@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-31T09:28:10.883388+00:00",
+  "sources": [
+    {
+      "source_id": "isle--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 22,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T09:28:10.968264+00:00"
+}

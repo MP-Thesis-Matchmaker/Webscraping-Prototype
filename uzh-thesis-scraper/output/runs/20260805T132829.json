@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-05T13:28:29.657593+00:00",
+  "sources": [
+    {
+      "source_id": "imcr--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-05T13:28:29.760060+00:00"
+}

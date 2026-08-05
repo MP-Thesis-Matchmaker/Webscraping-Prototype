@@ -1,0 +1,117 @@
+{
+  "started_at": "2026-07-25T06:25:57.792015+00:00",
+  "sources": [
+    {
+      "source_id": "ivw--4",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 43,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 30,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--8",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--10",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--10",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 31,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--18",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    },
+    {
+      "source_id": "asien-orient-institut--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 20,
+      "reasons": []
+    },
+    {
+      "source_id": "deutsches-seminar--5",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 97,
+      "reasons": []
+    },
+    {
+      "source_id": "englisches-seminar--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 55,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "by_status": {
+      "ok": 13
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-25T06:35:42.605703+00:00"
+}

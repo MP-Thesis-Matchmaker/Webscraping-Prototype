@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-25T05:45:32.737114+00:00",
+  "sources": [
+    {
+      "source_id": "deutsches-seminar--5",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 97,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-25T05:45:37.971469+00:00"
+}

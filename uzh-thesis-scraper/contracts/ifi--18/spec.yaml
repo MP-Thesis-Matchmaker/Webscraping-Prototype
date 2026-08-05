@@ -20,15 +20,15 @@ record:
     email:
       path: Mail
       transform: normalize_ws
-    personal_website: Personalpage
+    _profile_url: Personalpage         # institutional IFI profile page
     office: Office
     phone: Phone
     research_group: Group
 
-# Each professor's IFI profile page (the personal_website) follows the common
-# institute template; pull their research interests and short bio where present.
+# Each professor's IFI profile page (_profile_url) follows the common institute
+# template; pull their research interests and short bio where present.
 follow:
-  url_field: personal_website
+  url_field: _profile_url
   url_pattern: '^https?://([\w-]+\.)?ifi\.uzh\.ch/.+\.html$'   # incl. chair subdomains
   fields:
     research_interest:

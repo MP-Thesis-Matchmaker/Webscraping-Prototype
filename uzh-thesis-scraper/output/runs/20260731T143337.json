@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-07-31T14:33:37.978402+00:00",
+  "sources": [
+    {
+      "source_id": "soziologisches-institut--4",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 14,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "ok": 1
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-31T14:33:40.413365+00:00"
+}

@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-25T05:47:29.329610+00:00",
+  "sources": [
+    {
+      "source_id": "deutsches-seminar--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "deutsches-seminar--4",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-25T05:47:45.948802+00:00"
+}

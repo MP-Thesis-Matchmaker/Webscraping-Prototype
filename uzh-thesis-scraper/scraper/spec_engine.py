@@ -46,7 +46,7 @@ from . import cache, registry
 
 # Target-model field sets, so the preview always has a complete record shape.
 PEOPLE_FIELDS = ["role", "name", "email", "research_interest",
-                 "research_field", "bio", "personal_website"]
+                 "research_field", "bio", "personal_website", "_profile_url"]
 TOPIC_FIELDS = ["title", "status", "degree_level", "date_of_listing",
                 "research_area", "supervisors", "topic_description", "source_link"]
 
@@ -68,6 +68,22 @@ def _t_strip_mailto(v: str) -> str:
     return v.split("?", 1)[0].strip()
 
 
+def _t_drop_if_email(v: str):
+    """Return None when the value is/contains an email address — e.g. a mailto
+    link whose visible text is the address itself, so it isn't stored as a name."""
+    if isinstance(v, str) and "@" in v:
+        return None
+    return v
+
+
+def _t_dirname_html(v: str):
+    """'.../caflisch/master-theses.html' -> '.../caflisch.html' — the parent page
+    of a subpage (drop the last path segment, keep the directory as a .html page)."""
+    if not isinstance(v, str):
+        return v
+    return re.sub(r"/[^/]+$", ".html", v)
+
+
 def _t_mailto_email(v: str):
     """Return the address from a mailto: href (dropping any ?subject=…), or None
     for a non-mailto href. Lets one `each` handle both profile and mailto links."""
@@ -86,9 +102,9 @@ def _t_lower(v: str) -> str:
     return v.lower() if isinstance(v, str) else v
 
 
-_TITLES = r"(?:Prof\.?|Dr\.?|PD|em\.?|emer\.?|h\.?\s?c\.?|Dres\.?|Dipl\.?[\w-]*\.?)"
+_TITLES = r"(?:Prof\.?|Dres\.?|Dr\.?|PD\.?|em\.?|emer\.?|habil\.?|iur\.?|rer\.?|nat\.?|pol\.?|oec\.?|soc\.?|phil\.?|sc\.?|med\.?|h\.?\s?c\.?|Dipl\.?[\w-]*\.?)"
 _TITLE_LEAD_RE = re.compile(rf"^(?:{_TITLES}\s*)+", re.I)
-_TITLE_TRAIL_RE = re.compile(rf",\s*(?:{_TITLES}\s*)+$", re.I)
+_TITLE_TRAIL_RE = re.compile(rf"[,\s]\s*(?:{_TITLES}\s*)+$", re.I)  # ", Prof. Dr." or " Prof. Dr."
 
 
 def _t_strip_titles(v: str) -> str:
@@ -97,6 +113,48 @@ def _t_strip_titles(v: str) -> str:
     if not isinstance(v, str):
         return v
     return _TITLE_LEAD_RE.sub("", _TITLE_TRAIL_RE.sub("", v)).strip()
+
+
+def _t_name_lastfirst(v: str) -> str:
+    """'Backhaus, Norman, Prof. Dr.' -> 'Norman Backhaus'. Strips trailing
+    titles, then swaps a leading 'Surname, Given' into 'Given Surname'."""
+    if not isinstance(v, str):
+        return v
+    v = _t_strip_titles(v)
+    parts = [p.strip() for p in v.split(",") if p.strip()]
+    if len(parts) >= 2:
+        return f"{' '.join(parts[1:])} {parts[0]}".strip()
+    return v
+
+
+def _t_titlecase(v: str) -> str:
+    """'ALTMEYER' -> 'Altmeyer', 'SCHARL_FAZILATY' -> 'Scharl Fazilaty'. Turns an
+    all-caps, underscore-joined surname prefix into a readable name."""
+    if not isinstance(v, str):
+        return v
+    return v.replace("_", " ").title()
+
+
+def _t_name_lastfirst_space(v: str) -> str:
+    """'Altmeyer Matthias' -> 'Matthias Altmeyer', 'Guerreiro Stücklin Ana' ->
+    'Ana Guerreiro Stücklin'. For 'Surname(s) Given' lists with no comma, moves
+    the last token (the given name) to the front."""
+    if not isinstance(v, str):
+        return v
+    toks = v.split()
+    return f"{toks[-1]} {' '.join(toks[:-1])}" if len(toks) >= 2 else v
+
+
+def _t_pi_surname(v: str):
+    """Extract a leading all-caps, underscore-joined surname prefix from a label
+    like 'MORSCHER_Pediatric Cancer Metabolism' or 'SCHARL_FAZILATY_...' and
+    return it title-cased ('Morscher', 'Scharl Fazilaty'). None if absent. Does
+    the match and title-casing in one step so the caps pattern survives (a plain
+    titlecase transform would run before any `regex:` and destroy it)."""
+    if not isinstance(v, str):
+        return v
+    m = re.match(r"^([A-Z]+(?:_[A-Z]+)*)_", v)
+    return m.group(1).replace("_", " ").title() if m else None
 
 
 def _t_date_only(v: str) -> str:
@@ -148,7 +206,7 @@ def _t_contact_supervisors(v: str):
     out, seen = [], set()
     pair = re.compile(
         r"([A-ZÄÖÜ][A-Za-zäöüéèA-ZÄÖÜ.\-]*(?:\s+[A-ZÄÖÜ][A-Za-zäöüéè.\-]+){1,3})"
-        r"\s*[\[(]?\s*([\w.\-]+@[\w.\-]+\.\w{2,})")
+        r"\s*[\[(<]?\s*([\w.\-]+@[\w.\-]+\.\w{2,})")
     for m in pair.finditer(v):
         name = _t_strip_titles(re.sub(r"\s+", " ", m.group(1)).strip())
         email = m.group(2)
@@ -156,6 +214,11 @@ def _t_contact_supervisors(v: str):
             continue
         seen.add(email)
         out.append({"name": name or None, "email": email})
+    # bare emails with no preceding name (e.g. an email-only contact cell)
+    for e in re.findall(r"[\w.\-]+@[\w.\-]+\.\w{2,}", v):
+        if e not in seen:
+            seen.add(e)
+            out.append({"name": None, "email": e})
     return out or None
 
 
@@ -175,6 +238,21 @@ def _t_split_emails(v: str):
     if not isinstance(v, str):
         return v
     return re.findall(r"[\w.\-+]+@[\w.\-]+\.\w{2,}", v) or None
+
+
+def _t_academic_role(v: str):
+    """Derive an academic role from a person's title prefix, e.g.
+    'Prof. em. Dr. X' -> Professor Emeritus, 'PD Dr. Y' -> Privatdozent."""
+    if not isinstance(v, str):
+        return v
+    low = v.lower()
+    if "em." in low or "emerit" in low:
+        return "Professor Emeritus"
+    if re.match(r"\s*pd\b", low):
+        return "Privatdozent"
+    if "prof" in low:
+        return "Professor"
+    return None
 
 
 def _t_norm_status(v: str):
@@ -206,11 +284,18 @@ _TRANSFORMS = {
     "lower": _t_lower,
     "date_only": _t_date_only,
     "strip_titles": _t_strip_titles,
+    "name_lastfirst": _t_name_lastfirst,
+    "titlecase": _t_titlecase,
+    "name_lastfirst_space": _t_name_lastfirst_space,
+    "pi_surname": _t_pi_surname,
     "supervisor_list": _t_supervisor_list,
     "deobfuscate_email": _t_deobfuscate_email,
     "mailto_email": _t_mailto_email,
+    "dirname_html": _t_dirname_html,
+    "drop_if_email": _t_drop_if_email,
     "contact_supervisors": _t_contact_supervisors,
     "norm_status": _t_norm_status,
+    "academic_role": _t_academic_role,
     "degree_from_text": _t_degree_from_text,
     "degree_from_type": _t_degree_from_type,
     "split_emails": _t_split_emails,
@@ -234,6 +319,9 @@ def load_spec(source_id: str) -> dict:
     if source_type == "grouped_people":
         if "grouped" not in spec:
             raise SpecError(f"spec {source_id} (grouped_people) missing `grouped`")
+    elif source_type == "sectioned_people":
+        if "sections" not in spec:
+            raise SpecError(f"spec {source_id} (sectioned_people) missing `sections`")
     elif "record" not in spec or "fields" not in spec["record"]:
         raise SpecError(f"spec {source_id} missing record.fields")
     return spec
@@ -489,6 +577,87 @@ def _extract_grouped_people(source_id: str, spec: dict) -> list[dict]:
     return records
 
 
+def _split_containers(soup, rec_spec: dict):
+    """Build one synthetic container per record for flat, marker-delimited content
+    (e.g. a research-area block whose projects are just <p><strong>title</strong>,
+    <p>desc</p>, <p>Contact ...</p> repeated). Each record spans a `split_on`
+    marker up to (not including) the next marker. If `section_heading` is given,
+    the nearest preceding heading's text is injected as <span class="_section">
+    so a field can pick up the research area."""
+    import bisect
+
+    markers = soup.select(rec_spec["split_on"])
+    marker_ids = {id(m) for m in markers}
+    sec_sel = rec_spec.get("section_heading")
+    order = {id(e): i for i, e in enumerate(soup.find_all(True))} if sec_sel else {}
+    heads = sorted((order[id(h)], h.get_text(" ", strip=True))
+                   for h in soup.select(sec_sel)) if sec_sel else []
+    hpos = [p for p, _ in heads]
+
+    out = []
+    for mk in markers:
+        grp = soup.new_tag("div")
+        if sec_sel:
+            mp = order.get(id(mk))
+            idx = bisect.bisect_right(hpos, mp) - 1 if mp is not None else -1
+            if idx >= 0:
+                span = soup.new_tag("span")
+                span["class"] = ["_section"]
+                span.string = heads[idx][1]
+                grp.append(span)
+        grp.append(BeautifulSoup(str(mk), "html.parser"))
+        for sib in mk.next_siblings:
+            if getattr(sib, "name", None) is None:
+                continue
+            if id(sib) in marker_ids:
+                break
+            grp.append(BeautifulSoup(str(sib), "html.parser"))
+        out.append(grp)
+    return out
+
+
+def _extract_sectioned_people(source_id: str, spec: dict) -> list[dict]:
+    """People listed under function headings in flat document order (headings and
+    person links are not nested, e.g. an orphaned-table people iframe). Each
+    person is assigned to the nearest preceding heading; only sections in
+    `include` are kept, and the section name can be written into a field."""
+    import bisect
+
+    cfg = spec["sections"]
+    base_url = cache.read_meta(source_id).get("url", "")
+    soup = BeautifulSoup(cache.read_page(source_id), "html.parser")
+    include = set(cfg.get("include") or [])
+    section_into = cfg.get("section_into")
+    fields = cfg["fields"]
+    scraped_at = datetime.now(timezone.utc).isoformat()
+
+    pos = {id(el): i for i, el in enumerate(soup.find_all(True))}
+    heads = sorted((pos[id(h)], h.get_text(" ", strip=True))
+                   for h in soup.select(cfg["heading"]))
+    hpos = [p for p, _ in heads]
+
+    records = []
+    for a in soup.select(cfg["person"]):
+        p = pos.get(id(a))
+        if p is None:
+            continue
+        idx = bisect.bisect_right(hpos, p) - 1
+        section = heads[idx][1] if idx >= 0 else None
+        if include and section not in include:
+            continue
+        raw = {name: _extract_field(a, fs, base_url) for name, fs in fields.items()}
+        rec = {f: raw.get(f) for f in PEOPLE_FIELDS}
+        for k, v in raw.items():
+            if k not in rec:
+                rec[k] = v
+        if section_into:
+            rec[section_into] = section
+        rec["source_id"] = source_id
+        rec["scraped_at"] = scraped_at
+        records.append(rec)
+    return records
+
+
 def extract(source_id: str, spec: dict | None = None, *,
             html: str | None = None, base_url: str | None = None) -> list[dict]:
     """Run the spec against a page and return target-model records. Defaults to
@@ -499,6 +668,8 @@ def extract(source_id: str, spec: dict | None = None, *,
         return _extract_json(source_id, spec)
     if spec.get("source_type") == "grouped_people":
         return _extract_grouped_people(source_id, spec)
+    if spec.get("source_type") == "sectioned_people":
+        return _extract_sectioned_people(source_id, spec)
 
     if html is None:
         if not cache.is_cached(source_id):
@@ -510,7 +681,26 @@ def extract(source_id: str, spec: dict | None = None, *,
 
     page_type = spec.get("page_type")
     rec_spec = spec["record"]
-    containers = soup.select(rec_spec["container"])
+    if rec_spec.get("split_on"):
+        containers = _split_containers(soup, rec_spec)
+    else:
+        containers = soup.select(rec_spec["container"])
+    # Optionally drop containers at/after a marker element in document order
+    # (e.g. only current topics, before a "Themenarchiv" heading).
+    stop = rec_spec.get("stop_before")
+    if stop:
+        stop_el = soup.select_one(stop)
+        if stop_el is not None:
+            order = {id(e): i for i, e in enumerate(soup.find_all(True))}
+            sp = order.get(id(stop_el), 1 << 30)
+            containers = [c for c in containers if order.get(id(c), 0) < sp]
+    # Drop containers whose text contains any of these strings (e.g. a "†"
+    # deceased marker).
+    drop = rec_spec.get("drop_if_contains")
+    if drop:
+        needles = [drop] if isinstance(drop, str) else list(drop)
+        containers = [c for c in containers
+                      if not any(n in c.get_text() for n in needles)]
     scraped_at = datetime.now(timezone.utc).isoformat()
 
     known = PEOPLE_FIELDS if page_type == "people" else TOPIC_FIELDS
@@ -636,12 +826,14 @@ def normalize_supervisors(rec: dict) -> None:
     if not sups:
         name, email = rec.get("supervisor_name"), rec.get("supervisor_email")
         sups = [{"name": name, "email": email}] if (name or email) else []
-    # a "name" that is actually an email (broken source link) belongs in email
     for sup in sups:
         nm = sup.get("name")
+        # a "name" that is actually an email (broken source link) belongs in email
         if isinstance(nm, str) and "@" in nm and not sup.get("email"):
             sup["email"] = nm.strip()
             sup["name"] = None
+        elif isinstance(nm, str):        # drop academic titles ("Dr. X" -> "X")
+            sup["name"] = _t_strip_titles(nm) or None
     rec["supervisors"] = sups
     rec.pop("supervisor_name", None)
     rec.pop("supervisor_email", None)

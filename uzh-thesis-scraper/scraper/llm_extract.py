@@ -13,6 +13,7 @@ the reason is recorded under `_llm`.
 
 from __future__ import annotations
 
+import hashlib
 import re
 from datetime import datetime, timezone
 from urllib.parse import urljoin
@@ -228,11 +229,20 @@ def extract_process(source_id: str, *, use_llm: bool = True,
     system, prompt = build_prompt(src, text)
     description, llm_info = None, {"provider": llm.provider_name(), "model": llm.model_name()}
     if use_llm and llm.is_available():
-        try:
-            description = llm.complete(system, prompt)
+        # Cache the summary by page-text hash so re-running an unchanged process
+        # page (e.g. to refresh its aux people) never re-spends the LLM.
+        key = hashlib.sha1((system + "\n" + prompt).encode("utf-8")).hexdigest()[:16]
+        if cache.has_subpage(source_id, "processsummary", key):
+            description = cache.read_subpage(source_id, "processsummary", key)
             llm_info["status"] = "ok"
-        except Exception as exc:  # noqa: BLE001 — record, never crash a run
-            llm_info["status"] = f"error: {type(exc).__name__}: {exc}"
+            llm_info["cached"] = True
+        else:
+            try:
+                description = llm.complete(system, prompt)
+                cache.write_subpage(source_id, "processsummary", key, description)
+                llm_info["status"] = "ok"
+            except Exception as exc:  # noqa: BLE001 — record, never crash a run
+                llm_info["status"] = f"error: {type(exc).__name__}: {exc}"
     else:
         llm_info["status"] = "unavailable" if use_llm else "disabled"
 

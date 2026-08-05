@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-07-30T08:01:54.150867+00:00",
+  "sources": [
+    {
+      "source_id": "historisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "historisches-seminar--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_status": {
+      "ok": 2
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-07-30T08:01:54.207450+00:00"
+}
