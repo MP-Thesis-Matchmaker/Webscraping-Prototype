@@ -7,11 +7,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "4b3847b09a8518be735e1bfe479621d8b2249172",
-        "fetched_at": "2026-07-17T16:14:44.918448+00:00"
+        "content_sha1": "1eb6337204dcbfe7b47141ed56c30dbf594b64de",
+        "fetched_at": "2026-08-07T13:33:48.325608+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "4b3847b09a8518be735e1bfe479621d8b2249172"
+      "verified_sha1": "1eb6337204dcbfe7b47141ed56c30dbf594b64de"
     },
     "ivw--2": {
       "onboarding": "verified",
@@ -19,11 +19,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "24e8ef6d991af2ad051756819ad8b39b1d9216bb",
-        "fetched_at": "2026-07-17T16:14:47.196351+00:00"
+        "content_sha1": "71d0d3abda0548365866ee9016b64fc7f4e38bc5",
+        "fetched_at": "2026-08-07T13:33:50.561935+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "24e8ef6d991af2ad051756819ad8b39b1d9216bb"
+      "verified_sha1": "71d0d3abda0548365866ee9016b64fc7f4e38bc5"
     },
     "ivw--3": {
       "onboarding": "verified",
@@ -32,7 +32,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "24c842f1b773fa606630ab9691393d7743720da2",
-        "fetched_at": "2026-07-17T16:07:14.938949+00:00"
+        "fetched_at": "2026-08-07T13:33:52.872271+00:00"
       },
       "page_type": "process",
       "verified_sha1": "24c842f1b773fa606630ab9691393d7743720da2"
@@ -43,11 +43,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "playwright",
-        "content_sha1": "179cbbdc5823b05c748f6c7207b7f771b9b7f33a",
-        "fetched_at": "2026-07-17T16:18:23.368011+00:00"
+        "content_sha1": "73604749fd2295559d4cef3e86a88c8d6641ba79",
+        "fetched_at": "2026-08-07T13:33:59.306717+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "179cbbdc5823b05c748f6c7207b7f771b9b7f33a"
+      "verified_sha1": "a6d491bf6ee69523ff731a23eb652ceb99f963d4"
     },
     "ibw--1": {
       "onboarding": "verified",
@@ -55,23 +55,23 @@
       "last_fetch": {
         "http_status": 200,
         "method": "playwright",
-        "content_sha1": "4a5fdc71ada58dd1e7e58fac128cc4958edef63f",
-        "fetched_at": "2026-07-17T21:31:14.991847+00:00"
+        "content_sha1": "d4347a68c240e794ac01305aae0da64f24d5dce9",
+        "fetched_at": "2026-08-07T13:34:04.231585+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "4a5fdc71ada58dd1e7e58fac128cc4958edef63f"
+      "verified_sha1": "1c8f2e0a173395ba483041deaf6c5daa8a42001b"
     },
     "ibw--2": {
       "onboarding": "verified",
       "run": "done",
       "last_fetch": {
         "http_status": 200,
-        "method": "playwright",
-        "content_sha1": "2af435ff2c854aab0cd9b99fb11b6a2cb3a2660f",
-        "fetched_at": "2026-07-17T21:02:22.169345+00:00"
+        "method": "requests",
+        "content_sha1": "2680c342af54f925420a9fa66ab0cbcd3bc1ec01",
+        "fetched_at": "2026-08-07T13:34:06.506768+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "e9efc6bd5b5ef1f86423ee5760e54f442acf38ea"
+      "verified_sha1": "2680c342af54f925420a9fa66ab0cbcd3bc1ec01"
     },
     "iff--1": {
       "onboarding": "verified",
@@ -79,17 +79,23 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "384775a5cf555689b1a64b16dcf0dc9e82559bbd",
-        "fetched_at": "2026-07-17T22:39:49.133122+00:00"
+        "content_sha1": "7a81ce5fe37c53614784087fe1f93bf64b6f1a66",
+        "fetched_at": "2026-08-07T13:34:09.045388+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "384775a5cf555689b1a64b16dcf0dc9e82559bbd"
+      "verified_sha1": "7a81ce5fe37c53614784087fe1f93bf64b6f1a66"
     },
     "iff--2": {
       "onboarding": "verified",
       "run": "done",
       "page_type": "topics",
-      "verified_sha1": "b1fc60d2a0774d65bd90b73367377df50190abde"
+      "verified_sha1": "89b31ab72749c927667373bdc4f5e10c58d50116",
+      "last_fetch": {
+        "http_status": 200,
+        "method": "requests",
+        "content_sha1": "89b31ab72749c927667373bdc4f5e10c58d50116",
+        "fetched_at": "2026-08-07T13:34:11.402367+00:00"
+      }
     },
     "iff--3": {
       "onboarding": "verified",
@@ -97,11 +103,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "e86059dc31be3f2b5ac4b804aa532c0334189069",
-        "fetched_at": "2026-07-17T22:39:51.323497+00:00"
+        "content_sha1": "22f55d16d506659c6ae2ea63767f89a37d291e86",
+        "fetched_at": "2026-08-07T13:34:13.536046+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "e86059dc31be3f2b5ac4b804aa532c0334189069"
+      "verified_sha1": "22f55d16d506659c6ae2ea63767f89a37d291e86"
     },
     "ifi--1": {
       "onboarding": "verified",
@@ -109,11 +115,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "59dee52fde523406dfaedd560f9fe13ba6ff6c7a",
-        "fetched_at": "2026-07-18T09:24:25.373605+00:00"
+        "content_sha1": "2d63d56e8a20f88e0a12e98020f4d2ffcc011f2b",
+        "fetched_at": "2026-08-07T13:34:23.861788+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "59dee52fde523406dfaedd560f9fe13ba6ff6c7a"
+      "verified_sha1": "2d63d56e8a20f88e0a12e98020f4d2ffcc011f2b"
     },
     "ifi--2": {
       "onboarding": "verified",
@@ -121,11 +127,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "5029ed5e104e5d907d3cc85860c0f51f3ef25da1",
-        "fetched_at": "2026-07-18T09:26:01.521195+00:00"
+        "content_sha1": "8dd8d5478aa60f8612a4e438d3a7084b5fd8b689",
+        "fetched_at": "2026-08-07T13:34:26.402078+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "5029ed5e104e5d907d3cc85860c0f51f3ef25da1"
+      "verified_sha1": "8dd8d5478aa60f8612a4e438d3a7084b5fd8b689"
     },
     "ifi--3": {
       "onboarding": "verified",
@@ -133,11 +139,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "83315557b65bc013ce0013ae488f840f966f5469",
-        "fetched_at": "2026-07-18T09:39:40.950268+00:00"
+        "content_sha1": "f0466c6f6bd5a9ffecc56bf03ef6a753779b1237",
+        "fetched_at": "2026-08-07T13:34:28.701508+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "83315557b65bc013ce0013ae488f840f966f5469"
+      "verified_sha1": "ff38f8b21a7901acbfc7c3f99afac87e44c8121f"
     },
     "ifi--4": {
       "onboarding": "verified",
@@ -145,11 +151,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "deca70ac68989d1eddd96041e9ae683c8fe70d81",
-        "fetched_at": "2026-07-18T10:01:56.800019+00:00"
+        "content_sha1": "3f43fdfc86668758cc55b58b2d53a2859161fa66",
+        "fetched_at": "2026-08-07T13:34:30.962813+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "deca70ac68989d1eddd96041e9ae683c8fe70d81"
+      "verified_sha1": "3f43fdfc86668758cc55b58b2d53a2859161fa66"
     },
     "ifi--5": {
       "onboarding": "verified",
@@ -157,11 +163,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "edfc7c81b076b004447edcc716b185ef2e8df2dd",
-        "fetched_at": "2026-07-18T10:06:02.110073+00:00"
+        "content_sha1": "62e8bf23b592841654c708bdac514c5921dda311",
+        "fetched_at": "2026-08-07T13:34:33.496384+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "edfc7c81b076b004447edcc716b185ef2e8df2dd"
+      "verified_sha1": "62e8bf23b592841654c708bdac514c5921dda311"
     },
     "ifi--6": {
       "onboarding": "verified",
@@ -170,7 +176,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "d5507a6ffabc44e8df16576e4ecab72bb59a1754",
-        "fetched_at": "2026-07-21T12:41:31.992496+00:00"
+        "fetched_at": "2026-08-07T13:34:35.664510+00:00"
       },
       "page_type": "process",
       "verified_sha1": "d5507a6ffabc44e8df16576e4ecab72bb59a1754"
@@ -181,11 +187,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "3d5705fe73293659ca3343ee6af66d1da285225b",
-        "fetched_at": "2026-07-21T12:47:26.663324+00:00"
+        "content_sha1": "88f8eedfc9352eef162105f24099e3e4c769218a",
+        "fetched_at": "2026-08-07T13:34:38.274011+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "3d5705fe73293659ca3343ee6af66d1da285225b"
+      "verified_sha1": "88f8eedfc9352eef162105f24099e3e4c769218a"
     },
     "ifi--8": {
       "onboarding": "verified",
@@ -193,11 +199,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "db863523f160535c842ea646a980954f46f8f976",
-        "fetched_at": "2026-07-21T13:14:17.988490+00:00"
+        "content_sha1": "64f256b1abe4836234af421556a92829a8dcb9f2",
+        "fetched_at": "2026-08-07T13:34:40.646504+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "db863523f160535c842ea646a980954f46f8f976"
+      "verified_sha1": "64f256b1abe4836234af421556a92829a8dcb9f2"
     },
     "ifi--9": {
       "onboarding": "verified",
@@ -205,11 +211,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "790a723cce10aea2fdbc99a6b2e16c3f1bebe945",
-        "fetched_at": "2026-07-21T13:43:48.942929+00:00"
+        "content_sha1": "a849fb95ff68359cdb270cef76e1a38b055cda71",
+        "fetched_at": "2026-08-07T13:34:42.879680+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "790a723cce10aea2fdbc99a6b2e16c3f1bebe945"
+      "verified_sha1": "a849fb95ff68359cdb270cef76e1a38b055cda71"
     },
     "ifi--10": {
       "onboarding": "verified",
@@ -217,11 +223,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "0592707abbae7890585878ad9906a452c460d2b4",
-        "fetched_at": "2026-07-21T13:56:37.039058+00:00"
+        "content_sha1": "6470b1ec85e08b737b0b20787d254457179ffb6b",
+        "fetched_at": "2026-08-07T13:34:45.589231+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "0592707abbae7890585878ad9906a452c460d2b4"
+      "verified_sha1": "6470b1ec85e08b737b0b20787d254457179ffb6b"
     },
     "ifi--11": {
       "onboarding": "verified",
@@ -229,11 +235,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "6cf2b8fa3a3a7af88a23894a0dc5f94faf092d09",
-        "fetched_at": "2026-07-22T19:11:06.317383+00:00"
+        "content_sha1": "bd2a9bba444547be444580813f92a3ef504eff35",
+        "fetched_at": "2026-08-07T13:34:47.970126+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "6cf2b8fa3a3a7af88a23894a0dc5f94faf092d09"
+      "verified_sha1": "bd2a9bba444547be444580813f92a3ef504eff35"
     },
     "ifi--12": {
       "onboarding": "verified",
@@ -241,11 +247,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "7067a19aaff43747680221a6c13909d274befc7f",
-        "fetched_at": "2026-07-22T19:26:49.233627+00:00"
+        "content_sha1": "a194e7d481708cb19bd013dbb6044b8bf3d36c7a",
+        "fetched_at": "2026-08-07T13:34:50.579349+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "7067a19aaff43747680221a6c13909d274befc7f"
+      "verified_sha1": "a194e7d481708cb19bd013dbb6044b8bf3d36c7a"
     },
     "ifi--13": {
       "onboarding": "verified",
@@ -253,11 +259,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "f7f477328c3a9da9c5fd323244d7647145878eef",
-        "fetched_at": "2026-07-22T19:55:26.543232+00:00"
+        "content_sha1": "d4eb15bb94d6eda6d7ad3b1f2d2b9150fd1d761f",
+        "fetched_at": "2026-08-07T13:34:52.848284+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "f7f477328c3a9da9c5fd323244d7647145878eef"
+      "verified_sha1": "d4eb15bb94d6eda6d7ad3b1f2d2b9150fd1d761f"
     },
     "ifi--14": {
       "onboarding": "verified",
@@ -265,11 +271,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "090db15767b6702bcbd49368f5ddcf6955325b04",
-        "fetched_at": "2026-07-22T20:08:29.025357+00:00"
+        "content_sha1": "e1d501949c6cd666332f3177d1ee572cdab8c4af",
+        "fetched_at": "2026-08-07T13:34:55.236460+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "090db15767b6702bcbd49368f5ddcf6955325b04"
+      "verified_sha1": "e1d501949c6cd666332f3177d1ee572cdab8c4af"
     },
     "ifi--15": {
       "onboarding": "verified",
@@ -277,11 +283,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "55f17afe67a364682fc9a82af1f144f2aa1331d5",
-        "fetched_at": "2026-07-22T20:28:42.548430+00:00"
+        "content_sha1": "cdf816c81b4e8c7fffa27f288e41bf7ca49a0e60",
+        "fetched_at": "2026-08-07T13:34:57.818359+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "55f17afe67a364682fc9a82af1f144f2aa1331d5"
+      "verified_sha1": "cdf816c81b4e8c7fffa27f288e41bf7ca49a0e60"
     },
     "ifi--16": {
       "onboarding": "verified",
@@ -289,11 +295,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "19d81bf13d4257de922691ba2d3231c030a71cea",
-        "fetched_at": "2026-07-22T20:54:44.553447+00:00"
+        "content_sha1": "d68845742957a092a864cbe9ccddb20cae5e89a8",
+        "fetched_at": "2026-08-07T13:35:02.321579+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "19d81bf13d4257de922691ba2d3231c030a71cea"
+      "verified_sha1": "d68845742957a092a864cbe9ccddb20cae5e89a8"
     },
     "ifi--17": {
       "onboarding": "verified",
@@ -301,11 +307,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "b2bec9aa86e0dcba75da95b4450b985d6c665bad",
-        "fetched_at": "2026-07-22T21:07:00.000115+00:00"
+        "content_sha1": "1d2e0d58a150bbb2cbbaa43f1940388c801f1cfc",
+        "fetched_at": "2026-08-07T13:35:04.905346+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "b2bec9aa86e0dcba75da95b4450b985d6c665bad"
+      "verified_sha1": "1d2e0d58a150bbb2cbbaa43f1940388c801f1cfc"
     },
     "asien-orient-institut--1": {
       "onboarding": "verified",
@@ -313,11 +319,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "a432f66aa25dfc1cad87c4fc243926ddf38e559d",
-        "fetched_at": "2026-07-25T04:51:13.367133+00:00"
+        "content_sha1": "dba96838a3279fde6231a4be0f4cceea4e562d3f",
+        "fetched_at": "2026-08-07T13:35:07.337334+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "a432f66aa25dfc1cad87c4fc243926ddf38e559d"
+      "verified_sha1": "dba96838a3279fde6231a4be0f4cceea4e562d3f"
     },
     "asien-orient-institut--2": {
       "onboarding": "verified",
@@ -325,11 +331,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "25654ec9f690e90a915d2e6b3e0b2692f48f41ec",
-        "fetched_at": "2026-07-25T04:49:51.658113+00:00"
+        "content_sha1": "3e48106ca0e7fe51a492b7116db6d4e0feebecb3",
+        "fetched_at": "2026-08-07T13:35:10.065105+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "25654ec9f690e90a915d2e6b3e0b2692f48f41ec"
+      "verified_sha1": "3e48106ca0e7fe51a492b7116db6d4e0feebecb3"
     },
     "deutsches-seminar--1": {
       "onboarding": "verified",
@@ -337,11 +343,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "0978bbbf1afdf39678647337608b6a0d49ea32ca",
-        "fetched_at": "2026-08-05T13:54:32.694382+00:00"
+        "content_sha1": "c0614cde536c5c98a58cf9d9ddfbd621980e77ca",
+        "fetched_at": "2026-08-07T13:35:15.066747+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "0978bbbf1afdf39678647337608b6a0d49ea32ca"
+      "verified_sha1": "c0614cde536c5c98a58cf9d9ddfbd621980e77ca"
     },
     "deutsches-seminar--2": {
       "onboarding": "verified",
@@ -349,11 +355,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "3c5b22b349c9be629168c840dc7b74d50889ec79",
-        "fetched_at": "2026-08-05T13:54:34.988047+00:00"
+        "content_sha1": "3f5a4af55786079040c461f250d74c595563f998",
+        "fetched_at": "2026-08-07T13:35:17.774304+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "3c5b22b349c9be629168c840dc7b74d50889ec79"
+      "verified_sha1": "3f5a4af55786079040c461f250d74c595563f998"
     },
     "deutsches-seminar--3": {
       "onboarding": "verified",
@@ -361,11 +367,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "503c2ecf1e3da1ee2b3cec05db53bf910e20b118",
-        "fetched_at": "2026-07-25T05:47:10.041276+00:00"
+        "content_sha1": "76cc32a6ad48ce45d311f93a7c0296d0d493f2c1",
+        "fetched_at": "2026-08-07T13:35:20.100221+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "503c2ecf1e3da1ee2b3cec05db53bf910e20b118"
+      "verified_sha1": "76cc32a6ad48ce45d311f93a7c0296d0d493f2c1"
     },
     "englisches-seminar--1": {
       "onboarding": "verified",
@@ -373,11 +379,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "f5883585039fb28eba9c0cdcf79db8f0a29a8adc",
-        "fetched_at": "2026-07-25T06:11:10.129584+00:00"
+        "content_sha1": "2bace2a9611aa8b4c083d8207de5f7e0723b7fc4",
+        "fetched_at": "2026-08-07T13:35:27.408845+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "f5883585039fb28eba9c0cdcf79db8f0a29a8adc"
+      "verified_sha1": "2bace2a9611aa8b4c083d8207de5f7e0723b7fc4"
     },
     "englisches-seminar--2": {
       "onboarding": "verified",
@@ -385,11 +391,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "a93a7a8e6f8a4ddfe94dcea17d3413b694f3752d",
-        "fetched_at": "2026-07-25T06:10:37.366483+00:00"
+        "content_sha1": "eff623dbf7ca9186b62b5f7fdc64222ae9778915",
+        "fetched_at": "2026-08-07T13:35:29.618935+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "a93a7a8e6f8a4ddfe94dcea17d3413b694f3752d"
+      "verified_sha1": "eff623dbf7ca9186b62b5f7fdc64222ae9778915"
     },
     "englisches-seminar--3": {
       "onboarding": "verified",
@@ -397,11 +403,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "615b0f49a41d656a69babbe82de57b8d145be732",
-        "fetched_at": "2026-07-25T06:06:18.524924+00:00"
+        "content_sha1": "8b742a12544a0a59fed3ee150a56ddd11c200b93",
+        "fetched_at": "2026-08-07T13:35:31.875713+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "615b0f49a41d656a69babbe82de57b8d145be732"
+      "verified_sha1": "8b742a12544a0a59fed3ee150a56ddd11c200b93"
     },
     "historisches-seminar--1": {
       "onboarding": "verified",
@@ -409,11 +415,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "ab4309e5204db22a60b28f1e97188f4fb57f197c",
-        "fetched_at": "2026-07-30T08:01:12.059273+00:00"
+        "content_sha1": "1a0fbfe5d27c4a8cb076433eb06b64faac9ced52",
+        "fetched_at": "2026-08-07T13:35:34.546941+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "ab4309e5204db22a60b28f1e97188f4fb57f197c"
+      "verified_sha1": "1a0fbfe5d27c4a8cb076433eb06b64faac9ced52"
     },
     "historisches-seminar--2": {
       "onboarding": "verified",
@@ -421,11 +427,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "f7ec429c7dab5885692395babe69cddc94f4a4b3",
-        "fetched_at": "2026-07-30T08:01:44.207171+00:00"
+        "content_sha1": "7a62b17d221b9327dfb65d41fb6bc1ff081f70c7",
+        "fetched_at": "2026-08-07T13:35:36.860411+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "f7ec429c7dab5885692395babe69cddc94f4a4b3"
+      "verified_sha1": "7a62b17d221b9327dfb65d41fb6bc1ff081f70c7"
     },
     "historisches-seminar--3": {
       "onboarding": "verified",
@@ -433,11 +439,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "64e3c517eb295fa6095ae8c5ddd025b612bc5e26",
-        "fetched_at": "2026-07-30T07:59:18.768011+00:00"
+        "content_sha1": "3e644d5d41a14adb59137cd9adbbc0d8996543be",
+        "fetched_at": "2026-08-07T13:35:39.260130+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "64e3c517eb295fa6095ae8c5ddd025b612bc5e26"
+      "verified_sha1": "3e644d5d41a14adb59137cd9adbbc0d8996543be"
     },
     "computerlinguistik--1": {
       "onboarding": "verified",
@@ -445,11 +451,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "9b01de7a8c69fb4e4f080f633a63b7ce47084b5d",
-        "fetched_at": "2026-07-30T08:15:04.472081+00:00"
+        "content_sha1": "6470b1ec85e08b737b0b20787d254457179ffb6b",
+        "fetched_at": "2026-08-07T13:35:44.023292+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "9b01de7a8c69fb4e4f080f633a63b7ce47084b5d"
+      "verified_sha1": "6470b1ec85e08b737b0b20787d254457179ffb6b"
     },
     "erziehungswissenschaft--1": {
       "onboarding": "verified",
@@ -457,11 +463,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "f545a452456a9a01e9e97104c62aaa0981cd4d39",
-        "fetched_at": "2026-07-30T08:20:17.642857+00:00"
+        "content_sha1": "5a613c73fcad516cf4356fb740eeb1f19b0f25d2",
+        "fetched_at": "2026-08-07T13:35:46.744654+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "f545a452456a9a01e9e97104c62aaa0981cd4d39"
+      "verified_sha1": "5a613c73fcad516cf4356fb740eeb1f19b0f25d2"
     },
     "erziehungswissenschaft--2": {
       "onboarding": "verified",
@@ -470,7 +476,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "6f534a304d4fdedc3469ac11113648ce93aa3903",
-        "fetched_at": "2026-07-30T08:20:29.306164+00:00"
+        "fetched_at": "2026-08-07T13:35:48.952097+00:00"
       },
       "page_type": "process",
       "verified_sha1": "6f534a304d4fdedc3469ac11113648ce93aa3903"
@@ -481,11 +487,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "19f0126f06f9c999b9c605352535de104bea9334",
-        "fetched_at": "2026-07-30T08:20:43.973088+00:00"
+        "content_sha1": "ed1f524874465e9dba05e88aaf9242ac81937dd2",
+        "fetched_at": "2026-08-07T13:35:51.173343+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "19f0126f06f9c999b9c605352535de104bea9334"
+      "verified_sha1": "ed1f524874465e9dba05e88aaf9242ac81937dd2"
     },
     "erziehungswissenschaft--4": {
       "onboarding": "verified",
@@ -494,7 +500,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "f9b9133d59e0bf81a457391e5d76c39fb60c0af3",
-        "fetched_at": "2026-07-30T08:20:59.444881+00:00"
+        "fetched_at": "2026-08-07T13:35:53.345647+00:00"
       },
       "page_type": "process",
       "verified_sha1": "f9b9133d59e0bf81a457391e5d76c39fb60c0af3"
@@ -505,11 +511,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "513b47c228ed7dad03af1ec33b1812d09b8a7e2f",
-        "fetched_at": "2026-07-31T09:39:17.080823+00:00"
+        "content_sha1": "003b566ca5c83d8e2d910c22ae24b505cf620bfc",
+        "fetched_at": "2026-08-07T13:35:55.536684+00:00"
       },
       "page_type": "none",
-      "verified_sha1": "513b47c228ed7dad03af1ec33b1812d09b8a7e2f"
+      "verified_sha1": "003b566ca5c83d8e2d910c22ae24b505cf620bfc"
     },
     "isle--2": {
       "onboarding": "verified",
@@ -517,11 +523,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "61f0b11209e26cd77e517cf6a4deb077a780c3bf",
-        "fetched_at": "2026-07-31T09:05:18.084201+00:00"
+        "content_sha1": "a1d72b0e46d9aaaf6144b8dd8f73896b6b3ec2b5",
+        "fetched_at": "2026-08-07T13:35:58.404770+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "61f0b11209e26cd77e517cf6a4deb077a780c3bf"
+      "verified_sha1": "a1d72b0e46d9aaaf6144b8dd8f73896b6b3ec2b5"
     },
     "kommunikationswissenschaft-und-medienforschung-ikm--1": {
       "onboarding": "verified",
@@ -529,11 +535,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "40c18efd736fb0f037445ea6ac652c504c060759",
-        "fetched_at": "2026-07-31T10:24:54.502639+00:00"
+        "content_sha1": "3cbd4376f1bab07de883d387f57c37d45ebc6882",
+        "fetched_at": "2026-08-07T13:36:00.905682+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "40c18efd736fb0f037445ea6ac652c504c060759"
+      "verified_sha1": "3cbd4376f1bab07de883d387f57c37d45ebc6882"
     },
     "kommunikationswissenschaft-und-medienforschung-ikm--2": {
       "onboarding": "verified",
@@ -541,11 +547,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "1612fcef30d9ace2201b10362300ddea12f8c591",
-        "fetched_at": "2026-07-31T10:25:06.257081+00:00"
+        "content_sha1": "3bc8afceac81537a32fc804cb356f8a476d20c8f",
+        "fetched_at": "2026-08-07T13:36:03.318130+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "1612fcef30d9ace2201b10362300ddea12f8c591"
+      "verified_sha1": "3bc8afceac81537a32fc804cb356f8a476d20c8f"
     },
     "ipz--1": {
       "onboarding": "verified",
@@ -554,7 +560,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "4bc0f67be31170d17837836252f33d454af73e94",
-        "fetched_at": "2026-07-31T10:41:32.472970+00:00"
+        "fetched_at": "2026-08-07T13:36:05.922435+00:00"
       },
       "page_type": "topics",
       "verified_sha1": "4bc0f67be31170d17837836252f33d454af73e94"
@@ -565,11 +571,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "b1caa3ba3753e0e94ef35004789bff78e22468b0",
-        "fetched_at": "2026-07-31T10:43:45.010908+00:00"
+        "content_sha1": "2dbc853d17f59a63a9a35610c371e0b4bdd2d47c",
+        "fetched_at": "2026-08-07T13:36:09.035952+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "b1caa3ba3753e0e94ef35004789bff78e22468b0"
+      "verified_sha1": "2dbc853d17f59a63a9a35610c371e0b4bdd2d47c"
     },
     "ipz--3": {
       "onboarding": "verified",
@@ -578,7 +584,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "2cc5f3e91060f9880fc30226a9987f05d3d64420",
-        "fetched_at": "2026-07-31T10:43:45.537279+00:00"
+        "fetched_at": "2026-08-07T13:36:11.397013+00:00"
       },
       "page_type": "process",
       "verified_sha1": "2cc5f3e91060f9880fc30226a9987f05d3d64420"
@@ -589,11 +595,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "592258f1e0da38e0870a315b77615d90d8610d8a",
-        "fetched_at": "2026-07-31T10:52:00.442010+00:00"
+        "content_sha1": "bdcd81b41b00f5822b62a9cf56f9a27fee89a0d1",
+        "fetched_at": "2026-08-07T13:36:13.836695+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "592258f1e0da38e0870a315b77615d90d8610d8a"
+      "verified_sha1": "bdcd81b41b00f5822b62a9cf56f9a27fee89a0d1"
     },
     "isek--1": {
       "onboarding": "verified",
@@ -601,11 +607,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "d50ff4ad8bba54f887b69a1b229e0223e8e8e9a1",
-        "fetched_at": "2026-07-31T12:36:43.838191+00:00"
+        "content_sha1": "c14816a9bcdeb54f8df0576c1e4909b590987706",
+        "fetched_at": "2026-08-07T13:36:16.275173+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "d50ff4ad8bba54f887b69a1b229e0223e8e8e9a1"
+      "verified_sha1": "c14816a9bcdeb54f8df0576c1e4909b590987706"
     },
     "isek--2": {
       "onboarding": "verified",
@@ -613,11 +619,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "920c4b87da84fbd91fbd3f2fd8012aba36e09def",
-        "fetched_at": "2026-07-31T12:36:44.413461+00:00"
+        "content_sha1": "9a05e65efb41c79a5c0443278f4d47bdf4b194a8",
+        "fetched_at": "2026-08-07T13:36:18.845449+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "920c4b87da84fbd91fbd3f2fd8012aba36e09def"
+      "verified_sha1": "9a05e65efb41c79a5c0443278f4d47bdf4b194a8"
     },
     "kunsthistorisches-institut--1": {
       "onboarding": "verified",
@@ -625,11 +631,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "51316bec6f4cd56626b0abbf97a44b9298295751",
-        "fetched_at": "2026-07-31T12:45:41.323417+00:00"
+        "content_sha1": "f421632bf3235975cf15f9dbf1129553f01eb1c2",
+        "fetched_at": "2026-08-07T13:36:21.169353+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "51316bec6f4cd56626b0abbf97a44b9298295751"
+      "verified_sha1": "f421632bf3235975cf15f9dbf1129553f01eb1c2"
     },
     "kunsthistorisches-institut--2": {
       "onboarding": "verified",
@@ -637,11 +643,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "f9fc93d6f7b09b8eed0ec36cafa3af2fd502ecd4",
-        "fetched_at": "2026-07-31T12:45:56.121256+00:00"
+        "content_sha1": "eddbf69148a2d4dea068529229c148b0dee0aa0e",
+        "fetched_at": "2026-08-07T13:36:23.415700+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "f9fc93d6f7b09b8eed0ec36cafa3af2fd502ecd4"
+      "verified_sha1": "eddbf69148a2d4dea068529229c148b0dee0aa0e"
     },
     "musikwissenschaftliches-institut--1": {
       "onboarding": "verified",
@@ -649,11 +655,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "bcd6241b52df5cfa62d9f2065e0f768dd2bab5ea",
-        "fetched_at": "2026-07-31T12:53:40.942359+00:00"
+        "content_sha1": "4fc1fd403843a3c637fe35f7978966b69a14161e",
+        "fetched_at": "2026-08-07T13:36:25.770594+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "bcd6241b52df5cfa62d9f2065e0f768dd2bab5ea"
+      "verified_sha1": "4fc1fd403843a3c637fe35f7978966b69a14161e"
     },
     "musikwissenschaftliches-institut--2": {
       "onboarding": "verified",
@@ -661,11 +667,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "9b2a992b04e25486a8caf8b53e79dfed76d4714a",
-        "fetched_at": "2026-07-31T12:53:53.507655+00:00"
+        "content_sha1": "cab0478e1598632a2928c1fc7f34cb27d85a0d6e",
+        "fetched_at": "2026-08-07T13:36:28.366841+00:00"
       },
       "page_type": "none",
-      "verified_sha1": "9b2a992b04e25486a8caf8b53e79dfed76d4714a"
+      "verified_sha1": "cab0478e1598632a2928c1fc7f34cb27d85a0d6e"
     },
     "philosophisches-seminar--1": {
       "onboarding": "verified",
@@ -673,11 +679,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "2c372bf49ae61e2bc2369ace61c65dddcfd751a5",
-        "fetched_at": "2026-07-31T12:57:04.356349+00:00"
+        "content_sha1": "4fc1fd403843a3c637fe35f7978966b69a14161e",
+        "fetched_at": "2026-08-07T13:36:30.485519+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "2c372bf49ae61e2bc2369ace61c65dddcfd751a5"
+      "verified_sha1": "4fc1fd403843a3c637fe35f7978966b69a14161e"
     },
     "psychologisches-institut--1": {
       "onboarding": "verified",
@@ -685,11 +691,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "6658c55b4cb8c65803e0a5d000322722fb7a2e54",
-        "fetched_at": "2026-07-31T13:02:37.754703+00:00"
+        "content_sha1": "2a224e3bb4bca3a2354d7bdcb40b7b01f9d58249",
+        "fetched_at": "2026-08-07T13:36:33.075626+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "6658c55b4cb8c65803e0a5d000322722fb7a2e54"
+      "verified_sha1": "2a224e3bb4bca3a2354d7bdcb40b7b01f9d58249"
     },
     "psychologisches-institut--2": {
       "onboarding": "verified",
@@ -697,11 +703,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "b8131922fd45b199b771aa5461efb0f52b950f55",
-        "fetched_at": "2026-07-31T13:02:44.578181+00:00"
+        "content_sha1": "5821e085da18a6b1fad2afbd7c89bc74e1e8ecc7",
+        "fetched_at": "2026-08-07T13:36:35.338507+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "b8131922fd45b199b771aa5461efb0f52b950f55"
+      "verified_sha1": "5821e085da18a6b1fad2afbd7c89bc74e1e8ecc7"
     },
     "romanisches-seminar--1": {
       "onboarding": "verified",
@@ -709,11 +715,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "a486a5cde5aa192ab1386897b23a313e5cd07837",
-        "fetched_at": "2026-07-31T14:13:33.456228+00:00"
+        "content_sha1": "f069ff46e3a95acb6972f7cf069c5936376244aa",
+        "fetched_at": "2026-08-07T13:36:37.763660+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "a486a5cde5aa192ab1386897b23a313e5cd07837"
+      "verified_sha1": "f069ff46e3a95acb6972f7cf069c5936376244aa"
     },
     "romanisches-seminar--2": {
       "onboarding": "verified",
@@ -721,11 +727,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "9e79bd5b41f8d54a9d5377b49e9665e3ac54f9f1",
-        "fetched_at": "2026-07-31T14:11:38.211220+00:00"
+        "content_sha1": "aaf673e00a5a6eaaaf8f9623351867eb082c7e10",
+        "fetched_at": "2026-08-07T13:36:40.367478+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "9e79bd5b41f8d54a9d5377b49e9665e3ac54f9f1"
+      "verified_sha1": "aaf673e00a5a6eaaaf8f9623351867eb082c7e10"
     },
     "romanisches-seminar--3": {
       "onboarding": "verified",
@@ -733,11 +739,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "5d8d58ef115de03481288bbda5f62d799f766059",
-        "fetched_at": "2026-07-31T14:13:45.314601+00:00"
+        "content_sha1": "abd22301d98690adf7fd156f59bc5ae76974986d",
+        "fetched_at": "2026-08-07T13:36:42.569410+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "5d8d58ef115de03481288bbda5f62d799f766059"
+      "verified_sha1": "abd22301d98690adf7fd156f59bc5ae76974986d"
     },
     "filmwissenschaft--1": {
       "onboarding": "verified",
@@ -745,11 +751,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "7dcd4985e21c41ca7d9c5528306c9a6cfdd45eae",
-        "fetched_at": "2026-07-31T14:19:49.850587+00:00"
+        "content_sha1": "c4fbc3e526a8658263b27b78afcef642f6024e2c",
+        "fetched_at": "2026-08-07T13:36:45.042028+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "7dcd4985e21c41ca7d9c5528306c9a6cfdd45eae"
+      "verified_sha1": "c4fbc3e526a8658263b27b78afcef642f6024e2c"
     },
     "filmwissenschaft--2": {
       "onboarding": "verified",
@@ -758,7 +764,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "11809feeb283b49a4cb1610fdf4f0a2b911e9eea",
-        "fetched_at": "2026-07-31T14:20:01.233587+00:00"
+        "fetched_at": "2026-08-07T13:36:47.262695+00:00"
       },
       "page_type": "process",
       "verified_sha1": "11809feeb283b49a4cb1610fdf4f0a2b911e9eea"
@@ -770,7 +776,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "45e5463b55d31f17441ad3d93affbb7008910b9c",
-        "fetched_at": "2026-07-31T14:20:17.740552+00:00"
+        "fetched_at": "2026-08-07T13:36:49.538842+00:00"
       },
       "page_type": "process",
       "verified_sha1": "45e5463b55d31f17441ad3d93affbb7008910b9c"
@@ -781,11 +787,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "c641e87d66f9b03769d038d0ffc7a197448db6a1",
-        "fetched_at": "2026-07-31T14:34:56.703456+00:00"
+        "content_sha1": "0f412dff5b6822cb884d7019fc5973cce1ba0784",
+        "fetched_at": "2026-08-07T13:36:54.340519+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "c641e87d66f9b03769d038d0ffc7a197448db6a1"
+      "verified_sha1": "0f412dff5b6822cb884d7019fc5973cce1ba0784"
     },
     "soziologisches-institut--2": {
       "onboarding": "verified",
@@ -793,11 +799,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "262f9ca2298d5389f8ea106d464a8354394a395d",
-        "fetched_at": "2026-07-31T14:35:10.795630+00:00"
+        "content_sha1": "ea47864b6ae1f8644fbe855789ac16819629c590",
+        "fetched_at": "2026-08-07T13:36:56.774222+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "262f9ca2298d5389f8ea106d464a8354394a395d"
+      "verified_sha1": "ea47864b6ae1f8644fbe855789ac16819629c590"
     },
     "soziologisches-institut--3": {
       "onboarding": "verified",
@@ -806,7 +812,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "91f372e7f21248b19e2b0ae587c83f38896cca89",
-        "fetched_at": "2026-07-31T14:35:25.391644+00:00"
+        "fetched_at": "2026-08-07T13:36:59.046250+00:00"
       },
       "page_type": "process",
       "verified_sha1": "91f372e7f21248b19e2b0ae587c83f38896cca89"
@@ -817,11 +823,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "67b736c39e6c587889f9156bf299deffb490420a",
-        "fetched_at": "2026-08-04T10:50:54.512456+00:00"
+        "content_sha1": "acc688d22bf510f67c3bf55c44b9bd8742668fb3",
+        "fetched_at": "2026-08-07T13:37:09.331971+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "67b736c39e6c587889f9156bf299deffb490420a"
+      "verified_sha1": "acc688d22bf510f67c3bf55c44b9bd8742668fb3"
     },
     "religionswissenschaftliches-seminar--1": {
       "onboarding": "verified",
@@ -829,11 +835,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "ae465b632b4a8014069089a271f7cd6b85f8f809",
-        "fetched_at": "2026-08-04T10:59:53.117999+00:00"
+        "content_sha1": "ca8bf62b362eb3dac60aca54b3fcfc6379db0b11",
+        "fetched_at": "2026-08-07T13:37:13.945800+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "ae465b632b4a8014069089a271f7cd6b85f8f809"
+      "verified_sha1": "ca8bf62b362eb3dac60aca54b3fcfc6379db0b11"
     },
     "astrophysics--1": {
       "onboarding": "verified",
@@ -841,11 +847,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "f2453f7ee137c45ba7b4a9589e2af025a4c48df5",
-        "fetched_at": "2026-08-04T11:17:38.737602+00:00"
+        "content_sha1": "90218fb9bcec5e1d82c3ea4b75c57b4bcb2c8c0b",
+        "fetched_at": "2026-08-07T13:37:21.322123+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "f2453f7ee137c45ba7b4a9589e2af025a4c48df5"
+      "verified_sha1": "90218fb9bcec5e1d82c3ea4b75c57b4bcb2c8c0b"
     },
     "biochemisches-institut-mnf--1": {
       "onboarding": "verified",
@@ -853,11 +859,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "b87d9d847103d6ed246b0a9a26b0f0c1576cdbb0",
-        "fetched_at": "2026-08-04T11:31:18.774655+00:00"
+        "content_sha1": "d90e851d6ac882e6ae3005c49b47b381b0684bd6",
+        "fetched_at": "2026-08-07T13:37:23.768263+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "b87d9d847103d6ed246b0a9a26b0f0c1576cdbb0"
+      "verified_sha1": "d90e851d6ac882e6ae3005c49b47b381b0684bd6"
     },
     "biochemisches-institut-mnf--2": {
       "onboarding": "verified",
@@ -865,11 +871,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "c73c878683e9b8c7c57e6e59b737a36da779cec1",
-        "fetched_at": "2026-08-04T11:33:44.156799+00:00"
+        "content_sha1": "6005684fc7a6a3d4a869414d6906346355233095",
+        "fetched_at": "2026-08-07T13:37:26.263560+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "c73c878683e9b8c7c57e6e59b737a36da779cec1"
+      "verified_sha1": "6005684fc7a6a3d4a869414d6906346355233095"
     },
     "chemistry--1": {
       "onboarding": "verified",
@@ -877,11 +883,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "053dc70c309ab3319f4c2d4315d0b9fecaeb7b4d",
-        "fetched_at": "2026-08-04T13:44:18.385672+00:00"
+        "content_sha1": "5a1caa9719b63fff5d98647cb727f233341314da",
+        "fetched_at": "2026-08-07T13:37:28.854367+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "053dc70c309ab3319f4c2d4315d0b9fecaeb7b4d"
+      "verified_sha1": "5a1caa9719b63fff5d98647cb727f233341314da"
     },
     "ieu--1": {
       "onboarding": "verified",
@@ -889,11 +895,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "38cc9ac35063806f29711273a5ffb4649757c8b8",
-        "fetched_at": "2026-08-05T12:24:15.306312+00:00"
+        "content_sha1": "534b1a76ee4fe7ae5db3c0920255b4b76d0d6720",
+        "fetched_at": "2026-08-07T13:37:31.228390+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "38cc9ac35063806f29711273a5ffb4649757c8b8"
+      "verified_sha1": "534b1a76ee4fe7ae5db3c0920255b4b76d0d6720"
     },
     "ieu--2": {
       "onboarding": "verified",
@@ -901,11 +907,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "4b88d5fcf5c528fbe51b60712daecfa3ac2397c0",
-        "fetched_at": "2026-08-05T12:34:38.384478+00:00"
+        "content_sha1": "f7326f6b75ef5436bfd2f2db6f1acf5126573e62",
+        "fetched_at": "2026-08-07T13:37:35.105473+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "4b88d5fcf5c528fbe51b60712daecfa3ac2397c0"
+      "verified_sha1": "f7326f6b75ef5436bfd2f2db6f1acf5126573e62"
     },
     "ieu--3": {
       "onboarding": "verified",
@@ -913,11 +919,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "9435cb26816c5b6802b1d057b63c819949544af6",
-        "fetched_at": "2026-08-05T12:25:29.954640+00:00"
+        "content_sha1": "2b09bc7fbaae254b3e24fdc24128dcc9e7374092",
+        "fetched_at": "2026-08-07T13:37:37.464356+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "9435cb26816c5b6802b1d057b63c819949544af6"
+      "verified_sha1": "2b09bc7fbaae254b3e24fdc24128dcc9e7374092"
     },
     "geography--1": {
       "onboarding": "verified",
@@ -925,11 +931,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "e101436390a5f5efd66070f462676aaa40fc66e9",
-        "fetched_at": "2026-08-05T12:40:57.787959+00:00"
+        "content_sha1": "7803f284000eb0cbae732d6d6a15deedabbe9438",
+        "fetched_at": "2026-08-07T13:37:39.945467+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "e101436390a5f5efd66070f462676aaa40fc66e9"
+      "verified_sha1": "7803f284000eb0cbae732d6d6a15deedabbe9438"
     },
     "geography--2": {
       "onboarding": "verified",
@@ -937,11 +943,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "476c2191c727f5967b66d1f96b2f2f45c12abf9a",
-        "fetched_at": "2026-08-05T12:41:00.327219+00:00"
+        "content_sha1": "1f79e293336bcab1eeef0da745fa687664b64267",
+        "fetched_at": "2026-08-07T13:37:42.544309+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "476c2191c727f5967b66d1f96b2f2f45c12abf9a"
+      "verified_sha1": "1f79e293336bcab1eeef0da745fa687664b64267"
     },
     "geography--3": {
       "onboarding": "verified",
@@ -949,11 +955,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "5c9e90bf8f3ef3fa859c3f71045c43c83ef6c2c9",
-        "fetched_at": "2026-08-05T12:41:02.675235+00:00"
+        "content_sha1": "ee25e5e45d927154866ad39efb78bbfc23a24ceb",
+        "fetched_at": "2026-08-07T13:37:44.653770+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "5c9e90bf8f3ef3fa859c3f71045c43c83ef6c2c9"
+      "verified_sha1": "ee25e5e45d927154866ad39efb78bbfc23a24ceb"
     },
     "mathematics--1": {
       "onboarding": "verified",
@@ -961,11 +967,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "9870b98adad3b653974f4cc3933b6c7728ed5090",
-        "fetched_at": "2026-08-05T12:51:00.742158+00:00"
+        "content_sha1": "bfc5ffbd21343d34bf16882668596863dc1493e6",
+        "fetched_at": "2026-08-07T13:37:47.320838+00:00"
       },
       "page_type": "none",
-      "verified_sha1": "9870b98adad3b653974f4cc3933b6c7728ed5090"
+      "verified_sha1": "bfc5ffbd21343d34bf16882668596863dc1493e6"
     },
     "mathematics--2": {
       "onboarding": "verified",
@@ -973,11 +979,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "1255fe849ad32833462ad8e141289f58f79537c5",
-        "fetched_at": "2026-08-05T12:51:04.013981+00:00"
+        "content_sha1": "b651d889f2c460143620c5101800064ed4cd6764",
+        "fetched_at": "2026-08-07T13:37:50.827144+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "1255fe849ad32833462ad8e141289f58f79537c5"
+      "verified_sha1": "b651d889f2c460143620c5101800064ed4cd6764"
     },
     "paleontology--1": {
       "onboarding": "verified",
@@ -985,11 +991,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "6776e224f53e1b8958c27c5905080b462e8d410b",
-        "fetched_at": "2026-08-05T12:58:13.383275+00:00"
+        "content_sha1": "bd856d452fa97e4ce3770e02f6c4c31090b08a71",
+        "fetched_at": "2026-08-07T13:37:53.175993+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "6776e224f53e1b8958c27c5905080b462e8d410b"
+      "verified_sha1": "bd856d452fa97e4ce3770e02f6c4c31090b08a71"
     },
     "physics--1": {
       "onboarding": "verified",
@@ -997,11 +1003,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "c11729b7408ec85858c3ce4b01801e8e2bcadb7e",
-        "fetched_at": "2026-08-05T13:09:02.460086+00:00"
+        "content_sha1": "14fa949fbd59ac2734261164744502d0258bc995",
+        "fetched_at": "2026-08-07T13:37:55.985450+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "c11729b7408ec85858c3ce4b01801e8e2bcadb7e"
+      "verified_sha1": "14fa949fbd59ac2734261164744502d0258bc995"
     },
     "physics--2": {
       "onboarding": "verified",
@@ -1009,11 +1015,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "beb8ceda859b4a07db6ec272ff06bd99d2fda2cf",
-        "fetched_at": "2026-08-05T13:09:04.668970+00:00"
+        "content_sha1": "2611b92ef63666ea3845fc0fc2784b405ff99e09",
+        "fetched_at": "2026-08-07T13:37:58.343839+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "beb8ceda859b4a07db6ec272ff06bd99d2fda2cf"
+      "verified_sha1": "2611b92ef63666ea3845fc0fc2784b405ff99e09"
     },
     "physics--3": {
       "onboarding": "verified",
@@ -1021,11 +1027,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "b0ecd1cfd342a991b57c792818ee8ed21978d89b",
-        "fetched_at": "2026-08-05T13:09:06.853554+00:00"
+        "content_sha1": "8b7f440c5192a3cfdb97d6225f39a859107c772f",
+        "fetched_at": "2026-08-07T13:38:00.863792+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "b0ecd1cfd342a991b57c792818ee8ed21978d89b"
+      "verified_sha1": "8b7f440c5192a3cfdb97d6225f39a859107c772f"
     },
     "imcr--1": {
       "onboarding": "verified",
@@ -1033,23 +1039,23 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "e5e51e315647f1bf9fda45317af3ddb391be6655",
-        "fetched_at": "2026-08-05T13:19:23.621571+00:00"
+        "content_sha1": "19c4b0824f3531f62dc70a83e3e770b12b957dd4",
+        "fetched_at": "2026-08-07T13:38:03.304538+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "e5e51e315647f1bf9fda45317af3ddb391be6655"
+      "verified_sha1": "19c4b0824f3531f62dc70a83e3e770b12b957dd4"
     },
     "ifi--18": {
       "onboarding": "verified",
       "run": "done",
       "last_fetch": {
         "http_status": 200,
-        "method": "json",
-        "content_sha1": "93fc19167994f7cbdc03cf007b3c4dbf6339d462",
-        "fetched_at": "2026-07-22T21:43:57.123857+00:00"
+        "method": "requests",
+        "content_sha1": "193b1270641625495b6c0698567abb6e39e16999",
+        "fetched_at": "2026-08-07T13:34:16.271809+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "93fc19167994f7cbdc03cf007b3c4dbf6339d462"
+      "verified_sha1": "193b1270641625495b6c0698567abb6e39e16999"
     },
     "ifi--19": {
       "onboarding": "verified",
@@ -1057,11 +1063,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "626cc0ee051747a0d1fe20520fdf02d8f8a9115f",
-        "fetched_at": "2026-07-22T21:46:02.339058+00:00"
+        "content_sha1": "3639e79fd215a761145298b91ff01a011c6fd8a3",
+        "fetched_at": "2026-08-07T13:34:18.637699+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "626cc0ee051747a0d1fe20520fdf02d8f8a9115f"
+      "verified_sha1": "3639e79fd215a761145298b91ff01a011c6fd8a3"
     },
     "ifi--20": {
       "onboarding": "verified",
@@ -1069,11 +1075,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "d961744db4812859d73be86e2af14ecf92777477",
-        "fetched_at": "2026-07-22T21:46:14.350442+00:00"
+        "content_sha1": "95070ceea2033a434f5514c3dacb68bdb9abe049",
+        "fetched_at": "2026-08-07T13:34:21.501526+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "d961744db4812859d73be86e2af14ecf92777477"
+      "verified_sha1": "95070ceea2033a434f5514c3dacb68bdb9abe049"
     },
     "asien-orient-institut--3": {
       "onboarding": "verified",
@@ -1081,11 +1087,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "ea043a4636415fff7691c45c4a4905d122451301",
-        "fetched_at": "2026-07-25T04:55:04.730406+00:00"
+        "content_sha1": "737828df43e5659a17042daf32522c1ce3516e20",
+        "fetched_at": "2026-08-07T13:35:12.599238+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "ea043a4636415fff7691c45c4a4905d122451301"
+      "verified_sha1": "737828df43e5659a17042daf32522c1ce3516e20"
     },
     "deutsches-seminar--4": {
       "onboarding": "verified",
@@ -1093,11 +1099,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "2704d4f05cbed0f9efc65dcd1742598c209a18b5",
-        "fetched_at": "2026-07-25T05:47:21.265073+00:00"
+        "content_sha1": "34a70e58e714e3614a49a651a20a2d5aef9288ff",
+        "fetched_at": "2026-08-07T13:35:22.434671+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "2704d4f05cbed0f9efc65dcd1742598c209a18b5"
+      "verified_sha1": "34a70e58e714e3614a49a651a20a2d5aef9288ff"
     },
     "deutsches-seminar--5": {
       "onboarding": "verified",
@@ -1105,11 +1111,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "e3798d17f04fe78904e3fa57fc4abed25f50cd6e",
-        "fetched_at": "2026-07-25T05:45:32.423967+00:00"
+        "content_sha1": "89ea6f7c5c729692d9594ca61cfd4d51c934cca8",
+        "fetched_at": "2026-08-07T13:35:25.022440+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "e3798d17f04fe78904e3fa57fc4abed25f50cd6e"
+      "verified_sha1": "89ea6f7c5c729692d9594ca61cfd4d51c934cca8"
     },
     "rfw--1": {
       "onboarding": "verified",
@@ -1117,11 +1123,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "8b39c7013283af1226bf51e766c55e931b989b06",
-        "fetched_at": "2026-08-04T10:17:23.612039+00:00"
+        "content_sha1": "32ca170584414e96fc8d550aa39e6d0395be58af",
+        "fetched_at": "2026-08-07T13:37:04.701382+00:00"
       },
       "page_type": "topics",
-      "verified_sha1": "8b39c7013283af1226bf51e766c55e931b989b06"
+      "verified_sha1": "32ca170584414e96fc8d550aa39e6d0395be58af"
     },
     "rfw--2": {
       "onboarding": "verified",
@@ -1129,11 +1135,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "e2a5dad0504bf0b0bcd99489d43d9b90fabe3066",
-        "fetched_at": "2026-08-04T10:21:32.849139+00:00"
+        "content_sha1": "3bf96e3a9902b226d03aa5f114266726d98cd073",
+        "fetched_at": "2026-08-07T13:37:06.999760+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "e2a5dad0504bf0b0bcd99489d43d9b90fabe3066"
+      "verified_sha1": "3bf96e3a9902b226d03aa5f114266726d98cd073"
     },
     "iaka--1": {
       "onboarding": "verified",
@@ -1142,7 +1148,7 @@
         "http_status": 200,
         "method": "requests",
         "content_sha1": "48d89ecd758374433f298ee6af09d7e49232dd93",
-        "fetched_at": "2026-07-30T08:09:14.999268+00:00"
+        "fetched_at": "2026-08-07T13:35:41.690285+00:00"
       },
       "page_type": "process",
       "verified_sha1": "48d89ecd758374433f298ee6af09d7e49232dd93"
@@ -1153,11 +1159,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "ce9c43ad5f3e354d67112fa8f85b4552d6fc01ec",
-        "fetched_at": "2026-07-31T14:20:37.275871+00:00"
+        "content_sha1": "c5dd3562d9071a201259785f4689207ac1626bab",
+        "fetched_at": "2026-08-07T13:36:51.817357+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "ce9c43ad5f3e354d67112fa8f85b4552d6fc01ec"
+      "verified_sha1": "c5dd3562d9071a201259785f4689207ac1626bab"
     },
     "soziologisches-institut--4": {
       "onboarding": "verified",
@@ -1165,11 +1171,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "c327581d3368e68c28044a08c2c32d3dffecbac4",
-        "fetched_at": "2026-07-31T14:33:37.747533+00:00"
+        "content_sha1": "47a7b00796cd931a7a4e3f19d66ef8839ee3baa6",
+        "fetched_at": "2026-08-07T13:37:01.846301+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "c327581d3368e68c28044a08c2c32d3dffecbac4"
+      "verified_sha1": "47a7b00796cd931a7a4e3f19d66ef8839ee3baa6"
     },
     "theologisches-seminar--2": {
       "onboarding": "verified",
@@ -1177,11 +1183,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "5995c9591c951bdbcf19359ef94944b2a775a6b2",
-        "fetched_at": "2026-08-04T10:50:47.411842+00:00"
+        "content_sha1": "bdcb13f2757d7e77057191af36e7769461d602bb",
+        "fetched_at": "2026-08-07T13:37:11.571769+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "5995c9591c951bdbcf19359ef94944b2a775a6b2"
+      "verified_sha1": "bdcb13f2757d7e77057191af36e7769461d602bb"
     },
     "religionswissenschaftliches-seminar--2": {
       "onboarding": "verified",
@@ -1189,11 +1195,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "52118585469fe72d4f3e0b6f799224e72cdd73c2",
-        "fetched_at": "2026-08-04T11:00:13.775522+00:00"
+        "content_sha1": "653bbdbd831482a4947e5f47bdac4c4d4b006c71",
+        "fetched_at": "2026-08-07T13:37:16.632167+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "52118585469fe72d4f3e0b6f799224e72cdd73c2"
+      "verified_sha1": "653bbdbd831482a4947e5f47bdac4c4d4b006c71"
     },
     "religionswissenschaftliches-seminar--3": {
       "onboarding": "verified",
@@ -1201,11 +1207,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "f2d2ed0f97566051b745be34613920ed264265ca",
-        "fetched_at": "2026-08-04T10:58:50.044277+00:00"
+        "content_sha1": "bdcb13f2757d7e77057191af36e7769461d602bb",
+        "fetched_at": "2026-08-07T13:37:18.808186+00:00"
       },
       "page_type": "people",
-      "verified_sha1": "f2d2ed0f97566051b745be34613920ed264265ca"
+      "verified_sha1": "bdcb13f2757d7e77057191af36e7769461d602bb"
     },
     "mef--1": {
       "onboarding": "verified",
@@ -1213,11 +1219,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "abddb87d0c9d24a2632619b915d68ea47ec84b11",
-        "fetched_at": "2026-08-05T13:48:56.670359+00:00"
+        "content_sha1": "78070fa8a01fe0793d7a775b54d296e921bb1b2f",
+        "fetched_at": "2026-08-07T13:38:05.783025+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "abddb87d0c9d24a2632619b915d68ea47ec84b11"
+      "verified_sha1": "78070fa8a01fe0793d7a775b54d296e921bb1b2f"
     },
     "vsf--1": {
       "onboarding": "verified",
@@ -1225,11 +1231,11 @@
       "last_fetch": {
         "http_status": 200,
         "method": "requests",
-        "content_sha1": "811e3856507e8ba76e1343ed8f5a34b374ec6fa5",
-        "fetched_at": "2026-08-05T13:52:21.924052+00:00"
+        "content_sha1": "af50e634ee0e8bdde38c3a7bedf2cade192ff43f",
+        "fetched_at": "2026-08-07T13:38:08.189153+00:00"
       },
       "page_type": "process",
-      "verified_sha1": "811e3856507e8ba76e1343ed8f5a34b374ec6fa5"
+      "verified_sha1": "af50e634ee0e8bdde38c3a7bedf2cade192ff43f"
     }
   }
 }

@@ -224,12 +224,20 @@ def _group_bucket(unit: dict, group: dict) -> dict:
     return g
 
 
-def records_for_source(data: dict, src: registry.Source, page_type: str) -> list:
-    """Existing stored records for one source (used to diff on PAGE_CHANGED)."""
+def records_for_source(data: dict, src: registry.Source, page_type: str,
+                       scope: str | None = None) -> list:
+    """Existing stored records for one source (used to diff on PAGE_CHANGED). A
+    `scope='faculty'` source is consolidated at the FACULTY level, not under its
+    unit, so it must be looked up there — otherwise the diff compares against an
+    empty unit bucket and every run shows a spurious `+1 added`."""
     bucket = _BUCKET.get(page_type)
     fac = data.get("faculties", {}).get(src.faculty_code)
     if not bucket or not fac:
         return []
+    if scope == "faculty":
+        if page_type == "process":  # consolidated → raw per-source map on the faculty
+            return fac.get(_PROCESS_RAW_KEY, {}).get(src.source_id, [])
+        return [r for r in fac.get(bucket, []) if r.get("source_id") == src.source_id]
     unit = fac.get("units", {}).get(src.unit_id)
     if not unit:
         return []

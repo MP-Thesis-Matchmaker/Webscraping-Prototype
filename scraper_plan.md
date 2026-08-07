@@ -101,11 +101,18 @@ dropped, `_profile_url` exposed as `profile_url`).
   record-level diff (added/removed/modified) for my review. Process pages:
   flag for one LLM re-summarization + my review.
 
-Any flag → the source's state becomes `quarantined`, its previous good data
-stays in the output (never overwrite good data with garbage), and the run
-report lists every quarantined source with reason. `report.py` prints that
-table, writes `output/runs/<timestamp>.json`, and exits non-zero so any
-scheduler (cron/GitHub Action) can email me. Notification hook is one function
+Flag handling splits by kind (a refinement over the original "any flag →
+quarantined"): a `page_changed` whose re-extracted records are *identical* is a
+cosmetic HTML change and is quieted to `ok` (not flagged); a `page_changed` with
+a real record diff updates the data, is listed in the run report for review, but
+**keeps the source verified and in the rotation** — its data is good, so a
+weekly scraper should keep tracking it. Only hard failures (`fetch_failed`,
+`extract_failed`, `schema_invalid`) and an `llm_fallback` rescue **quarantine**
+the source (excluded from future runs until re-onboarded); their previous good
+data stays in the output (never overwrite good data with garbage). The run
+report lists every flagged source with reason, `report.py` writes
+`output/runs/<timestamp>.json`, and the run exits non-zero so any scheduler
+(cron/launchd/GitHub Action) can email me. Notification hook is one function
 (`notify(summary)`) — default prints, later swappable for email/webhook.
 
 ### 5. Pause & resume

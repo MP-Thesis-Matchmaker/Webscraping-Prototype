@@ -1,0 +1,133 @@
+{
+  "started_at": "2026-08-07T13:41:59.592326+00:00",
+  "sources": [
+    {
+      "source_id": "ivw--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ivw--4",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 43,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 29,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--3",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--6",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "iaka--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--4",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ipz--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 3,
+      "reasons": []
+    },
+    {
+      "source_id": "ipz--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "filmwissenschaft--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "filmwissenschaft--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "soziologisches-institut--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "by_status": {
+      "ok": 15
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-07T13:42:03.360677+00:00"
+}

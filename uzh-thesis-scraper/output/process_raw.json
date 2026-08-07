@@ -1,10 +1,452 @@
 {
+  "ivw": {
+    "ivw--2": [
+      {
+        "degree_level": "Master",
+        "process_description": "The page does not describe a concrete process for obtaining or completing a BA/MA thesis; it only links to a short PDF with information and coverpage/declaration templates and directs students to the Dean’s Office website, the Dean’s Office regulations/schedule, and studies@econ.uzh.ch for registration and formal requirements.",
+        "relevant_links": [
+          {
+            "url": "https://www.econ.uzh.ch/dam/jcr:62140c7a-f859-4754-ae1b-4a4546037d55/MIE%20Flyer%202019_Economics_EN.pdf",
+            "description": "flyer (PDF, 1 MB)"
+          },
+          {
+            "url": "https://www.econ.uzh.ch/dam/jcr:c800f7eb-31a0-4618-9b4b-3ff2ceb8503c/for%20students%20-%202023-%20%20BA_MA%20thesis%20guidelines%20ECON%20Department.pdf",
+            "description": "here. (PDF, 338 KB)"
+          }
+        ],
+        "source_url": "https://www.econ.uzh.ch/en/study/undergraduate/ma.html",
+        "source_id": "ivw--2",
+        "scraped_at": "2026-08-07T14:00:11.654361+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "ivw--3": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "These are departmental recommendations for BA (18 ECTS = 540 h) and MA (30 ECTS = 900 h) theses in Economics. Theses are not centrally allocated: find topics on the faculty list (link provided) and contact the professor or contact person directly (supervisors may be from other departments). Check the prospective supervisor’s website for specific requirements. You may start any time by agreement with your supervisor; completion period is six months and you must observe faculty graduation/registration deadlines (link provided). Language is English or German (tbd with supervisor). Formal requirements: ~40 pages max (tbd), 1.5 spacing, 12‑pt Times New Roman, 1.5\" margins, ≤150‑word abstract, include a declaration of authorship (form provided). Grading is primarily on content.",
+        "relevant_links": [
+          {
+            "url": "https://www.econ.uzh.ch/dam/jcr:c800f7eb-31a0-4618-9b4b-3ff2ceb8503c/for%20students%20-%202023-%20%20BA_MA%20thesis%20guidelines%20ECON%20Department.pdf",
+            "description": "BA/MA thesis process page"
+          },
+          {
+            "url": "https://www.oec.uzh.ch/de/studies/general/theses.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.oec.uzh.ch/en/studies/general/graduation/degree-deadlines.html",
+            "description": "referenced in document"
+          }
+        ],
+        "source_url": "https://www.econ.uzh.ch/dam/jcr:c800f7eb-31a0-4618-9b4b-3ff2ceb8503c/for%20students%20-%202023-%20%20BA_MA%20thesis%20guidelines%20ECON%20Department.pdf",
+        "source_id": "ivw--3",
+        "scraped_at": "2026-08-07T14:00:11.673257+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "ivw--1": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "The page does not describe a concrete process for obtaining or completing a Bachelor's or Master's thesis; it only points to a PDF with further information (including a cover page template and declaration of independence) and directs students to the Dean's Office and studies@econ.uzh.ch for registration and regulations.",
+        "relevant_links": [
+          {
+            "url": "https://www.econ.uzh.ch/dam/jcr:2d9768e6-c701-4d2c-b1c1-f05cd7337fbe/SIT_Flyer_2019_WWF_VWL_Auflage500.pdf",
+            "description": "flyer (PDF, 572 KB)"
+          },
+          {
+            "url": "https://www.econ.uzh.ch/dam/jcr:c800f7eb-31a0-4618-9b4b-3ff2ceb8503c/for%20students%20-%202023-%20%20BA_MA%20thesis%20guidelines%20ECON%20Department.pdf",
+            "description": "here (PDF, 338 KB)"
+          }
+        ],
+        "source_url": "https://www.econ.uzh.ch/en/study/undergraduate/ba.html",
+        "source_id": "ivw--1",
+        "scraped_at": "2026-08-07T14:00:11.622018+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "ibw": {
+    "ibw--1": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "Eligibility: you must have relevant prior knowledge in the subject area (relevant lectures attended and passed); some provided topics list additional requirements. How to find and approach a supervisor: use the Business Theses Market—either upload your own Research Proposal (2–3 pages) assigned to the correct research area, or apply for a posted topic (requires a short letter of motivation). Professor links on the department page lead to chair websites. Registration and documents: digital application via the Business Theses Market with CV, transcript of records (current export) and Research Proposal for own topics; you need your UZH login. After a successful match you are contacted by the supervisor and collect the official thesis assignment on OLAT. Key formal points and deadlines: collecting the OLAT assignment starts the six‑month writing period; matching typically takes up to two months (no feedback after two months = proposal rejected); submit your thesis via OLAT as a ZIP file; you receive a grade within one month. Official guidelines: follow the Dean’s Office rules and the department’s “Possible Topic Areas” document; contact theses@business.uzh.ch for questions.",
+        "relevant_links": [
+          {
+            "url": "https://www.oec.uzh.ch/en/studies/theses.html#OLAT_process:_registration,_collection_of_project_definition,_and_submission_of_thesis",
+            "description": "Detailed information on the OLAT Process"
+          },
+          {
+            "url": "https://theses.business.uzh.ch/",
+            "description": "Business Theses Market"
+          },
+          {
+            "url": "https://www.business.uzh.ch/dam/jcr:4b2871d0-fa49-437b-bdb5-e8b66b10b455/260630_Possible_Topic_Areas_for_Theses_2026.pdf",
+            "description": "Possible Topic Areas for Bachelor's and Master's Theses (PDF, 117 KB)"
+          },
+          {
+            "url": "https://www.business.uzh.ch/en/research/professorships/managerialaccounting/abschlussarbeiten.html",
+            "description": "e-Form"
+          },
+          {
+            "url": "https://www.business.uzh.ch/de/research/professorships/emap/teaching/thesis.html",
+            "description": "thesis page"
+          },
+          {
+            "url": "https://www.business.uzh.ch/en/research/professorships/hrmlead/Theses.html",
+            "description": "website"
+          },
+          {
+            "url": "https://www.business.uzh.ch/en/research/professorships/managerial-economics/thesissupervision.html",
+            "description": "website"
+          },
+          {
+            "url": "https://www.business.uzh.ch/en/research/professorships/international-management/Teaching/thesis.html",
+            "description": "our website"
+          },
+          {
+            "url": "https://www.business.uzh.ch/en/teaching/theses/thesesmarket.html",
+            "description": "Business Theses Market"
+          },
+          {
+            "url": "https://www.business.uzh.ch/en/teaching/theses/faqs.html",
+            "description": "FAQs for Students"
+          }
+        ],
+        "source_url": "https://www.business.uzh.ch/en/teaching/theses.html",
+        "source_id": "ibw--1",
+        "scraped_at": "2026-08-07T14:00:12.897405+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "iff": {
+    "iff--1": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "Students eligible must have the relevant prior knowledge and passed the corresponding lectures; additional requirements may appear in specific topic proposals. To apply you must use the DF Thesis Market (digital application with UZH login) and upload a CV, transcript of records and — if you propose your own topic — a 2–3 page Research Proposal (guidelines and example provided). Alternatively apply to a posted topic (requires CV, transcript and a short motivation letter). If accepted you are contacted by your supervisor who issues the final thesis assignment on OLAT; collecting the assignment on OLAT starts the six‑month time limit. Submit the thesis via OLAT as a ZIP file; you receive a grade within a month. Apply at least one month before desired start. Follow the Dean’s Office study/graduation rules and the department’s online instructions.",
+        "relevant_links": [
+          {
+            "url": "https://cmsauth.uzh.ch/df/dam/jcr:8285e68a-6639-44ad-8228-0dec0a2a23e2/Pr%C3%A4sentation_Bachelorarbeit_Final_2023.pdf",
+            "description": "presentation (PDF, 276 KB)"
+          },
+          {
+            "url": "https://theses.df.uzh.ch/",
+            "description": "DF Thesis Market"
+          },
+          {
+            "url": "https://www.df.uzh.ch/dam/jcr:dcf76951-19b3-4ec2-bef9-4bc4a2d303f3/Research_Proposal_Instructions_ENG.pdf",
+            "description": "Instructions for writing a Research Proposal (PDF, 69 KB)"
+          },
+          {
+            "url": "https://www.df.uzh.ch/dam/jcr:49d19108-e397-43c4-a627-fee9ec8cc83a/Sample_Proposal.pdf",
+            "description": "Example of a Research Proposal (PDF, 205 KB)"
+          },
+          {
+            "url": "https://www.df.uzh.ch/dam/jcr:13a0ae15-6284-4605-a85b-4c1703284e8c/Bachelor_Thesis_Example.pdf",
+            "description": "The different theories of the 2010 Flash Crash with main focus on high-frequency trading (PDF, 1 MB)"
+          },
+          {
+            "url": "https://www.df.uzh.ch/dam/jcr:70e846dc-43a5-4483-a908-e1245b64ee15/Master_Thesis_Example.pdf",
+            "description": "Strategic Allocation to Return Factors (PDF, 1 MB)"
+          },
+          {
+            "url": "https://www.df.uzh.ch/dam/jcr:1b0741ad-afa2-491b-a85d-3b4245f930fc/Thesis_Template.zip",
+            "description": "template for LaTeX (ZIP, 416 KB)"
+          },
+          {
+            "url": "https://www.df.uzh.ch/dam/jcr:36f7371c-64ea-4fac-89b5-683e2f4d8786/Bachelor%20and%20master%20theses%20at%20Chair%20Nyborg.pdf",
+            "description": "Bachelor and Master Theses at Chair Nyborg (PDF, 124 KB)"
+          },
+          {
+            "url": "https://www.df.uzh.ch/dam/jcr:72619389-a7be-49aa-87e8-58f521d67f4e/Zitierstandard_JoF.pdf",
+            "description": "Zitierstandard (Journal of Finance) (PDF, 83 KB)"
+          },
+          {
+            "url": "https://people.math.ethz.ch/~farkas/Thesis_topics.html",
+            "description": "More information and topics"
+          },
+          {
+            "url": "https://www.df.uzh.ch/en/studies/bachelor-master/thesis/faq.html",
+            "description": "FAQ for Students"
+          },
+          {
+            "url": "https://www.df.uzh.ch/en/studies/bachelor-master/thesis/thesis-market.html",
+            "description": "DF Thesis Market"
+          }
+        ],
+        "source_url": "https://www.df.uzh.ch/en/studies/bachelor-master/thesis.html",
+        "source_id": "iff--1",
+        "scraped_at": "2026-08-07T14:00:13.445085+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "ifi": {
+    "ifi--20": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "This page is aimed at MSc students and points to the concrete steps and documents for thesis work but does not list enrollment/eligibility rules in detail. To find a supervisor use the \"Specializations and Topics per Professor\" table or contact research groups directly; additional thesis offers appear at the Master’s Project Market (MPM) and on research group pages (MPM next in Fall 2026; projects are also available independently). You must register using the provided registration forms (Master’s project, Independent Study, Master’s thesis) and read the relevant fact sheets (Master’s Thesis; Preparation of BSc/MSc Theses; plagiarism). All Bachelor’s and Master’s theses and registrations must be submitted digitally from your UZH e‑mail to studies@ifi.uzh.ch. Follow the required order Master’s Project > Master’s Thesis, check faculty study regulations and deadlines on the Faculty/IFI study pages, and contact Study Coordination (Daniela Bärtschi) for questions.",
+        "relevant_links": [
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:1b564225-e6bd-437c-9e20-a07bca1c4df2/Merkblatt-Plagiate_en.pdf",
+            "description": "fact sheet on plagiarism (PDF, 109 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:f7a9e0bd-2a65-402b-882d-4cf72a6bdf81/Merkblatt-Masterprojekt-SO26-EN-20260702.pdf",
+            "description": "Fact Sheet (PDF, 85 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:a7f9f590-4216-4d19-84dc-51e91f9aa3b3/mpm2026-03-30web.pdf",
+            "description": "Master Project Market of 30 March 2026: Slides (PDF, 7 MB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:e5381fea-b531-45ae-804a-6bf77679a61f/Anmeldung-Masterprojekt-SO26-EN-20260702.pdf",
+            "description": "Registration form Master's project (PDF, 100 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:dbccd306-3981-41ee-839f-e056484287ea/Merkblatt-Independent-Study-SO26-EN-20260702.pdf",
+            "description": "Fact Sheet (PDF, 78 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:5024e3e3-f8b6-49fb-8054-6bc32bdfc76a/Anmeldung-IndependentStudy-SO26-EN-20260702.pdf",
+            "description": "Registration form Independent Study (PDF, 97 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:a8df9bc8-40df-468a-a004-a04bbfeb0c44/Merkblatt-Masterarbeit-SO26-EN-20260702.pdf",
+            "description": "Fact Sheet (PDF, 92 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:e563d185-4fed-46d0-920f-b38c7e84364a/Merkblatt-Ausarbeitung-Thesis-SO26-EN-20260702.pdf",
+            "description": "Fact Sheet: Preparation of BSc/MSc Theses (PDF, 157 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:d38760ed-0651-480f-8c75-0da35bc0763c/Anmeldung-BScMScArbeiten-SO26-EN-20260702.pdf",
+            "description": "Registration form Master's thesis (PDF, 173 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:aeae2658-0bdc-4bbb-99fc-3d435bbaaf2c/MSc%20program%20introduction%202025%20IS%20GS.pdf",
+            "description": "Information Systems (PDF, 1 MB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:a2fc0420-aaf1-45c1-bc98-d5b02249c398/MSc%20program%20introduction%202025%20SoSy%20ABa.pdf",
+            "description": "Software Systems (PDF, 1 MB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:83342e9d-3b1f-4dc7-8a96-e92ad5859c07/MSc%20program%20introduction%202025%20POC%20CW.pdf",
+            "description": "Human-Centered Computing (PDF, 2 MB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:4bb23413-31f4-4fd9-8aca-f6d6b4bb4652/MSc%20program%20introduction%202025%20DS%20DO.pdf",
+            "description": "Data Science (PDF, 1 MB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:883154cd-26e7-45d2-a74b-147331d75f3a/MSc%20program%20introduction%202025%20AI%20ABe.pdf",
+            "description": "Artificial Intelligence (PDF, 1 MB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/ddis/theses.html",
+            "description": "Abraham Bernstein"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/dbtg/teaching/theses.html",
+            "description": "Michael Böhlen"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/zpac/teaching/theses.html",
+            "description": "Elaine Huang"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/alpi/thesis.html",
+            "description": "Giorgia Ramponi"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/imrg/theses.html",
+            "description": "Gerhard Schwabe"
+          },
+          {
+            "url": "http://www.csg.uzh.ch/csg/en/theses.html",
+            "description": "Burkhard Stiller"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:27d457ad-aac4-45a0-bd33-e2c72da666c2/Stellenausschreibung%20Coaching%20HS25.pdf",
+            "description": "more information (PDF, 106 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:40d06422-adc7-4fb0-97c0-ab68165090ac/kodex_layout_en_web.pdf",
+            "description": "Code of conduct for scientific integrity"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:b31db5bc-c980-4571-9eed-fcfb75ec864e/IfI%20MSc%20Welcome%20Event%20HS%202025.pdf",
+            "description": "this semester’s slides"
+          }
+        ],
+        "source_url": "https://www.ifi.uzh.ch/en/studies/msc-info.html",
+        "source_id": "ifi--20",
+        "scraped_at": "2026-08-07T14:00:15.302971+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "ifi--19": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "This unit handles BSc and MSc thesis work via published fact sheets and registration forms. Eligibility and specific prerequisites (for example: follow the module order 3rd/4th‑semester compulsory program → Informatics Internship → Bachelor’s Thesis) are defined in the Bachelor’s/Master’s thesis fact sheets and in the faculty study regulations. To find a supervisor, consult the “Specializations and Topics per Professor” table on the site (shows likely thesis topic areas and priorities) or contact research groups directly. To register, complete the Bachelor’s/Master’s thesis registration form (PDF) and submit all thesis documents and registrations digitally from your UZH e‑mail address to studies@ifi.uzh.ch. Check the IfI fact sheets and the Faculty of Business, Economics and Informatics “Studies BSc” pages for official rules, deadlines, and the code of scientific integrity.",
+        "relevant_links": [
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:1b564225-e6bd-437c-9e20-a07bca1c4df2/Merkblatt-Plagiate_en.pdf",
+            "description": "fact sheet on plagiarism (PDF, 109 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:6bf63227-071b-4c3c-993f-9b8962773f30/Merkblatt-Informatikpraktikum-SO26-DE-20260702.pdf",
+            "description": "Fact Sheet (German) (PDF, 128 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:8d3a89af-2a35-4d9c-84ac-6e38ae90547c/Informatikpraktikum%202026.pdf",
+            "description": "Slides Information Event (PDF, 2 MB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:f0fc5571-e60a-4c4e-94d6-c5300cc0e9fa/Informatikpraktikum_Musterbeschrieb_note.pdf",
+            "description": "Example internship description (German) (PDF, 211 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:e8058f3e-9270-4b1d-868d-be4b89b6d89f/Anmeldung-Informatikpraktikum-SO26-DE-20260702.pdf",
+            "description": "Registration form Informatics Internship (PDF, 85 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:dbccd306-3981-41ee-839f-e056484287ea/Merkblatt-Independent-Study-SO26-EN-20260702.pdf",
+            "description": "Fact Sheet (PDF, 78 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:5024e3e3-f8b6-49fb-8054-6bc32bdfc76a/Anmeldung-IndependentStudy-SO26-EN-20260702.pdf",
+            "description": "Registration form Independent Study (PDF, 97 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:98813eec-095e-413e-a276-d2d06f6b8232/Merkblatt-Bachelorarbeit-SO26-EN-20260702.pdf",
+            "description": "Fact Sheet Bachelor's Thesis (PDF, 99 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:e563d185-4fed-46d0-920f-b38c7e84364a/Merkblatt-Ausarbeitung-Thesis-SO26-EN-20260702.pdf",
+            "description": "Fact Sheet: Preparation of BSc/MSc Theses (PDF, 157 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:d38760ed-0651-480f-8c75-0da35bc0763c/Anmeldung-BScMScArbeiten-SO26-EN-20260702.pdf",
+            "description": "Registration form Bachelor's thesis (PDF, 173 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/ddis/theses.html",
+            "description": "Abraham Bernstein"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/dbtg/teaching/theses.html",
+            "description": "Michael Böhlen"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/zpac/teaching/theses.html",
+            "description": "Elaine Huang"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/alpi/thesis.html",
+            "description": "Giorgia Ramponi"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/en/imrg/theses.html",
+            "description": "Gerhard Schwabe"
+          },
+          {
+            "url": "http://www.csg.uzh.ch/csg/en/theses.html",
+            "description": "Burkhard Stiller"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:360850a4-50c9-49e1-a8c6-f5ac72144a59/Anmeldung-Tutorat%20ECTS-SO26_final.pdf",
+            "description": "Registration form Tutors (ECTS) (PDF, 71 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:e727d6fc-4a61-459b-b762-f95f84ef341b/Anmeldung-money-Tutorat-SO2026_final.pdf",
+            "description": "Registration form Tutors (money) (PDF, 64 KB)"
+          },
+          {
+            "url": "https://www.ifi.uzh.ch/dam/jcr:40d06422-adc7-4fb0-97c0-ab68165090ac/kodex_layout_en_web.pdf",
+            "description": "Code of conduct for scientific integrity"
+          }
+        ],
+        "source_url": "https://www.ifi.uzh.ch/en/studies/bsc-info.html",
+        "source_id": "ifi--19",
+        "scraped_at": "2026-08-07T14:00:15.272478+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "asien-orient-institut": {
+    "asien-orient-institut--1": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "Studierende, die eine Bachelor- oder Masterarbeit am Asien‑Orient‑Institut schreiben, müssen die Arbeit selbständig im Online‑Modulbuchungstool buchen. Vor der Buchung ist rechtzeitig Kontakt mit einer Betreuungsperson der Wahl aufzunehmen und eine schriftliche Betreuungsvereinbarung zu erstellen (jeweils als PDF‑Formular für Bachelor und Master auf der Seite). Zur Klärung der Betreuungsübernahme konsultieren Sie Ihre gewünschte Betreuungsperson. Wichtige Zusatzinformationen zur Masterarbeit finden sich auf den Studienseiten der Philosophischen Fakultät. Bei Fragen wenden Sie sich an die Studienprogrammberatung Ihres Programmes oder an die Studienadministration des AOI. Konkrete Fristen, Umfangs‑ oder Abgabeformalitäten werden auf dieser Seite nicht genannt.",
+        "relevant_links": [
+          {
+            "url": "https://www.aoi.uzh.ch/dam/jcr:0fd8c61e-0b0e-4bc9-80e1-1b7d1506ad94/Bologna2020_AOI_Betreuungsvereinbarung_Ba-Arbeit_UZH.pdf",
+            "description": "Formular Betreuungsvereinbarung Bachelorarbeit (PDF, 76 KB)"
+          },
+          {
+            "url": "https://www.aoi.uzh.ch/dam/jcr:4b85b376-019f-4ce6-b973-083f262b53a5/Bologna2020_AOI_Betreuungsvereinbarung_Ma-Arbeit_UZH.pdf",
+            "description": "Formular Betreuungsvereinbarung Masterarbeit (PDF, 82 KB)"
+          }
+        ],
+        "source_url": "https://www.aoi.uzh.ch/de/studies/studyorganization/completion/finaltheses.html",
+        "source_id": "asien-orient-institut--1",
+        "scraped_at": "2026-08-07T14:00:20.852374+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
   "deutsches-seminar": {
     "deutsches-seminar--3": [
       {
         "degree_level": "Bachelor",
-        "process_description": "Für den Erwerb des B.A. im Major müssen Studierende eine selbständige wissenschaftliche Arbeit (15 ECTS) von 90'000–120'000 Zeichen (ca. 30–40 Seiten) verfassen. Betreuungspersonen sind Angehörige des Deutschen Seminars (ordentliche/ausserordentliche Professor:innen, Assistenz- und Titularprofessor:innen, Privatdozierende sowie promovierter wissenschaftlicher Nachwuchs). Vorgehen: vor bzw. spätestens während der Buchungsfrist klären, ob die Wunschbetreuung verfügbar ist und Thema/Titel in der Sprechstunde vereinbaren; während der Buchungsfrist das DS-Webformular zur Anfrage der Betreuungsvereinbarung ausfüllen; nach Erhalt der Betreuungsbestätigung das Modul „Bachelorarbeit“ im Studierendenportal buchen (zuerst Betreuung, dann Buchung, vgl. §26 Studienordnung). Abgabe: 1. Dezember (bei HS-Buchung) bzw. 1. Juni (bei FS), digital oder in Papier nach Wunsch der Betreuerin/des Betreuers; Fristerstreckung max. 1 Monat mit Begründung. Offizielle Details auf den Seiten des Studiendekanats und der Philosophischen Fakultät.",
+        "process_description": "Studierende im Major des Bachelorstudienprogramms verfassen eine selbständige wissenschaftliche Arbeit (90ʼ000–120ʼ000 Zeichen inkl. Leerzeichen, ca. 30–40 Seiten; 15 ECTS). Betreuung dürfen Angehörige des Deutschen Seminars (ordentliche/ausserordentliche Professor:innen, Assistenzprofessor:innen, Titularprofessor:innen, Privatdozierende und promovierter wissenschaftlicher Nachwuchs; Liste als PDF). Vorgehen: rechtzeitig (idealerweise im Vorsemester, spätestens während der Buchungsfrist) klären, ob die Wunschbetreuung verfügbar und Thema/Arbeitstitel in der Sprechstunde vereinbart werden kann. Während der Buchungsfrist das DS-Webformular zur Anfrage der Betreuungsvereinbarung ausfüllen. Nach Betreuungsbestätigung per Mail das Modul \"Bachelorarbeit\" im Studierendenportal buchen (erst Betreuung klären, dann buchen; vgl. §26 Studienordnung). Nach Stornofrist Eingabe der Eckdaten gemäss Aufforderung des Studiendekanats. Abgabe fristgerecht bei der Betreuungsperson: 1. Dezember (bei HS-Buchung) oder 1. Juni (bei FS-Buchung), digital oder auf Papier. Fristerstreckung nur mit Begründung, maximal 1 Monat (s. Verhinderungsgrund). Offizielle Regelungen und Fristen finden sich auf der Website des Studiendekanats, in der Studienordnung (§26) und auf den Informationsseiten der Philosophischen Fakultät; die Liste betreuungsberechtigter Personen ist als PDF verlinkt.",
         "relevant_links": [
+          {
+            "url": "https://www.ds.uzh.ch/dam/jcr:4e905455-21d0-4f66-bc9d-5e82c0695135/BetreuungsberechtigungDS_20260724.pdf",
+            "description": "Liste betreuungsberechtigter Personen (PDF, 187 KB)"
+          },
           {
             "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ba.php",
             "description": "Betreuungsvereinbarung für die Bachelorarbeit"
@@ -12,19 +454,24 @@
         ],
         "source_url": "https://www.ds.uzh.ch/de/studium/bachelor/info_bachelorstudium/abschluss_bachelor.html#Die_Bachelorarbeit_am_Deutschen_Seminar",
         "source_id": "deutsches-seminar--3",
-        "scraped_at": "2026-07-25T05:47:29.330823+00:00",
+        "scraped_at": "2026-08-07T14:00:21.422835+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
-          "status": "ok"
+          "status": "ok",
+          "cached": true
         }
       }
     ],
     "deutsches-seminar--4": [
       {
         "degree_level": "Master",
-        "process_description": "Voraussetzung: Sie können die Masterarbeit anmelden, wenn Sie die Bestehensvoraussetzungen Ihres Studienprogramms erfüllt haben. Thema und Betreuung: Wählen Sie Thema/Teilgebiet in Absprache mit einer Betreuungsperson; klären Sie Verfügbarkeit und vereinbaren Titel in der Sprechstunde. Betreuungsberechtigt sind Angehörige des Deutschen Seminars (ordentliche/ausserordentliche Professor:innen, Assistenzprofessor:innen, Titularprofessor:innen, Privatdozierende). Anmeldung/Registrierung: Während der Buchungsfrist das DS-Webformular zur Anfrage der Betreuungsvereinbarung ausfüllen; nach Erhalt der Betreuungsbestätigung das Modul \"Masterarbeit\" im Studierendenportal buchen (zuerst Betreuung klären, dann buchen; vgl. §31 Studienordnung). Ablauf und Fristen: Umfang 180'000–240'000 Zeichen (60–80 S.), 30 ECTS; Abgabe 1. Dezember (bei Buchung im FS) oder 1. Juni (bei Buchung im HS), digital oder auf Papier nach Wunsch der Betreuungsperson. Die Arbeit ist regelmässig zweisemestrig (einsemestrig auf Wunsch möglich); Fristerstreckung nur begründet und max. 1 Monat (s. Verhinderungsgrund). Offizielle Regelungen: Website des Studiendekanats und Seiten der Philosophischen Fakultät.",
+        "process_description": "Eligibility: students who have fulfilled the programme's passing requirements may register to complete the Master’s degree. Procedure: first check with a potential supervisor in their office hour and agree on topic and provisional title; eligible supervisors are members of the Deutsches Seminar (professors, assistant/titular professors, Privatdozierende) — see the PDF list. During the booking period fill the DS web form to request a supervision agreement. After you receive written supervision confirmation, book the \"Masterarbeit\" module in the student portal (always secure supervision before booking; cf. §31 Studienordnung). After the cancellation deadline follow the Studiendekanats request to enter thesis metadata. Requirements and deadlines: 180,000–240,000 characters incl. spaces (60–80 pages), 30 ECTS; normally two semesters (one semester possible by agreement); submission 1 Dec (if booked in FS) or 1 June (if booked in HS), digital or paper per supervisor. Extensions only with justification and up to one month. Official rules on the Studiendekanats and Philosophische Fakultät web pages; supervision list PDF linked.",
         "relevant_links": [
+          {
+            "url": "https://www.ds.uzh.ch/dam/jcr:4e905455-21d0-4f66-bc9d-5e82c0695135/BetreuungsberechtigungDS_20260724.pdf",
+            "description": "Liste betreuungsberechtigter Personen (PDF, 187 KB)"
+          },
           {
             "url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ma.php",
             "description": "Betreuungsvereinbarung für die Masterarbeit"
@@ -32,11 +479,12 @@
         ],
         "source_url": "https://www.ds.uzh.ch/de/studium/master/info_masterstudium/abschluss_master.html",
         "source_id": "deutsches-seminar--4",
-        "scraped_at": "2026-07-25T05:47:38.197645+00:00",
+        "scraped_at": "2026-08-07T14:00:21.438184+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
-          "status": "ok"
+          "status": "ok",
+          "cached": true
         }
       }
     ],
@@ -47,7 +495,7 @@
         "relevant_links": [],
         "source_url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ma.php?get=s",
         "source_id": "deutsches-seminar--1",
-        "scraped_at": "2026-08-05T13:55:39.946294+00:00",
+        "scraped_at": "2026-08-07T14:00:21.387372+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -63,7 +511,214 @@
         "relevant_links": [],
         "source_url": "https://www.ds.uzh.ch/apps/cms/pfs/betreuung_ba_ma/betreuung_ba.php?get=s",
         "source_id": "deutsches-seminar--2",
-        "scraped_at": "2026-08-05T13:55:39.971127+00:00",
+        "scraped_at": "2026-08-07T14:00:21.405593+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "englisches-seminar": {
+    "englisches-seminar--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Bachelor students (ideally in their final BA semester) should prepare a brief proposal and contact a potential supervisor the semester before writing; consult instructors’ homepages via the department Staff List to check research interests. Do not contact several supervisors at once. Contact deadlines: 30 April for theses submitted in the fall, 30 November for spring submissions. Supervisors are not obliged to accept supervisees; if no reply, send a reminder after one week and then contact the study advisor (englishstudies@es.uzh.ch) one week after a second message. Book the BA thesis module during the regular module-booking period via the module booking tool only after a supervisor has agreed; you will then be asked in the thesis tool to enter supervisor and title and later confirm the final title. Requirements: Linguistics 8,000 words (+/-10%), Literature 10,000 words (+/-10%); outline due about first week of Oct (fall) or Apr (spring); final submission PDF to supervisor and englishstudies@es.uzh.ch by 1 Dec (fall) or 1 June (spring). Use the department’s BA Thesis Guidelines and template (links on the page) for full rules.",
+        "relevant_links": [
+          {
+            "url": "https://www.es.uzh.ch/dam/jcr:7360cb3c-205e-4435-970c-43d564a210e5/Writing%20Your%20Bachelor%20Thesis%20in%20Literature%20(March%202025).pdf",
+            "description": "Writing Your Bachelor Thesis in Literature (March 2025) (PDF, 115 KB)"
+          },
+          {
+            "url": "https://www.es.uzh.ch/dam/jcr:e2a1930d-0b00-47d2-9fef-e9b5b8d57332/Template%20Cover%20Bachelor%20Thesis%20(English).docx",
+            "description": "Template Cover Bachelor Thesis (English) (DOCX, 56 KB)"
+          },
+          {
+            "url": "https://www.es.uzh.ch/dam/jcr:3b4c2169-eea8-4ea7-b499-5b162562cb8c/BA%20Theses%20Guidelines%20(August%202026).pdf",
+            "description": "the Bachelor Thesis Guidelines. (PDF, 90 KB)"
+          }
+        ],
+        "source_url": "https://www.es.uzh.ch/en/studies/bachelor/bachelor-thesis.html",
+        "source_id": "englisches-seminar--2",
+        "scraped_at": "2026-08-07T14:00:21.577339+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "englisches-seminar--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "Eligible students: MA candidates in their final two MA semesters; you must contact potential supervisors the semester before you plan to start. Finding/approaching a supervisor: consult instructors’ homepages via the UZH English Department Staff List, prepare a brief proposal, and contact one potential supervisor (do not approach several at once). Supervisors are usually professors or other PhD-holding staff (they are not obliged to supervise). Registration: book the MA thesis module during the regular booking period via the module booking tool only after a supervisor has agreed. If a supervisor is not listed, email englishstudies@es.uzh.ch and cc the supervisor. After booking you will be asked in the thesis tool to name your supervisor and preliminary title. Requirements/deadlines: 20,000–30,000 words (excl. bibliography); submission deadlines are Dec 1 (fall) and June 1 (spring); submit a PDF to your supervisor and englishstudies@es.uzh.ch (instructor may request Word/print) and use the MA Thesis Template Cover. Official guidelines and forms: general module description and the Master Thesis Guidelines (PDF) on the unit website.",
+        "relevant_links": [
+          {
+            "url": "https://www.es.uzh.ch/dam/jcr:a8b6b728-dc95-4423-b3b7-ef03a8fbc382/MA%20Thesis%20Guidelines%20(August%202026).pdf",
+            "description": "the Master Thesis Guidelines (PDF, 88 KB)"
+          },
+          {
+            "url": "https://www.es.uzh.ch/dam/jcr:87b36b35-9669-4cb4-85a0-717c1851588a/Template%20Cover%20Master%20Thesis%20(English).docx",
+            "description": "MA Thesis Template Cover (DOCX, 56 KB)"
+          }
+        ],
+        "source_url": "https://www.es.uzh.ch/en/studies/master/master-thesis.html",
+        "source_id": "englisches-seminar--1",
+        "scraped_at": "2026-08-07T14:00:21.560019+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "historisches-seminar": {
+    "historisches-seminar--2": [
+      {
+        "degree_level": "Bachelor",
+        "process_description": "Hauptfachstudierende schliessen das Programm mit einer Bachelorarbeit ab. Studierende suchen und kontaktieren die Betreuungsperson selbst (Professor:innen; Titularprofessor:innen und Privatdozierende mit Lehrpflicht/Lehranstellung; promovierte Angestellte des Historischen Seminars inkl. längerfristiger Lehrangestellter). In der Regel sollte zuvor ein Seminar/Kolloquium bei der Betreuungsperson besucht worden sein; das Betreuungsrecht gilt meist für deren Fach-/Zeitraum (Ausnahme: Rezeptionsgeschichte). Vor der Modulbuchung Thema und Vorgehen mit der Betreuerin/dem Betreuer abklären. Modul Bachelorarbeit während ordentlicher Buchungsfristen buchen; danach auf der angegebenen Website Namen der Betreuungsperson und provisorischen Titel eintragen, zum Abgabetermin den definitiven Titel ergänzen. Abgabe an die Betreuungsperson als PDF (Benennung: Name_Vorname_Matrikelnummer_BA_Semester); späteste Abgabe: 1.12. (HS) bzw. 1.6. (FS) — sonst nicht bestanden. Modalitäten für Fristerstreckung/Abmeldung auf der Website des Studiendekanats; Regelungen in RVO und StO.",
+        "relevant_links": [
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/bachelor/regulaer-nachfolger/mk/MK_06B-7600-120.pdf",
+            "description": "Modulkatalog"
+          },
+          {
+            "url": "https://www.hist.uzh.ch/de/studium/geschichte-studieren-in-zuerich/studienrelevante-dokumente/richtlinien-formulare.html",
+            "description": "Merkblatt Beurteilungskriterien"
+          },
+          {
+            "url": "https://www.hist.uzh.ch/de/studium/geschichte-studieren-in-zuerich/beratung/kontaktformular.html",
+            "description": "Kontaktformular"
+          },
+          {
+            "url": "https://www.hist.uzh.ch/de/studium/geschichte-studieren-in-zuerich/beratung/sprechstunde.html",
+            "description": "Anmeldung Sprechstunde"
+          }
+        ],
+        "source_url": "https://www.hist.uzh.ch/de/studium/studienstufen/bachelor/aufbau/abschluss/bachelorarbeit.html",
+        "source_id": "historisches-seminar--2",
+        "scraped_at": "2026-08-07T14:00:22.336052+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ],
+    "historisches-seminar--1": [
+      {
+        "degree_level": "Master",
+        "process_description": "Masterarbeiten im Historischen Seminar werden im Teilfach 1 über zwei Semester geschrieben und sind an das Forschungskolloquium I (1. Semester) und II (2. Semester) gekoppelt. Betreuung erfolgt durch Professor:innen, Titularprofessor:innen oder Privatdozierende des Seminars (bei Titularprofessor:innen/Privatdozierenden nur in ihrem Zeitbereich); in der Regel hat man zuvor ein Seminar oder Kolloquium bei der Betreuungsperson besucht. Vorgehen: Studierende kontaktieren eine potenzielle Betreuungsperson vor der Modulbuchung und vereinbaren Thema und Ablauf; das Modul muss innerhalb der ordentlichen Buchungsfristen gebucht. Nach Fristende fordert das Studiendekanat zur Eingabe von Betreuer:in und vorläufigem Titel auf. Abgabe: spätestens 1. Dezember (Herbstsemester) bzw. 1. Juni (Frühjahrssemester) an die Betreuungsperson, danach PDF auf der Studiendekanats-Website hochladen. Titelblatt- und Abgabeformate, Verlängerungen und Abmeldung sind auf der Website des Studiendekanats sowie in Modulkatalog, RVO, StO und dem Merkblatt geregelt. Mündliche Prüfung: 30 Minuten, in anderem Teilfach; Prüfende wie für die Betreuung; Themenwahl und Literaturlisten erfolgen nach Buchungsfrist; Termine im Mai bzw. Ende Nov/Anfang Dez.",
+        "relevant_links": [
+          {
+            "url": "https://www.phil.uzh.ch/static/rechtssammlung/master/regulaer-nachfolger/mk/MK_06M-7600-090.pdf",
+            "description": "Modulkatalog Geschichte 90 ECTS Credits"
+          },
+          {
+            "url": "https://www.hist.uzh.ch/de/studium/geschichte-studieren-in-zuerich/studienrelevante-dokumente/richtlinien-formulare.html",
+            "description": "Merkblatt Beurteilungskriterien"
+          },
+          {
+            "url": "https://www.hist.uzh.ch/dam/jcr:ffffffff-cb70-aa7a-0000-00000aa12814/20260601_Merkblatt_muendl_Pruefung_MA.pdf",
+            "description": "Merkblatt (PDF, 77 KB)"
+          },
+          {
+            "url": "https://www.hist.uzh.ch/de/studium/geschichte-studieren-in-zuerich/beratung/kontaktformular.html",
+            "description": "Kontaktformular"
+          },
+          {
+            "url": "https://www.hist.uzh.ch/de/studium/geschichte-studieren-in-zuerich/beratung/sprechstunde.html",
+            "description": "Anmeldung Sprechstunde"
+          }
+        ],
+        "source_url": "https://www.hist.uzh.ch/de/studium/studienstufen/master/aufbau/abschluss.html",
+        "source_id": "historisches-seminar--1",
+        "scraped_at": "2026-08-07T14:00:22.317960+00:00",
+        "_llm": {
+          "provider": "openai",
+          "model": "gpt-5-mini",
+          "status": "ok",
+          "cached": true
+        }
+      }
+    ]
+  },
+  "iaka": {
+    "iaka--1": [
+      {
+        "degree_level": "Bachelor, Master",
+        "process_description": "Students in the IAKA’s Griechisch, Lateinisch and Mittellatein programmes may write theses; works are usually tied to a course (supervision by the course’s Dozierende; some proseminars also have tutors) but Bachelor (15 ECTS) and Master (30 ECTS) theses can be written without a course. Register/book the corresponding module (modules are normally booked in the semester after the associated course). Lengths: Bachelor 30–40 pages, Master 60–80 pages. Standard submission deadlines: 1 December (autumn) and 1 June (spring); if writing parallel to a course you must request permission by email to studium.klph@iaka.uzh.ch (deadlines then 6 Jan / 1 July). Submit an electronic PDF and usually a printed/Word copy; no post‑submission revisions; feedback only before submission. Extensions for medical reasons: up to one month with the supervisor or request module cancellation. Full formal rules and formatting are on the IAKA study pages (https://www.iaka.uzh.ch/de/klph/studium.html and subject subpages).",
+        "relevant_links": [
+          {
+            "url": "https://www.iaka.uzh.ch/dam/jcr:466b1f32-db04-4570-9991-2018fbcb40d7/Hinweise_schriftliche_Arbeiten_HS24.pdf",
+            "description": "Process pdf for BA/MA thesis"
+          },
+          {
+            "url": "https://www.iaka.uzh.ch/de/klph/studium.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.iaka.uzh.ch/de/klph/studium/latein/arbeiten.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.iaka.uzh.ch/apps/netclassics/proseminar/wissarbeite/",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/pruefungen.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.iaka.uzh.ch/apps/netclassics/proseminar/wissarbeite/Vorgehensweise_Aufbau_Form.php",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.teaching.uzh.ch/de/infrastruktur/plagiate.html",
+            "description": "referenced in document"
+          },
+          {
+            "url": "http://www.lucius-",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.iaka.uzh.ch/apps/netclassics/proseminar/word/",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://aboutbrepolis.files.wordpress.com/2018/09/aph_abbrc3a9viations.pdf",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://referenceworks.brill.com/display/entries/NPOG/COM-004.xml",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://journals.openedition.org/e-spania/329",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://thesaurus.badw.de/tll-digital/index",
+            "description": "referenced in document"
+          },
+          {
+            "url": "https://www.uzh.ch/de/explore/basics/ai/r",
+            "description": "referenced in document"
+          }
+        ],
+        "source_url": "https://www.iaka.uzh.ch/dam/jcr:466b1f32-db04-4570-9991-2018fbcb40d7/Hinweise_schriftliche_Arbeiten_HS24.pdf",
+        "source_id": "iaka--1",
+        "scraped_at": "2026-08-07T14:00:22.792068+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -86,7 +741,7 @@
         ],
         "source_url": "https://www.ife.uzh.ch/dam/jcr:5c0e99fe-d5b0-427e-b311-88d59cd7cf43/Merkblatt%20BA-Arbeit.pdf",
         "source_id": "erziehungswissenschaft--2",
-        "scraped_at": "2026-07-30T08:36:04.380016+00:00",
+        "scraped_at": "2026-08-07T14:00:24.392885+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -107,7 +762,7 @@
         ],
         "source_url": "https://www.ife.uzh.ch/de/study/Bachelor/Module/Bachelorarbeit.html",
         "source_id": "erziehungswissenschaft--3",
-        "scraped_at": "2026-07-30T08:29:55.282186+00:00",
+        "scraped_at": "2026-08-07T14:00:24.484026+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -128,7 +783,7 @@
         ],
         "source_url": "https://www.ife.uzh.ch/dam/jcr:f959d90e-2b98-4f1b-bdd8-c626da957ceb/Merkblatt%20MA-Arbeit.pdf",
         "source_id": "erziehungswissenschaft--4",
-        "scraped_at": "2026-07-30T08:29:55.293208+00:00",
+        "scraped_at": "2026-08-07T14:00:24.498542+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -153,7 +808,7 @@
         ],
         "source_url": "https://www.ife.uzh.ch/de/study/Master/Module/Master-Arbeit.html",
         "source_id": "erziehungswissenschaft--1",
-        "scraped_at": "2026-07-30T08:29:55.148501+00:00",
+        "scraped_at": "2026-08-07T14:00:24.373919+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -184,7 +839,7 @@
         ],
         "source_url": "https://www.ikmz.uzh.ch/de/studies/graduation/bachelor.html",
         "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--1",
-        "scraped_at": "2026-07-31T10:25:17.049401+00:00",
+        "scraped_at": "2026-08-07T14:00:24.641300+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -225,7 +880,7 @@
         ],
         "source_url": "https://www.ikmz.uzh.ch/de/studies/graduation/master.html",
         "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--2",
-        "scraped_at": "2026-07-31T10:25:17.070678+00:00",
+        "scraped_at": "2026-08-07T14:00:24.656084+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -296,7 +951,7 @@
         ],
         "source_url": "https://www.ipz.uzh.ch/de/studium/bachelor.html",
         "source_id": "ipz--3",
-        "scraped_at": "2026-07-31T10:44:17.173419+00:00",
+        "scraped_at": "2026-08-07T14:00:24.808193+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -314,11 +969,12 @@
         "relevant_links": [],
         "source_url": "https://www.isek.uzh.ch/de/ethnologie/studium/master/maforschung.html",
         "source_id": "isek--1",
-        "scraped_at": "2026-07-31T12:36:53.453559+00:00",
+        "scraped_at": "2026-08-07T14:00:24.971465+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
-          "status": "ok"
+          "status": "ok",
+          "cached": true
         }
       }
     ],
@@ -342,7 +998,7 @@
         ],
         "source_url": "https://www.isek.uzh.ch/de/ethnologie/studium/bachelor/Bachelorarbeiten.html",
         "source_id": "isek--2",
-        "scraped_at": "2026-07-31T12:38:44.218437+00:00",
+        "scraped_at": "2026-08-07T14:00:25.372345+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -365,7 +1021,7 @@
         ],
         "source_url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/bachelor/Abschluss-des-Studiums.html",
         "source_id": "kunsthistorisches-institut--1",
-        "scraped_at": "2026-07-31T12:46:08.474572+00:00",
+        "scraped_at": "2026-08-07T14:00:25.387767+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -386,7 +1042,7 @@
         ],
         "source_url": "https://www.khist.uzh.ch/de/studies/Studienorganisation/master/Abschluss-des-Studiums.html",
         "source_id": "kunsthistorisches-institut--2",
-        "scraped_at": "2026-07-31T12:46:08.499848+00:00",
+        "scraped_at": "2026-08-07T14:00:25.404094+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -509,7 +1165,7 @@
         ],
         "source_url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/master/abschluss/arbeit/aktuelle-arbeiten.html",
         "source_id": "psychologisches-institut--1",
-        "scraped_at": "2026-07-31T14:05:08.934827+00:00",
+        "scraped_at": "2026-08-07T14:00:25.915241+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -634,7 +1290,7 @@
         ],
         "source_url": "https://www.psychologie.uzh.ch/de/studium/bscmsc/bachelor/aufbau/bachelorarbeit/aktuelle-bachelorarbeiten.html",
         "source_id": "psychologisches-institut--2",
-        "scraped_at": "2026-07-31T14:05:11.829809+00:00",
+        "scraped_at": "2026-08-07T14:00:29.057091+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -652,7 +1308,7 @@
         "relevant_links": [],
         "source_url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ba.html",
         "source_id": "romanisches-seminar--1",
-        "scraped_at": "2026-07-31T14:13:56.367719+00:00",
+        "scraped_at": "2026-08-07T14:00:29.073876+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -668,7 +1324,7 @@
         "relevant_links": [],
         "source_url": "https://www.rose.uzh.ch/de/studium/infos/buchung-ma.html",
         "source_id": "romanisches-seminar--3",
-        "scraped_at": "2026-07-31T14:13:56.389864+00:00",
+        "scraped_at": "2026-08-07T14:00:29.472601+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -691,7 +1347,7 @@
         ],
         "source_url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/BA/abschluss.html",
         "source_id": "filmwissenschaft--1",
-        "scraped_at": "2026-07-31T14:20:53.965071+00:00",
+        "scraped_at": "2026-08-07T14:00:29.486503+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -720,7 +1376,7 @@
         ],
         "source_url": "https://www.film.uzh.ch/dam/jcr:b6e09f75-50b9-4f08-9c55-153f5b52aab7/2026_Merkblatt_Bachelorarbeit_Abschluss_FIWI.pdf",
         "source_id": "filmwissenschaft--2",
-        "scraped_at": "2026-07-31T14:20:53.988465+00:00",
+        "scraped_at": "2026-08-07T14:04:58.302955+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -749,7 +1405,7 @@
         ],
         "source_url": "https://www.film.uzh.ch/dam/jcr:e9bd773c-2fda-4e83-93c5-f2e469818a9d/2026_Merkblatt_Masterarbeit_Abschluss_FIWI.pdf",
         "source_id": "filmwissenschaft--3",
-        "scraped_at": "2026-07-31T14:20:54.086941+00:00",
+        "scraped_at": "2026-08-07T14:04:58.967154+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -770,7 +1426,7 @@
         ],
         "source_url": "https://www.film.uzh.ch/de/studies/studienprogrammangebot/MA/abschluss/thesis.html",
         "source_id": "filmwissenschaft--4",
-        "scraped_at": "2026-07-31T14:20:54.148023+00:00",
+        "scraped_at": "2026-08-07T14:00:29.669463+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -793,7 +1449,7 @@
         ],
         "source_url": "https://www.suz.uzh.ch/de/master/abschluss.html",
         "source_id": "soziologisches-institut--1",
-        "scraped_at": "2026-07-31T14:35:40.707049+00:00",
+        "scraped_at": "2026-08-07T14:00:29.683885+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -814,7 +1470,7 @@
         ],
         "source_url": "https://www.suz.uzh.ch/de/bachelor/abschluss.html",
         "source_id": "soziologisches-institut--2",
-        "scraped_at": "2026-07-31T14:35:40.731260+00:00",
+        "scraped_at": "2026-08-07T14:00:29.700674+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -883,7 +1539,7 @@
         ],
         "source_url": "https://www.suz.uzh.ch/dam/jcr:b5b92ece-6b67-4649-803a-5246909cf86b/Merkblatt%20BA_2601.pdf",
         "source_id": "soziologisches-institut--3",
-        "scraped_at": "2026-07-31T14:35:40.743949+00:00",
+        "scraped_at": "2026-08-07T14:04:58.432039+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -930,7 +1586,7 @@
         ],
         "source_url": "https://www.ius.uzh.ch/de/studies/during-studies/modules-records/thesis-papers.html#Bachelorarbeit",
         "source_id": "rfw--2",
-        "scraped_at": "2026-08-04T10:38:40.467928+00:00",
+        "scraped_at": "2026-08-07T14:00:30.868207+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -969,7 +1625,7 @@
         ],
         "source_url": "https://www.theologie.uzh.ch/de/studium/studierende/Masterarbeit.html",
         "source_id": "theologisches-seminar--1",
-        "scraped_at": "2026-08-04T10:51:20.181273+00:00",
+        "scraped_at": "2026-08-07T14:00:30.893526+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -996,7 +1652,7 @@
         ],
         "source_url": "https://www.religionswissenschaft.uzh.ch/de/studium/studienorganisation/bachelorarbeit.html",
         "source_id": "religionswissenschaftliches-seminar--1",
-        "scraped_at": "2026-08-04T11:00:28.011364+00:00",
+        "scraped_at": "2026-08-07T14:00:30.940953+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -1033,7 +1689,7 @@
         ],
         "source_url": "https://www.religionswissenschaft.uzh.ch/de/studium/studienorganisation/masterarbeit.html",
         "source_id": "religionswissenschaftliches-seminar--2",
-        "scraped_at": "2026-08-04T11:00:28.038400+00:00",
+        "scraped_at": "2026-08-07T14:00:30.958880+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -1104,7 +1760,7 @@
         ],
         "source_url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/master-thesis-exam.html",
         "source_id": "geography--2",
-        "scraped_at": "2026-08-05T12:45:42.203121+00:00",
+        "scraped_at": "2026-08-07T14:00:32.029410+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -1161,11 +1817,12 @@
         ],
         "source_url": "https://www.geo.uzh.ch/en/studying/during-your-studies/theses/bachelor-thesis.html",
         "source_id": "geography--3",
-        "scraped_at": "2026-08-05T12:45:46.895580+00:00",
+        "scraped_at": "2026-08-07T14:00:32.157098+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
-          "status": "ok"
+          "status": "ok",
+          "cached": true
         }
       }
     ]
@@ -1215,7 +1872,7 @@
         ],
         "source_url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/master-/masterarbeit.html",
         "source_id": "physics--2",
-        "scraped_at": "2026-08-05T13:14:48.650280+00:00",
+        "scraped_at": "2026-08-07T14:00:32.367855+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -1268,7 +1925,7 @@
         ],
         "source_url": "https://www.physik.uzh.ch/de/studium/Studienprogramme/bachelorstudiengang/Bachelorarbeit-und-Abschluss.html",
         "source_id": "physics--3",
-        "scraped_at": "2026-08-05T13:14:48.671283+00:00",
+        "scraped_at": "2026-08-07T14:00:32.388619+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -1282,7 +1939,7 @@
     "mef--1": [
       {
         "degree_level": "Master",
-        "process_description": "This page concerns the Masterarbeit for Human‑ and Zahnmedizin Master students: the thesis is mandatory in the Master programme and a prerequisite for admission to the federal examination. To find a supervisor or topic students are directed to the Virtuelle Ausbildungsplattform Medizin (VAM > Masterarbeit), which hosts a \"Handbuch\", an online Themenbörse to match supervisors and students, a mini‑guide for supervisors and assorted documents. Formal registration steps and deadlines are not specified on this page. Plagiarism rules are explicit: the Faculty policy (22 May 2019) requires supervisors/mentors to check theses (students must consent), and the absence of suspicion must be confirmed at submission; suspected cases are referred to the Masterarbeitskommission. Official guidelines are on VAM and the faculty's plagiarism‑policy PDF; contact: Sandra Lang, Studiendekanat.",
+        "process_description": "Master students in Human- and Zahnmedizin must complete a Masterarbeit as part of their degree (prerequisite for the federal exam). Practical guidance, formal rules and matchmaking are provided on the Virtuelle Ausbildungsplattform Medizin (VAM > Masterarbeit): a Handbuch, an online Themenbörse to find/offer topics and supervisors, mini-guides for supervisors, and useful documents. Supervisors/mentors must check theses for plagiarism (students authorize checks); at submission they must confirm checks and absence of suspicion; suspected cases are referred to the Masterarbeitskommission. The faculty adopted a plagiarism policy (pdf) and offers a Turnitin portal. The page does not specify concrete registration steps or deadlines. Contact: Sandra Lang, Studiendekanat Medizin. Composition of the Masterarbeitskommission is listed on the page.",
         "relevant_links": [
           {
             "url": "https://www.med.uzh.ch/dam/jcr:c1650d20-8765-4a9f-b7ff-1985b25b3e84/220207%20Policy%20Plagiat%20Mai%202019.pdf",
@@ -1291,7 +1948,7 @@
         ],
         "source_url": "https://www.med.uzh.ch/de/studium/masterarbeit.html",
         "source_id": "mef--1",
-        "scraped_at": "2026-08-05T13:49:51.299521+00:00",
+        "scraped_at": "2026-08-07T14:00:32.503325+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -1318,7 +1975,7 @@
         ],
         "source_url": "https://www.vet.uzh.ch/de/dozierende/MasterarbeitThemenboerse.html",
         "source_id": "vsf--1",
-        "scraped_at": "2026-08-05T13:53:05.235523+00:00",
+        "scraped_at": "2026-08-07T14:00:32.528969+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",

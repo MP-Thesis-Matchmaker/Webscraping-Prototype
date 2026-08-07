@@ -3,7 +3,7 @@
     "asien-orient-institut--3": [
       {
         "degree_level": "Bachelor, Master",
-        "process_description": "You first agree a topic with a supervision person (Bachelor: the supervisor must teach in the Major/Mono programme of the thesis; Master: the supervisor must hold a UZH position in the semester of booking). You must meet all booking prerequisites (check the module description of your study programme) and be validly enrolled with semester fees paid. Book the thesis during the regular online module‑booking/framing deadlines; after the booking deadline you will receive an email to your UZH address to log in and enter the provisional title and supervisor. Submit the final thesis to your supervisor by 1 December (autumn) or 1 June (spring). Late submission = module \"not passed\" and a failed attempt. After submission you will be asked to enter the definitive title online. In case of impediment before the deadline, request either a short extension or deregister the assessment via the institutes/seminars or the Studienprogrammberatung. Official rules: module descriptions, the UZH module‑booking webpages and institutes/seminars’ web pages.",
+        "process_description": "Vor Beginn der Bachelor- oder Masterarbeit einigen Sie sich mit einer Betreuungsperson auf ein Thema und prüfen die Buchungsvoraussetzungen in der Modulbeschreibung Ihres Studienprogramms. Bachelorbetreuende müssen im Major- oder Mono‑Studienprogramm unterrichten; Masterbetreuende müssen im Semester der Buchung an der UZH angestellt sein. Buchen Sie die Arbeit während der Modulbuchungsfrist in der Online‑Modulbuchung; nach Ablauf erhalten Sie per UZH‑E‑Mail einen Loginlink, um vorläufigen Titel und Betreuende anzugeben. Abgabe spätestens 1. Dezember (Herbstsemester) bzw. 1. Juni (Frühjahrssemester); Fristüberschreitung = «nicht bestanden» und Fehlversuch. Nach Ablauf der Abgabefrist geben Sie online den definitiven Titel ein. Bei Verhinderung: kurzes Fristerstreckungs- oder Abmeldegesuch (weitere Verlängerungen führen zur Stornierung und Neubuchung). Offizielle Regeln: Modulbeschreibung Ihres Programms, die UZH‑Seite „Modulbuchung“ und die Webseiten der Institute/Seminare; bei Fragen die Studienprogrammberatung.",
         "relevant_links": [
           {
             "url": "https://www.uzh.ch/phil/ssl-dir/abschlussarbeiten/index.php",
@@ -24,11 +24,12 @@
         ],
         "source_url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
         "source_id": "asien-orient-institut--3",
-        "scraped_at": "2026-07-25T04:55:13.599206+00:00",
+        "scraped_at": "2026-08-07T14:00:21.368959+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
-          "status": "ok"
+          "status": "ok",
+          "cached": true
         }
       }
     ],
@@ -56,7 +57,7 @@
         ],
         "source_url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
         "source_id": "musikwissenschaftliches-institut--1",
-        "scraped_at": "2026-07-31T12:54:00.561403+00:00",
+        "scraped_at": "2026-08-07T14:00:25.420487+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",
@@ -89,7 +90,7 @@
         ],
         "source_url": "https://www.phil.uzh.ch/de/studium/rundumsstudium/module.html",
         "source_id": "philosophisches-seminar--1",
-        "scraped_at": "2026-07-31T12:57:18.762993+00:00",
+        "scraped_at": "2026-08-07T14:00:25.445965+00:00",
         "_llm": {
           "provider": "openai",
           "model": "gpt-5-mini",

@@ -31,6 +31,19 @@ SCHEMA_INVALID = "schema_invalid"
 # still stored) — the same "store but alert" contract as PAGE_CHANGED.
 FLAGGED = {PAGE_CHANGED, LLM_FALLBACK, FETCH_FAILED, EXTRACT_FAILED, SCHEMA_INVALID}
 
+# Statuses that keep a source verified and in the run rotation. OK is obvious;
+# PAGE_CHANGED too — its data is good and stored, the flag is only "review this
+# change", so the source keeps being scraped. Every other flagged status
+# quarantines (a hard failure, or an LLM rescue that means the template is broken
+# and should be fixed) — those are excluded from future runs until re-onboarded.
+KEEPS_VERIFIED = {OK, PAGE_CHANGED}
+
+
+def quarantines(status: str) -> bool:
+    """Whether a result status should quarantine the source — i.e. drop it from
+    future runs until a human re-onboards it."""
+    return status not in KEEPS_VERIFIED
+
 _EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 _URL_RE = re.compile(r"^https?://[^\s]+$", re.I)
 
@@ -176,6 +189,24 @@ def _key_fn(page_type: str):
 
 def _norm(r: dict) -> dict:
     return {k: v for k, v in r.items() if not k.startswith("scraped") and not k.startswith("_")}
+
+
+def is_empty_diff(diff: dict | None) -> bool:
+    """True when a record-level diff shows no added/removed/modified records."""
+    return bool(diff) and not (diff["added"] or diff["removed"] or diff["modified"])
+
+
+def downgrade_if_unchanged(result: Result, diff: dict | None) -> bool:
+    """A `page_changed` whose record-level diff is empty is a cosmetic-only change
+    — the page's raw HTML moved (embedded tokens, timestamps) but its extracted
+    records did not. Downgrade it to OK so it isn't flagged for review; the data
+    is still refreshed. Returns True if it downgraded. Leaves the verified hash
+    untouched, so this simply re-quiets on every run without needing re-onboarding."""
+    if result.status == PAGE_CHANGED and is_empty_diff(diff):
+        result.status = OK
+        result.reasons = []
+        return True
+    return False
 
 
 def diff_records(page_type: str, old: list, new: list) -> dict:

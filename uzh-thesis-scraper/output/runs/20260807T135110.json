@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-08-07T13:51:10.562966+00:00",
+  "sources": [
+    {
+      "source_id": "ivw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 8,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "asien-orient-institut--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "historisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "by_status": {
+      "ok": 5
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-07T13:51:10.855803+00:00"
+}

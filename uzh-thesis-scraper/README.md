@@ -215,14 +215,14 @@ commit it:
 
 `scraper/validate.py` classifies every source's result each run:
 
-| status | meaning |
-|---|---|
-| `ok` | extracted, schema-valid, content unchanged since verification |
-| `page_changed` | schema-valid but the page hash differs from the verified hash — data is still updated, but the source is flagged with a record-level diff for review |
-| `llm_fallback` | the deterministic template matched nothing, but the LLM fallback produced schema-valid records — stored, yet flagged so the template gets fixed |
-| `fetch_failed` | no usable cached page / last fetch errored |
-| `extract_failed` | template matched nothing and the fallback couldn't recover it |
-| `schema_invalid` | required fields missing or emails/links malformed |
+| status | meaning | quarantines? |
+|---|---|---|
+| `ok` | extracted, schema-valid; content unchanged (or the HTML changed but the records didn't — a cosmetic change is quieted to `ok`) | no |
+| `page_changed` | schema-valid, and the re-extracted records actually differ — data is updated and the source is flagged with a record-level diff for review, but it **stays verified and keeps scraping** | no |
+| `llm_fallback` | the deterministic template failed, but the LLM fallback produced schema-valid records — stored, yet quarantined so the template gets fixed | yes |
+| `fetch_failed` | no usable cached page / last fetch errored | yes |
+| `extract_failed` | template matched nothing and the fallback couldn't recover it | yes |
+| `schema_invalid` | required fields missing or emails/links malformed | yes |
 
 `page_changed` and `llm_fallback` are the two "store but alert" statuses: the
 data is written *and* the source is flagged for review. The LLM fallback
@@ -234,10 +234,14 @@ hash (no re-spend), and degrades to a no-op when no LLM is configured. A rescue
 only replaces the original result if it is itself schema-valid, so a worse
 fallback never clobbers the diagnosis. Disable it with `run --no-llm-fallback`.
 
-Any flag quarantines the source, its previous good data stays in the output, and
-the run report (`output/runs/<timestamp>.json`) lists it with a reason.
-`report.notify(summary)` is the single, swappable notification hook (prints
-today; later email/webhook without touching callers).
+Only hard failures and `llm_fallback` **quarantine** a source (drop it from
+future runs until re-onboarded); their previous good data stays in the output. A
+`page_changed` keeps the source verified and scraping — it's only a review note,
+because for a weekly scraper you *want* pages whose content changes to keep being
+tracked. Either way the run report (`output/runs/<timestamp>.json`) lists every
+flagged source with a reason, and the run exits non-zero. `report.notify(summary)`
+is the single, swappable notification hook (prints today; later email/webhook
+without touching callers).
 
 ## Pause & resume
 

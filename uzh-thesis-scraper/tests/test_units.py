@@ -280,6 +280,60 @@ class DiffTest(unittest.TestCase):
         self.assertEqual(diff["modified"], 1)  # same email key, changed content
 
 
+# --- page_changed: quiet cosmetic-only changes -------------------------------
+
+class QuietUnchangedTest(unittest.TestCase):
+    def _empty(self):
+        return {"added": 0, "removed": 0, "modified": 0}
+
+    def _real(self):
+        return {"added": 2, "removed": 0, "modified": 1}
+
+    def test_is_empty_diff(self):
+        self.assertTrue(V.is_empty_diff(self._empty()))
+        self.assertFalse(V.is_empty_diff(self._real()))
+        self.assertFalse(V.is_empty_diff(None))  # no diff computed → not "empty"
+
+    def test_page_changed_with_empty_diff_downgrades_to_ok(self):
+        res = V.Result("s--1", V.PAGE_CHANGED, "topics",
+                       reasons=["hash a -> b"], record_count=5)
+        changed = V.downgrade_if_unchanged(res, self._empty())
+        self.assertTrue(changed)
+        self.assertEqual(res.status, V.OK)
+        self.assertFalse(res.flagged)     # no longer flagged
+        self.assertTrue(res.writable)     # data still stored
+        self.assertEqual(res.reasons, [])
+
+    def test_page_changed_with_real_diff_stays_flagged(self):
+        res = V.Result("s--1", V.PAGE_CHANGED, "topics", record_count=5)
+        self.assertFalse(V.downgrade_if_unchanged(res, self._real()))
+        self.assertEqual(res.status, V.PAGE_CHANGED)
+        self.assertTrue(res.flagged)
+
+    def test_other_statuses_are_untouched(self):
+        for status in (V.OK, V.EXTRACT_FAILED, V.SCHEMA_INVALID, V.LLM_FALLBACK):
+            res = V.Result("s--1", status, "topics")
+            self.assertFalse(V.downgrade_if_unchanged(res, self._empty()))
+            self.assertEqual(res.status, status)
+
+
+# --- quarantine policy (which statuses drop a source from the rotation) -------
+
+class QuarantinePolicyTest(unittest.TestCase):
+    def test_ok_and_page_changed_keep_scraping(self):
+        # page_changed's data is good and stored → stay verified, keep scraping
+        self.assertFalse(V.quarantines(V.OK))
+        self.assertFalse(V.quarantines(V.PAGE_CHANGED))
+
+    def test_failures_and_fallback_quarantine(self):
+        for status in (V.FETCH_FAILED, V.EXTRACT_FAILED, V.SCHEMA_INVALID, V.LLM_FALLBACK):
+            self.assertTrue(V.quarantines(status), status)
+
+    def test_page_changed_is_still_flagged_for_the_report(self):
+        # it keeps scraping, but it's still reported/alerted on
+        self.assertIn(V.PAGE_CHANGED, V.FLAGGED)
+
+
 # --- LLM fallback: classification --------------------------------------------
 
 class LlmFallbackClassifyTest(unittest.TestCase):
@@ -442,6 +496,26 @@ class PublicViewTest(unittest.TestCase):
                "_llm": {"x": 1}, "source_id": "s--1"}
         self.assertEqual(list(ST._clean_record(rec)),
                          ["degree_level", "process_description", "source_id"])
+
+    def test_faculty_scope_source_diffs_against_faculty_records(self):
+        # A scope='faculty' process source is stored at the faculty level; the
+        # diff lookup must read it there, not from the (empty) unit bucket.
+        from scraper import registry
+        rec = {"source_id": "phil--1", "degree_level": "Master",
+               "process_description": "how to get a thesis"}
+        data = {"faculties": {"PhF": {
+            "faculty": "Phil", "process": [rec],
+            ST._PROCESS_RAW_KEY: {"phil--1": [rec]},
+            "units": {"philosophisches-seminar": {"unit": "PS", "people": [],
+                      "process": [], "concrete_topics": []}}}}}
+        src = registry.Source(
+            source_id="phil--1", url="", notes="", unit_id="philosophisches-seminar",
+            faculty_code="PhF", faculty="Phil", unit="PS", classification="")
+        # with scope → finds the faculty-level record (empty diff, not spurious +1)
+        self.assertEqual(ST.records_for_source(data, src, "process", scope="faculty"),
+                         [rec])
+        # without scope → the old (buggy) unit lookup returns nothing
+        self.assertEqual(ST.records_for_source(data, src, "process"), [])
 
     def test_public_view_is_a_clean_copy_that_leaves_live_data_intact(self):
         data = {"faculties": {"WWF": {

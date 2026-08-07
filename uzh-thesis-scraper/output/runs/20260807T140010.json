@@ -1,0 +1,1005 @@
+{
+  "started_at": "2026-08-07T14:00:10.678718+00:00",
+  "sources": [
+    {
+      "source_id": "ivw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ivw--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ivw--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ivw--4",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 43,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 29,
+      "reasons": []
+    },
+    {
+      "source_id": "ibw--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "iff--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--18",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--19",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--20",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 8,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--3",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--4",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--5",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 12,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--5",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--6",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--7",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 6,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--7",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--8",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--9",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 21,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--9",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--10",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--10",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 27,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--11",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 4,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--11",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--12",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 12,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--12",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--13",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 5,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--13",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--14",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--14",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--15",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 5,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--15",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 2,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--16",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 14,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--16",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--17",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 26,
+      "reasons": []
+    },
+    {
+      "source_id": "ifi--17",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "asien-orient-institut--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "asien-orient-institut--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 20,
+      "reasons": []
+    },
+    {
+      "source_id": "asien-orient-institut--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "deutsches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "deutsches-seminar--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "deutsches-seminar--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "deutsches-seminar--4",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "deutsches-seminar--5",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 95,
+      "reasons": []
+    },
+    {
+      "source_id": "englisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "englisches-seminar--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "englisches-seminar--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 55,
+      "reasons": []
+    },
+    {
+      "source_id": "historisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "historisches-seminar--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "historisches-seminar--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 28,
+      "reasons": []
+    },
+    {
+      "source_id": "iaka--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "computerlinguistik--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 16,
+      "reasons": []
+    },
+    {
+      "source_id": "computerlinguistik--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 27,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "erziehungswissenschaft--4",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "isle--1",
+      "page_type": "none",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "isle--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 21,
+      "reasons": []
+    },
+    {
+      "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "kommunikationswissenschaft-und-medienforschung-ikm--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "ipz--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 3,
+      "reasons": []
+    },
+    {
+      "source_id": "ipz--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 14,
+      "reasons": []
+    },
+    {
+      "source_id": "ipz--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "slavistik-und-osteuropastudien--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 18,
+      "reasons": []
+    },
+    {
+      "source_id": "isek--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 3,
+      "reasons": []
+    },
+    {
+      "source_id": "isek--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "isek--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 21,
+      "reasons": []
+    },
+    {
+      "source_id": "isek--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "kunsthistorisches-institut--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "kunsthistorisches-institut--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "musikwissenschaftliches-institut--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "musikwissenschaftliches-institut--2",
+      "page_type": "none",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "philosophisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "psychologisches-institut--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 63,
+      "reasons": []
+    },
+    {
+      "source_id": "psychologisches-institut--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "psychologisches-institut--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 141,
+      "reasons": []
+    },
+    {
+      "source_id": "psychologisches-institut--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "romanisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "romanisches-seminar--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 21,
+      "reasons": []
+    },
+    {
+      "source_id": "romanisches-seminar--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "filmwissenschaft--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "filmwissenschaft--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "filmwissenschaft--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "filmwissenschaft--4",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "soziologisches-institut--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "soziologisches-institut--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "soziologisches-institut--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "soziologisches-institut--4",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 17,
+      "reasons": []
+    },
+    {
+      "source_id": "rfw--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 5,
+      "reasons": []
+    },
+    {
+      "source_id": "rfw--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "theologisches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "theologisches-seminar--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 11,
+      "reasons": []
+    },
+    {
+      "source_id": "religionswissenschaftliches-seminar--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "religionswissenschaftliches-seminar--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "religionswissenschaftliches-seminar--3",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 5,
+      "reasons": []
+    },
+    {
+      "source_id": "astrophysics--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 10,
+      "reasons": []
+    },
+    {
+      "source_id": "biochemisches-institut-mnf--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 8,
+      "reasons": []
+    },
+    {
+      "source_id": "biochemisches-institut-mnf--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 32,
+      "reasons": []
+    },
+    {
+      "source_id": "chemistry--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 10,
+      "reasons": []
+    },
+    {
+      "source_id": "ieu--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 3,
+      "reasons": []
+    },
+    {
+      "source_id": "ieu--2",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 199,
+      "reasons": []
+    },
+    {
+      "source_id": "ieu--3",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 8,
+      "reasons": []
+    },
+    {
+      "source_id": "geography--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 27,
+      "reasons": []
+    },
+    {
+      "source_id": "geography--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "geography--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "mathematics--1",
+      "page_type": "none",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 0,
+      "reasons": []
+    },
+    {
+      "source_id": "mathematics--2",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 14,
+      "reasons": []
+    },
+    {
+      "source_id": "paleontology--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 10,
+      "reasons": []
+    },
+    {
+      "source_id": "physics--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 34,
+      "reasons": []
+    },
+    {
+      "source_id": "physics--2",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "physics--3",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "imcr--1",
+      "page_type": "topics",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 19,
+      "reasons": []
+    },
+    {
+      "source_id": "imcr--1",
+      "page_type": "people",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 43,
+      "reasons": []
+    },
+    {
+      "source_id": "mef--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    },
+    {
+      "source_id": "vsf--1",
+      "page_type": "process",
+      "status": "ok",
+      "action": "updated",
+      "record_count": 1,
+      "reasons": []
+    }
+  ],
+  "summary": {
+    "total": 124,
+    "by_status": {
+      "ok": 124
+    },
+    "flagged": 0
+  },
+  "finished_at": "2026-08-07T14:00:32.647528+00:00"
+}

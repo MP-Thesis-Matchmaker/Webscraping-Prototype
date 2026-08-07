@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import re
 import shutil
 import subprocess
@@ -115,7 +116,10 @@ def cmd_fetch(args: argparse.Namespace) -> int:
     try:
         for i, src in enumerate(targets):
             print(f"[{i + 1}/{len(targets)}] {src.source_id}  {src.url}")
-            result, meta = _fetch_and_cache(state, src, sess, args.render)
+            # Honour the contract's `render: true` (a JS-rendered listing), so a
+            # plain `fetch` doesn't capture the pre-render shell of those pages.
+            render = args.render or bool((_contract_spec(src) or {}).get("render"))
+            result, meta = _fetch_and_cache(state, src, sess, render)
             if meta is None:
                 failed += 1
                 print(f"    FAILED  status={result.http_status} {result.error}")
@@ -1142,7 +1146,8 @@ def cmd_run(args: argparse.Namespace) -> int:
                     current_sha1=meta.get("content_sha1"),
                     verified_sha1=st.get("verified_sha1"),
                     records=records, llm_ok=llm_ok,
-                    allow_empty=bool(sp and sp.get("source_type") == "json"))
+                    allow_empty=bool(sp and (sp.get("source_type") == "json"
+                                             or sp.get("allow_empty"))))
 
                 # LLM fallback: the deterministic template failed — either it
                 # matched nothing (extract_failed) or what it matched was
@@ -1296,21 +1301,28 @@ def _run_aux_process(state, data, src, group, rep) -> None:
 
 def _apply_result(state, data, src, page_type, result, records, rep, group=None,
                   scope=None) -> None:
+    diff = None
+    if result.writable and result.status == validate.PAGE_CHANGED:
+        # Compare against what's stored. If the extracted records are unchanged,
+        # the page_changed flag is cosmetic noise (raw HTML moved, data didn't) —
+        # quiet it to OK so only real content changes are flagged for review.
+        old = store.records_for_source(data, src, page_type, scope=scope)
+        diff = validate.diff_records(page_type, old, records)
+        if validate.downgrade_if_unchanged(result, diff):
+            diff = None
     print(f"    {result.status}  records={len(records)}"
           + (f"  [{group['id']}]" if group else "")
           + ("  [faculty]" if scope == "faculty" else "")
           + (f"  {result.reasons[0]}" if result.reasons else ""))
-    diff = None
     if result.writable:
-        if result.status == validate.PAGE_CHANGED:
-            old = store.records_for_source(data, src, page_type)
-            diff = validate.diff_records(page_type, old, records)
         store.upsert_source(data, src, page_type, records, group=group, scope=scope)
         action = "updated"
     else:
         action = "kept_previous"  # never overwrite good data with garbage
 
-    onboarding = (registry.ONBOARD_QUARANTINED if result.flagged
+    # page_changed stays verified (data is good, keep scraping — the flag is just
+    # a review note); hard failures and llm_fallback quarantine until re-onboarded.
+    onboarding = (registry.ONBOARD_QUARANTINED if validate.quarantines(result.status)
                   else registry.ONBOARD_VERIFIED)
     run_state = registry.RUN_DONE if result.writable else registry.RUN_FAILED
     registry.update_source_state(state, src.source_id,
@@ -1435,7 +1447,8 @@ def cmd_check(args: argparse.Namespace) -> int:
     for reason in result.reasons:
         print(f"  - {reason}")
 
-    old = store.records_for_source(store.load(), src, page_type)
+    old = store.records_for_source(store.load(), src, page_type,
+                                   scope=(sp or {}).get("scope"))
     diff = validate.diff_records(page_type, old, records)
     print(f"\ndiff vs stored:  +{diff['added']} / -{diff['removed']} / ~{diff['modified']}"
           f"   (stored {len(old)}, extracted {len(records)})")
@@ -1492,6 +1505,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    # pypdf logs recoverable PDF-xref quirks ("Ignoring wrong pointing object …")
+    # at WARNING for some source PDFs; they don't affect extraction, so quiet
+    # them (real pypdf errors still surface at ERROR).
+    logging.getLogger("pypdf").setLevel(logging.ERROR)
     args = build_parser().parse_args(argv)
     return args.func(args)
 
