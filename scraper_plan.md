@@ -1,19 +1,33 @@
 # UZH Thesis Scraper — Implementation Plan
 
+> **Status: all seven build steps complete and verified.** All 37 units / 103
+> sources in the current registry are onboarded (`verified`) and run (`done`),
+> zero quarantined. Final dataset: **711 concrete topics · 569 people · 58
+> process entries → 1,338 rows** in `output/extracted_data.json` + `output/extracted_data.sqlite`
+> (35 output units; 2 registry units consolidate into faculty-level process via
+> `scope: faculty`). See [Build order](#build-order) for the per-step ledger.
+
 ## Context
 
 I'm building a scraper that aggregates open Bachelor/Master thesis information
 across the University of Zurich for a thesis-matching tool. The source registry
-already exists: `scraping_sources.json` (99 units across 7 faculties, 141 source
-URLs, each with a stable `source_id`, a classification, and a `notes` field
-describing what's on the page). I will verify every implementation step against
-the populated target data model before you move on.
+lives in `registry/scraping_sources.json`. It was regenerated during the build
+from a "full structure crawl (visible rows only)" and now holds **37 units
+across 7 faculties (WWF 4, PhF 19, RWF 1, TRF 2, MNF 9, MeF 1, VSF 1), 103
+source URLs**, each with a stable `source_id`, a classification, and a `notes`
+field describing what's on the page. (The original draft targeted a wider
+99-unit / 141-URL list; the visible-rows crawl is the authoritative set.) Every
+implementation step was verified against the populated target data model before
+moving on.
 
 Core philosophy: **humans decide where and what; deterministic templates make
 extraction repeatable; cached HTML decouples fetching from scraping; alarms
-report drift.** The LLM appears in exactly two controlled places — summarizing
-process pages and drafting extraction templates during onboarding — and sits
-behind an exchangeable interface.
+report drift.** The LLM appears in three controlled places — summarizing process
+pages, drafting extraction templates during onboarding, and a run-time fallback
+that rescues a source whose deterministic template matched nothing (always
+flagged for review) — and sits behind an exchangeable interface. (The original
+plan scoped the LLM to the first two; the fallback was added later, see the
+mechanisms note below.)
 
 ## Pipeline (the six requirements)
 
@@ -66,14 +80,21 @@ faculty:
 ```
 Every record carries `source_id` and `scraped_at` (UTC ISO); concrete topics get
 a stable `topic_id` = sha1(source_url + normalized title). Output:
-`output/theses.json` (this nesting) + a SQLite mirror for querying.
+`output/extracted_data.json` (this nesting) + a SQLite mirror for querying. The
+JSON is written as a cleaned public view: internal keys never reach disk (`_llm`
+dropped, `_profile_url` exposed as `profile_url`).
 
 ### 4. Break detection & notification
 `validate.py` classifies every source's result each run:
 - `fetch_failed` — network/HTTP error (retry once first)
-- `extract_failed` — template matched nothing / LLM returned unusable output
+- `extract_failed` — template matched nothing, and the LLM fallback couldn't
+  recover it
 - `schema_invalid` — global checks only, no per-source config: required fields
-  of the record type present, emails well-formed, links resolvable format
+  of the record type present, emails well-formed, links resolvable format. Like
+  `extract_failed`, it triggers the LLM fallback (the match was there but bad)
+- `llm_fallback` — the deterministic template failed (`extract_failed` or
+  `schema_invalid`) but the LLM fallback produced schema-valid records: stored,
+  yet flagged for review so the template gets fixed
 - `page_changed` — content hash differs from the hash the template was
   verified against. Topics/people: re-extract with the existing template; if
   schema-valid, update the data BUT list the source in the run report with a
@@ -101,7 +122,7 @@ model it produces. After each step, write the relevant JSON and show me its
 content (or excerpt if large):
 - spec-engine proof: `output/preview/ddis--1.json`
 - each onboarded source: `output/preview/<source_id>.json` (in target nesting)
-- each run: updated `output/theses.json` + diff summary vs previous run
+- each run: updated `output/extracted_data.json` + diff summary vs previous run
   (added / removed / modified records)
 Stop after each build step and wait for my go-ahead.
 
@@ -129,7 +150,7 @@ uzh-thesis-scraper/
   cache/<source_id>/...
   scraper/{registry,fetch,cache,spec_engine,spec_generator,llm,llm_extract,
            validate,store,report,main}.py
-  output/{theses.json, theses.sqlite, preview/, runs/}
+  output/{extracted_data.json, extracted_data.sqlite, preview/, runs/}
   tests/{test_contracts.py, test_units.py}
 ```
 Stages communicate only via typed dicts/dataclasses; `main.py` reads as ~10
@@ -148,16 +169,75 @@ python -m scraper check <source_id>                   # dry-run one source, diff
 
 ## Build order
 
-1. Skeleton: registry, state, cache, fetch (+ fetch command with resume)
-2. spec_engine + one hand-written spec for
-   https://www.ifi.uzh.ch/en/ddis/theses/topics.html → prove it, show
-   `output/preview/ddis--1.json`
-3. llm.py abstraction (OpenAI impl) + llm_extract for process pages
-4. onboard command (interactive, as specified) incl. people-page link following
-5. validate + store + report + notify; run command with resume
-6. tests (contracts replay + unit tests for topic_id stability,
-   normalization, link-pattern matching, escalation decision — mocked network)
-7. status/check commands, README documenting the workflow
+1. ✅ Skeleton: registry, state, cache, fetch (+ fetch command with resume)
+2. ✅ spec_engine + one hand-written spec for
+   https://www.ifi.uzh.ch/en/ddis/theses/topics.html → proven, `output/preview/ddis--1.json`
+3. ✅ llm.py abstraction (OpenAI impl) + llm_extract for process pages
+4. ✅ onboard command (interactive, as specified) incl. people-page link following
+5. ✅ validate + store + report + notify; run command with resume
+6. ✅ tests (`tests/test_contracts.py` golden-replay of every spec against its
+   snapshot, offline; `tests/test_units.py` for topic_id stability,
+   normalization/transforms, link-pattern matching, escalation decision)
+7. ✅ status + check commands; README documenting the workflow
+
+> **Note on the two baselines.** Each contract's `expected.json` is the
+> *onboarding provenance snapshot* — the full approved records at verification
+> time, including enrichment (followed profiles, PDF-parsed supervisors). It is
+> human-facing documentation and is not read back at runtime. The contract test
+> asserts against `tests/golden_contracts.json`, the engine's deterministic,
+> offline-reproducible core extraction, because `expected.json` carries
+> non-reproducible enrichment and drifts as specs are edited after freezing.
+> Regenerate the golden deliberately with `python tests/regen_golden.py`.
 
 Politeness everywhere: sequential fetching, 2s delay, honest User-Agent. Do not
 scrape sources beyond the ones I explicitly onboard.
+
+## What the build added beyond the original plan
+
+All 37 units were extracted by *configuration, not new code*: the spec engine
+grew a set of reusable mechanisms so each new source needed only a `spec.yaml`.
+
+- **Field transforms** (`spec_engine.py` `_TRANSFORMS`) — composable string
+  cleaners: `name_lastfirst` (`"Backhaus, Norman, Prof."` → `"Norman Backhaus"`),
+  `name_lastfirst_space`, `pi_surname` (leading `SURNAME_` prefix from a PDF
+  link, title-cased), `titlecase`, `academic_role`, `strip_titles`,
+  `absolute_url`, `normalize_ws`. **Ordering contract: transforms run BEFORE a
+  field's `regex:`** — a match+destroy pattern (e.g. `pi_surname`) must do its
+  own regex inside the transform, never rely on a later `regex:`.
+- **`sectioned_people`** source_type — bins each person element under its
+  nearest preceding heading, keeps only whitelisted sections (e.g. active
+  Professors, excluding emeriti/visiting).
+- **`pdf_enrich`** — for one-PDF-per-project topic lists: parse each PDF for a
+  fuller `topic_description` and the supervisor's name/email
+  (`supervisors_from_pdf` supersedes the surname stub; `supervisor_email_any`
+  accepts external domains like usz.ch / kispi.uzh.ch). PDFs are cached so
+  re-runs don't re-spend.
+- **`include_pages`** (process) — stitches a thin hub page together with named
+  subpages into one document before the LLM summary.
+- **`scope: faculty`** — sources that share one central page (e.g. the PhF
+  `module.html`) consolidate into a single faculty-level process entry crediting
+  every contributing unit, instead of surfacing as empty units.
+- **LLM fallback** (`llm_extract.extract_records_fallback`, validate status
+  `llm_fallback`) — a third, opt-out LLM use: when a topics/people template
+  fails — matching nothing (`extract_failed`) or only malformed records
+  (`schema_invalid`) — a run reads the cached page's cleaned main HTML and asks
+  the model for target-model records as JSON, cached by content hash. The result
+  is *writable but flagged* (same "store but alert" contract as `page_changed`):
+  the run is rescued, but the source is quarantined for review so the template
+  gets fixed. A rescue only replaces the original result when it is itself
+  schema-valid, so a worse fallback never clobbers the diagnosis. On by default;
+  `run --no-llm-fallback` disables it, and it no-ops when no LLM is configured.
+- **`_profile_url`** is the standard institutional link on every person;
+  `personal_website` is reserved for genuine external homepages (followed via a
+  `follow` block when the profile links one).
+
+Accepted limits: supervisor emails behind contact forms or login-gated topic
+tools (paleontology mailform, physics team pages, MeF VAM, VSF matool) are left
+`null` — not scrapable, by design.
+
+## State-file note
+
+`registry/state.json` still carries ~57 orphaned entries from the earlier
+99-unit registry version (e.g. `ivr--1`, `cale--1`, `zkr--1`). They are not in
+the current 37-unit registry and are correctly ignored; they can be pruned for
+tidiness without affecting output.

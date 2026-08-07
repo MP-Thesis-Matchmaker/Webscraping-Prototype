@@ -451,10 +451,6 @@
       "page_type": "people",
       "verified_sha1": "9b01de7a8c69fb4e4f080f633a63b7ce47084b5d"
     },
-    "computerlinguistik--2": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
     "erziehungswissenschaft--1": {
       "onboarding": "verified",
       "run": "done",
@@ -671,10 +667,6 @@
       "page_type": "none",
       "verified_sha1": "9b2a992b04e25486a8caf8b53e79dfed76d4714a"
     },
-    "musikwissenschaftliches-institut--3": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
     "philosophisches-seminar--1": {
       "onboarding": "verified",
       "run": "done",
@@ -819,66 +811,6 @@
       "page_type": "process",
       "verified_sha1": "91f372e7f21248b19e2b0ae587c83f38896cca89"
     },
-    "ivr--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "kriminologisches-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "cale--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "ccsel--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "cirr--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "cirr--2": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "cipco--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "cimels--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "clds--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "crcl--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "zkr--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "zlr--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "zfr--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "zrf--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "stiftungsrecht--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
     "theologisches-seminar--1": {
       "onboarding": "verified",
       "run": "done",
@@ -939,10 +871,6 @@
       "page_type": "people",
       "verified_sha1": "c73c878683e9b8c7c57e6e59b737a36da779cec1"
     },
-    "biochemisches-institut-mnf--3": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
     "chemistry--1": {
       "onboarding": "verified",
       "run": "done",
@@ -990,10 +918,6 @@
       },
       "page_type": "topics",
       "verified_sha1": "9435cb26816c5b6802b1d057b63c819949544af6"
-    },
-    "ieu--4": {
-      "onboarding": "unverified",
-      "run": "pending"
     },
     "geography--1": {
       "onboarding": "verified",
@@ -1114,150 +1038,6 @@
       },
       "page_type": "topics",
       "verified_sha1": "e5e51e315647f1bf9fda45317af3ddb391be6655"
-    },
-    "physiologisches-institut-mnf--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "anatomisches-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "biochemisches-institut-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "biomedizinische-ethik-und-medizingeschichte--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "biomedizinische-technik--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "epidemiologie-biostatistik-und-praevention--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "evolutionaere-medizin--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "experimentelle-immunologie-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "hirnforschung--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "implementation-science-in-health-care--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "labortierkunde-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "luft-und-raumfahrtmedizin--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "medizinische-genetik--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "medizinische-mikrobiologie--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "medizinische-virologie-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "molekulare-krebsforschung--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "one-health-institute-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "parasitologie-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "pharmakologie-und-toxikologie-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "quantitative-biomedizin--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "rechtsmedizin--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "regenerative-medizin--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "physiologisches-institut-mef--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "veterinaeranatomie--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "veterinaeranatomie--2": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "molekulare-mechanismen-bei-krankheiten--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "veterinaerphysiologie--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "veterinaerpharmakologie-und-toxikologie--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "labortierkunde-vsf--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "abteilung-immunologie--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "lebensmittelsicherheit-und-hygiene--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "parasitologie-vsf--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "veterinaerpathologie--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "virologisches-institut--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "tierernaehrung-und-diaetetik--1": {
-      "onboarding": "unverified",
-      "run": "pending"
-    },
-    "abteilung-fuer-epidemiologie--1": {
-      "onboarding": "unverified",
-      "run": "pending"
     },
     "ifi--18": {
       "onboarding": "verified",

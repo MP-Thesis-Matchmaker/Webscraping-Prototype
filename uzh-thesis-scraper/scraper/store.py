@@ -1,6 +1,6 @@
 """Store — the populated target data model + a SQLite mirror.
 
-`output/theses.json` holds the plan's nesting:
+`output/extracted_data.json` holds the plan's nesting:
 
     faculties[faculty_code].units[unit_id].{people, process, concrete_topics}
 
@@ -8,10 +8,17 @@ Every record carries its source_id, so updating one source is a clean
 per-source replace inside its unit bucket (other sources' data is untouched).
 The SQLite mirror is rebuilt from the JSON at the end of a run — simple and
 idempotent, easy to query.
+
+The written JSON is a cleaned *public view* (see `_public_view`): internal-only
+keys never reach the file — the LLM debug blob (`_llm`) is dropped and the
+profile link is exposed as `profile_url` rather than the internal `_profile_url`.
+The in-memory structure keeps the internal names so re-merge and the SQLite
+build (which read the live data) are unaffected.
 """
 
 from __future__ import annotations
 
+import copy
 import json
 import re
 import sqlite3
@@ -20,10 +27,10 @@ from datetime import datetime, timezone
 from . import registry
 from .spec_engine import PEOPLE_FIELDS
 
-THESES_PATH = registry.OUTPUT_DIR / "theses.json"
-SQLITE_PATH = registry.OUTPUT_DIR / "theses.sqlite"
-# Raw per-source people (pre-merge) live in a sidecar so theses.json stays clean;
-# they are only needed to re-merge correctly when re-running a single source.
+DATA_PATH = registry.OUTPUT_DIR / "extracted_data.json"
+SQLITE_PATH = registry.OUTPUT_DIR / "extracted_data.sqlite"
+# Raw per-source people (pre-merge) live in a sidecar so the main file stays
+# clean; they are only needed to re-merge correctly when re-running a source.
 RAW_PEOPLE_PATH = registry.OUTPUT_DIR / "people_raw.json"
 RAW_PROCESS_PATH = registry.OUTPUT_DIR / "process_raw.json"
 RAW_FACULTY_PROCESS_PATH = registry.OUTPUT_DIR / "faculty_process_raw.json"
@@ -93,8 +100,8 @@ def _write_json(path, obj) -> None:
 
 
 def load() -> dict:
-    if THESES_PATH.exists():
-        with THESES_PATH.open(encoding="utf-8") as fh:
+    if DATA_PATH.exists():
+        with DATA_PATH.open(encoding="utf-8") as fh:
             data = json.load(fh)
     else:
         data = {"generated_at": None, "faculties": {}}
@@ -121,7 +128,7 @@ def load() -> dict:
 def save(data: dict) -> None:
     data["generated_at"] = datetime.now(timezone.utc).isoformat()
     # Pull the internal raw-per-source maps (people, process) out into their
-    # sidecars, then write theses.json without them (restoring in-memory after).
+    # sidecars, then write the main file without them (restoring in-memory after).
     stashed = []  # (unit, key, value)
     for path, key in ((RAW_PEOPLE_PATH, _RAW_KEY), (RAW_PROCESS_PATH, _PROCESS_RAW_KEY)):
         sidecar = {}
@@ -140,9 +147,48 @@ def save(data: dict) -> None:
     _write_json(RAW_FACULTY_PROCESS_PATH, fsidecar)
     for obj, key, _ in stashed:
         del obj[key]
-    _write_json(THESES_PATH, data)
+    # Write the cleaned public view (never the internal-keyed live structure).
+    _write_json(DATA_PATH, _public_view(data))
     for obj, key, value in stashed:
         obj[key] = value
+
+
+# --- Public view (the cleaned schema written to disk) -----------------------
+
+def _clean_record(rec: dict) -> dict:
+    """One output record with internal-only keys removed: drop the `_llm` debug
+    blob (and any other `_`-prefixed internal), and expose `_profile_url` as the
+    public `profile_url`. Key order is otherwise preserved."""
+    out = {}
+    for k, v in rec.items():
+        if k == "_profile_url":
+            out["profile_url"] = v
+        elif k.startswith("_"):
+            continue
+        else:
+            out[k] = v
+    return out
+
+
+def _clean_list(records) -> None:
+    if isinstance(records, list):
+        records[:] = [_clean_record(r) if isinstance(r, dict) else r for r in records]
+
+
+def _public_view(data: dict) -> dict:
+    """A deep copy of the data with every record run through `_clean_record`, so
+    the file on disk carries the public schema while the in-memory structure
+    keeps its internal keys (needed by re-merge and the SQLite build)."""
+    view = copy.deepcopy(data)
+    for fac in view.get("faculties", {}).values():
+        _clean_list(fac.get("process"))
+        for unit in fac.get("units", {}).values():
+            for bucket in ("people", "process", "concrete_topics"):
+                _clean_list(unit.get(bucket))
+            for g in unit.get("groups", {}).values():
+                for bucket in ("people", "process", "concrete_topics"):
+                    _clean_list(g.get(bucket))
+    return view
 
 
 def _faculty_bucket(data: dict, src: registry.Source) -> dict:
@@ -395,8 +441,9 @@ def rebuild_sqlite(data: dict) -> int:
                                 row.append(fcode)
                             elif c == "unit_id":
                                 row.append(uid)
-                            elif c == "profile_url":       # JSON field is _profile_url
-                                row.append(rec.get("_profile_url"))
+                            elif c == "profile_url":       # live: _profile_url;
+                                # reloaded from the cleaned file: profile_url
+                                row.append(rec.get("_profile_url") or rec.get("profile_url"))
                             elif c in ("relevant_links", "supervisors"):
                                 row.append(json.dumps(rec.get(c) or [],
                                                       ensure_ascii=False))

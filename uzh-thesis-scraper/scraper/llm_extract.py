@@ -268,3 +268,165 @@ def to_preview(source: registry.Source, record: dict) -> dict:
         "page_type": "process",
         "process": [record],
     }
+
+
+# --- LLM fallback extraction (topics/people) --------------------------------
+#
+# The THIRD, opt-out controlled LLM use: a rescue net for when the deterministic
+# spec matched nothing (validate → EXTRACT_FAILED). It reads the cached page's
+# cleaned main HTML and asks the model for target-model records as JSON. Output
+# is always flagged for review (validate.LLM_FALLBACK) — it recovers a run that
+# would otherwise drop a source, but the fix is to repair the template.
+
+import json  # noqa: E402
+
+_FALLBACK_HTML_BUDGET = 14000  # chars of cleaned main HTML sent to the LLM
+
+_FALLBACK_TOPICS_SYSTEM = (
+    "You extract open Bachelor's/Master's thesis topics from a university "
+    "department web page for a thesis-matching tool. Return ONLY a JSON array "
+    "(no markdown, no prose). Each element is one open topic:\n"
+    '  {"title": str, "degree_level": "Bachelor"|"Master"|"Bachelor, Master"|null,'
+    ' "research_area": str|null, "supervisors": [{"name": str|null,'
+    ' "email": str|null}], "topic_description": str|null, "status": "open"|null,'
+    ' "source_link": str|null}\n'
+    "Use only information present on the page. Use null (not guesses) for missing "
+    "fields. Copy hrefs verbatim from the HTML for source_link/emails. If the "
+    "page lists no concrete open topics, return []."
+)
+
+_FALLBACK_PEOPLE_SYSTEM = (
+    "You extract the people (supervisors / group leaders / academic staff) from "
+    "a university department web page for a thesis-matching tool. Return ONLY a "
+    "JSON array (no markdown, no prose). Each element is one person:\n"
+    '  {"role": str|null, "name": str, "email": str|null,'
+    ' "research_interest": str|null, "research_field": str|null,'
+    ' "personal_website": str|null, "_profile_url": str|null}\n'
+    "Use only information present on the page. Use null (not guesses) for missing "
+    "fields. Copy hrefs verbatim from the HTML: put an institutional profile link "
+    "in _profile_url and an external personal homepage in personal_website. Strip "
+    "academic titles from name. If the page lists no people, return []."
+)
+
+_FALLBACK_SYSTEM = {"topics": _FALLBACK_TOPICS_SYSTEM, "people": _FALLBACK_PEOPLE_SYSTEM}
+
+# Only these keys are kept from a fallback record, in target-model order.
+_FALLBACK_KEEP = {
+    "topics": ["title", "status", "degree_level", "date_of_listing", "research_area",
+               "supervisors", "topic_description", "source_link"],
+    "people": ["role", "name", "email", "research_interest", "research_field",
+               "bio", "personal_website", "_profile_url"],
+}
+_FALLBACK_URL_FIELDS = ("source_link", "_profile_url", "personal_website")
+
+
+def _clean_main_html(html: str) -> str:
+    """The main content region as HTML (hrefs/emails intact), stripped of chrome
+    and truncated to the token budget — the LLM reads links, not just text."""
+    soup = BeautifulSoup(html, "html.parser")
+    node = _main_node(soup)
+    for junk in node.select("script, style, nav, header, footer, svg, form, "
+                            ".Breadcrumb, noscript"):
+        junk.decompose()
+    return node.decode()[:_FALLBACK_HTML_BUDGET]
+
+
+def _parse_json_array(text: str) -> list:
+    """Best-effort parse of a JSON array from an LLM reply — tolerating a
+    ```json fence or leading prose by slicing to the outermost brackets."""
+    if not text:
+        return []
+    s = text.strip()
+    if s.startswith("```"):
+        s = re.sub(r"^```[a-zA-Z]*\s*|\s*```$", "", s).strip()
+    try:
+        data = json.loads(s)
+    except json.JSONDecodeError:
+        start, end = s.find("["), s.rfind("]")
+        if start == -1 or end <= start:
+            return []
+        try:
+            data = json.loads(s[start:end + 1])
+        except json.JSONDecodeError:
+            return []
+    return data if isinstance(data, list) else []
+
+
+def _coerce_records(raw: list, page_type: str, source_id: str, base_url: str) -> list[dict]:
+    from . import spec_engine  # local import: spec_engine never imports us
+
+    keep = _FALLBACK_KEEP[page_type]
+    scraped_at = datetime.now(timezone.utc).isoformat()
+    out = []
+    for item in raw:
+        if not isinstance(item, dict):
+            continue
+        rec = {f: item.get(f) for f in keep}
+        # resolve any relative URLs the model copied verbatim
+        for uf in _FALLBACK_URL_FIELDS:
+            if isinstance(rec.get(uf), str) and rec[uf].strip():
+                rec[uf] = urljoin(base_url, rec[uf].strip())
+        rec["source_id"] = source_id
+        rec["scraped_at"] = scraped_at
+        if page_type == "people":
+            if not (rec.get("name") or "").strip():
+                continue
+        else:  # topics
+            if isinstance(rec.get("supervisors"), list):
+                for sup in rec["supervisors"]:
+                    if isinstance(sup, dict) and isinstance(sup.get("email"), str):
+                        sup["email"] = sup["email"].replace("mailto:", "").split("?")[0].strip()
+            spec_engine.normalize_supervisors(rec)
+            rec["source_link"] = rec.get("source_link") or base_url
+            rec["topic_id"] = spec_engine._topic_id(base_url, rec, ["title"])
+            if not (rec.get("title") or rec.get("topic_description")):
+                continue
+        out.append(rec)
+    return out
+
+
+def extract_records_fallback(source_id: str, page_type: str, *,
+                             html: str | None = None,
+                             base_url: str | None = None) -> tuple[list[dict], dict]:
+    """Rescue extraction for a topics/people source whose deterministic template
+    matched nothing. Returns (records, llm_info). Records are in target-model
+    shape and always meant to be flagged for review. Degrades to ([], info) when
+    no LLM is configured, the reply won't parse, or the call errors — never
+    raises, so a run keeps going."""
+    info = {"provider": llm.provider_name(), "model": llm.model_name(), "mode": "fallback"}
+    if page_type not in _FALLBACK_SYSTEM:
+        info["status"] = "unsupported_page_type"
+        return [], info
+    if not llm.is_available():
+        info["status"] = "unavailable"
+        return [], info
+
+    if html is None:
+        if not cache.is_cached(source_id):
+            info["status"] = "not_cached"
+            return [], info
+        base_url = cache.read_meta(source_id).get("url", "")
+        html = cache.read_page(source_id)
+    base_url = base_url or ""
+    cleaned = _clean_main_html(html)
+    system = _FALLBACK_SYSTEM[page_type]
+
+    # Cache the raw JSON reply by (system+content) hash so a repeat run of an
+    # unchanged failing page doesn't re-spend the LLM.
+    key = hashlib.sha1((system + "\n" + cleaned).encode("utf-8")).hexdigest()[:16]
+    kind = "llmfallback"
+    if cache.has_subpage(source_id, kind, key):
+        reply = cache.read_subpage(source_id, kind, key)
+        info["cached"] = True
+    else:
+        try:
+            reply = llm.complete(system, cleaned)
+        except Exception as exc:  # noqa: BLE001 — record, never crash a run
+            info["status"] = f"error: {type(exc).__name__}: {exc}"
+            return [], info
+        cache.write_subpage(source_id, kind, key, reply)
+
+    records = _coerce_records(_parse_json_array(reply), page_type, source_id, base_url)
+    info["status"] = "ok"
+    info["count"] = len(records)
+    return records, info

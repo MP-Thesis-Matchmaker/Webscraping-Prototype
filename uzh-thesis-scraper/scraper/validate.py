@@ -4,6 +4,9 @@ Statuses (plan §4):
   OK            — extracted, schema-valid, content unchanged since verification
   PAGE_CHANGED  — schema-valid but the page hash differs from the verified hash
                   (data is still updated, but the source is flagged for review)
+  LLM_FALLBACK  — the deterministic template matched nothing, but an LLM rescue
+                  extraction produced schema-valid records (stored, but flagged
+                  for review — the template likely needs fixing)
   FETCH_FAILED  — no usable cached page / last fetch errored
   EXTRACT_FAILED— template/LLM produced nothing usable
   SCHEMA_INVALID— required fields missing or malformed (emails/links)
@@ -19,11 +22,14 @@ from dataclasses import dataclass, field
 
 OK = "ok"
 PAGE_CHANGED = "page_changed"
+LLM_FALLBACK = "llm_fallback"
 FETCH_FAILED = "fetch_failed"
 EXTRACT_FAILED = "extract_failed"
 SCHEMA_INVALID = "schema_invalid"
 
-FLAGGED = {PAGE_CHANGED, FETCH_FAILED, EXTRACT_FAILED, SCHEMA_INVALID}
+# LLM_FALLBACK is flagged (needs review) yet writable (the recovered data is
+# still stored) — the same "store but alert" contract as PAGE_CHANGED.
+FLAGGED = {PAGE_CHANGED, LLM_FALLBACK, FETCH_FAILED, EXTRACT_FAILED, SCHEMA_INVALID}
 
 _EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 _URL_RE = re.compile(r"^https?://[^\s]+$", re.I)
@@ -44,9 +50,9 @@ class Result:
     @property
     def writable(self) -> bool:
         """Whether the freshly extracted data is good enough to store. We write
-        on OK and on PAGE_CHANGED (still schema-valid); we never overwrite good
-        data on a hard failure."""
-        return self.status in (OK, PAGE_CHANGED)
+        on OK, PAGE_CHANGED, and LLM_FALLBACK (all still schema-valid); we never
+        overwrite good data on a hard failure."""
+        return self.status in (OK, PAGE_CHANGED, LLM_FALLBACK)
 
 
 def _valid_email(v) -> bool:
@@ -135,6 +141,26 @@ def classify(source_id: str, page_type: str, *, cached: bool, last_status: int,
     if verified_sha1 and current_sha1 and current_sha1 != verified_sha1:
         res.status = PAGE_CHANGED
         res.reasons.append(f"hash {verified_sha1[:8]} -> {current_sha1[:8]}")
+    return res
+
+
+def classify_llm_fallback(source_id: str, page_type: str, records: list) -> Result:
+    """Classify the records recovered by the LLM fallback (used only after the
+    deterministic template already failed with EXTRACT_FAILED). Same schema bar
+    as a normal run: empty → still EXTRACT_FAILED; malformed → SCHEMA_INVALID;
+    otherwise LLM_FALLBACK (stored, but flagged so the template gets fixed)."""
+    res = Result(source_id, LLM_FALLBACK, page_type, record_count=len(records))
+    if not records:
+        res.status = EXTRACT_FAILED
+        res.reasons.append("llm fallback produced 0 records")
+        return res
+    errs = _SCHEMA.get(page_type, lambda _r: [])(records)
+    if errs:
+        res.status = SCHEMA_INVALID
+        res.reasons = [f"llm fallback: {e}" for e in errs[:10]]
+        return res
+    res.reasons.append(f"recovered {len(records)} record(s) via LLM fallback — "
+                       f"review and fix the template")
     return res
 
 

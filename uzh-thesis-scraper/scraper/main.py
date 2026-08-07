@@ -192,6 +192,12 @@ def _freeze_contract(src: registry.Source, page_type: str, records, meta: dict,
                         cdir / cache.binary_file(src.source_id).name)
     if spec_yaml is not None:
         (cdir / "spec.yaml").write_text(spec_yaml, encoding="utf-8")
+    # expected.json is the onboarding PROVENANCE snapshot: the full approved
+    # records at verification time, INCLUDING enrichment (followed profiles,
+    # PDF-parsed supervisors) that is not reproducible offline. It is human-facing
+    # documentation, not the test oracle — the contract-replay test asserts
+    # against tests/golden_contracts.json (the engine's deterministic, offline
+    # core extraction). See tests/replay_util.py for why the two differ.
     expected = {"source_id": src.source_id, "page_type": page_type,
                 "verified_content_sha1": meta.get("content_sha1"),
                 "records": records}
@@ -1049,6 +1055,17 @@ def _ensure_main_cached(state, src, page_type) -> bool:
     return meta is not None
 
 
+# Deterministic statuses that warrant an LLM rescue attempt: the template either
+# matched nothing (extract_failed) or matched only malformed records
+# (schema_invalid). page_changed / ok already produced schema-valid data.
+_FALLBACK_TRIGGERS = (validate.EXTRACT_FAILED, validate.SCHEMA_INVALID)
+
+
+def _should_try_fallback(use_fallback: bool, page_type: str, status: str) -> bool:
+    return (use_fallback and page_type in ("topics", "people")
+            and status in _FALLBACK_TRIGGERS)
+
+
 def cmd_run(args: argparse.Namespace) -> int:
     state = registry.load_state()
     selected = _select_sources(args.only)
@@ -1070,6 +1087,13 @@ def cmd_run(args: argparse.Namespace) -> int:
     if not verified:
         print("nothing to run.")
         return 0
+
+    # LLM rescue for sources whose template matched nothing (on by default;
+    # no-ops gracefully when no LLM is configured).
+    use_fallback = not getattr(args, "no_llm_fallback", False)
+    if use_fallback and not llm.is_available():
+        use_fallback = False
+        print("(no LLM configured — extract_failed sources won't be rescued)\n")
 
     data = store.load()
     rep = report.new_report()
@@ -1119,6 +1143,27 @@ def cmd_run(args: argparse.Namespace) -> int:
                     verified_sha1=st.get("verified_sha1"),
                     records=records, llm_ok=llm_ok,
                     allow_empty=bool(sp and sp.get("source_type") == "json"))
+
+                # LLM fallback: the deterministic template failed — either it
+                # matched nothing (extract_failed) or what it matched was
+                # malformed (schema_invalid). Rescue this run with an LLM
+                # extraction (flagged for review). A rescue only replaces the
+                # result if it is itself schema-valid, so a worse fallback never
+                # clobbers the original diagnosis.
+                if _should_try_fallback(use_fallback, page_type, result.status):
+                    fb_records, fb_info = llm_extract.extract_records_fallback(
+                        src.source_id, page_type)
+                    if fb_records:
+                        fb_result = validate.classify_llm_fallback(
+                            src.source_id, page_type, fb_records)
+                        print(f"    LLM fallback ({result.status}): "
+                              f"{fb_info.get('status')} -> {len(fb_records)} "
+                              f"record(s) [{fb_result.status}]")
+                        if fb_result.writable:
+                            records, result = fb_records, fb_result
+                    elif fb_info.get("status") not in ("ok", "unavailable"):
+                        print(f"    LLM fallback: {fb_info.get('status')}")
+
                 _apply_result(state, data, src, page_type, result, records, rep,
                               group=(sp or {}).get("group"),
                               scope=(sp or {}).get("scope"))
@@ -1145,7 +1190,7 @@ def cmd_run(args: argparse.Namespace) -> int:
     report.finalize(rep)
     path = report.write(rep)
     report.print_table(rep)
-    print(f"\nwrote {store.THESES_PATH} + {n} rows in theses.sqlite\nrun report: {path}")
+    print(f"\nwrote {store.DATA_PATH} + {n} rows in {store.SQLITE_PATH.name}\nrun report: {path}")
     sm = rep["summary"]
     report.notify(f"run complete: {sm['total']} sources, {sm['flagged']} flagged")
     return 1 if sm["flagged"] else 0
@@ -1282,13 +1327,127 @@ class _null_ctx:
         return False
 
 
-# --- not-yet-implemented commands ------------------------------------------
+# --- status ----------------------------------------------------------------
 
-def _not_yet(step: str):
-    def _run(args: argparse.Namespace) -> int:
-        print(f"'{args.command}' is not implemented yet (build order {step}).")
-        return 0
-    return _run
+def cmd_status(args: argparse.Namespace) -> int:
+    """A no-network snapshot: where every source sits in its lifecycle, plus the
+    last run's summary. Reads registry/state.json + output/runs/ only."""
+    from collections import Counter
+
+    state = registry.load_state()
+    sources = registry.all_sources()
+    ids = {s.source_id for s in sources}
+
+    onb, runc, ptc = Counter(), Counter(), Counter()
+    quarantined, unverified = [], []
+    for s in sources:
+        st = registry.source_state(state, s.source_id)
+        o = st.get("onboarding", registry.ONBOARD_UNVERIFIED)
+        r = st.get("run", registry.RUN_PENDING)
+        onb[o] += 1
+        runc[r] += 1
+        ptc[st.get("page_type", "-")] += 1
+        if o == registry.ONBOARD_QUARANTINED:
+            quarantined.append((s.source_id, st.get("page_type", "-"), r))
+        elif o == registry.ONBOARD_UNVERIFIED:
+            unverified.append(s.source_id)
+
+    print(f"registry: {len(sources)} sources | "
+          f"{len({s.faculty_code for s in sources})} faculties | "
+          f"{len({s.unit_id for s in sources})} units\n")
+    print("  onboarding:  " + "  ".join(f"{k}={v}" for k, v in sorted(onb.items())))
+    print("  run:         " + "  ".join(f"{k}={v}" for k, v in sorted(runc.items())))
+    print("  page_type:   " + "  ".join(f"{k}={v}" for k, v in sorted(ptc.items())))
+
+    if quarantined:
+        print(f"\n{len(quarantined)} quarantined:")
+        for sid, pt, r in quarantined:
+            print(f"  {sid:32} {pt:8} run={r}")
+    if unverified:
+        shown = ", ".join(unverified[:12]) + (" ..." if len(unverified) > 12 else "")
+        print(f"\n{len(unverified)} unverified: {shown}")
+    if not quarantined and not unverified:
+        print("\nall registry sources verified.")
+
+    orphans = sorted(set(state.get("sources", {})) - ids)
+    if orphans:
+        print(f"\n{len(orphans)} orphaned state entries (not in current registry): "
+              + ", ".join(orphans[:6]) + (" ..." if len(orphans) > 6 else ""))
+
+    run_files = sorted(registry.RUNS_DIR.glob("*.json")) if registry.RUNS_DIR.exists() else []
+    if run_files:
+        rr = json.loads(run_files[-1].read_text(encoding="utf-8"))
+        sm = rr.get("summary", {})
+        by = "  ".join(f"{k}={v}" for k, v in (sm.get("by_status") or {}).items())
+        print(f"\nlast run: {run_files[-1].name}"
+              f"\n  total={sm.get('total')}  flagged={sm.get('flagged')}  {by}")
+    else:
+        print("\nno runs recorded yet.")
+
+    if store.DATA_PATH.exists():
+        print(f"\noutput: {store.DATA_PATH}")
+    return 0
+
+
+# --- check (dry-run one source, diff vs stored) ----------------------------
+
+def cmd_check(args: argparse.Namespace) -> int:
+    """Re-extract one source from cache, classify it, and diff against the data
+    already in output/extracted_data.json — writing nothing. The single-source dry run
+    for verifying a spec change before committing to a full run."""
+    state = registry.load_state()
+    try:
+        src = registry.get_source(args.source_id)
+    except KeyError as exc:
+        print(exc)
+        return 2
+
+    st = registry.source_state(state, src.source_id)
+    if st.get("onboarding") != registry.ONBOARD_VERIFIED:
+        print(f"{src.source_id} is not verified (onboarding={st.get('onboarding')}). "
+              f"Onboard it first.")
+        return 2
+    if not cache.is_cached(src.source_id):
+        print(f"{src.source_id} not cached — run "
+              f"`python -m scraper fetch --only {src.source_id}` first.")
+        return 2
+
+    page_type = st.get("page_type", "process")
+    meta = cache.read_meta(src.source_id)
+    fetch_fn = fetch.html_fetcher()  # cache-first; only followed links may hit network
+    try:
+        records, llm_ok = _extract_source(src, page_type, fetch_fn)
+    except Exception as exc:  # noqa: BLE001
+        print(f"{src.source_id} ({page_type}): extract failed — "
+              f"{type(exc).__name__}: {exc}")
+        return 1
+
+    sp = _contract_spec(src)
+    result = validate.classify(
+        src.source_id, page_type, cached=True,
+        last_status=meta.get("http_status", 0),
+        current_sha1=meta.get("content_sha1"),
+        verified_sha1=st.get("verified_sha1"),
+        records=records, llm_ok=llm_ok,
+        allow_empty=bool(sp and sp.get("source_type") == "json"))
+
+    print(f"{src.source_id} ({page_type}): {result.status}  records={len(records)}")
+    for reason in result.reasons:
+        print(f"  - {reason}")
+
+    old = store.records_for_source(store.load(), src, page_type)
+    diff = validate.diff_records(page_type, old, records)
+    print(f"\ndiff vs stored:  +{diff['added']} / -{diff['removed']} / ~{diff['modified']}"
+          f"   (stored {len(old)}, extracted {len(records)})")
+    for label, key in (("added", "added_keys"), ("removed", "removed_keys"),
+                       ("modified", "modified_keys")):
+        keys = diff.get(key) or []
+        if keys:
+            print(f"  {label}: " + ", ".join(keys[:10])
+                  + (" ..." if len(keys) > 10 else ""))
+
+    print("\n(dry run — nothing written)")
+    return 1 if result.flagged else 0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -1318,14 +1477,16 @@ def build_parser() -> argparse.ArgumentParser:
     r = sub.add_parser("run", help="extract verified sources, validate, store")
     r.add_argument("--only", nargs="+", metavar="ID")
     r.add_argument("--resume", action="store_true", help="skip sources already done")
+    r.add_argument("--no-llm-fallback", action="store_true",
+                   help="disable the LLM rescue for sources whose template matched nothing")
     r.set_defaults(func=cmd_run)
 
-    s = sub.add_parser("status", help="state + last-run table (step 7)")
-    s.set_defaults(func=_not_yet("step 7"))
+    s = sub.add_parser("status", help="state + last-run summary")
+    s.set_defaults(func=cmd_status)
 
-    c = sub.add_parser("check", help="dry-run one source, diff vs stored (step 7)")
+    c = sub.add_parser("check", help="dry-run one source, diff vs stored")
     c.add_argument("source_id")
-    c.set_defaults(func=_not_yet("step 7"))
+    c.set_defaults(func=cmd_check)
 
     return p
 
