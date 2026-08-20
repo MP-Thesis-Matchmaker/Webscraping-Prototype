@@ -20,7 +20,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from . import cache, llm, registry
+from . import cache, llm, registry, title_check
 
 PROCESS_FIELDS = ["degree_level", "process_description", "relevant_links", "source_url"]
 
@@ -381,6 +381,8 @@ def _coerce_records(raw: list, page_type: str, source_id: str, base_url: str) ->
             rec["topic_id"] = spec_engine._topic_id(base_url, rec, ["title"])
             if not (rec.get("title") or rec.get("topic_description")):
                 continue
+            # Score only: a fallback record has no DOM container to repair from.
+            title_check.check_only(rec)
         out.append(rec)
     return out
 

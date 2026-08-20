@@ -274,6 +274,10 @@ def _onboard_spec(src, meta, page_type, args, prompter) -> tuple[bool, list | No
             print(json.dumps({k: v for k, v in r.items() if not k.startswith("scraped")},
                              ensure_ascii=False)[:400])
 
+        if page_type == "topics" and records:
+            _report_title_checks(
+                records, llm_review=getattr(args, "llm_title_review", False))
+
         if page_type == "people" and records and spec.get("follow"):
             _preview_follow(src, records, spec, args, prompter)
 
@@ -290,6 +294,47 @@ def _onboard_spec(src, meta, page_type, args, prompter) -> tuple[bool, list | No
         elif choice == "r":
             hint = prompter.ask("hint for the model", hint)
             spec_yaml = None
+
+
+def _report_title_checks(records, *, llm_review: bool = False) -> None:
+    """Surface title repairs and flags during onboarding, where a human is already
+    reviewing. `--llm-title-review` additionally prints the model's opinion on the
+    flagged ones — advisory output only, never written to the data, so routine
+    runs stay fully deterministic."""
+    repaired = [r for r in records if r.get("_title_repair")]
+    flagged = [r for r in records if r.get("_title_check")]
+    if not (repaired or flagged):
+        return
+    print(f"\n  title check: {len(repaired)} repaired, {len(flagged)} flagged")
+    for r in repaired:
+        fx = r["_title_repair"]
+        print(f"    repaired via {fx['via']}: {str(fx['from'])[:40]!r}"
+              f" -> {str(fx['to'])[:60]!r}")
+    for r in flagged:
+        note = r["_title_check"]
+        print(f"    flagged (score {note['score']}): {str(note.get('title'))[:46]!r}"
+              f"  {(note.get('reasons') or [''])[0][:52]}")
+    if not (llm_review and flagged):
+        return
+    if not llm.is_available():
+        print("    (--llm-title-review: no LLM configured)")
+        return
+    system = ("You review web-scraped Bachelor/Master thesis topic titles. For each "
+              "numbered record answer on ONE line: 'PLAUSIBLE' or 'IMPLAUSIBLE', and "
+              "when implausible, quote the string from that record which looks like "
+              "the real title. No prose, no preamble.")
+    prompt = "\n".join(
+        f"{i}. title={r.get('title')!r} "
+        f"description={str(r.get('topic_description'))[:200]!r} "
+        f"research_area={r.get('research_area')!r}"
+        for i, r in enumerate(flagged, 1))
+    print("    LLM opinion (advisory, not stored):")
+    try:
+        for line in llm.complete(system, prompt).splitlines():
+            if line.strip():
+                print(f"      {line.strip()[:110]}")
+    except Exception as exc:  # noqa: BLE001 — advisory only, never fail onboarding
+        print(f"      (failed: {type(exc).__name__}: {exc})")
 
 
 def _preview_follow(src, records, spec, args, prompter) -> None:
@@ -1494,6 +1539,9 @@ def build_parser() -> argparse.ArgumentParser:
     o.add_argument("--no-follow", action="store_true", help="skip profile following")
     o.add_argument("--profile-limit", type=int, default=3,
                    help="profiles to follow during onboarding (default 3)")
+    o.add_argument("--llm-title-review", action="store_true",
+                   help="ask the LLM for an advisory opinion on flagged titles "
+                        "(printed only, never stored)")
     o.add_argument("--yes", action="store_true", help="auto-approve (non-interactive)")
     o.set_defaults(func=cmd_onboard)
 

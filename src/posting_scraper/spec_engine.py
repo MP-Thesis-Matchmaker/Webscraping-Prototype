@@ -42,7 +42,7 @@ from urllib.parse import urljoin
 import yaml
 from bs4 import BeautifulSoup
 
-from . import cache, registry
+from . import cache, registry, title_check
 
 # Target-model field sets, so the preview always has a complete record shape.
 PEOPLE_FIELDS = ["role", "name", "email", "research_interest",
@@ -523,6 +523,8 @@ def _extract_json(source_id: str, spec: dict) -> list[dict]:
             link = record.get("source_link") or base_url
             record["source_link"] = link
             record["topic_id"] = _topic_id(link, record, spec.get("id_from"))
+            if spec.get("title_check", True) is not False:
+                title_check.check_only(record)  # no container to repair from
         records.append(record)
     return records
 
@@ -704,6 +706,7 @@ def extract(source_id: str, spec: dict | None = None, *,
     scraped_at = datetime.now(timezone.utc).isoformat()
 
     known = PEOPLE_FIELDS if page_type == "people" else TOPIC_FIELDS
+    title_declared = "title" in (rec_spec.get("fields") or {})
     records = []
     for c in containers:
         raw = {name: _extract_field(c, fs, base_url)
@@ -717,6 +720,14 @@ def extract(source_id: str, spec: dict | None = None, *,
         record["source_id"] = source_id
         record["scraped_at"] = scraped_at
         if page_type == "topics":
+            # A spec says WHERE the title is, never what a title looks like, so a
+            # selector matching the wrong element yields a wrong-but-well-formed
+            # value. Repair it from the container before the id is computed, so
+            # topic_id is seeded from the corrected title. Only specs that
+            # actually declare a title are touched; `title_check: false` opts out.
+            if title_declared and spec.get("title_check", True) is not False:
+                title_check.repair(record, c,
+                                   extra_selectors=spec.get("title_candidates"))
             record["source_link"] = record.get("source_link") or base_url
             record["topic_id"] = _topic_id(base_url, record, spec.get("id_from"))
         for f in spec.get("omit_fields", ()):  # e.g. drop a renamed default field

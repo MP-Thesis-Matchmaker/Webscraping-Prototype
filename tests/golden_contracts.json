@@ -7200,7 +7200,16 @@
   "ifi--5": [
     {
       "_supervisor_url": "https://www.ifi.uzh.ch/en/dbtg/Staff/Jamal.html",
-      "date_of_listing": null,
+      "_title_repair": {
+        "from": "November 3, 2021",
+        "reasons": [
+          "is a date, not a title: 'November 3, 2021'"
+        ],
+        "score": 1.0,
+        "to": "Optimization of Lempel-Ziv Algorithm for Entropy Rate Estimation of Numerical Time series",
+        "via": "p>strong"
+      },
+      "date_of_listing": "November 3, 2021",
       "degree_level": "Bachelor, Master",
       "research_area": "Database Technology",
       "source_id": "ifi--5",
@@ -7208,9 +7217,9 @@
       "status": "taken",
       "supervisor_name": "Jamal Mohammed",
       "supervisors": null,
-      "title": "November 3, 2021",
-      "topic_description": "Optimization of Lempel-Ziv Algorithm for Entropy Rate Estimation of Numerical Time series: The Lempel-Ziv algorithm is a well known universal lossless compression algorithm used for example in the GIF image format. The naive implementation of this algorithm has a time complexity of O(n 2 ). If the series is symbolic implementations based on hash or dictionary data structure reduce the computational complexity to O(n). But this is not straightforward to apply when the series is numeric. So, the objective of the project is to implement solutions which are better than the naive solution for numeric series. Moreover, the project includes an experimentation task where the students are required to develop time series prediction models to study correlation between prediction performance and estimated entropy rate.",
-      "topic_id": "5037cb7a9ca06d19f6b6bf948ae6f003dfb87b18"
+      "title": "Optimization of Lempel-Ziv Algorithm for Entropy Rate Estimation of Numerical Time series",
+      "topic_description": "The Lempel-Ziv algorithm is a well known universal lossless compression algorithm used for example in the GIF image format. The naive implementation of this algorithm has a time complexity of O(n 2 ). If the series is symbolic implementations based on hash or dictionary data structure reduce the computational complexity to O(n). But this is not straightforward to apply when the series is numeric. So, the objective of the project is to implement solutions which are better than the naive solution for numeric series. Moreover, the project includes an experimentation task where the students are required to develop time series prediction models to study correlation between prediction performance and estimated entropy rate.",
+      "topic_id": "9c404f2fcb6d390ada4c213f2b5d10d7976a992c"
     },
     {
       "_supervisor_url": "https://www.ifi.uzh.ch/en/dbtg/Staff/dolmatova.html",

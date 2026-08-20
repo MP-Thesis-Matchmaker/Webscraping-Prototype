@@ -4,6 +4,9 @@ Statuses (plan §4):
   OK            — extracted, schema-valid, content unchanged since verification
   PAGE_CHANGED  — schema-valid but the page hash differs from the verified hash
                   (data is still updated, but the source is flagged for review)
+  NEEDS_REVIEW  — schema-valid, but a record's title is implausible and no better
+                  candidate was found on the page (see title_check). Stored and
+                  flagged; the template is what needs fixing
   LLM_FALLBACK  — the deterministic template matched nothing, but an LLM rescue
                   extraction produced schema-valid records (stored, but flagged
                   for review — the template likely needs fixing)
@@ -22,6 +25,7 @@ from dataclasses import dataclass, field
 
 OK = "ok"
 PAGE_CHANGED = "page_changed"
+NEEDS_REVIEW = "needs_review"
 LLM_FALLBACK = "llm_fallback"
 FETCH_FAILED = "fetch_failed"
 EXTRACT_FAILED = "extract_failed"
@@ -29,14 +33,18 @@ SCHEMA_INVALID = "schema_invalid"
 
 # LLM_FALLBACK is flagged (needs review) yet writable (the recovered data is
 # still stored) — the same "store but alert" contract as PAGE_CHANGED.
-FLAGGED = {PAGE_CHANGED, LLM_FALLBACK, FETCH_FAILED, EXTRACT_FAILED, SCHEMA_INVALID}
+FLAGGED = {PAGE_CHANGED, NEEDS_REVIEW, LLM_FALLBACK, FETCH_FAILED, EXTRACT_FAILED,
+           SCHEMA_INVALID}
 
 # Statuses that keep a source verified and in the run rotation. OK is obvious;
 # PAGE_CHANGED too — its data is good and stored, the flag is only "review this
 # change", so the source keeps being scraped. Every other flagged status
 # quarantines (a hard failure, or an LLM rescue that means the template is broken
 # and should be fixed) — those are excluded from future runs until re-onboarded.
-KEEPS_VERIFIED = {OK, PAGE_CHANGED}
+# NEEDS_REVIEW joins them: the data is good enough to store and the rest of the
+# page extracts fine, so quarantining the whole source over one questionable
+# title would stop refreshing every good record on it.
+KEEPS_VERIFIED = {OK, PAGE_CHANGED, NEEDS_REVIEW}
 
 
 def quarantines(status: str) -> bool:
@@ -63,9 +71,9 @@ class Result:
     @property
     def writable(self) -> bool:
         """Whether the freshly extracted data is good enough to store. We write
-        on OK, PAGE_CHANGED, and LLM_FALLBACK (all still schema-valid); we never
-        overwrite good data on a hard failure."""
-        return self.status in (OK, PAGE_CHANGED, LLM_FALLBACK)
+        on OK, PAGE_CHANGED, NEEDS_REVIEW, and LLM_FALLBACK (all still
+        schema-valid); we never overwrite good data on a hard failure."""
+        return self.status in (OK, PAGE_CHANGED, NEEDS_REVIEW, LLM_FALLBACK)
 
 
 def _valid_email(v) -> bool:
@@ -118,6 +126,27 @@ def _check_process(records) -> list[str]:
 _SCHEMA = {"people": _check_people, "topics": _check_topics, "process": _check_process}
 
 
+def _title_notes(records) -> tuple[list[str], list[str]]:
+    """(flags, repairs) read off the bookkeeping keys `title_check` writes.
+
+    `_title_check` marks a record whose title is implausible with no better
+    candidate on the page — that raises NEEDS_REVIEW. `_title_repair` records an
+    automatic correction; it is informational only, reported but never flagged,
+    since the data ended up right."""
+    flags, repairs = [], []
+    for i, r in enumerate(records):
+        note = r.get("_title_check")
+        if note:
+            reason = (note.get("reasons") or ["implausible"])[0]
+            flags.append(f"records[{i}]: implausible title — {reason}")
+        fixed = r.get("_title_repair")
+        if fixed:
+            repairs.append(f"records[{i}]: title repaired via {fixed.get('via')} — "
+                           f"{str(fixed.get('from'))[:40]!r} -> "
+                           f"{str(fixed.get('to'))[:60]!r}")
+    return flags, repairs
+
+
 def classify(source_id: str, page_type: str, *, cached: bool, last_status: int,
              current_sha1: str | None, verified_sha1: str | None,
              records: list, llm_ok: bool = True, allow_empty: bool = False) -> Result:
@@ -150,10 +179,22 @@ def classify(source_id: str, page_type: str, *, cached: bool, last_status: int,
         res.reasons = errs[:10]
         return res
 
-    # 4. page change (valid data, but flag for review)
+    # 4. title plausibility. Repairs are informational (the data is right now);
+    #    an unrepairable title is a real review item.
+    title_flags, title_repairs = _title_notes(records)
+    res.reasons.extend(title_repairs)
+
+    # 5. page change (valid data, but flag for review)
     if verified_sha1 and current_sha1 and current_sha1 != verified_sha1:
         res.status = PAGE_CHANGED
-        res.reasons.append(f"hash {verified_sha1[:8]} -> {current_sha1[:8]}")
+        res.reasons.insert(0, f"hash {verified_sha1[:8]} -> {current_sha1[:8]}")
+        return res
+
+    # A questionable title only sets the status when nothing louder already did,
+    # so a page_changed diff is never masked by it.
+    if title_flags:
+        res.status = NEEDS_REVIEW
+        res.reasons = title_flags[:10] + res.reasons
     return res
 
 

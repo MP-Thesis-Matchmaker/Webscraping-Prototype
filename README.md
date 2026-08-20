@@ -8,8 +8,9 @@ Zurich into one structured dataset for a thesis-matching tool.
 make extraction *repeatable*; cached HTML *decouples* fetching from scraping;
 alarms *report drift*. The LLM appears in three controlled places —
 summarizing process pages, drafting extraction templates during onboarding, and
-a run-time *fallback* that rescues a source whose template matched nothing — and
-sits behind an exchangeable interface. Routine re-runs are 100% deterministic:
+a run-time *fallback* that rescues a source whose template matched nothing — plus
+an opt-in advisory during onboarding (`--llm-title-review`) whose output is
+printed, never stored. All of it sits behind an exchangeable interface. Routine re-runs are 100% deterministic:
 same cached page + same template ⇒ identical records. The fallback only fires on
 failure and is always flagged for review, so it never silently changes a
 working source.
@@ -93,7 +94,8 @@ posting-scraper fetch [--only ID ...] [--resume] [--render]
 # the contract on approval). --next picks the first unverified source.
 posting-scraper onboard <source_id> | --next
         [--page-type process|topics|people|none] [--hint TEXT]
-        [--refetch] [--redraft] [--no-follow] [--profile-limit N] [--yes]
+        [--refetch] [--redraft] [--no-follow] [--profile-limit N]
+        [--llm-title-review] [--yes]
 
 # Extract verified sources from cache, validate, store. Resumable.
 # When a source's template matches nothing, an LLM fallback tries to recover it
@@ -228,6 +230,7 @@ uv run python tests/regen_golden.py
 |---|---|---|
 | `ok` | extracted, schema-valid; content unchanged (or the HTML changed but the records didn't — a cosmetic change is quieted to `ok`) | no |
 | `page_changed` | schema-valid, and the re-extracted records actually differ — data is updated and the source is flagged with a record-level diff for review, but it **stays verified and keeps scraping** | no |
+| `needs_review` | schema-valid, but a record's title is implausible and nothing better was found on the page — stored and flagged, source **keeps scraping** (see [Title plausibility](#title-plausibility)) | no |
 | `llm_fallback` | the deterministic template failed, but the LLM fallback produced schema-valid records — stored, yet quarantined so the template gets fixed | yes |
 | `fetch_failed` | no usable cached page / last fetch errored | yes |
 | `extract_failed` | template matched nothing and the fallback couldn't recover it | yes |
@@ -251,6 +254,58 @@ tracked. Either way the run report (`output/runs/<timestamp>.json`) lists every
 flagged source with a reason, and the run exits non-zero. `report.notify(summary)`
 is the single, swappable notification hook (prints today; later email/webhook
 without touching callers).
+
+## Title plausibility
+
+A spec says *where* a title sits; it cannot say what a title should look like. So
+a selector that keeps matching the wrong element yields a wrong-but-well-formed
+value that no structural check can catch — the page did not move, the template
+still matched, the record is schema-valid. `ifi--5` stored a topic titled
+`"November 3, 2021"` that way: 11 of the 12 blocks on that page put the title in
+the `h3`, and one put a posting date there and the real title in a bold paragraph
+below.
+
+`src/posting_scraper/title_check.py` closes that gap for `topics` records, deterministically
+and with no LLM, on a reserve-then-replace contract:
+
+1. **Score** the extracted title. A string that is *entirely* something else
+   scores 0 — a date (EN/DE, numeric, ISO), an availability word
+   (`Taken`/`vergeben`/…), a section label (`Thesis`, `Masterarbeit`, `PDF`), a
+   degree or ECTS marker, a semester code, an email, a URL, or a 300+ character
+   paragraph. Softer penalties cover a single short token and a title that merely
+   repeats the record's `status`.
+2. **Reserve, don't discard.** An implausible title is kept in hand while the
+   record's own container is scanned for a better candidate, in a fixed order:
+   `p > strong`, other headings, `strong`/`b`, `dt`/`caption`/`[class*=title]`,
+   link text, the PDF filename stem, then the first clause of the description.
+3. **Case A — a plausible alternative exists.** It becomes the title. The
+   rejected string is parked, not dropped: into `date_of_listing` when it is a
+   date, otherwise into an internal `_title_rejected`. A description that merely
+   repeated the promoted title loses that prefix.
+4. **Case B — nothing better.** The original title stays, because a bad title
+   carries more than no title, and the source is flagged `needs_review`.
+
+`topic_id` is computed *after* the repair, so ids are seeded from the corrected
+title. The bookkeeping keys (`_title_repair`, `_title_check`, `_title_rejected`)
+are internal and never reach `extracted_data.json`. Repairs are recorded in the
+run report but do not flag the run; only Case B does.
+
+Per-spec escape hatches:
+
+```yaml
+title_check: false                  # opt out entirely for this source
+title_candidates: [".topic-name"]   # selectors to try first, before the defaults
+```
+
+The heuristic is calibrated against the committed golden baseline, not intuition:
+`tests/test_title_check.py::CorpusCalibrationTest` asserts every one of the ~247
+titles in `tests/golden_contracts.json` passes the check and that the repair
+touched exactly one record. Tighten it too far and that test fails rather than
+quietly rewriting good titles.
+
+`onboard` prints every repair and flag before you approve a spec. With
+`--llm-title-review` it also prints the model's opinion on the flagged ones —
+advisory text only, never stored, so routine runs stay deterministic.
 
 ## Pause & resume
 
@@ -282,6 +337,7 @@ src/posting_scraper/               # code only
   registry.py  fetch.py  cache.py         # skeleton: sources, fetch, cache
   spec_engine.py  spec_generator.py       # deterministic extraction + LLM spec draft
   llm.py  llm_extract.py                  # LLM abstraction + process summaries/PDFs
+  title_check.py                          # title plausibility + repair
   validate.py  store.py  report.py        # break detection, storage, run report
   main.py                                 # the CLI
 tests/{test_contracts.py, test_units.py, replay_util.py, regen_golden.py,
