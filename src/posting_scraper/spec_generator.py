@@ -17,8 +17,7 @@ import re
 from bs4 import BeautifulSoup
 
 from . import cache, llm, registry
-
-_HTML_BUDGET = 16000  # chars of cleaned HTML shown to the drafting model
+from .config import get_settings
 
 _SCHEMA_DOC = """\
 The spec is YAML with this shape:
@@ -83,7 +82,10 @@ class DraftError(Exception):
     pass
 
 
-def _clean_html(html: str, budget: int = _HTML_BUDGET) -> str:
+def _clean_html(html: str, budget: int | None = None) -> str:
+    """Strip the page to what the drafting model needs, truncated to
+    `spec_draft_html_budget` chars unless a budget is given."""
+    budget = get_settings().spec_draft_html_budget if budget is None else budget
     soup = BeautifulSoup(html, "html.parser")
     for junk in soup.select("script, style, noscript, svg, head, link, meta"):
         junk.decompose()

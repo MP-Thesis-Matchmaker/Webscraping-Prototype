@@ -1,9 +1,10 @@
 """Stage 1 — fetch.
 
-Politeness is non-negotiable (the plan): sequential fetching, a 2s delay
-between requests, an honest User-Agent. Strategy per URL: try a plain static
-`requests` GET first; if the response looks empty or blocked (JS-rendered page,
-challenge, 403/429), fall back to a Playwright chromium render. PDFs and other
+Politeness is non-negotiable (the plan): sequential fetching, a delay between
+requests (2s by default, `SCRAPER_POLITE_DELAY_SECONDS`), an honest User-Agent.
+Strategy per URL: try a plain static `requests` GET first; if the response
+looks empty or blocked (JS-rendered page, challenge, 403/429), fall back to a
+Playwright chromium render. PDFs and other
 binary sources are fetched and handed back as bytes for the cache to store.
 
 This module only *fetches*; writing to disk and updating state is the caller's
@@ -12,7 +13,6 @@ job (main.fetch), which keeps fetch pure and easy to test.
 
 from __future__ import annotations
 
-import os
 import time
 from contextlib import contextmanager
 from dataclasses import dataclass, field
@@ -20,14 +20,10 @@ from typing import Callable
 
 import requests
 
-CONTACT = os.environ.get("SCRAPER_CONTACT", "nicolas.o.peyer@gmail.com")
-USER_AGENT = (
-    "UZH-Thesis-Scraper/0.1 (academic research; +mailto:%s)" % CONTACT
-)
-POLITE_DELAY_SECONDS = 2.0
-TIMEOUT = 30
-RENDER_IDLE_MS = 6000    # bounded wait for network-idle before giving up
-RENDER_SETTLE_MS = 700   # small settle after DOM/idle so JS finishes painting
+from .config import get_settings
+
+# The polite delay, the timeouts, the render waits and the User-Agent's contact
+# address are all settings (see config.py) — nothing here is a literal.
 
 # Content-types we treat as HTML/text; everything else is cached as bytes.
 _TEXT_HINTS = ("text/html", "application/xhtml", "text/plain", "text/")
@@ -89,12 +85,14 @@ def _strip_tags(html: str) -> str:
 
 def _session() -> requests.Session:
     s = requests.Session()
-    s.headers.update({"User-Agent": USER_AGENT, "Accept-Language": "en,de;q=0.8"})
+    s.headers.update({"User-Agent": get_settings().user_agent,
+                      "Accept-Language": "en,de;q=0.8"})
     return s
 
 
 def _fetch_static(url: str, sess: requests.Session):
-    resp = sess.get(url, timeout=TIMEOUT, allow_redirects=True)
+    resp = sess.get(url, timeout=get_settings().http_timeout_seconds,
+                    allow_redirects=True)
     ct = resp.headers.get("Content-Type", "")
     if _is_text(ct) or (not ct and resp.text):
         return resp.status_code, ct, resp.text, None, False
@@ -104,15 +102,17 @@ def _fetch_static(url: str, sess: requests.Session):
 def _render_on_page(page, url):
     """Robust render: wait for DOM, then give the client-side JS a bounded
     chance to settle. Some UZH pages never reach 'networkidle', so we never
-    block on it — we wait up to RENDER_IDLE_MS and move on."""
+    block on it — we wait up to `render_idle_ms` and move on."""
     from playwright.sync_api import TimeoutError as PWTimeout
-    resp = page.goto(url, wait_until="domcontentloaded", timeout=TIMEOUT * 1000)
+    s = get_settings()
+    resp = page.goto(url, wait_until="domcontentloaded",
+                     timeout=s.http_timeout_seconds * 1000)
     status = resp.status if resp else 0
     try:
-        page.wait_for_load_state("networkidle", timeout=RENDER_IDLE_MS)
+        page.wait_for_load_state("networkidle", timeout=s.render_idle_ms)
     except PWTimeout:
         pass  # page keeps a connection open; JS has usually rendered by now
-    page.wait_for_timeout(RENDER_SETTLE_MS)
+    page.wait_for_timeout(s.render_settle_ms)
     return status, page.content()
 
 
@@ -126,7 +126,7 @@ def _fetch_render(url: str):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         try:
-            page = browser.new_context(user_agent=USER_AGENT).new_page()
+            page = browser.new_context(user_agent=get_settings().user_agent).new_page()
             return _render_on_page(page, url)
         finally:
             browser.close()
@@ -144,7 +144,7 @@ def render_session():
         return
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_context(user_agent=USER_AGENT).new_page()
+        page = browser.new_context(user_agent=get_settings().user_agent).new_page()
         try:
             yield lambda url: _render_on_page(page, url)
         finally:
@@ -195,23 +195,25 @@ def fetch_json(url: str, sess: requests.Session | None = None) -> tuple[int, str
     JSON-backed (SPA) sources whose data lives behind an API rather than in
     the rendered HTML."""
     sess = sess or _session()
-    resp = sess.get(url, timeout=TIMEOUT,
+    resp = sess.get(url, timeout=get_settings().http_timeout_seconds,
                     headers={"Accept": "application/json"}, allow_redirects=True)
     return resp.status_code, resp.text
 
 
 def html_fetcher(sess: requests.Session | None = None,
-                 delay: float = POLITE_DELAY_SECONDS,
+                 delay: float | None = None,
                  renderer: Callable[[str], tuple[int, str]] | None = None
                  ) -> Callable[[str, bool], tuple[int, str]]:
     """A polite `(url, render) -> (status, html)` fetcher for following sub-pages
-    (e.g. person profiles). Sleeps `delay` before each request. When `render` is
-    requested and a reusable `renderer` (from render_session) is supplied, it's
-    used instead of launching a browser per call."""
+    (e.g. person profiles). Sleeps `delay` before each request (the configured
+    polite delay when None). When `render` is requested and a reusable `renderer`
+    (from render_session) is supplied, it's used instead of launching a browser
+    per call."""
     sess = sess or _session()
+    wait = get_settings().polite_delay_seconds if delay is None else delay
 
     def _f(url: str, render: bool = False) -> tuple[int, str]:
-        time.sleep(delay)
+        time.sleep(wait)
         if render and renderer is not None:
             return renderer(url)
         r = fetch_one("_subpage", url, sess, force_render=render)

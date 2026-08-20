@@ -23,17 +23,37 @@ import json
 import re
 import sqlite3
 from datetime import datetime, timezone
+from pathlib import Path
 
 from . import registry
+from .config import get_settings
 from .spec_engine import PEOPLE_FIELDS
 
-DATA_PATH = registry.OUTPUT_DIR / "extracted_data.json"
-SQLITE_PATH = registry.OUTPUT_DIR / "extracted_data.sqlite"
-# Raw per-source people (pre-merge) live in a sidecar so the main file stays
-# clean; they are only needed to re-merge correctly when re-running a source.
-RAW_PEOPLE_PATH = registry.OUTPUT_DIR / "people_raw.json"
-RAW_PROCESS_PATH = registry.OUTPUT_DIR / "process_raw.json"
-RAW_FACULTY_PROCESS_PATH = registry.OUTPUT_DIR / "faculty_process_raw.json"
+# Output locations are functions, not constants: a constant would freeze the data
+# root at import time, so `SCRAPER_DATA_ROOT` would move the cache but not the
+# output. Raw per-source people/process (pre-merge) live in sidecars so the main
+# file stays clean; they are only needed to re-merge when re-running a source.
+
+
+def data_path() -> Path:
+    return get_settings().data_path
+
+
+def sqlite_path() -> Path:
+    return get_settings().sqlite_path
+
+
+def raw_people_path() -> Path:
+    return get_settings().raw_people_path
+
+
+def raw_process_path() -> Path:
+    return get_settings().raw_process_path
+
+
+def raw_faculty_process_path() -> Path:
+    return get_settings().raw_faculty_process_path
+
 
 _BUCKET = {"people": "people", "process": "process", "topics": "concrete_topics"}
 _RAW_KEY = "_people_by_source"
@@ -100,13 +120,14 @@ def _write_json(path, obj) -> None:
 
 
 def load() -> dict:
-    if DATA_PATH.exists():
-        with DATA_PATH.open(encoding="utf-8") as fh:
+    main = data_path()
+    if main.exists():
+        with main.open(encoding="utf-8") as fh:
             data = json.load(fh)
     else:
         data = {"generated_at": None, "faculties": {}}
     # rehydrate raw per-source people/process from the sidecars into each unit
-    for path, key in ((RAW_PEOPLE_PATH, _RAW_KEY), (RAW_PROCESS_PATH, _PROCESS_RAW_KEY)):
+    for path, key in ((raw_people_path(), _RAW_KEY), (raw_process_path(), _PROCESS_RAW_KEY)):
         if not path.exists():
             continue
         with path.open(encoding="utf-8") as fh:
@@ -116,8 +137,9 @@ def load() -> dict:
                 if uid in raw:
                     unit[key] = raw[uid]
     # rehydrate faculty-level raw process (keyed by faculty code)
-    if RAW_FACULTY_PROCESS_PATH.exists():
-        with RAW_FACULTY_PROCESS_PATH.open(encoding="utf-8") as fh:
+    fpath = raw_faculty_process_path()
+    if fpath.exists():
+        with fpath.open(encoding="utf-8") as fh:
             fraw = json.load(fh)
         for fcode, fac in data.get("faculties", {}).items():
             if fcode in fraw:
@@ -130,7 +152,7 @@ def save(data: dict) -> None:
     # Pull the internal raw-per-source maps (people, process) out into their
     # sidecars, then write the main file without them (restoring in-memory after).
     stashed = []  # (unit, key, value)
-    for path, key in ((RAW_PEOPLE_PATH, _RAW_KEY), (RAW_PROCESS_PATH, _PROCESS_RAW_KEY)):
+    for path, key in ((raw_people_path(), _RAW_KEY), (raw_process_path(), _PROCESS_RAW_KEY)):
         sidecar = {}
         for fac in data.get("faculties", {}).values():
             for uid, unit in fac.get("units", {}).items():
@@ -144,11 +166,11 @@ def save(data: dict) -> None:
         if _PROCESS_RAW_KEY in fac:
             fsidecar[fcode] = fac[_PROCESS_RAW_KEY]
             stashed.append((fac, _PROCESS_RAW_KEY, fac[_PROCESS_RAW_KEY]))
-    _write_json(RAW_FACULTY_PROCESS_PATH, fsidecar)
+    _write_json(raw_faculty_process_path(), fsidecar)
     for obj, key, _ in stashed:
         del obj[key]
     # Write the cleaned public view (never the internal-keyed live structure).
-    _write_json(DATA_PATH, _public_view(data))
+    _write_json(data_path(), _public_view(data))
     for obj, key, value in stashed:
         obj[key] = value
 
@@ -417,9 +439,10 @@ _COLS = {
 
 
 def rebuild_sqlite(data: dict) -> int:
-    if SQLITE_PATH.exists():
-        SQLITE_PATH.unlink()
-    conn = sqlite3.connect(SQLITE_PATH)
+    path = sqlite_path()
+    if path.exists():
+        path.unlink()
+    conn = sqlite3.connect(path)
     try:
         conn.executescript(_SCHEMA)
         n = 0

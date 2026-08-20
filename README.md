@@ -46,16 +46,53 @@ uv run python -m playwright install chromium  # only with the render extra
 `playwright` is an opt-in extra because it pulls a browser download; `fetch.py`
 lazy-imports it and falls back to the static fetch when it is absent.
 
-Create a `.env` at the repo root for the LLM (only needed for onboarding new
-sources and running process pages):
+## Configuration
 
-```
-OPENAI_API_KEY=sk-...
+Every setting lives in one place: `Settings` in `src/posting_scraper/config.py`,
+a `pydantic_settings.BaseSettings` class (the same shape as `config.py` in
+`backend-core`). Values are read from environment variables first, then from a
+`.env` at the repo root or the working directory. Copy `.env.example` — it lists
+every variable with its default and what it does — and fill in what you need:
+
+```bash
+cp .env.example .env
 ```
 
-Data locations (`registry/`, `contracts/`, `cache/`, `output/`, `var/`) resolve
-relative to the repo checkout by default. Set `SCRAPER_DATA_ROOT` to point the
-tool at a different data tree without touching the code.
+Nothing is required. With no `.env` at all the scraper runs fully deterministic:
+the only settings without a usable default are the LLM credentials, and every
+LLM path degrades to its rule-based output when they are absent.
+
+The variables you are most likely to touch:
+
+| Variable | Default | Effect |
+|---|---|---|
+| `OPENAI_API_KEY` / `SCRAPER_LLM_API_KEY` | unset | Enables spec drafting at onboarding, process/PDF summaries, and the run-time extraction fallback. Unset ⇒ `llm.is_available()` is False and callers keep deterministic output. |
+| `SCRAPER_LLM_MODEL` | `gpt-5-mini` | Model used for all three LLM paths. |
+| `SCRAPER_LLM_BASE_URL` | unset | OpenAI-compatible gateway (LibreChat / AI Buddy) or a local model, e.g. Ollama at `http://localhost:11434/v1`. |
+| `SCRAPER_DATA_ROOT` | the repo checkout | Root of everything read or written: `registry/`, `contracts/`, `cache/`, `output/`, `var/`. Relocates all of them together. |
+| `SCRAPER_CONTACT` | maintainer address | Address advertised in the User-Agent so a site owner can reach a human. |
+| `SCRAPER_POLITE_DELAY_SECONDS` | `2.0` | Delay between requests. Lower it only with a reason. |
+
+Read them in code with `get_settings()`, never at import time:
+
+```python
+from .config import get_settings
+
+def fetch_something(url):
+    s = get_settings()
+    return requests.get(url, timeout=s.http_timeout_seconds)
+```
+
+Calling it inside the function is what makes `SCRAPER_DATA_ROOT` work
+everywhere — a module-level `PATH = settings.output_dir` would freeze the root
+at import and silently ignore the variable.
+
+Two things are deliberately **not** configurable, because they would change
+stored data rather than how it is obtained: the title-plausibility thresholds in
+`title_check.py` (calibrated against `tests/golden_contracts.json`, see below)
+and the extraction field lists, regexes and prompts. Those are domain
+constants — the determinism invariant depends on an environment variable being
+unable to move them.
 
 ## The pipeline
 
@@ -333,15 +370,17 @@ Wire that into launchd (macOS), cron, or a CI schedule as needed.
 
 ```
 pyproject.toml                     # deps, extras, console script, ruff + pytest config
+.env.example                       # every setting, with defaults (copy to .env)
 src/posting_scraper/               # code only
+  config.py                               # pydantic Settings — the only config
   registry.py  fetch.py  cache.py         # skeleton: sources, fetch, cache
   spec_engine.py  spec_generator.py       # deterministic extraction + LLM spec draft
   llm.py  llm_extract.py                  # LLM abstraction + process summaries/PDFs
   title_check.py                          # title plausibility + repair
   validate.py  store.py  report.py        # break detection, storage, run report
   main.py                                 # the CLI
-tests/{test_contracts.py, test_units.py, replay_util.py, regen_golden.py,
-       golden_contracts.json}
+tests/{test_contracts.py, test_units.py, test_title_check.py, test_config.py,
+       replay_util.py, regen_golden.py, golden_contracts.json}
 registry/scraping_sources.json     # the curated source list (input, tracked)
 contracts/<source_id>/             # spec.yaml, snapshot.*, expected.json (the test oracle)
 var/state.json                     # per-source lifecycle + run progress (untracked)
@@ -355,5 +394,5 @@ Code lives in `src/`; everything the scraper reads or writes sits beside it at
 the repo root, so the read-only inputs (`registry/`, `contracts/`) are visibly
 separate from the machine-written state (`var/`, `cache/`, `output/`).
 
-Politeness everywhere: sequential fetching, a 2s delay, an honest User-Agent, and
-no scraping of sources beyond the ones explicitly onboarded.
+Politeness everywhere: sequential fetching, a 2s delay (`SCRAPER_POLITE_DELAY_SECONDS`),
+an honest User-Agent, and no scraping of sources beyond the ones explicitly onboarded.

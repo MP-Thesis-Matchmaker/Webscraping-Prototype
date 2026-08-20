@@ -8,7 +8,7 @@ Layout (per the plan):
     cache/<source_id>/
       page.html          # latest fetched HTML
       meta.json          # fetched_at, http_status, content_sha1, fetch_method, url
-      history/<ts>.html  # previous versions (keep last 3)
+      history/<ts>.html  # previous versions (keep `cache_history_keep`, default 3)
 """
 
 from __future__ import annotations
@@ -19,13 +19,11 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import registry
-
-HISTORY_KEEP = 3
+from .config import get_settings
 
 
 def _dir(source_id: str) -> Path:
-    return registry.CACHE_DIR / source_id
+    return get_settings().cache_dir / source_id
 
 
 def page_path(source_id: str) -> Path:
@@ -149,7 +147,7 @@ def read_meta(source_id: str) -> dict:
 
 
 def _rotate_history(source_id: str) -> None:
-    """Move the current page.html into history/ and prune to HISTORY_KEEP."""
+    """Move the current page.html into history/, pruning to `cache_history_keep`."""
     current = page_path(source_id)
     if not current.exists():
         return
@@ -159,7 +157,7 @@ def _rotate_history(source_id: str) -> None:
     current.replace(hist / f"{ts}.html")
 
     versions = sorted(hist.glob("*.html"))
-    for stale in versions[:-HISTORY_KEEP]:
+    for stale in versions[:-get_settings().cache_history_keep]:
         stale.unlink()
 
 

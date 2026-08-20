@@ -4,11 +4,12 @@ Public surface is deliberately tiny (the plan): one function
 
     complete(system, prompt) -> str
 
-Everything else — which provider, which model, keys, retries — is config. The
-provider is chosen by ``SCRAPER_LLM_PROVIDER`` (default ``openai``). Swapping in
-another provider means adding one file ``scraper/llm_<name>.py`` that exposes a
-``Provider`` class with ``available()`` and ``complete(system, prompt, **opts)``
-— no call site anywhere else changes.
+Everything else — which provider, which model, keys, retries — lives in
+``config.Settings``. The provider is chosen by ``SCRAPER_LLM_PROVIDER`` (default
+``openai``). Swapping in another provider means adding one file
+``posting_scraper/llm_<name>.py`` that exposes a ``Provider`` class with
+``available()`` and ``complete(system, prompt, **opts)`` — no call site anywhere
+else changes.
 
 Degrades gracefully: if no provider is configured (e.g. no ``OPENAI_API_KEY``),
 ``is_available()`` is False and callers keep their deterministic output instead
@@ -18,34 +19,17 @@ of crashing.
 from __future__ import annotations
 
 import importlib
-import os
 import time
 
-_ENV_LOADED = False
-
-
-def _load_env() -> None:
-    """Load a project-root .env once, if python-dotenv is available."""
-    global _ENV_LOADED
-    if _ENV_LOADED:
-        return
-    _ENV_LOADED = True
-    try:
-        from dotenv import load_dotenv
-    except ImportError:
-        return
-    from .registry import ROOT
-    load_dotenv(ROOT / ".env")
+from .config import get_settings
 
 
 def provider_name() -> str:
-    _load_env()
-    return os.environ.get("SCRAPER_LLM_PROVIDER", "openai")
+    return get_settings().llm_provider
 
 
 def model_name() -> str:
-    _load_env()
-    return os.environ.get("SCRAPER_LLM_MODEL", "gpt-5-mini")
+    return get_settings().llm_model
 
 
 def _get_provider():
@@ -76,26 +60,30 @@ def complete(system: str, prompt: str, **opts) -> str:
 class _OpenAIProvider:
     """Chat Completions. No temperature is sent (gpt-5.x rejects != 1). Own
     retry loop with a hard per-request timeout so a hung call can't freeze a
-    whole run; auth failures are never retried."""
-
-    MAX_ATTEMPTS = 3
-    TIMEOUT = 120
+    whole run; auth failures are never retried. `base_url` is only passed when
+    configured, so the default stays the OpenAI API itself."""
 
     def __init__(self) -> None:
-        _load_env()
-        self.api_key = os.environ.get("OPENAI_API_KEY")
-        self.model = model_name()
+        s = get_settings()
+        self.api_key = s.llm_api_key
+        self.model = s.llm_model
+        self.base_url = s.llm_base_url
+        self.max_attempts = s.llm_max_attempts
+        self.timeout = s.llm_timeout_seconds
 
     def available(self) -> bool:
         return bool(self.api_key)
 
     def _client(self):
         from openai import OpenAI
-        return OpenAI(api_key=self.api_key, timeout=self.TIMEOUT, max_retries=0)
+        opts = {"base_url": self.base_url} if self.base_url else {}
+        return OpenAI(api_key=self.api_key, timeout=self.timeout,
+                      max_retries=0, **opts)
 
     def complete(self, system: str, prompt: str, **opts) -> str:
         if not self.available():
-            raise RuntimeError("OPENAI_API_KEY not set (see .env)")
+            raise RuntimeError("no LLM API key set — see .env.example "
+                               "(SCRAPER_LLM_API_KEY or OPENAI_API_KEY)")
         from openai import (APIConnectionError, APITimeoutError,
                             AuthenticationError, InternalServerError,
                             RateLimitError)
@@ -104,7 +92,7 @@ class _OpenAIProvider:
         transient = (APIConnectionError, APITimeoutError, RateLimitError,
                      InternalServerError)
         last = None
-        for attempt in range(self.MAX_ATTEMPTS):
+        for attempt in range(self.max_attempts):
             try:
                 resp = client.chat.completions.create(
                     model=self.model,
@@ -117,4 +105,4 @@ class _OpenAIProvider:
             except transient as exc:
                 last = exc
                 time.sleep(2 ** attempt)
-        raise RuntimeError(f"LLM failed after {self.MAX_ATTEMPTS} attempts: {last}")
+        raise RuntimeError(f"LLM failed after {self.max_attempts} attempts: {last}")

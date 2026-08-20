@@ -6,31 +6,19 @@ sources (106 URLs — a few sources bundle two). The *state* (`var/state.json`) 
 the mutable per-source bookkeeping — onboarding status and per-run progress —
 that makes pause/resume possible. Both live here so every other stage has a
 single place to ask "what sources exist and where are they in their lifecycle?".
+
+Both file locations come from `config.Settings` (`registry_path`, `state_path`), so
+pointing `SCRAPER_DATA_ROOT` at another tree moves them together.
 """
 
 from __future__ import annotations
 
 import json
-import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterator
 
-# --- Canonical data paths (every other module imports these) ----------------
-# The data root is deliberately NOT derived from the package location alone:
-# `SCRAPER_DATA_ROOT` overrides it, so the package works when installed
-# non-editable and when it is embedded in another project whose data lives
-# elsewhere. The default is the repo checkout (src/posting_scraper/… -> repo).
-_REPO_ROOT = Path(__file__).resolve().parents[2]
-ROOT = Path(os.environ.get("SCRAPER_DATA_ROOT") or _REPO_ROOT)
-REGISTRY_PATH = ROOT / "registry" / "scraping_sources.json"
-VAR_DIR = ROOT / "var"                      # machine-written state, never tracked
-STATE_PATH = VAR_DIR / "state.json"
-CACHE_DIR = ROOT / "cache"
-CONTRACTS_DIR = ROOT / "contracts"
-OUTPUT_DIR = ROOT / "output"
-PREVIEW_DIR = OUTPUT_DIR / "preview"
-RUNS_DIR = OUTPUT_DIR / "runs"
+from .config import get_settings
 
 # Onboarding lifecycle (does a human trust this source's extraction?).
 ONBOARD_UNVERIFIED = "unverified"
@@ -64,13 +52,13 @@ class Source:
 
     @property
     def cache_dir(self) -> Path:
-        return CACHE_DIR / self.source_id
+        return get_settings().cache_dir / self.source_id
 
 
 # --- Registry (read-only) ---------------------------------------------------
 
 def load_registry() -> dict:
-    with REGISTRY_PATH.open(encoding="utf-8") as fh:
+    with get_settings().registry_path.open(encoding="utf-8") as fh:
         return json.load(fh)
 
 
@@ -122,8 +110,9 @@ def _fresh_state() -> dict:
 def load_state() -> dict:
     """Load state.json, creating a blank one if absent, and ensure every
     registry source has an entry (new sources default to unverified/pending)."""
-    if STATE_PATH.exists():
-        with STATE_PATH.open(encoding="utf-8") as fh:
+    path = get_settings().state_path
+    if path.exists():
+        with path.open(encoding="utf-8") as fh:
             state = json.load(fh)
     else:
         state = _fresh_state()
@@ -140,12 +129,13 @@ def load_state() -> dict:
 
 def save_state(state: dict) -> None:
     """Atomically persist state (write to temp, then replace)."""
-    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    tmp = STATE_PATH.with_suffix(".json.tmp")
+    path = get_settings().state_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".json.tmp")
     with tmp.open("w", encoding="utf-8") as fh:
         json.dump(state, fh, indent=2, ensure_ascii=False)
         fh.write("\n")
-    tmp.replace(STATE_PATH)
+    tmp.replace(path)
 
 
 def source_state(state: dict, source_id: str) -> dict:

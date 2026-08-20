@@ -31,8 +31,9 @@ from pathlib import Path
 import yaml
 
 from posting_scraper import cache, registry, spec_engine
+from posting_scraper.config import get_settings
 
-CONTRACTS = registry.CONTRACTS_DIR
+CONTRACTS = get_settings().contracts_dir
 GOLDEN_PATH = Path(__file__).resolve().parent / "golden_contracts.json"
 
 # Fields that legitimately differ between runs and must be ignored on compare.

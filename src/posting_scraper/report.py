@@ -11,7 +11,8 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 
-from . import registry, validate
+from . import validate
+from .config import get_settings
 
 
 def new_report() -> dict:
@@ -41,9 +42,10 @@ def finalize(report: dict) -> dict:
 
 
 def write(report: dict) -> str:
-    registry.RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    runs = get_settings().runs_dir
+    runs.mkdir(parents=True, exist_ok=True)
     ts = report["started_at"].replace(":", "").replace("-", "").split(".")[0]
-    path = registry.RUNS_DIR / f"{ts}.json"
+    path = runs / f"{ts}.json"
     path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n",
                     encoding="utf-8")
     return str(path)

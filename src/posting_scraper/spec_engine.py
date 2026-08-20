@@ -43,6 +43,7 @@ import yaml
 from bs4 import BeautifulSoup
 
 from . import cache, registry, title_check
+from .config import get_settings
 
 # Target-model field sets, so the preview always has a complete record shape.
 PEOPLE_FIELDS = ["role", "name", "email", "research_interest",
@@ -306,7 +307,7 @@ _TRANSFORMS = {
 # --- Spec loading -----------------------------------------------------------
 
 def spec_path(source_id: str) -> Path:
-    return registry.CONTRACTS_DIR / source_id / "spec.yaml"
+    return get_settings().contracts_dir / source_id / "spec.yaml"
 
 
 def load_spec(source_id: str) -> dict:

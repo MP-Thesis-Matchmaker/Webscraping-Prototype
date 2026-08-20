@@ -30,6 +30,7 @@ from . import (
     store,
     validate,
 )
+from .config import get_settings
 
 # --- shared helpers ---------------------------------------------------------
 
@@ -121,7 +122,8 @@ def cmd_fetch(args: argparse.Namespace) -> int:
 
     sess = fetch._session()
     fetched = failed = 0
-    print(f"fetching {len(targets)} source(s)  (delay {fetch.POLITE_DELAY_SECONDS}s)\n")
+    delay = get_settings().polite_delay_seconds
+    print(f"fetching {len(targets)} source(s)  (delay {delay}s)\n")
     try:
         for i, src in enumerate(targets):
             print(f"[{i + 1}/{len(targets)}] {src.source_id}  {src.url}")
@@ -139,7 +141,7 @@ def cmd_fetch(args: argparse.Namespace) -> int:
                 print(f"    ok  status={result.http_status} method={result.method} "
                       f"{tag}{changed}  sha1={meta['content_sha1'][:12]}")
             if i < len(targets) - 1:
-                time.sleep(fetch.POLITE_DELAY_SECONDS)
+                time.sleep(delay)
     except KeyboardInterrupt:
         registry.save_state(state)
         print(f"\ninterrupted — state saved. fetched={fetched} failed={failed}")
@@ -190,7 +192,7 @@ class _Prompter:
 
 def _freeze_contract(src: registry.Source, page_type: str, records, meta: dict,
                      spec_yaml: str | None) -> None:
-    cdir = registry.CONTRACTS_DIR / src.source_id
+    cdir = get_settings().contracts_dir / src.source_id
     cdir.mkdir(parents=True, exist_ok=True)
     # snapshot: the exact cached content the expectation was verified on.
     # JSON sources snapshot their data.json even if a stale page.html lingers.
@@ -219,7 +221,7 @@ def _freeze_contract(src: registry.Source, page_type: str, records, meta: dict,
 
 
 def _write_preview(preview: dict, source_id: str) -> None:
-    out = registry.PREVIEW_DIR / f"{source_id}.json"
+    out = get_settings().preview_dir / f"{source_id}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(preview, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
@@ -1249,7 +1251,8 @@ def cmd_run(args: argparse.Namespace) -> int:
     report.finalize(rep)
     path = report.write(rep)
     report.print_table(rep)
-    print(f"\nwrote {store.DATA_PATH} + {n} rows in {store.SQLITE_PATH.name}\nrun report: {path}")
+    print(f"\nwrote {store.data_path()} + {n} rows in {store.sqlite_path().name}"
+          f"\nrun report: {path}")
     sm = rep["summary"]
     report.notify(f"run complete: {sm['total']} sources, {sm['flagged']} flagged")
     return 1 if sm["flagged"] else 0
@@ -1440,7 +1443,8 @@ def cmd_status(args: argparse.Namespace) -> int:
         print(f"\n{len(orphans)} orphaned state entries (not in current registry): "
               + ", ".join(orphans[:6]) + (" ..." if len(orphans) > 6 else ""))
 
-    run_files = sorted(registry.RUNS_DIR.glob("*.json")) if registry.RUNS_DIR.exists() else []
+    runs = get_settings().runs_dir
+    run_files = sorted(runs.glob("*.json")) if runs.exists() else []
     if run_files:
         rr = json.loads(run_files[-1].read_text(encoding="utf-8"))
         sm = rr.get("summary", {})
@@ -1450,8 +1454,8 @@ def cmd_status(args: argparse.Namespace) -> int:
     else:
         print("\nno runs recorded yet.")
 
-    if store.DATA_PATH.exists():
-        print(f"\noutput: {store.DATA_PATH}")
+    if store.data_path().exists():
+        print(f"\noutput: {store.data_path()}")
     return 0
 
 
@@ -1537,8 +1541,9 @@ def build_parser() -> argparse.ArgumentParser:
     o.add_argument("--refetch", action="store_true", help="refetch even if cached")
     o.add_argument("--redraft", action="store_true", help="ignore existing spec")
     o.add_argument("--no-follow", action="store_true", help="skip profile following")
-    o.add_argument("--profile-limit", type=int, default=3,
-                   help="profiles to follow during onboarding (default 3)")
+    o.add_argument("--profile-limit", type=int, default=get_settings().profile_limit,
+                   help="profiles to follow during onboarding "
+                        "(default SCRAPER_PROFILE_LIMIT, 3)")
     o.add_argument("--llm-title-review", action="store_true",
                    help="ask the LLM for an advisory opinion on flagged titles "
                         "(printed only, never stored)")

@@ -21,11 +21,11 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 from . import cache, llm, registry, title_check
+from .config import get_settings
 
 PROCESS_FIELDS = ["degree_level", "process_description", "relevant_links", "source_url"]
 
 _MAIN_SELECTORS = ["main", "article", "[role=main]", ".Content", "#content", ".content"]
-_TEXT_BUDGET = 6000  # chars of page text sent to the LLM
 
 # Anchor text / href keywords that mark a link as process-relevant. Kept
 # thesis-specific on purpose — broad terms like "bachelor"/"master" pulled in
@@ -132,7 +132,8 @@ def summarize_pdf_text(text: str) -> str | None:
     if not text or not llm.is_available():
         return None
     try:
-        return llm.complete(_TOPIC_PDF_SYSTEM, text[:_TEXT_BUDGET])
+        budget = get_settings().llm_page_text_budget
+        return llm.complete(_TOPIC_PDF_SYSTEM, text[:budget])
     except Exception:  # noqa: BLE001 — never fail a run on one PDF
         return None
 
@@ -182,7 +183,7 @@ def build_prompt(source: registry.Source, page_text: str) -> tuple[str, str]:
         f"Faculty: {source.faculty}\n"
         f"Page URL: {source.url}\n"
         f"Registry note: {source.notes}\n\n"
-        f"Page text:\n{page_text[:_TEXT_BUDGET]}"
+        f"Page text:\n{page_text[:get_settings().llm_page_text_budget]}"
     )
     return _SYSTEM, prompt
 
@@ -280,8 +281,6 @@ def to_preview(source: registry.Source, record: dict) -> dict:
 
 import json  # noqa: E402
 
-_FALLBACK_HTML_BUDGET = 14000  # chars of cleaned main HTML sent to the LLM
-
 _FALLBACK_TOPICS_SYSTEM = (
     "You extract open Bachelor's/Master's thesis topics from a university "
     "department web page for a thesis-matching tool. Return ONLY a JSON array "
@@ -328,7 +327,7 @@ def _clean_main_html(html: str) -> str:
     for junk in node.select("script, style, nav, header, footer, svg, form, "
                             ".Breadcrumb, noscript"):
         junk.decompose()
-    return node.decode()[:_FALLBACK_HTML_BUDGET]
+    return node.decode()[:get_settings().llm_fallback_html_budget]
 
 
 def _parse_json_array(text: str) -> list:
