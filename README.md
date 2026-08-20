@@ -10,10 +10,10 @@ alarms *report drift*. The LLM appears in three controlled places —
 summarizing process pages, drafting extraction templates during onboarding, and
 a run-time *fallback* that rescues a source whose template matched nothing — plus
 an opt-in advisory during onboarding (`--llm-title-review`) whose output is
-printed, never stored. All of it sits behind an exchangeable interface. Routine re-runs are 100% deterministic:
-same cached page + same template ⇒ identical records. The fallback only fires on
-failure and is always flagged for review, so it never silently changes a
-working source.
+printed, never stored. All of it sits behind an exchangeable interface. Routine
+re-runs are 100% deterministic: same cached page + same template ⇒ identical
+records. The fallback only fires on failure and is always flagged for review, so
+it never silently changes a working source.
 
 ## Status
 
@@ -24,14 +24,19 @@ and run (`done`), zero quarantined.
 |---|---|
 | Faculties | 7 (WWF, PhF, RWF, TRF, MNF, MeF, VSF) |
 | Units | 37 registry / 35 in output* |
-| Concrete topics | 711 |
-| People | 569 |
-| Process entries | 58 |
-| Rows in `extracted_data.sqlite` | 1,338 |
+| Concrete topics | 707 |
+| People | 565 |
+| Process entries | 57 |
+| Rows in `extracted_data.sqlite` | 1,329 |
 
-\* Two units expose only a faculty-shared page and consolidate into a
-faculty-level process entry via `scope: faculty`, so they carry no unit-level
-output.
+\* Three sources carry `scope: faculty` and consolidate into one PhF-level
+process entry crediting all three. Two of their units
+(`musikwissenschaftliches-institut`, `philosophisches-seminar`) have no other
+source, so they carry no unit-level output; the third does.
+
+Counts include records nested under `unit.groups.<chair>` (160 topics, 20 people,
+15 process entries) — a flat count of `unit.concrete_topics` alone reports 547
+topics and misses the grouped ones.
 
 ## Setup
 
@@ -111,8 +116,12 @@ registry ──▶ fetch ──▶ cache/ ──▶ extract (routed by page_type
    - `people` → deterministic `spec.yaml` + follow each profile link one step
      deep (also cached) → `people`.
    - `none` → source carries no extractable thesis data.
-4. **Validate** — classify each result; any flag quarantines the source and
-   keeps its previous good data (never overwrite good data with garbage).
+4. **Validate** — classify each result. Hard failures (`fetch_failed`,
+   `extract_failed`, `schema_invalid`) and an `llm_fallback` rescue *quarantine*
+   the source, keeping its previous good data (never overwrite good data with
+   garbage); `page_changed` and `needs_review` are flagged for review but keep
+   the source verified and scraping. See
+   [Break detection & quarantine](#break-detection--quarantine).
 5. **Store** — `output/extracted_data.json` (nested by faculty → unit) + a
    SQLite mirror. The written JSON is a cleaned *public view*: internal keys
    never reach disk — the `_llm` debug blob is dropped and the profile link is
@@ -179,7 +188,7 @@ A spec is a small declarative document: a `container` CSS selector that picks ou
 each record, plus a `fields` map saying how to pull each field from a container.
 
 ```yaml
-source_id: ddis--1
+source_id: example--1        # illustrative; contracts/ifi--3/spec.yaml is a real one
 page_type: topics
 record:
   container: ".teaser"
@@ -213,6 +222,13 @@ stays generic. Beyond plain selectors it supports:
   description and the supervisor's name/email.
 - **`scope: faculty`** — sources that share one central page consolidate into a
   single faculty-level process entry crediting every contributing unit.
+- **`also_process`** — a dual page that is both a topic/people listing *and* a
+  description of the chair's application procedure: the records are extracted
+  deterministically and the page is *also* LLM-summarized into `process`. The
+  most-used optional key in the corpus (16 specs).
+- **`group`** — attributes a source's records to a named research group or chair;
+  they nest under `unit.groups.<id>` instead of at unit level (17 specs), which
+  is where a large share of the stored records actually live.
 
 Onboard interactively (`onboard`) rather than hand-writing specs: the LLM drafts
 the spec, the engine runs it immediately, and you approve / edit / retry before
@@ -241,13 +257,15 @@ uv run pytest
 ```
 
 - **`tests/test_contracts.py`** — replays every replayable topics/people spec
-  (50 of the 66 contracts; the rest are process-only or carry group metadata
-  with no record block) against its frozen snapshot, offline, and asserts it
-  reproduces a committed golden baseline of 1,002 records
-  (`tests/golden_contracts.json`). This is the regression net for the spec
-  engine: a change that alters what any source extracts fails the suite. The
-  golden captures the engine's deterministic *core* extraction (before the
-  network-dependent enrichment/roster steps that `run` applies).
+  against its frozen snapshot, offline, and asserts it reproduces a committed
+  golden baseline of 1,002 records
+  (`tests/golden_contracts.json`). Of the 103 contract directories, 66 carry a
+  `spec.yaml`; the 16 whose `page_type` is `process` are LLM-summarized rather
+  than selector-extracted and cannot be replayed, leaving exactly **50** (29
+  topics + 21 people). This is the regression net for the spec engine: a change
+  that alters what any source extracts fails the suite. The golden captures the
+  engine's deterministic *core* extraction (before the network-dependent
+  enrichment/roster steps that `run` applies).
 - **`tests/test_units.py`** — unit tests for `topic_id` stability, the field
   transforms/normalization, profile-link matching, and the run's escalation
   (quarantine) decision.
@@ -335,7 +353,7 @@ title_candidates: [".topic-name"]   # selectors to try first, before the default
 ```
 
 The heuristic is calibrated against the committed golden baseline, not intuition:
-`tests/test_title_check.py::CorpusCalibrationTest` asserts every one of the ~247
+`tests/test_title_check.py::CorpusCalibrationTest` asserts every one of the 247
 titles in `tests/golden_contracts.json` passes the check and that the repair
 touched exactly one record. Tighten it too far and that test fails rather than
 quietly rewriting good titles.
@@ -382,7 +400,7 @@ src/posting_scraper/               # code only
 tests/{test_contracts.py, test_units.py, test_title_check.py, test_config.py,
        replay_util.py, regen_golden.py, golden_contracts.json}
 registry/scraping_sources.json     # the curated source list (input, tracked)
-contracts/<source_id>/             # spec.yaml, snapshot.*, expected.json (the test oracle)
+contracts/<source_id>/             # spec.yaml, snapshot.*, expected.json (onboarding provenance)
 var/state.json                     # per-source lifecycle + run progress (untracked)
 cache/<source_id>/                 # page.html, meta.json, history/, followed subpages (untracked)
 output/{extracted_data.json, extracted_data.sqlite, *_raw.json, preview/, runs/}

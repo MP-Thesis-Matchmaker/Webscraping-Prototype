@@ -2,10 +2,14 @@
 
 > **Status: all seven build steps complete and verified.** All 37 units / 103
 > sources in the current registry are onboarded (`verified`) and run (`done`),
-> zero quarantined. Final dataset: **711 concrete topics · 569 people · 58
-> process entries → 1,338 rows** in `output/extracted_data.json` + `output/extracted_data.sqlite`
-> (35 output units; 2 registry units consolidate into faculty-level process via
-> `scope: faculty`). See [Build order](#build-order) for the per-step ledger.
+> zero quarantined. Final dataset: **707 concrete topics · 565 people · 57
+> process entries → 1,329 rows** in `output/extracted_data.json` + `output/extracted_data.sqlite`
+> (35 output units; 3 sources carry `scope: faculty` and consolidate into one
+> PhF-level process entry, and 2 of their units have no other source so carry no
+> unit-level output). Counts include the records nested under
+> `unit.groups.<chair>` — 160 topics, 20 people, 15 process entries — which a flat
+> count of `unit.concrete_topics` misses. See [Build order](#build-order) for the
+> per-step ledger.
 
 ## Context
 
@@ -14,11 +18,11 @@ across the University of Zurich for a thesis-matching tool. The source registry
 lives in `registry/scraping_sources.json`. It was regenerated during the build
 from a "full structure crawl (visible rows only)" and now holds **37 units
 across 7 faculties (WWF 4, PhF 19, RWF 1, TRF 2, MNF 9, MeF 1, VSF 1), 103
-source URLs**, each with a stable `source_id`, a classification, and a `notes`
-field describing what's on the page. (The original draft targeted a wider
-99-unit / 141-URL list; the visible-rows crawl is the authoritative set.) Every
-implementation step was verified against the populated target data model before
-moving on.
+sources / 106 URLs** (a few sources bundle two), each with a stable `source_id`,
+a classification, and a `notes` field describing what's on the page. (The
+original draft targeted a wider 99-unit / 142-URL list, kept under `archive/`;
+the visible-rows crawl is the authoritative set.) Every implementation step was
+verified against the populated target data model before moving on.
 
 Core philosophy: **humans decide where and what; deterministic templates make
 extraction repeatable; cached HTML decouples fetching from scraping; alarms
@@ -39,7 +43,7 @@ chromium fallback when the static fetch looks empty/blocked) and stored:
 cache/<source_id>/
   page.html          # latest fetched HTML
   meta.json          # fetched_at, http_status, content_sha1, fetch_method
-  history/<ts>.html  # previous versions (keep last 3)
+  history/<ts>.html  # previous versions (keep `SCRAPER_CACHE_HISTORY_KEEP`, default 3)
 ```
 
 All extraction runs read from cache, never from the network. Refetching is its
@@ -51,9 +55,10 @@ the registry's classification + notes, confirmed by me during onboarding.
 
 - **process** → LLM summary into the process layer (degree_level,
   process_description, relevant_links, source_url). The LLM sits behind
-  `scraper/llm.py` exposing one function `complete(system, prompt) -> str`,
-  with an OpenAI implementation selected via config/env — any other provider
-  must be pluggable by adding one file, changing no call sites.
+  `src/posting_scraper/llm.py` exposing one function
+  `complete(system, prompt) -> str`, with an OpenAI implementation selected by
+  `config.Settings` (`llm_provider` / `llm_model` / `llm_api_key`) — any other
+  provider must be pluggable by adding one file, changing no call sites.
 - **topics** → deterministic extraction template (`spec.yaml` per source):
   CSS selectors + field mappings, executed by a spec engine. Same input,
   same output, no LLM in routine runs.
@@ -78,8 +83,20 @@ faculty:
       - degree_level, date_of_listing, research_area, supervisor_name,
         supervisor_email, topic_description, source_link
 ```
+
+> **Post-build note.** The built topic record is
+> `title, status, degree_level, date_of_listing, research_area, supervisors,
+> topic_description, source_link` (`spec_engine.TOPIC_FIELDS`): `title` and
+> `status` were added, and the two flat supervisor fields became a
+> `supervisors: [{name, email}]` list so a topic can carry several. A spec may
+> still *declare* a scalar `supervisor_email` (`contracts/ifi--3/spec.yaml`
+> does) — `normalize_supervisors` collapses it into the list before storage.
+
 Every record carries `source_id` and `scraped_at` (UTC ISO); concrete topics get
-a stable `topic_id` = sha1(source_url + normalized title). Output:
+a stable `topic_id` = sha1(source_url + normalized seed), where the seed is the
+spec's `id_from` fields joined — `[title]` on most sources, hence "title" in the
+original plan — falling back to `topic_description` when a spec sets no
+`id_from`. Output:
 `output/extracted_data.json` (this nesting) + a SQLite mirror for querying. The
 JSON is written as a cleaned public view: internal keys never reach disk (`_llm`
 dropped, `_profile_url` exposed as `profile_url`).
@@ -95,6 +112,10 @@ dropped, `_profile_url` exposed as `profile_url`).
 - `llm_fallback` — the deterministic template failed (`extract_failed` or
   `schema_invalid`) but the LLM fallback produced schema-valid records: stored,
   yet flagged for review so the template gets fixed
+- `needs_review` — a record's title is implausible (a date, a status word, a
+  bare label) and no better candidate was found on the page: the record is
+  stored, the source is flagged, but it keeps scraping. Added post-build with
+  `title_check.py`; see below.
 - `page_changed` — content hash differs from the hash the template was
   verified against. Topics/people: re-extract with the existing template; if
   schema-valid, update the data BUT list the source in the run report with a
@@ -106,7 +127,10 @@ quarantined"): a `page_changed` whose re-extracted records are *identical* is a
 cosmetic HTML change and is quieted to `ok` (not flagged); a `page_changed` with
 a real record diff updates the data, is listed in the run report for review, but
 **keeps the source verified and in the rotation** — its data is good, so a
-weekly scraper should keep tracking it. Only hard failures (`fetch_failed`,
+weekly scraper should keep tracking it. `needs_review` joins it in
+`validate.KEEPS_VERIFIED` for the same reason: one questionable title is no
+reason to stop refreshing every good record on the page. Only hard failures
+(`fetch_failed`,
 `extract_failed`, `schema_invalid`) and an `llm_fallback` rescue **quarantine**
 the source (excluded from future runs until re-onboarded); their previous good
 data stays in the output (never overwrite good data with garbage). The run
@@ -127,7 +151,8 @@ The cache layer makes this cheap — completed work is never redone.
 No implementation step is complete until I've seen the populated target data
 model it produces. After each step, write the relevant JSON and show me its
 content (or excerpt if large):
-- spec-engine proof: `output/preview/ddis--1.json`
+- spec-engine proof: `output/preview/ifi--3.json` (the DDIS page is source
+  `ifi--3`; `ddis` survives only as the `group.id` in its spec)
 - each onboarded source: `output/preview/<source_id>.json` (in target nesting)
 - each run: updated `output/extracted_data.json` + diff summary vs previous run
   (added / removed / modified records)
@@ -150,14 +175,19 @@ Stop after each build step and wait for my go-ahead.
 ## Repository layout
 
 ```
-src/posting_scraper/{registry,fetch,cache,spec_engine,spec_generator,llm,
-                     llm_extract,validate,store,report,main}.py
-tests/{test_contracts.py, test_units.py, replay_util.py, regen_golden.py}
-registry/scraping_sources.json   # provided
-contracts/<source_id>/{spec.yaml, snapshot.html, expected.json}
+pyproject.toml                   # deps, extras, console script, ruff + pytest config
+.env.example                     # every setting, with defaults (copy to .env)
+src/posting_scraper/{config,registry,fetch,cache,spec_engine,spec_generator,llm,
+                     llm_extract,title_check,validate,store,report,main}.py
+tests/{test_contracts.py, test_units.py, test_title_check.py, test_config.py,
+       replay_util.py, regen_golden.py, golden_contracts.json}
+registry/scraping_sources.json   # regenerated during the build (see archive/)
+contracts/<source_id>/{spec.yaml, snapshot.html|snapshot.json, expected.json}
 cache/<source_id>/...
 var/state.json
-output/{extracted_data.json, extracted_data.sqlite, preview/, runs/}
+output/{extracted_data.json, extracted_data.sqlite, *_raw.json, preview/, runs/}
+docs/scraper_plan.md             # this file
+archive/                         # provenance of the source list; nothing reads it
 ```
 
 > **Layout note (post-build).** The tree above is the restructured layout: code
@@ -173,18 +203,25 @@ snapshot with no network and must always pass.
 ## CLI
 
 ```
-posting-scraper fetch [--only ID ...] [--resume]    # stage 1 only
-posting-scraper onboard <source_id> | --next        # interactive verification
-posting-scraper run [--only ID ...] [--resume]      # extract verified sources from cache
+posting-scraper fetch [--only ID ...] [--resume] [--render]
+posting-scraper onboard <source_id> | --next
+        [--page-type process|topics|people|none] [--hint TEXT]
+        [--refetch] [--redraft] [--no-follow] [--profile-limit N]
+        [--llm-title-review] [--yes]
+posting-scraper run [--only ID ...] [--resume] [--no-llm-fallback]
 posting-scraper status                              # state + last-run table
 posting-scraper check <source_id>                   # dry-run one source, diff vs stored
 ```
+
+The five subcommands are as planned; the flags accumulated during the build.
+README §CLI is the canonical reference.
 
 ## Build order
 
 1. ✅ Skeleton: registry, state, cache, fetch (+ fetch command with resume)
 2. ✅ spec_engine + one hand-written spec for
-   https://www.ifi.uzh.ch/en/ddis/theses/topics.html → proven, `output/preview/ddis--1.json`
+   https://www.ifi.uzh.ch/en/ddis/theses/topics.html (source `ifi--3`) → proven,
+   `output/preview/ifi--3.json`
 3. ✅ llm.py abstraction (OpenAI impl) + llm_extract for process pages
 4. ✅ onboard command (interactive, as specified) incl. people-page link following
 5. ✅ validate + store + report + notify; run command with resume
@@ -202,8 +239,9 @@ posting-scraper check <source_id>                   # dry-run one source, diff v
 > non-reproducible enrichment and drifts as specs are edited after freezing.
 > Regenerate the golden deliberately with `python tests/regen_golden.py`.
 
-Politeness everywhere: sequential fetching, 2s delay, honest User-Agent. Do not
-scrape sources beyond the ones I explicitly onboard.
+Politeness everywhere: sequential fetching, a 2s delay
+(`SCRAPER_POLITE_DELAY_SECONDS`, see the configuration note below), honest
+User-Agent. Do not scrape sources beyond the ones I explicitly onboard.
 
 ## What the build added beyond the original plan
 
@@ -240,6 +278,30 @@ grew a set of reusable mechanisms so each new source needed only a `spec.yaml`.
   gets fixed. A rescue only replaces the original result when it is itself
   schema-valid, so a worse fallback never clobbers the diagnosis. On by default;
   `run --no-llm-fallback` disables it, and it no-ops when no LLM is configured.
+- **Title plausibility + repair** (`title_check.py`, validate status
+  `needs_review`) — a spec says *where* a title sits, never what one should look
+  like, so a selector that keeps matching the wrong element yields a
+  wrong-but-well-formed value no structural check can catch (`ifi--5` stored a
+  topic titled `"November 3, 2021"`). Each `topics` title is scored; an
+  implausible one is *reserved, not discarded*, while the record's own container
+  is scanned for a better candidate (`p > strong`, other headings, `strong`/`b`,
+  link text, PDF filename stem, description lead). Found ⇒ it becomes the title
+  and the rejected string is parked in `date_of_listing` or `_title_rejected`;
+  not found ⇒ the original stays and the source is flagged `needs_review`.
+  `topic_id` is computed after the repair. Deterministic, no LLM in runs, and
+  calibrated against the committed golden corpus rather than intuition — the
+  calibration test fails instead of letting a tightened heuristic quietly rewrite
+  good titles. Per-spec escape hatches: `title_check: false`,
+  `title_candidates:`.
+- **Centralized configuration** (`config.py`) — a `pydantic_settings.BaseSettings`
+  class replaced config scattered across import-time `os.environ` reads, module
+  constants and class attributes. All variables are `SCRAPER_`-prefixed (with
+  `OPENAI_API_KEY` still accepted), read through `get_settings()` at call time so
+  `SCRAPER_DATA_ROOT` relocates the whole data tree — it previously moved the
+  cache but not the output, because `store.py` froze its output paths at import.
+  Same shape as `backend-core`'s `config.py`, so the port is a merge. The title
+  thresholds are deliberately excluded: they would change stored data, not how it
+  is obtained.
 - **`_profile_url`** is the standard institutional link on every person;
   `personal_website` is reserved for genuine external homepages (followed via a
   `follow` block when the profile links one).
