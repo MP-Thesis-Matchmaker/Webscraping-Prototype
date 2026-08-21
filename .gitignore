@@ -1,13 +1,17 @@
 .venv/
 __pycache__/
 *.pyc
-cache/
-output/theses.json
-output/theses.sqlite
-output/runs/
-output/preview/
-registry/state.json
+*.egg-info/
 .env
 
 .DS_Store
 .claude/
+.idea/
+
+# Machine-written state and fetched pages: reproducible, never tracked.
+cache/
+var/
+
+# Run artifacts: kept on disk as evidence, but not tracked.
+output/runs/
+output/preview/

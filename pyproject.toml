@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "posting-scraper"
+version = "0.1.0"
+description = "Aggregates open UZH Bachelor/Master thesis postings, supervisors, and application processes into one structured dataset."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "pydantic-settings>=2.2",
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+    "PyYAML>=6.0",
+    "pypdf>=4.0",
+    "python-dotenv>=1.0",
+    "openai>=1.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+# Playwright renderer for JS-heavy / blocked pages. Kept out of the default
+# install because it pulls a browser download; fetch.py lazy-imports it and
+# degrades to the static fetch when absent. After installing, run:
+#   uv run python -m playwright install chromium
+render = [
+    "playwright>=1.40",
+]
+
+[project.scripts]
+posting-scraper = "posting_scraper.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
